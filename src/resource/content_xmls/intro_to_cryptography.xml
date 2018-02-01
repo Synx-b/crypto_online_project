@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<messages>
+
+    <message id="learning.intro-to-cryptography.title">
+        <center>
+            <h1 style="text-decoration: underline;">Introduction to Cryptography</h1>
+        </center>
+    </message>
+
+    <message id="learning.intro-to-cryptography.content">
+        <h2 style="text-decoration: underline;">
+            Topics covered in this section
+        </h2>
+
+        <ul>
+            <li>1. Classification</li>
+            <li>2. Basics / Setup</li>
+            <li>3. Substitution Cipher</li>
+            <li>4. Attacks</li>
+        </ul>
+
+
+        <br/>
+        <br/>
+        <br/>
+
+        <h3 style="text-decoration: underline;">1. Classification</h3>
+
+        <p>
+            Cryptography is really only 1 subsection of something called Cryptology. Cryptology is consisted of 2 sub-sections, one being Cryptography and the other Cryptanalysis.
+            <br/>
+            The main goal of Cryptography is to design and develop algorithms / systems that allow a message being being sent by the sender (Alice) to the receiver (Bob) and not allowing and adversary (Oscar) the ability to intercept and read the message.
+            <br/>
+            The main goal of Cryptanalysis is to try and break the algorithms / systems developed using Cryptography. This is very important as without it we would not know whether or not a given algorithm / system is secure.
+            <br/>
+            A diagram is given below showing the different sections and subsections of Cryptology 
+        </p>
+
+        <center>
+            <img src="../resource/images/cryptology-sections.png" alt="Image could not be loaded"/>
+        </center>
+
+        <h3 style="text-decoration: underline;">2. Basics / Setup</h3>
+
+        <p>
+            In this example we will be looking at the basic setup for a symmetric cryptosystem. The simple problem we are trying to solve is to provide secure communications over an insecure channel.
+        </p>
+
+        <center>
+            <img src="../resource/images/basic_setup_fv.png" alt="Image showing the basic setup of a symmetric cryptosystem"/>
+        </center>
+
+        <p>
+            Examples of channels that could be used are
+            <ul>
+                <li>The Internet</li>
+                <li>Airwaves, e.g. GSM, UMTS, LTE</li>
+                <li>Insecure public networks</li>
+            </ul>
+
+            In practice you should <b>NEVER</b> use an untested crypto algorithm
+
+        </p>
+
+        <h3 style="text-decoration: underline">2.1. Basic Notation</h3>
+
+        <center>
+            <img src="../resource/images/basic_notation_fv.png" alt="Basic Notation Diagram for Cryptography"/>
+        </center>
+
+        <h3 style="text-decoration: underline">2.2. Kerckhuffs Principle</h3>
+
+        A cryptosystem should be secure even if the attacker (Oscar) knows all the details about the system, with the exception of the secret key. 
+
+        <h3 style="text-decoration: underline;">3. Substitution Cipher</h3>
+
+        <p>
+            The substitution cipher is a historical cipher that operates on the letters of the alphabet. <br/>
+            The main idea is that you substitute a plaintext letter with a ciphertext one.
+        </p>
+
+        <center>
+            <img src="../resource/images/substition_cipher_fv.png" alt="Substitution Cipher Example" />
+        </center>
+
+        <br/>
+
+        <p>
+            Question? Is this Cipher Secure and if not how can we attack it?
+        </p>
+
+        <h3 style="text-decoration: underline">3.1 Attacks against the Substitution Cipher</h3>
+        <h3 style="text-decoration: underline">3.1.1 Brute Force Attack or  Exhaustive Key Search</h3>
+
+        <p>
+        This is the most boring but the most consistant form of attack on any cipher. The only downside of this type of attack is that it can take far to long to give back results. So, how does this work against the subsitution cipher?
+        </p>
+
+        <center>
+            <img src="../resource/images/brute_force_against_sub_cipher_fv.png" alt="Brute force against Sub Ciher"/>
+        </center>
+
+        <br/>
+
+        This shows us that the key space for the substitution cipher is to large for us to brute force, its not that its impossible but in order to go through all possible keys it would just take far to long. So we will need to try another attack..
+
+        <h3 style="text-decoration: underline">Letter Frequency Analysis</h3>
+
+        By doing this we work out the frequency of the letters in the ciphertext and then compare that to how frequent the letters of the alphabet occur and then just compare. This allows us to effectively work out what ciphertext letter maps to what plaintext letter. This works because we have a 1 to 1 relationship between the ciphertext letters and the plaintext letters. Below is a diagram showing the frequency of the letters of the alphabet.
+
+        <center>
+            <img src="../resource/images/letter_frequency_fv.png" alt="Letter Frequency Diagram" />
+        </center>
+
+        <h3 style="text-decoration: underline;">4. Classification of Attacks</h3>
+
+        <p>
+            There are often many many different ways to attack a system. Each of theses ways are known as 'Attack Vectors'
+        </p>
+
+        <center>
+            <img src="../resource/images/cryptanalysis_classification_fv.png" alt="The Different Types of Attack Vectors"/>
+        </center>
+
+    </message>
+</messages>

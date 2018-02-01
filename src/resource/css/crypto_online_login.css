@@ -1,0 +1,21 @@
+.login_credentials{
+    font-family: monospace;
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+.login_buttons{
+    font-family: monospace;
+    margin-top: 20px;
+    margin-left: 20px;
+    font-size: 15px;
+}
+
+.login_error{
+    font-family: monospace;
+    color: red;
+}
+
+.login_table{
+    text-align: center;
+}

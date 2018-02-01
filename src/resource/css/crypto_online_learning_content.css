@@ -1,0 +1,15 @@
+.learning_content_title{
+    font-size: 50px;
+    font-family: monospace;
+    font-style: italic;
+}
+
+.ul_side_by_side{
+	display: inline-block;
+}
+
+.learning_content_content{
+
+    font-size: 20px;
+    font-family: monospace;
+}

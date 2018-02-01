@@ -1,0 +1,81 @@
+% Computer Science Year 13 Project
+% By Jacob Powell
+
+
+% Structure of the Document
+% 1) Analysis (9)
+% 2) Documented Design (12)
+% 3) Technical Solution (42)
+% 3.1) Completeness of solution (15)
+% 3.2) Techniques used (27)
+% 4) Testing (8)
+% 5) Evaluation (4)
+
+\documentclass[12pt, a4paper, twoside]{report}
+
+\usepackage{graphicx}
+\usepackage{a4wide}
+\usepackage{fancyhdr}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1in]{geometry}
+\usepackage{lastpage}
+\usepackage{caption}
+\usepackage{nameref}
+\usepackage[english]{babel}
+\usepackage{lipsum}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{textcomp}
+
+\graphicspath{{images/}}
+\setlength\headheight{14.5pt}
+
+% Header and Footer settings below
+\fancypagestyle{IHA-fancy-style}{%
+  \fancyhf{}% Clear header and footer
+  \fancyhead[LE,RO]{\slshape \leftmark}
+  \fancyhead[LO,RE]{\slshape \rightmark}
+  \fancyfoot[C]{Page \thepage\ of \pageref{LastPage}}% Custom footer
+  \renewcommand{\headrulewidth}{0pt}% Line at the header visible
+  \renewcommand{\footrulewidth}{0.4pt}% Line at the footer visible
+}
+
+% Redefine the plain page style
+\fancypagestyle{plain}{%
+  \fancyhf{}%
+  \fancyfoot[C]{Page \thepage\ of \pageref{LastPage}}%
+  \renewcommand{\headrulewidth}{0pt}% Line at the header invisible
+  \renewcommand{\footrulewidth}{0.4pt}% Line at the footer visible
+}
+
+\pagestyle{IHA-fancy-style}
+
+\begin{document}
+
+% All Pages before the actual document start %
+\input{titlepage}
+\pagenumbering{roman}
+%\input{acknowlegements}
+\tableofcontents
+\newpage
+
+%\listoftables
+
+\addcontentsline{toc}{chapter}{Acknowledgements}
+
+% All the content pages including all the chapters %
+
+\pagenumbering{arabic}
+\input{analysis} % Chapter 1
+\input{documented_design} % Chapter 2
+\input{technical_solution} % Chapter 3
+\input{testing} % Chapter 4
+\input{evaluation} % Chapter 5
+
+% BibTeX stuff if I need to cite references
+%\nocite{*}
+%\addcontentsline{toc}{chapter}{Bibliography}
+%\bibliography{bibligraphy}
+%\bibliographystyle{plain}
+\listoffigures
+\end{document}

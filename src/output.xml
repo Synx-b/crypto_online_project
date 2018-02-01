@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?latexml searchpaths="/home/synx/crypto-online-project/src"?>
+<?latexml class="report" options="12pt,a4paper,twoside"?>
+<?latexml package="mathptmx"?>
+<?latexml package="anyfontsize"?>
+<?latexml package="t1enc"?>
+<?latexml RelaxNGSchema="LaTeXML"?>
+<document xmlns="http://dlmf.nist.gov/LaTeXML" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://dlmf.nist.gov/LaTeXML ">
+  <resource src="LaTeXML.css" type="text/css"/>
+  <resource src="ltx-report.css" type="text/css"/>
+  <para xml:id="p1">
+    <p>
+      <Math mode="inline" xml:id="p1.m1" tex="x^{5}" text="x ^ 5">
+        <XMath>
+          <XMApp>
+            <XMTok role="SUPERSCRIPTOP" scriptpos="post3"/>
+            <XMTok role="UNKNOWN" font="italic">x</XMTok>
+            <XMTok meaning="5" role="NUMBER">5</XMTok>
+          </XMApp>
+        </XMath>
+      </Math>
+    </p>
+  </para>
+</document>

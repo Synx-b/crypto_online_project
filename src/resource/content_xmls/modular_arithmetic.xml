@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<messages>
+
+    <message id="learning.modular-arithmetic.title">
+        <center>
+            Modular Arithmetic
+        </center>
+
+    </message>
+
+    <message id="learning.modular-arithmetic.content">
+
+        <center>
+            This is where the content will go
+        </center>
+    
+    </message>
+</messages>
