@@ -3,9 +3,7 @@
  * @date 19/12/2017
  *
  * @brief This file contains the base structure for how the website looks and how the user interacts with it.
- *
- *
- *
+ * @version 0.01
  * @author Jacob Powell
  */
 
@@ -16,7 +14,6 @@
 
 #include <Wt/WApplication.h>
 #include <Wt/Dbo/backend/Sqlite3.h>
-#include <Wt/Auth/Identity.h>
 
 
 /**

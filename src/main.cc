@@ -3,8 +3,8 @@
  * @date 14/12/2017
  *
  * @brief This is the file from which the deployment of the website is launched.
- * It handles the deployment options, the necessary external style files and message bundles
  *
+ * @version 0.01
  * @author Jacob Powell
  */
 
@@ -14,13 +14,10 @@
 using namespace Wt;
 
 /**
- * @brief This method initializes and creates the web application.
- * It is responsible for loading bootstrap3 as the main theme and if bootstrap3 is not available then it tries to load
- * bootstrap2 and if that is not possible then it will set the theme to the standard WCssTheme. It is also responsible
- * for loading in the required style sheets and message bundles that are needed.
+ * @brief This method returns a live instance of the web application
  *
  * @param env The current environment that the application is running from.
- * @return A live web application for the project to run from.
+ * @return An instance of the starter class which builds the initial running of the web app
  */
 std::unique_ptr<WApplication> createApplication(const WEnvironment& env)
 {

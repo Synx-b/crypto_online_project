@@ -1,10 +1,10 @@
-/*
+/**
  * File: db_interface.cc
  * Created: 20/12/2017 19:45
  * Finished:
  *
  * Description:
- *
+ * @version 0.01
  * Author: Jacob Powell
  */
 

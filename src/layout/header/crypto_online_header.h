@@ -1,10 +1,10 @@
-/*
+/**
  * File: crypto_online_home.cc
  * Created: 19/12/2017 13:25
  * Finished:
  *
  * Description:
- *
+ * @version 0.01
  * Author: Jacob Powell
  */
 

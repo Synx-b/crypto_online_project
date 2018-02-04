@@ -3,7 +3,7 @@
  * @date 19/12/2017
  *
  * @brief This file contains the class and method definitions for the CryptoOnlineHome class
- *
+ * @version 0.01
  * @author Jacob Powell
  */
 
@@ -38,19 +38,19 @@
  */
 class CryptoOnlineHome : public Wt::WContainerWidget{
 public:
-    explicit CryptoOnlineHome(Session& session);
+    explicit CryptoOnlineHome(Session& session); /**< Constructor for the CryptoOnlineHome Class */
 
 private:
-    void load_home_page();
-    void load_login_page();
-    void load_register_page();
-    void load_profile_page();
+    void load_home_page(); /**< Loads the Home Page */
+    void load_login_page(); /**< Loads the Login Page */
+    void load_register_page(); /**< Loads the Registration Page */
+    void load_profile_page(); /**< Loads the Profile Page */
 
-    void load_modular_arithmetic_page();
-    void load_intro_to_cryptography_page();
+    void load_intro_to_cryptography_page(); /**< Loads the Intro to Cryptography Page */
+    void load_modular_arithmetic_page(); /**< Loads the Modular Arithmetic Page */
 
-    void load_database();
-    void handleInternalPath(const std::string& string);
+    void load_database(); /**< Loads and Connects to the Database */
+    void handleInternalPath(const std::string& string); /**< Handles the change in the internal path of the application */
 
     Session& _current_session;
 
@@ -67,7 +67,5 @@ private:
     db_interface database_interface; /**< Allows the interaction between the application and the database */
 
 };
-
-
 
 #endif //CRYPTO_ONLINE_PROJECT_CRYPTO_ONLINE_HOME_H

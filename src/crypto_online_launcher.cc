@@ -2,6 +2,8 @@
  * @file crypto_online_launcher.cc
  * @date 30/01/2018
  *
+ * @brief Method definitions for the CryptoOnlineLauncher class
+ * @version 0.01
  * @author Jacob Powell
  */
 
@@ -11,6 +13,12 @@
 
 #include <Wt/WCssTheme.h>
 
+/**
+ * @brief Constructor for the CryptoOnlineLauncher
+ * It loads the initial state including the theme, css files and message bundles
+ *
+ * @param environment current enviroment that the application is loaded with
+ */
 CryptoOnlineLauncher::CryptoOnlineLauncher(const Wt::WEnvironment &environment)
         : WApplication(environment), _session(appRoot() + "auth.db") {
     /**
@@ -45,30 +53,19 @@ CryptoOnlineLauncher::CryptoOnlineLauncher(const Wt::WEnvironment &environment)
 
     this->_session.login().changed().connect(this, &CryptoOnlineLauncher::auth_event);
 
-
-
-    /**
-     * Load the necessary style sheets into the project
-     */
-    this->useStyleSheet("resource/css/crypto_online_header.css");
-    this->useStyleSheet("resource/css/crypto_online_grid.css");
-    this->useStyleSheet("resource/css/crypto_online_login.css");
-    this->useStyleSheet("resource/css/crypto_online_register.css");
-    this->useStyleSheet("resource/css/crypto_online_profile.css");
-    this->useStyleSheet("resource/css/crypto_online_learning_content.css");
+    load_css_files();
+    load_message_bundles();
 
     /**
-     * Load the necessary xml templates and message bundles for the project
+     * Load the initial settings of the website
      */
-    this->messageResourceBundle().use(this->appRoot() + "resource/xml-templates/login_template");
-
-    this->messageResourceBundle().use(this->appRoot() + "resource/content_xmls/modular_arithmetic");
-    this->messageResourceBundle().use(this->appRoot() + "resource/content_xmls/intro_to_cryptography");
-
     this->root()->addWidget(Wt::cpp14::make_unique<CryptoOnlineHome>(_session));
     this->root()->setContentAlignment(Wt::AlignmentFlag::Center);
 }
 
+/**
+ * @brief When a change in the authentication is detected this method is called
+ */
 void CryptoOnlineLauncher::auth_event() {
     if (_session.login().loggedIn()) {
         std::cout << "AUTH EVENT: CALLED" << std::endl;
@@ -78,4 +75,29 @@ void CryptoOnlineLauncher::auth_event() {
     }else{
 
     }
+}
+
+/**
+ * @brief This method loads all the required style files
+ */
+void CryptoOnlineLauncher::load_css_files() {
+
+    this->useStyleSheet("resource/css/crypto_online_header.css");
+    this->useStyleSheet("resource/css/crypto_online_grid.css");
+    this->useStyleSheet("resource/css/crypto_online_login.css");
+    this->useStyleSheet("resource/css/crypto_online_register.css");
+    this->useStyleSheet("resource/css/crypto_online_profile.css");
+    this->useStyleSheet("resource/css/crypto_online_learning_content.css");
+}
+
+/**
+ * @brief Load the necessary xml templates and message bundles for the project
+ */
+void CryptoOnlineLauncher::load_message_bundles() {
+    this->messageResourceBundle().use(this->appRoot() + "resource/xml-templates/login_template");
+
+    this->messageResourceBundle().use(this->appRoot() + "resource/content_xmls/modular_arithmetic");
+    this->messageResourceBundle().use(this->appRoot() + "resource/content_xmls/intro_to_cryptography");
+
+
 }
