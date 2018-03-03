@@ -1,21 +1,29 @@
-/*
- * File: sha3_hash.cc
- * Created: 20/12/2017 22:07
- * Finished:
+/**
+ * @file sha3_hash.cc
+ * @date 20/12/2017
+ * @version 0.01
  *
- * Description:
+ * @brief This file contains the class method body definitions
  *
- * Author: Jacob Powell
+ * @author Jacob Powell
  */
-
 
 #include "sha3_hash.h"
 
 #include <iostream>
 
-sha3_512_hash::sha3_512_hash() = default;
+/**
+ * @brief This is just a the default constructor the class
+ */
+SHA3_512::SHA3_512() = default;
 
-std::string sha3_512_hash::compute_hash(const std::string message) {
+/**
+ * @brief This method takes a message as a parameter and returns a hash of that message
+ *
+ * @param message The plaintext message that needs to be hashed
+ * @return The SHA3_512 hash of the parameter message
+ */
+std::string SHA3_512::compute_hash(const std::string message) {
     if(this->message.length() != 0 || this->hashed_message_bytes != nullptr || this->hashed_string.length() != 0){
         this->message.clear();
         this->hashed_string.clear();
@@ -32,10 +40,12 @@ std::string sha3_512_hash::compute_hash(const std::string message) {
     return this->hashed_string;
 }
 
-void sha3_512_hash::null_array() {
+/**
+ * @brief This nulls out the array containing the hashed message bytes
+ */
+void SHA3_512::null_array() {
     for(int i = 0; i < sizeof(this->hashed_message_bytes) / sizeof(CryptoPP::SHA3_512::DIGESTSIZE); i++){
         this->hashed_message_bytes[i] = 0;
     }
 }
-
 

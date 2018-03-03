@@ -8,11 +8,11 @@
  * Author: Jacob Powell
  */
 
-#include "crypto_online_header.h"
+#include "CryptoOnlineHeader.h"
 #include "../crypto_online_home.h"
 
 
-crypto_online_header::crypto_online_header(Session& session) : _current_session(session) {
+CryptoOnlineHeader::CryptoOnlineHeader(Session& session) : _current_session(session) {
     
     if(session.login().loggedIn()){
         create_user_navigation_bar();
@@ -22,7 +22,7 @@ crypto_online_header::crypto_online_header(Session& session) : _current_session(
 
 }
 
-void crypto_online_header::create_navigation_bar() {
+void CryptoOnlineHeader::create_navigation_bar() {
     this->navigation_bar = Wt::cpp14::make_unique<Wt::WNavigationBar>();
     this->navigation_bar->setTitle("Crypto Online", Wt::WLink(Wt::LinkType::InternalPath, "/home"));
     this->navigation_bar->setResponsive(true);
@@ -47,7 +47,7 @@ void crypto_online_header::create_navigation_bar() {
 
 }
 
-void crypto_online_header::create_user_navigation_bar() {
+void CryptoOnlineHeader::create_user_navigation_bar() {
     this->navigation_bar = Wt::cpp14::make_unique<Wt::WNavigationBar>();
     this->navigation_bar->setTitle("Crypto Online", Wt::WLink(Wt::LinkType::InternalPath, "/home"));
     this->navigation_bar->setResponsive(true);

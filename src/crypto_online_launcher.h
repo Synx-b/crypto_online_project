@@ -29,7 +29,7 @@
  */
 class CryptoOnlineLauncher : public Wt::WApplication {
 public:
-    explicit CryptoOnlineLauncher(const Wt::WEnvironment &environment);
+    explicit CryptoOnlineLauncher(const Wt::WEnvironment &environment); /**< Constructor for the CryptoOnlineLauncher Class*/
     void auth_event(); /**< Method that handles any authentication signals */
 
 private:

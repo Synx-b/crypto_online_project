@@ -10,7 +10,7 @@
 #ifndef CRYPTO_ONLINE_PROJECT_CRYPTO_ONLINE_HOME_H
 #define CRYPTO_ONLINE_PROJECT_CRYPTO_ONLINE_HOME_H
 
-#include "header/crypto_online_header.h"
+#include "header/CryptoOnlineHeader.h"
 #include "crypto_online_navigation_grid.h"
 #include "crypto_online_footer.h"
 #include "../user_utils/crypto_online_login.h"
@@ -56,7 +56,7 @@ private:
 
     std::unique_ptr<Wt::WGridLayout> _grid; /**< Holds the state of the front-end display of the website */
 
-    std::unique_ptr<crypto_online_header> _header; /**< Holds the state of the header of the website */
+    std::unique_ptr<CryptoOnlineHeader> _header; /**< Holds the state of the header of the website */
     std::unique_ptr<crypto_online_navigation_grid> _navigation_grid; /**< Holds the state of the navigation grid of the website */
     std::unique_ptr<crypto_online_footer> _footer; /**< Holds the state of the footer of the website */
     std::unique_ptr<CryptoOnlineProfile> _profile; /**< Holds the state of the profile page of the website */

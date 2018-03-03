@@ -1,11 +1,11 @@
-/*
- * File: sha3_hash.h
- * Created: 20/12/2017 22:07
- * Finished:
+/**
+ * @file sha3_hash.h
+ * @date 20/12/2017
+ * @version 0.01
  *
- * Description:
+ * @brief This file contains the class definition for the sha3-512 hashing function
  *
- * Author: Jacob Powell
+ * @author Jacob Powell
  */
 
 #ifndef CRYPTO_ONLINE_PROJECT_SHA3_HASH_H
@@ -16,21 +16,25 @@
 
 #include <string>
 
-class sha3_512_hash {
+/**
+ * @class SHA3_512
+ *
+ * @brief This class implements the SHA3 512-bit hash function provided in the Crypto++ library
+ */
+class SHA3_512 {
 public:
-    explicit sha3_512_hash();
-    std::string compute_hash(std::string message);
+    explicit SHA3_512(); /**< Default Constructor for the SHA3_512 Class*/
+    std::string compute_hash(std::string message);/**< Public function that hashes a given message*/
 
 private:
+    void null_array(); /**< This nulls the byte array containing the hashed message*/
 
-    void null_array();
+    std::string message; /**< This holds the message that needs to be hashed */
+    std::string hashed_string; /**< This holds the SHA3_512 hash of the message */
 
-    std::string message;
-    std::string hashed_string;
-
-    CryptoPP::byte hashed_message_bytes[CryptoPP::SHA3_512::DIGESTSIZE];
-    CryptoPP::SHA3_512 SHA3;
-    CryptoPP::HexEncoder hex_encoder;
+    CryptoPP::byte hashed_message_bytes[CryptoPP::SHA3_512::DIGESTSIZE]; /**< This Contains in bytes the hashed message */
+    CryptoPP::SHA3_512 SHA3; /**< This is an instance of the SHA3_512 class provided by the Crypto++ Library*/
+    CryptoPP::HexEncoder hex_encoder; /**< This is an instance of thr HexEncoder class provided by the Crypto++ Library */
 };
 
 

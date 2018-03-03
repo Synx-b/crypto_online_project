@@ -1,72 +1,84 @@
-/*
- * File: aes_implementation.h
- * Created: 14/01/2018 12:39
- * Finished:
+/**
+ * @file aes_implementation.h
+ * @date 14/01/2018
  *
- * Description:
+ * @brief This contains the class definition for my AES Implementation
  *
- * Author: Jacob Powell
+ * @version 0.01
+ * @author Jacob Powell
  */
 
-#ifndef CRYPTO_ONLINE_PROJECT_AES_IMPLEMENTATION_H
-#define CRYPTO_ONLINE_PROJECT_AES_IMPLEMENTATION_H
+typedef uint8_t byte; /**< This is a simple typedef that makes my life easier */
 
-#include <cstdint>
-
-#ifndef CBC
-    #define CBC 1
-#endif
-
-#ifndef ECB
-    #define ECB 1
-#endif
-
-#ifndef CTR
-    #define CTR 1
-#endif
-
-#define AES128 1
-#define AES192 0
-#define AES256 0
-
-#define AES_BLOCKLEN 16
-
-#if defined(AES128) && (AES128 == 1)
-    #define AES_KEYLEN 16
-    #define AES_KeyExpansionSize 176
-#elif defined(AES192) && (AES192 == 1)
-    #define AES_KEYLEN 24
-    #define AES_KeyExpansionSize 208
-#else
-    #define AES_KEYLEN 32
-    #define AES_KeyExpansionSize 240
-#endif
-
-struct AES {
-    uint8_t _roundkey[AES_KeyExpansionSize];
-#if (defined(CBC) && (CBC == 1) || defined(CTR) && (CTR == 1))
-    uint8_t _iv[AES_BLOCKLEN];
-#endif
+/**
+ * @enum AESKeyLengths
+ *
+ * @version 0.01
+ * @brief This enum contains the possible key lengths that the AES algorithm can use.
+ */
+enum AESKeyLengths{
+    AES128,
+    AES192,
+    AES256
 };
 
-void aes_init(struct AES* aes, const uint8_t* key);
-#if defined(CBC) && (CBC == 1)
-void aes_init_iv(struct AES* aes, const uint8_t* key, const uint8_t* iv);
-void aes_set_iv(struct AES* aes, const uint8_t* iv);
-#endif
 
-#if defined(ECB) && (ECB == 1)
-void aes_ecb_encrypt(struct AES* aes, const uint8_t* buf);
-void aes_ecb_decrypt(struct AES* aes, const uint8_t* buf);
-#endif
+/**
+ * @class AESImplementation
+ *
+ * @version 0.01
+ * @brief This class contains my implementation for the AES encryption algorithm
+ */
+class AESImplementation {
+public:
+    /**
+     * @brief Setting constructor with no arguments to delete
+     */
+    AESImplementation() = delete;
 
-#if defined(CBC) && (CBC == 1)
-void aes_cbc_encrypt_buffer(struct AES* aes, uint8_t* buf, uint32_t length);
-void aes_cbc_decrypt_buffer(struct AES* aes, uint8_t* buf, uint32_t length);
-#endif
+    /**
+     * @brief Default constructor which sets the encryption 128-bit key to be used
+     *
+     * @param key The encryption key passed into the algorithm
+     */
+    explicit AESImplementation(AESKeyLengths keyLength);
 
-#if defined(CTR) && (CTR == 1)
-void aes_ctr_xcrypt(struct AES* aes, uint8_t* buf, uint32_t length);
-#endif
+    /**
+     * @brief This method provides the encryption functionality for the AES algorithm
+     *
+     * @param input The plaintext that wants to be encrypted
+     * @param output The ciphertext that has been encrypted
+     * @param key The encryption key
+     */
+    void encrypt(const byte input[], byte output[], const byte key[]);
 
-#endif //CRYPTO_ONLINE_PROJECT_AES_IMPLEMENTATION_H
+private:
+
+    /**
+     * @brief This provides the implementation for the KeyExpansion part of the algorithm
+     *
+     * @param key The original 128-bit key
+     * @param expandedKey The expanded key used for the algorithms round
+     */
+    void KeyExpansion(const byte key[], byte expandedKey[]) const;
+    static void KeyExpansionCore(byte roundNumber, const byte keyIn[4], byte keyOut[4]);
+
+    void AddRoundKey(byte state[4][4], byte roundKey[4][4]);
+    void SubBytes(byte state[4][4]);
+    void ShiftRows(byte state[4][4]);
+    void MixColumns(byte state[4][4]);
+
+    void outputState(std::string prefix);
+
+    byte _state[4][4]; /**< This will hold the current state of the algorithm */
+    byte _round_key[4][4]; /**< This will hold the round key */
+
+    int _number_of_rounds; /**< This holds the number of rounds the algorithm will use */
+    int _block_size; /**< This holds the Block size of the AES Algorithm */
+    byte _initial_key_length; /**< This holds the initial length of key */
+    byte _expanded_key_length; /**< This holds the length of the expanded key */
+
+    byte _key_size_decrementer;
+    byte _m;
+
+};

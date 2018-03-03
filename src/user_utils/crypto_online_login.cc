@@ -67,7 +67,7 @@ void crypto_online_login::process_login() {
     auto password = this->password_entry->text().toUTF8();
 
     std::string hashed_password_string;
-    sha3_512_hash sha3;
+    SHA3_512 sha3;
     hashed_password_string = sha3.compute_hash(password);
 
 

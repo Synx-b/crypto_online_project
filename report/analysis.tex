@@ -16,7 +16,832 @@
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\newpage
+
+\tikzset{
+  compress/.style={
+    trapezium,
+    draw=black, thick,
+    rounded corners=3pt,
+    shape border rotate=90,
+    trapezium left angle=75,
+    trapezium right angle=75,
+    minimum height=5mm,
+    minimum width=6mm,
+    },
+}
+
+\tikzset{
+  expand/.style={
+    trapezium,
+    draw=black, thick,
+    rounded corners=3pt,
+    shape border rotate=270,
+    trapezium left angle=75,
+    trapezium right angle=75,
+    minimum height=5mm,
+    minimum width=6mm,
+    },
+}
+
+\def\compress{\hbox to 0.4em{\hfill$\mathfrak c$\hfill}}
+\def\expand{\hbox to 0.4em{\hfill$\mathfrak e$\hfill}}
+
+\def\leftvalue#1#2{\node[coordinate] (#1) {} node[left,yshift=0.5mm] {#2};}
+\def\rightvalue#1#2{\node[coordinate] (#1) {} node[right,yshift=0.5mm] {#2};}
+
+\def\DESF#1{\node[compress] (F#1) {\compress}; \& \node[XOR] (X#1) {}; \&  \node[expand] (e#1) {\expand}; }
+
+\def\KS{KS}
+\def\PCA{PC1}
+\def\PCB{PC2}
+\def\vph{\vphantom{PKy}}
+
 \chapter{Analysis}
 
-\section{What is Cryptology}
+\section{What is Cryptography}
+
+Cryptography is idea of allowing 2 parties to communicate securely and not allowing an adversary to listen in on the communications. In a general sense it is the art of building secure protocols that allow us to communicate securely. This idea has been around for centuries and is constantly evolving with the increase in demand for technology in our everyday lives and the need make certain that everything that is in the public domain is secure. 
+
+\subsection{Quick History}
+\subsubsection{Ancient History}
+One of the first recorded instances of cryptography is from the Roman Empire when \textit{Julius Caesar} created what is now known as the Caesar Cipher. This cipher works by shifting the letters of the alphabet a given number of times. According to \textit{Gaius Suetonius Tranquillus}, Julius  Caesar used a shift of +3 places to protect messages of military importance. Even though it is unknown how effective the cipher was at the time it can be assumed that it was reasonably secure. Not least because most of Caesars enemies would have been illiterate and others would have just presumed that the messages were written in an unknown foreign language. 
+
+At the time there was no recorded way to break these ciphers. The earliest records of attacks that could be used to break the cipher are from the $9^{th}$ century, with the work of \textit{Al-Kindi} in the Arab world with the discovery of frequency analysis.
+\subsubsection{Recent History}
+\paragraph{WW1:}
+One of the most notable events during WW1 would be the British interception and decryption of the Zimmermann Telegram. Room 40, the section in British admiralty most identified with cryptanalysis effort during WW1, heavily contributed to the decryption of the Zimmermann Telegram. This decryption is often referred to as the most significant triumph in signals intelligence for Britain in the First World War, and one of the first times in which a single piece of signals intelligence directly influenced world events. In this case the United States of America joined the War on $6^{th}$ April 1917. 
+
+\paragraph{WW2:}
+During World War 2, cryptography was used extensively with a plethora of ciphers systems fielded by the nations involved during the war. In addition to the advancements of cipher systems, the theoretical and practical aspects of cryptanalysis was much more advanced.
+
+Probably the most important codebreaking event during WW2 was the breaking and decryption of the \textit{Enigma} Cipher. The first 'full' break of the enigma cipher was in 1932 by Poland, with the techniques and insights were passed on to the British and French Allies just before the start of the War in 1939. These were improved significantly by the British efforts at the Bletchly Park research station during the War. The decryption of the Enigma Cipher allowed the allies to read important parts of the German Radio networks and it provided an invaluable source of military intelligence throughout the war. Intelligence from this source (including other high level sources, including the Fish Ciphers), was eventually called \textit{Ultra}. 
+
+A similar break into an important Japanese cipher (PURPLE) by the US Army Signals Intelligence started before the US entered the War. The product of this effort was given the codename \textit{MAGIC}, it was the highest security Japanese diplomatic cipher.
+
+\subsection{Modern Day Cryptography}
+\subsubsection{Symmetric}
+Symmetric-Key Algorithms are algorithms for cryptography that use the same Key for encryption and decryption of the plaintext and ciphertext respectively. These \textit{Keys} are a representation of a shared secret between 2 or more parties, that can be used to maintain a confidential link of communication. The main drawback of this system is that all the parties communicating need to know the secret key in order to communicate with each other.
+
+There are 2 main types of Symmetric Cryptography Algorithms:
+\begin{itemize}
+\item{Stream Ciphers
+
+Stream ciphers will go through each bit of the plaintext and encrypt it one at a time
+}
+\item{Block Ciphers
+
+Block Ciphers will divide the plaintext into groups of bits and will encrypt each of those \textit{Blocks} at once, padding the plaintext if the length of the plaintext does not equally divide the block size of the cipher. Blocks of 64-bits were commonly used but now a days a block size of 128-bits is more common. The Advanced Encryption Standard (approved by NIST in 2001) and the GCM Block cipher both use block sizes of 128-bits.
+}
+\end{itemize}
+
+\subsubsection{Asymmetric}
+
+Public Key Cryptography or Asymmetric Cryptography is any cryptographic system that instead of using a single secret key, uses pairs of keys:
+\begin{itemize}
+\item{Public Keys
+
+These could be known widely to the public domain}
+\item{Private Keys
+
+These are only known to the Owner}
+\end{itemize}
+
+This accomplishes 2 things: Authentication, where the public key verifies that the holder of the paired private keys sent the message, and encryption, where only the paired private key holder can decrypt the message encrypted with the public key.
+
+Public Key systems are often based on complex mathematical systems that currently have no reasonable solution to them. Some of these include certain integer factorization, discrete logarithm and elliptic curve problems. Unlike symmetric key algorithms, asymmetric algorithms do not require a secure channel of communication for the initial exchange of one or more of the secret keys between the parties.
+
+Because of the computational complexity of asymmetric cryptography, it is usually only used for small blocks of data. This is typically the transfer of a symmetric encryption key or \textit{Session Key}. This session key is the used to encrypt the rest of the potentially longer message. This symmetric encryption/decryption is based on simpler algorithms and is much faster.
+
+In a public key signature system a person can combine their message with a private key to create a short digital signature on the message. Anyone with the corresponding public key can combine a message, a digital signature and the known public key to verify if the signature is valid or not. Therefore this provides authentication of a message provided that the owner of the private key keeps the private key secret. 
+
+These public key algorithms play fundamental roles in cryptosystems, applications and protocols. They are heavily involved in internet standards such as TLS (Transport Layer Security), S/MIME, PGP and GPG. Some public key algorithms provide key distribution and secrecy. Examples include the Diffie-Hellman Key Exchange. Some algorithms provide digital signatures. Examples include the Digital Signature Algorithm and some provide both, e.g. RSA.
+
+Public Key Cryptography finds applications in the Information Security Discipline. Information Security (IS) is concerned with all aspects of protecting electronic information assets against security threats. Public Key cryptography is used as a method of assuring the confidentiality, authenticity and non-reputability of electronic communications.  
+
+\subsubsection{Cryptanalysis}
+
+Cryptanalysis is the study of information systems working towards the goal of unveiling the hidden aspects of the system. This knowledge is then used to break the information system and gain access to the contents of encrypted information.
+
+In addition to mathematical analysis of cryptographic algorithms, cryptanalysis also involves looking at side-channel attacks. These attacks don't specifically look for weaknesses in the algorithm itself but for a weakness in the implementation of algorithm.
+
+Considering the end goal has been the same, the specific ways in which we get there have evolved and developed drastically of the past few decades. We have gone from the pen-and-papers methods of the past, to the machines like the British bombes and colossus supercomputer at Bletchly part to the mathematically advanced computerized schemes of the preset. Most cryptanalysis of modern day algorithms involves solving complex pure mathematical problems, including the integer-factorization problem and the discrete logarithm problem.  
+
+\subsubsection{Protocols}
+
+A security protocol is an abstract protocol that performs a security function and applies cryptographic methods, often grouped together as sequences of cryptographic primitives. The protocol defines how the algorithms should be used. 
+
+Cryptographic protocols are widely used for application-level data transport. A cryptographic protocol usually incorporates at least a few of the following features
+\begin{itemize}
+\item{Key Agreement / Establishment}
+\item{Entity Authentication}
+\item{Symmetric Encryption and message material construction}
+\item{Secure Application-level data transport}
+\item{Non-repudiation methods}
+\item{Secret Sharing Methods}
+\item{Secure Multi-party computation}
+\end{itemize} 
+
+\paragraph{Example: Transport Layer Security} 
+An example of one of these algorithms could be the Transport Layer Security, or TLS, protocol. TLS is used to secure web (HTTP/HTTPS) connections. It has an entity authentication mechanism based on the X.509 system; a key setup phase, where a symmetric key is formed by employing public-key cryptography; and a secure application-level data transport system. These 3 functions have very important interconnections. Standard TLS does not however implement Non-repudiation methods.
+
+There are other types of cryptographic protocols as well, and even the spelling has multiple meanings. Cryptographic Application Protocols, often use one or more underlying key agreement methods, which are sometimes themselves referred to as cryptographic protocols. For example, TLS employs the Diffie-Hellman Key Exchange, which although is only a part of the TLS protocol, could be seen as a completely independent cryptographic protocol in itself for other applications.
+
+\subsection{Applications of Modern Cryptography in Everyday Life}
+
+Cryptography is present in nearly every single electronic device that has been produced in the past decade. This ranges from your new ePassport to your new mobile phone to your smart fridge. It is everywhere and because of this it has become even more important. 
+
+For the most part Cryptography provides security to a service that we use in out daily lives. Examples of these services could be:
+\begin{itemize}
+\item{ATM Cash Withdraw}
+\item{File Storage}
+\item{Emails}
+\item{TV}
+\item{Text Messaging}
+\item{Web Browsing}
+\item{Payment Systems like PayPal}
+\end{itemize}
+
+\section{Algorithms Being Used}
+
+\subsection{DES}
+\subsubsection{What is DES?}
+
+DES, or the Data Encryption Standard, is a symmetric block cipher used for the encryption and decryption of electronic data. Even though it has now been proven that DES is insecure it was a major keystone in the development of modern cryptography. 
+
+Developed in the early 1970's by IBM, based of an earlier design by \textit{Horst Feistal}, the algorithm was submitted to the National Bureau of Standards (NBS) following the agency's invitation to propose a candidate for the protection of unclassified, sensitive electronic government data. In 1976, after consultation with the National Security Agency (NSA), the NBS eventually selected a modified version of DES which was published as a Federal Information Processing Standard (FIPS) for the United States in 1977. It should be noted that this modified version helped protect against differential cryptanalysis but weakened it significantly against brute-force attacks, the attack that would eventually make NIST (National Institute for Standards and Technology, the new NBS) ask for the newer Advanced Encryption Standard (AES).
+
+\subsubsection{Overview of DES}
+
+DES is a Block Cipher. It takes a fixed-length amount of plaintext bits and transforms it through a series of complicated operations which results in ciphertext bits. In the case of DES, its block-size is 64-bits, this means that you would split up your plaintext into 64-bit blocks and pass them through the algorithm one at a time. In the case that your plaintext does not fully divide into 64-bits you would use padding to increase the size of the plaintext until it fully divided into 64-bits. DES also uses a Key that heavily effects the transformation, so decryption can only be done if the user has the Key. DES uses a Key size of 64-bits. However it should be noted that 8 of these bits are used solely for parity checks so the effective Key size of DES is 56-bits. The Key is stored or transferred as 8 bytes with odd parity. According to \textit{ANSI INCITS 92-1981}, section 3.5:
+
+\begin{quote}
+\textit{One bit in every byte of the KEY may be utilized for error detection in key generation, distribution and storage. Bits 8,16,..,64 are for use in ensuring that each byte is of odd parity.}
+\end{quote}
+
+Like all Block Ciphers, DES on its own in not inherently secure, it must be used in a mode of operation to achieve this. FIPS-81 specifies several modes to be used with DES.
+
+Decryption works the same way as encryption, but the keys are used in reverse order. This gives the advantage that you can use the same hardware/software for both encryption and decryption.
+
+\paragraph{Overview of Internal Structure:}
+
+DES uses 16 rounds, this means that the core blocks of the cipher are repeated 16 times on each block of plaintext. There is also an Initial Permutation and a Final Permutation, name IP and FP respectively. These have no significant cryptographic impact on the cipher but were added to allow the loading of blocks in and out of mid-1970s 8-bit based hardware. 
+
+Before the main rounds the block is divided into two 32-bit halves, being processes alternatively. This structure is known as a Feistel Network. This way of constructing a block cipher ensures that decryption and encryption are very similar processes, the only difference being that the subkeys are applied in reverse for decryption. Figure \ref{DES-HL-Overview} shows this.
+
+\begin{figure}[h!]
+\begin{center}
+\begin{tikzpicture}[/tikz/ampersand replacement=\&]
+
+  \matrix[column sep={10mm,between origins}, row sep={8mm,between origins}]{
+%
+								   \&  \& \node[] (input) {Plaintext\vph}; \& \&        \&[1mm] \&[1mm] \&[6mm] \& \node[] (key) {Key\vph}; \& \\[3.6mm]
+	\node[coordinate,yshift=-8mm] (dotIPa) {}; \&  \& \node[function,yshift=-8mm] (IP) {IP};    \& \& \node[coordinate,yshift=-8mm] (dotIPb) {};  \& \& \& \&  \node[function] (PC1) {\PCA};    \\[4mm]
+%
+	\leftvalue{L0}{$L_1$};         \&  \& \&    \& \rightvalue{R0}{$R_1$};      \& \&                   	          \& \node[function,yshift=4mm] (ROL0a) {$\lll_1$}; \& \& \node[function,yshift=4mm] (ROL0b) {$\lll_1$};  \\[-4.5mm]
+                                   \&  \& \&    \&                              \& \& \node[function] (KPC0) {\PCB};  \& \node[branch,yshift=1.25mm] (B0a) {};     \& \& \node[branch,yshift=-1.25mm] (B0b) {};     \\[-2.5mm]
+	\node[XOR] (plus0) {};         \&  \DESF 0  \& \node[branch] (dot0) {};                                                                                                                                    \\[-1mm]
+	\node[coordinate] (dot0a) {};  \&  \& \&    \& \node[coordinate] (dot0b) {};                                                                                                                               \\
+%
+	\leftvalue{L1}{$L_2$};         \&  \& \&    \& \rightvalue{R1}{$R_2$};      \& \&                         	      \& \node[function,yshift=4mm] (ROL1a) {$\lll_1$}; \& \& \node[function,yshift=4mm] (ROL1b) {$\lll_1$};  \\[-4.5mm]
+                                   \&  \& \&    \&                              \& \& \node[function] (KPC1) {\PCB};  \& \node[branch,yshift=1.25mm] (B1a) {};     \& \& \node[branch,yshift=-1.25mm] (B1b) {};     \\[-2.5mm]
+	\node[XOR] (plus1) {};         \&  \DESF 1  \& \node[branch] (dot1) {};                                                                                                                                    \\[-1mm]
+	\node[coordinate] (dot1a) {};  \&  \& \&    \& \node[coordinate] (dot1b) {};                                                                                                                               \\
+%
+	\leftvalue{L2}{$L_3$};         \&  \& \&    \& \rightvalue{R2}{$R_3$};      \& \&                        	      \& \node[function,yshift=4mm] (ROL2a) {$\lll_2$}; \& \& \node[function,yshift=4mm] (ROL2b) {$\lll_2$};  \\[-4.5mm]
+                                   \&  \& \&    \&                              \& \& \node[function] (KPC2) {\PCB};  \& \node[branch,yshift=1.25mm] (B2a) {};     \& \& \node[branch,yshift=-1.25mm] (B2b) {};     \\[-2.5mm]
+	\node[XOR] (plus2) {};         \&  \DESF 2  \& \node[branch] (dot2) {};                                                                                                                                    \\[-1mm]
+	\node[coordinate] (dot2a) {};  \&  \& \&    \& \node[coordinate] (dot2b) {};                                                                                                                               \\
+%
+	\leftvalue{L3}{$L_4$};         \&  \& \&    \& \rightvalue{R3}{$R_4$};      \& \&                   	          \& \node[function,yshift=4mm] (ROL3a) {$\lll_2$}; \& \& \node[function,yshift=4mm] (ROL3b) {$\lll_2$};  \\[-4.5mm]
+                                   \&  \& \&    \&                              \& \& \node[function] (KPC3) {\PCB};  \& \node[branch,yshift=1.25mm] (B3a) {};     \& \& \node[branch,yshift=-1.25mm] (B3b) {};     \\[-2.5mm]
+	\node[XOR] (plus3) {};         \&  \DESF 3  \& \node[branch] (dot3) {};                                                                                                                                    \\[-1mm]
+	\node[coordinate] (dot3a) {};  \&  \& \&    \& \node[coordinate] (dot3b) {};                                                                                                                               \\
+%
+%L6
+	\leftvalue{L4}{$L_{16}$};      \&  \& \&    \& \rightvalue{R4}{$R_{16}$};   \& \&                                 \& \node[function,yshift=4mm] (ROL4a) {$\lll_1$}; \& \& \node[function,yshift=4mm] (ROL4b) {$\lll_1$};  \\[-4.5mm]
+                                   \&  \& \&    \&                              \& \& \node[function] (KPC4) {\PCB};  \& \node[coordinate,yshift=1.25mm] (B4a) {}; \& \& \node[coordinate,yshift=-1.25mm] (B4b) {}; \\[-2.5mm]
+	\node[XOR] (plus4) {};         \&  \DESF 4  \& \node[branch] (dot4) {};                                                                                                                                    \\[-1mm]
+%
+	\leftvalue{L5}{$L_{17}$};      \&  \& \&    \& \rightvalue{R5}{$R_{17}$};                                                                                                                                  \\[-4mm]
+	\node[coordinate] (dotFPa) {}; \&  \& \node[function] (FP) {FP};  \& \& \node[coordinate] (dotFPb) {};                                                                                                          \\[3.6mm]
+								   \&  \& \node[] (output) {Ciphertext};                                                                                                                                       \\
+  };   
+
+
+
+    \draw[arrow] (key) -- (PC1);
+    \draw[arrow,rounded corners] (PC1) -| (ROL0a);
+    \draw[arrow,rounded corners] (PC1) -| (ROL0b);
+
+    \draw[connect] (ROL0a) -- (B0a); \draw[connect] (ROL0b) -- (B0b); 
+    \draw[arrow] (B0a) -- (ROL1a); \draw[arrow] (B0b) -- (ROL1b);
+    \draw[connect] (ROL1a) -- (B1a); \draw[connect] (ROL1b) -- (B1b); 
+    \draw[arrow] (B1a) -- (ROL2a); \draw[arrow] (B1b) -- (ROL2b);
+    \draw[connect] (ROL2a) -- (B2a); \draw[connect] (ROL2b) -- (B2b); 
+    \draw[arrow] (B2a) -- (ROL3a); \draw[arrow] (B2b) -- (ROL3b);
+    \draw[connect] (ROL3a) -- (B3a); \draw[connect] (ROL3b) -- (B3b); 
+    \draw[arrow,dashed] (B3a) -- (ROL4a); \draw[arrow,dashed] (B3b) -- (ROL4b);
+
+    \draw[arrow] (B0a) -- (KPC0.east |- B0a); \draw[arrow,cross line] (B0b) -- (KPC0.east |- B0b);
+    \draw[arrow] (B1a) -- (KPC1.east |- B1a); \draw[arrow,cross line] (B1b) -- (KPC1.east |- B1b);
+    \draw[arrow] (B2a) -- (KPC2.east |- B2a); \draw[arrow,cross line] (B2b) -- (KPC2.east |- B2b);
+    \draw[arrow] (B3a) -- (KPC3.east |- B3a); \draw[arrow,cross line] (B3b) -- (KPC3.east |- B3b);
+
+    \draw[arrow,rounded corners] (ROL4a) |- (KPC4.east |- B4a);
+    \draw[arrow,rounded corners] (ROL4b) |- (KPC4.east |- B4b);
+
+
+    \newcount\u
+    \foreach \m in {0,...,4} {
+      \u=\m 
+      \advance\u by 1
+      \def\j{\number\u}
+
+       {
+         \draw[arrow,rounded corners] (KPC\m) -|
+              node[above, pos=0.06] 
+                   {\ifthenelse{\equal{\m}{4}}{$k_{16}$}{$k_\j$}}
+                       (X\m);
+         \draw[arrow] (L\m) -- (plus\m);
+         \draw[connect, cross line] (R\m) -- (dot\m);
+         \draw[arrow] (dot\m) -- (e\m);
+         \draw[arrow] (e\m) -- (X\m);
+         \draw[arrow] (X\m) -- (F\m);
+         \draw[arrow] (F\m) -- (plus\m);
+       }
+    }
+
+    \def\p{0} %% (p,m)=(0,1),(1,2),...,(5,6)
+    \foreach \m in {1,...,4} {
+      \ifthenelse{\equal{\p}{3}}
+      {
+        \draw[connect, dashed, rounded corners] (dot\p) -- (dot\p b) -- ($(L\m)+(0,3mm)$) -- (L\m);
+        \draw[connect, dashed, rounded corners, cross line] (plus\p) -- (dot\p a) -- ($(R\m)+(0,3mm)$) -- (R\m);
+      }
+      {
+        \draw[connect, rounded corners] (dot\p) -- (dot\p b) -- ($(L\m)+(0,3mm)$) -- (L\m);
+        \draw[connect, rounded corners, cross line] (plus\p) -- (dot\p a) -- ($(R\m)+(0,3mm)$) -- (R\m);
+      }
+      \global\let\p\m
+    }
+
+	\draw[connect] (dot4) -- (R5);
+	\draw[connect] (plus4) -- (L5);
+
+    \draw[arrow] (input) -- (IP); 
+    \draw[connect, rounded corners] (IP) -- (dotIPa) -- (L0);
+    \draw[connect, rounded corners] (IP) -- (dotIPb) -- (R0);
+
+    \draw[arrow, rounded corners] (L5) -- (dotFPa) -- (FP);
+    \draw[arrow, rounded corners] (R5) -- (dotFPb) -- (FP);
+    \draw[arrow] (FP) -- (output); 
+
+\end{tikzpicture}
+\end{center}
+\caption{High Level Overview of the DES Block Cipher}
+\label{DES-HL-Overview}
+\end{figure}
+
+\newpage
+\subsection{AES}
+\subsubsection{What is AES?}
+
+AES, or the Advanced Encryption Standard, is a specification for the encryption of electronic data established by the National Institute for Standards and Technology (NIST) in 2001. AES is a subset of the Rijndael Cipher, developed by 2 Belgium cryptographers. \textit{Vincent Rijmen} and \textit{Joan Daemen}, who submitted the cipher during the AES selection phase. Rijndael is a family of Block Ciphers which support multiple block sizes and key lengths.
+
+For AES, NIST selected only 3 members of the Rijndael cipher. Each using a block size of 128-bits and supports using key lengths of 128, 192, 256 bits.
+
+AES was first adopted by the US Government and nowadays is used worldwide. It has become the defacto standard for securing electronic data. It has replaced the Data Encryption Standard which was first published in 1977. AES was first announced by NIST on \textit{November 26, 2001} as a FIPS PUB 197 (FIPS 197). This announcement followed a five year standardization process on which fifteen competing designs were presented and evaluated, before the Rijndael Cipher was accepted as the most suitable.
+
+AES became effective as a federal government standard on \textit{May 26, 2002}, after its approval by the state of commerce. AES is included in ISO/IEC 18033-3 Standard. AES is available in multiple encryption packages and is the first(and only) cipher approved by the National Security Agency (NSA) for top secret information when used in an NSA cryptographic module.
+
+\subsubsection{Overview of AES}
+
+AES is based on what is known as a substitution-permutation network, and is very fast in both hardware and software. Unlike its predecessor DES, AES is not build on a Feistal Network. Since AES is a variant of the Rijndael Cipher using a Block size of 128-bits and supporting key sizes of 128, 192, 256 bits.
+
+AES operates on a $4$ x $4$ column major order matrix of bytes, known as the state of the cipher. The calculations of this Cipher are performed in the Galios Field of $2^8$, $GF(2^8)$, this is covered in detail in \textit{Section 2.4.1}. The byte ordering in the matrix is shown in Figure \ref{AES-Byte-Ordering}.
+
+\begin{figure}[h!]
+\begin{center}
+\begin{tikzpicture}[scale=1]
+
+	\draw (0,3) rectangle node { $b_0$} +(1,1);
+	\draw (0,2) rectangle node { $b_1$} +(1,1);
+	\draw (0,1) rectangle node { $b_2$} +(1,1);
+	\draw (0,0) rectangle node { $b_3$} +(1,1);
+	\draw (1,3) rectangle node { $b_4$} +(1,1);
+	\draw (1,2) rectangle node { $b_5$} +(1,1);
+	\draw (1,1) rectangle node { $b_6$} +(1,1);
+	\draw (1,0) rectangle node { $b_7$} +(1,1);
+	\draw (2,3) rectangle node { $b_8$} +(1,1);
+	\draw (2,2) rectangle node { $b_9$} +(1,1);
+	\draw (2,1) rectangle node { $b_{10}$} +(1,1);
+	\draw (2,0) rectangle node { $b_{11}$} +(1,1);
+	\draw (3,3) rectangle node { $b_{12}$} +(1,1);
+	\draw (3,2) rectangle node { $b_{13}$} +(1,1);
+	\draw (3,1) rectangle node { $b_{14}$} +(1,1);
+	\draw (3,0) rectangle node { $b_{15}$} +(1,1);
+        
+\end{tikzpicture}
+\caption{AES Byte Ordering}
+\label{AES-Byte-Ordering}
+\end{center}
+\end{figure}
+
+The Key size used for the AES cipher specifies the number of rounds the used to convert the plaintext block into the ciphertext block.
+
+\begin{itemize}
+\item{128-bits : 10 Rounds}
+\item{192-bits : 12 Rounds}
+\item{256-bits : 14 Rounds}
+\end{itemize}
+
+Each round consists of several processing steps, each containing 4 steps including one that depends on the key supplied to the algorithm. A set of reverse rounds are applied to transform the ciphertext back into the plaintext using the same key. A High Level description of the algorithm is given below in Figure \ref{AES-HL-Overview}:
+
+\vspace{0.3cm}
+
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[scale=0.5]{aes-hl-overview-ue.png}
+\end{center}
+\caption{AES High Level Overview}
+\label{AES-HL-Overview}
+\end{figure}
+
+    
+
+\subsection{SHA-3}
+\subsubsection{What is SHA-3}
+
+SHA-3, commonly known as the Secure Hashing Algorithm-3, is the most up to date member of the Secure Hashing Algorithm family. It was released by NIST on \textit{August 5, 2015}. Although it is a member of the same group hash function standards, SHA-3's internal structure is quite different from the MD5-like structures of SHA-1 and SHA-2.
+
+SHA-3 is a subset of a broader group of cryptographic primitive Keccak, designed by \textit{Guido Bertoni}, \textit{Joan Daemon}, \textit{Micheal Peeters} and \textit{Gilles Van Assche}, building upon their previous RadioGatun cryptographic primitive. Keccaks authors have proposed further additional uses of the hash function, which are not yet standardized by NIST, including a stream cipher, an authenticated encryption system, a 'tree' hashing scheme for faster hashing on certain architectures and AEAD ciphers Keyak and Ketje. 
+
+Keccak is based on something known as sponge construction. Sponge construction is based on a wide random function or random permutation, and allows inputting of any size of data and outputting any size of data, while acting as a psuedrandom function with regards to all previous inputs. This allows SHA-3 to have great flexibility.
+
+NIST does not have any plans to remove SHA-2 from the revised Secure Hash Standard. The purpose of SHA-3 is that it can be directly substituted for SHA-2 in current application if necessary, and to significantly improve the robustness of NIST's overall hash algorithm toolkit.
+
+\subsubsection{Overview of SHA-3}
+
+\textbf{I NEED TO LEARN THE STRUCTURE OF SHA-3}
+
+
+\section{Why is this important?}
+
+\subsection{The Importance of Cryptography in the Modern day}
+
+In the modern era, the amount of reliance we have on technology has exponentially increased over the past few decades. With this dramatic increase, we have started using this new technology to complete tasks that use very important and critical information about us, like online banking. This has opened a new opportunity for criminals to gain access to your critical accounts and now, rather than having to rob a bank, steal your credit cards, mug you, they only need to be in the same coffee shop connected to the same pubic Wifi as you. This is a very bad situation.
+
+Cryptography plays a key role in this as it is the only thing that stops attackers from being able to access all of our critical information. As long our data is encrypted securely, it doesn't matter whether or not they can see what we are doing by being connected to the same public Wifi, all they will see is jiberish that makes no sense. And as long as the algorithms we use are secure and we make sure they don't get access to our private cryptographic keys they will never be able to access our critical data.
+
+This is why Cryptography is very very important in the Modern Day. Cryptography is the only defense we have against attackers who have access to our data. The counter argument could be made that as long as they never get access to our data we will be fine. But, recent cyber attacks against corporate companies have proven that even the most secure facilities are not 100\% secure. So preventing the attackers from getting the data in the first place is important, but it is equally important to make sure that when they get the data, that data is useless to them.  
+
+\subsection{Analysis of Current Solutions}
+
+Now we know that cryptography is possible one of the most important concepts in our digital age we need to make sure that it stays that way. This means we need to educate and train the next generation of cryptographers so that in 100 years time, we don't run out of people that can develop, test, maintain the next wave of cryptographic algorithms. So, what are the current ways that an individual can learn the ways of the cryptographers.
+
+\subsubsection{1. Academia}
+
+The most traditional way to break into a given industry, you enroll at a institution that allows you to study cryptography. You will learn everything, from the basics of cryptography all the way up to why specifically the designers of certain algorithms did it that way rather than another way.
+
+\begin{itemize}
+\item{Advantages
+
+With this method being the most traditional way of learning a given subject, it has been tried and tested for many many years and works pretty much every time. With the additional bonus of having staff who will provide you any assistance you require over your few years of study, whether that would be on understanding a given topic or just to answer some of your questions. You also have ability to use any on-site facilities that the institute provide for you and this can be a massive help as it means you don't have to go out and spend money on specialist equipment to test something. You can just use the institutes. 
+}
+
+\item{Disadvantages
+
+Even though this is the most traditional way to learn something in depth, like everything it does have flaws. For some people, learning this way just doesn't work well. You will spend most of your time learning about the theoretical side of the subject and will only look at the practical side on a few occasions. Couple this along with the fact that this route is very very expensive it makes it pointless for somebody that learns best by doing practical work. 
+}
+\end{itemize}
+
+\subsubsection{2. Self Taught}
+
+Becoming a more and more popular way to learn about cryptography is to just teach yourself, its the route it took. This way allows you to quickly focus in on exactly the aspect of cryptography that you find interesting and learn about it in depth. 
+
+\begin{itemize}
+\item{Advantages
+
+With the internet becoming more and more accessible to the average person it has made an abundance of learning resources available to anyone with a browser from the last decade. This given us an opportunity to learn more things than ever before and it is all completely free. There is plenty of information on cryptography that you can learn from, this includes YouTube series on every aspect of modern cryptography to research papers about an up and coming area of cryptography, like Quantum Cryptography. Combine this with the fact that you can learn at exactly the right pace for you and it is a very good option.
+}
+
+\item{Disadvantages
+
+The main drawback of this option is that you will need a device that allows you to connect to the internet, and you will need internet which does cost a fair amount. You also need the commitment to stick to it. Because you can go at your own pace, it does mean there is no one that will make you stick to learning about it. The entire responsibility of learning about the subject is in your own hands and for some this could be to much and they will just give up after about a week. 
+}
+\end{itemize}
+
+\subsubsection{3. Learning on the Job}
+
+This option mixes the aspects of both the previously mentioned options. Some people will have already gotten a job in the technology industry before realizing how important cryptography is and will want to learn it so they know that they are doing there job right.
+
+\begin{itemize}
+\item{Advantages 
+
+With already working, you will be moved away from the theoretical and more the practical. This is great for some people. You will also be able to see exactly how these highly complicated concepts directly affect the way we use the internet. You may also have the opportunity through your employer to attend various courses and conferences that allow you to gain various certifications in cryptography and maybe even the broader InfoSec industry.
+}
+\item{Disadvantages
+
+The main disadvantage here is that you will need a job in a somewhat relevant area in the industry and in order to get the job in the first place you will probably have gone through options 1 and 2 anyway.
+}
+\end{itemize} 
+
+\section{My Proposed Solution}
+\subsection{End Goal}
+
+The end goal of my project is to provide a website that combines the best parts of Options 1 and 2 from the above list. It will teach the users everything from the core concepts of cryptography all the way to the very complicated systems that implement modern cryptography. This way people have the ability to learn as much as they would while in academia while getting the same freedom as if they were teaching themselves. 
+
+\subsection{Proposed End Users}
+
+In the short term there my End Users will be a few students from the Computer Science class. Over the past few weeks while I have been learning Cryptography they have noticed and thought it was pretty cool and wanted to learn as well. But most of them just don't have the commitment to sit through hours of lectures like I did to learn the content so I though that I should build something that they can use.
+
+Due to the content in this project, I will also be making it available to the public so anyone that really wants to learn about Cryptography will have the option to. This allows for a much larger range of people who will have the option to learn about Cryptography which everyone can see a being a good thing.
+
+\subsection{How the User will interact with the system}
+
+The main way that uses will interact with my system is quite simple. First they will need to create an account so they can record and keep track of there progress. They will then select a specific area to study. This is completely up the the user, they can work there way through chronologically going through each section or just jump to the middle and crack on with the hard stuff. Once in the selected section, they will read through the information content displayed on the screen. Once the user feels confident they understand that content, they can attempt to answer the sample questions at the bottom of the page. These questions will cover all content shown on that given page and will vary in difficulty. Once they have answered the questions they can check if they are right, this information will be shown in the report section, any questions they get wrong will be shown and the provided solutions as well so the user can see where they went wrong and learn from the mistakes made. Once they are happy with how they have performed in that given section they can move on to the next section repeating this process.
+
+\subsection{Technical Analysis of my System}
+\subsubsection{Option 1: Classical Approach}
+
+My first idea about how I was going to attempt to build this system was arguably the 'classical' approach. By using the 3 core web technologies, (HTML CSS JS), I would have all the features that would be needed to fully achieve my goal.
+
+\begin{itemize}
+\item{
+\underline{Advantages}
+
+The biggest advantage of choosing this option would be that it has been around for decades. It is truly a tried and tested method. This means that not only does it have the flexibility that I would require, but if I were to run across any problems then I would just have to use the internet and chances are someone else has had that problem before and they would know how I could fix it and make it work. This is a massive perk over the other 2 choices as it means that even if I come across an abundance of problems, I will definitely be able to find a solution in a timely manner.
+
+An another advantage is that Javascript, that main language I would be using to 'code' the website, has many frameworks and extensions that I would be able to use freely. This allows me the ability to be a lot more ambitious about what I want to do as I wouldn't have to develop the majority of the core complex functions. I would just have to know how I need to implement them.  
+}
+
+\item{
+\underline{Disadvantages}
+
+The main disadvantage of this option for me is that personally I tend to stay away from this kind of work. I personally am much more of a back-end type developer. So I would definitely go for one of the other options.
+
+I also have much more experience with the back-end type languages and feel I would be spending the majority of my time learning the concepts and syntax of this option, whereas if I were to choose one of the other options I already know the syntax so could start working straight away.
+}
+\end{itemize}
+
+\subsubsection{Option 2: Modern Approach}
+
+This Option is the most 'modern' approach I could think of. This option considers all options with similarities to ASP.NET. I consider this the 'modern' approach as we are not using specific web technologies to create our website. We are just using a standard High Level language to do it, the main 2 contenders here are clearly C-Sharp and Java.
+
+\begin{itemize}
+\item{
+\underline{Advantages}
+
+The main advantage here is that by using a normal programming language, you have lots of flexibility. Because this is a normal programming language you are not bound by the paradigms of normal web development. You can effectively create a Desktop application and with very little modifications, it will be possible to turn it into a Web application. Another advantage is that it is very easy to incorporate previously coded modules into your web application. 
+
+This also has the advantage that it suits my needs better as well. Since I have lots more experience with these types of languages, I would have much more time to spend on the actual web application rather than learning the language. This means I can get more done and have a better, more complete end result.
+
+This option is also new technology, not so new that there is no documentation and help but not so old there is the same amount of help that Option 1 provides. Since it is in this mid-stage area, it will only be used more and more so looking at it in terms of what industry might need in a few years, this would give me a good opportunity to learn a technology that will make me more employable than the average person.
+}
+\item{
+\underline{Disadvantages}
+
+The main disadvantage of this option is that since it revolves around fairly new technology, it will not be streamlined to the point of Option 1. What I mean by this is that it may take more effort to create the same thing from Option 1 using this method. This method may provide the best solution, but it may take a far longer time to get to the 'best' solution when compared to a 'client ready' solution from Option 1. The solution from Option 1 may not be as good as this one, but on a scale of 'first conception' to 'ready to ship', this Option is not the one to choose.  
+}
+\end{itemize}
+
+
+\subsubsection{Option 3: The Hybrid}
+
+The final option is a sort of combination of the other Options but with a sort of twist. It will be using the C++ language, which is by no means the go to for creating web applications. It also includes using a 3rd party library which will provide the necessary core web technology functionality.
+
+\begin{itemize}
+\item{
+\underline{Advantages}
+
+The clear advantage of this option is that because it uses a 'mid' level language, that allows us to write very fast code. Rather than having to go through a framework and converting from source to bytecode to asm, we can go directly from the source to the asm. This is a very important factor as the the whole purpose of this project is to teach Cryptography and in a lot of situations, the key algorithms need to be fast. So, in that aspect there is no other option.
+
+This option is also my preferred option as C++ is a pure back-end language. I also have the most experience with this language therefore I would be most comfortable working with it. This also removes the need to learn a completely new language to continue with the project. Thus eliminating a massive bottleneck in the process of development.
+
+I would also consider this a very good option to make myself more employable in the future as lots of the older systems are written in C++ and in order to keep them running you need someone who is familiar with the language. 
+
+}
+\item{
+\underline{Disadvantages}
+
+The key disadvantage with this option is that it uses a not-so friendly language. Meaning that it takes much more effort to do the same task when compared to the other options. It also has the disadvantage that you need to learn a completely new library to do anything which can be very daunting to consider. 
+
+}
+\end{itemize}
+
+\section{Requirements / Objectives / Limitations}
+
+This whole section is going to serve a check list of the requirements, objectives and limitations of my project. The requirements serve as a detailed check list for me to go over and use to see if my project has all the content I want it to have. The objectives serve as a more 'is my project complete' check list and that is what will be used when checking as to whether or not my project is complete per say. And finally, limitations are similar to objectives but are things that I would like to achieve but couldn't due a variety of reasons including but not limited to time constraints and complexity of the problem.
+
+There are 2 main sections here relating to the User and System. Anything that relates the the User is about how the platform is designed and orientated around the user. When it comes to the System it is mainly about my implementation for the solution.
+
+\subsection{User Requirements}
+
+\begin{itemize}
+\item{Easy to read font}
+\item{Intuitive user interface}
+\item{Good flow through out the entirety of the website}
+\item{Content explained makes sense}
+\item{Hard / Complex areas explained simply}
+\item{Content should be easy to follow}
+\end{itemize}
+
+\subsection{System Requirements}
+\subsubsection{Platform Requirements}
+
+\textbf{A High Level look at what I want the platform to cover.}
+\begin{itemize}
+\item{Cryptography
+\begin{itemize}
+\item{Basic information about Cryptography
+\begin{itemize} % First List of Objectives %
+\item{Private-Key Cryptography}
+\item{Introduction to Public-Key Cryptography
+\begin{itemize}
+\item{Security Mechanisms}
+\item{Authenticity of Public Keys}
+\item{Important Public-Key Algorithms}
+\item{Key Lengths and Security Levels}
+\end{itemize}}
+\item{Explain the simple protocols}
+\end{itemize}}
+\item{Overview of the types of Ciphers
+\begin{itemize}
+\item{Block Cipher}
+\item{Stream Cipher}
+\item{Encryption and Decryption using both types of ciphers}
+\end{itemize}}
+\item{Overview of Hashing Functions}
+\item{Brief History on Cryptography
+\begin{itemize}
+\item{Caesar Cipher}
+\item{Enigma Machine}
+\end{itemize}}
+\end{itemize}}
+\item{Cryptanalysis
+\begin{itemize}
+\item{Very Basic overview of what Cryptanalysis involves}
+\item{Brief History on Cryptanalysis}
+\end{itemize}}
+\end{itemize}
+
+\textbf{Going into more detail about what I want to teach specifically.}
+\begin{itemize} % Second List of Objectives %
+\item{Cryptography
+\begin{itemize}
+\item{Public-Key Cryptography
+\begin{itemize}
+\item{Cryptosystems based of the Discrete Logarithm Problem
+\begin{itemize}
+\item{Diffie-Hellman Key Exchange}
+\item{The Discrete Logarithm Problem}
+\item{The Elgamel Encryption Scheme}
+\end{itemize}}
+\item{RSA Cryptosystem}
+\item{Eliptic Curve}
+\item{Digital Signatures
+\begin{itemize}
+\item{RSA Signature Scheme}
+\item{Elgamel Digital Signature Scheme}
+\item{Digital Signature Scheme (DSA)}
+\item{Elliptic Curve Digital Signature Scheme (ELDSC)}
+\end{itemize}}
+\item{Key Establishment}
+\item{Message Authentication Codes (MACs)
+\begin{itemize}
+\item{MACs from Hash Functions}
+\item{MACS from Block Ciphers CBC-MAC}
+\item{Galois Counter Message Authentication Code (GMAC)}
+\end{itemize}}
+\end{itemize}}
+\item{More detailed look into the common algorithms
+\begin{itemize}
+\item{Block Ciphers
+\begin{itemize}
+\item{Data Encryption Standard (DES)}
+\item{Advanced Encryption Standard (AES)}
+\end{itemize}}
+\item{Talk about the modes of operation for Block Ciphers
+\begin{itemize}
+\item{Electronic Codebook Mode (ECB)}
+\item{Cipher Block Chaining (CBC)}
+\item{Output Feedback Mode (OFB)}
+\item{Cipher Feedback Mode (CFB)}
+\item{Counter Mode (CTR)}
+\item{Galois Counter Mode (GCM)}
+\end{itemize}}
+\item{Stream Ciphers
+\begin{itemize}
+\item{Stream ciphers based off Linear Feedback Shift Register (LFSR)}
+\end{itemize}}
+\item{Hashing Functions
+\begin{itemize}
+\item{MD5}
+\item{SHA-1}
+\item{SHA-2}
+\item{SHA-3}
+\end{itemize}}
+\end{itemize}}
+\item{Implementations of the ciphers shown above}
+\item{Create theory questions that require the user to demonstrate their understanding of the various Cryptography sections}
+\end{itemize}}
+\end{itemize}
+{\noindent
+\textbf{Additional Content that I would like to add if possible but not critical to the completion of the project}}
+
+\begin{itemize} % Third List of Objectives %
+\item{Cryptography
+\begin{itemize}
+\item{Build a simulator for the enigma machine and show graphically how it works}
+\item{Coding Problems
+\begin{itemize}
+\item{Design Custom coding problems that test the users cryptology knowledge}
+\item{Create a custom development environment so the user can enter the solution to the problem on the website and it will be able to tell you if the answer is correct or not}
+\end{itemize}}
+\end{itemize}}
+\item{Cryptanalysis
+\begin{itemize}
+\item{Explain some of the common techniques used in cryptanalysis}
+\item{Provide come example ciphers for the users to practice their cryptanalysis on}
+\end{itemize}}
+\end{itemize}
+
+\subsubsection{AES Implementation Requirements}
+
+\begin{itemize}
+\item{Key Expansion Implemented}
+\item{AddRoundKey Function Implemented}
+\item{SubstituteBytes Function Implemented}
+\item{ShiftRows Function Implemented}
+\item{MixColumns Function Implemented}
+\item{Key Schedule Implemented}
+\end{itemize}
+
+\subsubsection{DES Implementation Requirements}
+
+\begin{itemize}
+\item{Initial Permutation Implemented}
+\item{
+Feistal (F) Function Implemented
+
+	\begin{itemize}
+		\item{Key Expansion}
+		\item{Key Mixing}
+		\item{Substitution}
+		\item{Permutation}
+	\end{itemize}
+}
+\item{Final Permutation Implemented}
+\item{Key Schedule Implemented}
+\end{itemize}
+
+\subsubsection{SHA-1 Implementation Requirements}
+
+\subsection{System Objectives}
+\subsubsection{Platform Objectives}
+
+I have split up this section into 3 different areas, Website Management, Website Content, User Interaction to make it easier to understand. It is also organized from most important to least important for each section. E.g. the higher up in the list the more important the item is. 
+
+\begin{enumerate}
+\item{Website Management
+	\begin{enumerate}
+		\item{Website that I can launch and connect to from my Computer}
+		\item{Buying a Domain for the Website}
+		\item{Renting a VM for my Website to live in so it can be accessible to anyone}
+		\item{Renting a SSL Certificate so I have HTTPS enabled for secure communication between the client and the server}
+	\end{enumerate}
+}
+\item{Website Content
+	\begin{enumerate}
+		\item{Contains content on Symmetric Cryptography}
+		\item{Contains theoretical questions on Symmetric Cryptography}
+		\item{Contains content on Asymmetric Cryptography}
+		\item{Contains theoretical questions on Asymmetric Cryptography}
+		\item{Create online code-editor with standard code-editor features. E.g. Auto-complete, re factoring, a home made 'intellisense'}
+		\item{Create questions that require the need to write code in order to solve them}
+		\item{Review the Coded solutions and suggest improvements}
+		\item{Create Visual simulation of various algorithms and cryptographic systems
+			\begin{enumerate}
+				\item{AES and DES}
+				\item{The Engima Machine}
+			\end{enumerate}					
+		}
+	\end{enumerate}
+}
+\item{User Interaction
+	\begin{enumerate}
+		\item{Login system is implemented}
+		\item{Authentication for users is implemented}
+		\item{Relevant user information is stored in local database}
+		\item{Email verification for accounts is implemented}
+		\item{Store answers to questions into local database}
+		\item{Analyse the users answers to questions and produce report on what they need to work on}
+		\item{}
+	\end{enumerate}
+}
+\end{enumerate}
+
+\subsubsection{AES Implementation Objectives}
+
+\begin{enumerate}
+\item{Key sizes supported
+	\begin{enumerate}
+		\item{128-bit}
+		\item{192-bit}
+		\item{256-bit}
+	\end{enumerate}
+}
+\item{
+Different Modes of Operation
+	\begin{enumerate}
+		\item{ECB (Electronic Code Book}
+		\item{CBC (Cipher Block Chaining)}
+		\item{OFB (Output Feedback Mode)}
+		\item{CFB (Cipher Feedback Mode)}
+		\item{CTR (Counter Mode)}
+		\item{GCM (Galois Counter Mode)}
+	\end{enumerate}
+}
+\end{enumerate}
+
+\subsubsection{DES Implementations Objectives}
+
+\begin{enumerate}
+\item{
+Different Modes of Operation
+	\begin{enumerate}
+		\item{ECB (Electronic Code Book}
+		\item{CBC (Cipher Block Chaining)}
+		\item{OFB (Output Feedback Mode)}
+		\item{CFB (Cipher Feedback Mode)}
+		\item{CTR (Counter Mode)}
+		\item{GCM (Galois Counter Mode)}
+	\end{enumerate}
+}
+\end{enumerate}
+
+\subsubsection{SHA-1 Implementation Objectives}
+
+\subsection{Acceptable Limitations}
+\subsubsection{Platform Limitations}
+
+\begin{enumerate}
+\item{
+Website Management
+	\begin{enumerate}
+		\item{Limit to concurrent connections to the website}
+		\item{Making the website live to the public}
+		\item{Getting SSL/HTTPS setup for the website}
+	\end{enumerate}
+}
+\item{
+Website Content
+	\begin{enumerate}
+		\item{Online Code-editor does not support all the modern features}
+		\item{Visual simulations are not implemented}
+	\end{enumerate}
+}
+\item{
+User Interaction
+	\begin{enumerate}
+		\item{Analysis of user answers not fully finished}
+	\end{enumerate}
+}
+\end{enumerate}
+
+\subsubsection{AES Implementation Limitations}
+\begin{enumerate}
+\item{Only 128-bit Key size is supported}
+\item{Only configure ECB Mode of operation}
+\item{Padding is not implemented}
+\end{enumerate}
+\subsubsection{DES Implementation Limitations}
+\begin{enumerate}
+\item{Only configure ECB Mode of operation}
+\item{Padding is not implemented}
+\end{enumerate}
+\subsubsection{SHA-1 Implementation Limitations}
+
+\section{Data Usage in the System}
+
+\subsection{Data Security Overview}
+This will be covered more in depth in the Documented Design section but I feel it is important to briefly go over it here.
+
+So for all important user critical information stored in the local database, the appropriate security measures will be implemented. Since the only critical user information is the passwords to the users account, before storing the password it will be hashed using a secure hashing algorithm, such as bcrypt, SHA2, SHA3, etc. The reason we hash it rather than encrypt it is that a hash is known as a 1-way function. You can never get the plaintext back from the ciphertext, in this case our plaintext is the password and the ciphertext is the password hash or digest. 
+
+\subsection{Data Sources}
+
+$ \frac{a}{b} $
+
+\subsection{Data Destinations}
+\subsection{Data Volumes}
+
+\subsection{Data Analysis}
+\subsubsection{User Data}
+\subsubsection{System Data}
+\subsubsection{Temporary Data}
+
+\subsection{Data Flow}
+
+
+

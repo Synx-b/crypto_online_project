@@ -13,6 +13,7 @@
 
 \documentclass[12pt, a4paper, twoside]{report}
 
+\usepackage{bookman}
 \usepackage{graphicx}
 \usepackage{a4wide}
 \usepackage{fancyhdr}
@@ -26,17 +27,26 @@
 \usepackage{listings}
 \usepackage{xcolor}
 \usepackage{textcomp}
+\usepackage{fullpage}
+\usepackage{ifthen}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{flexisym}
 
 \graphicspath{{images/}}
+
+\setcounter{tocdepth}{3}
+\setcounter{secnumdepth}{3}
+\setlength{\headsep}{0.2in} 
 \setlength\headheight{14.5pt}
 
 % Header and Footer settings below
 \fancypagestyle{IHA-fancy-style}{%
   \fancyhf{}% Clear header and footer
   \fancyhead[LE,RO]{\slshape \leftmark}
-  \fancyhead[LO,RE]{\slshape \rightmark}
+  %\fancyhead[LO,RE]{\slshape \rightmark}
   \fancyfoot[C]{Page \thepage\ of \pageref{LastPage}}% Custom footer
-  \renewcommand{\headrulewidth}{0pt}% Line at the header visible
+  \renewcommand{\headrulewidth}{0.4pt}% Line at the header visible
   \renewcommand{\footrulewidth}{0.4pt}% Line at the footer visible
 }
 
@@ -50,6 +60,8 @@
 
 \pagestyle{IHA-fancy-style}
 
+\input{avanzi-tikz-defs.tex}
+
 \begin{document}
 
 % All Pages before the actual document start %
@@ -59,10 +71,8 @@
 \tableofcontents
 \newpage
 
-%\listoftables
-
-\addcontentsline{toc}{chapter}{Acknowledgements}
-
+%\addcontentsline{toc}{chapter}{Acknowledgements}
+\raggedbottom
 % All the content pages including all the chapters %
 
 \pagenumbering{arabic}
@@ -71,11 +81,12 @@
 \input{technical_solution} % Chapter 3
 \input{testing} % Chapter 4
 \input{evaluation} % Chapter 5
-
+\raggedbottom
 % BibTeX stuff if I need to cite references
 %\nocite{*}
 %\addcontentsline{toc}{chapter}{Bibliography}
 %\bibliography{bibligraphy}
 %\bibliographystyle{plain}
+\listoftables
 \listoffigures
 \end{document}

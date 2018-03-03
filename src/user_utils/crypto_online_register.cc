@@ -85,7 +85,7 @@ void crypto_online_register::process_register() {
         this->email_label_error->setText("Invalid Email Address");
     }else {
         std::string hashed_password_string;
-        sha3_512_hash sha3;
+        SHA3_512 sha3;
         hashed_password_string = sha3.compute_hash(password);
 
 

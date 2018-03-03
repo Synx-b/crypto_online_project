@@ -82,7 +82,7 @@ void CryptoOnlineLauncher::auth_event() {
  */
 void CryptoOnlineLauncher::load_css_files() {
 
-    this->useStyleSheet("resource/css/crypto_online_header.css");
+    this->useStyleSheet("resource/css/CryptoOnlineHeader.css");
     this->useStyleSheet("resource/css/crypto_online_grid.css");
     this->useStyleSheet("resource/css/crypto_online_login.css");
     this->useStyleSheet("resource/css/crypto_online_register.css");
@@ -94,10 +94,10 @@ void CryptoOnlineLauncher::load_css_files() {
  * @brief Load the necessary xml templates and message bundles for the project
  */
 void CryptoOnlineLauncher::load_message_bundles() {
+
     this->messageResourceBundle().use(this->appRoot() + "resource/xml-templates/login_template");
 
     this->messageResourceBundle().use(this->appRoot() + "resource/content_xmls/modular_arithmetic");
     this->messageResourceBundle().use(this->appRoot() + "resource/content_xmls/intro_to_cryptography");
-
 
 }

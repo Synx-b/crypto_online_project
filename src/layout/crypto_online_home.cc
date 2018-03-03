@@ -86,7 +86,7 @@ void CryptoOnlineHome::load_home_page() {
 
     this->_grid = Wt::cpp14::make_unique<Wt::WGridLayout>();
 
-    this->_header = Wt::cpp14::make_unique<crypto_online_header>(_current_session);
+    this->_header = Wt::cpp14::make_unique<CryptoOnlineHeader>(_current_session);
     this->_navigation_grid = Wt::cpp14::make_unique<crypto_online_navigation_grid>();
     this->_footer = Wt::cpp14::make_unique<crypto_online_footer>();
 
@@ -106,7 +106,7 @@ void CryptoOnlineHome::load_login_page() {
 
     this->_grid = Wt::cpp14::make_unique<Wt::WGridLayout>();
 
-    this->_header = Wt::cpp14::make_unique<crypto_online_header>(_current_session);
+    this->_header = Wt::cpp14::make_unique<CryptoOnlineHeader>(_current_session);
     this->_login = Wt::cpp14::make_unique<CryptoOnlineAuthWidget>(Session::auth(), _current_session.users(), _current_session.login());
     this->_footer = Wt::cpp14::make_unique<crypto_online_footer>();
 
@@ -126,7 +126,7 @@ void CryptoOnlineHome::load_register_page() {
 
     this->_grid = Wt::cpp14::make_unique<Wt::WGridLayout>();
 
-    this->_header = Wt::cpp14::make_unique<crypto_online_header>(_current_session);
+    this->_header = Wt::cpp14::make_unique<CryptoOnlineHeader>(_current_session);
     this->_register = Wt::cpp14::make_unique<crypto_online_register>();
     this->_footer = Wt::cpp14::make_unique<crypto_online_footer>();
 
@@ -153,7 +153,7 @@ void CryptoOnlineHome::load_profile_page() {
 
     this->_grid = Wt::cpp14::make_unique<Wt::WGridLayout>();
 
-    this->_header = Wt::cpp14::make_unique<crypto_online_header>(_current_session);
+    this->_header = Wt::cpp14::make_unique<CryptoOnlineHeader>(_current_session);
     this->_profile = Wt::cpp14::make_unique<CryptoOnlineProfile>();
     this->_footer = Wt::cpp14::make_unique<crypto_online_footer>();
 
@@ -176,7 +176,7 @@ void CryptoOnlineHome::load_intro_to_cryptography_page(){
 
     this->_grid = Wt::cpp14::make_unique<Wt::WGridLayout>();
 
-    this->_header = Wt::cpp14::make_unique<crypto_online_header>(_current_session);
+    this->_header = Wt::cpp14::make_unique<CryptoOnlineHeader>(_current_session);
     this->_footer = Wt::cpp14::make_unique<crypto_online_footer>();
 
     this->_grid->addItem(std::move(this->_header), 0, 0);
@@ -198,7 +198,7 @@ void CryptoOnlineHome::load_modular_arithmetic_page() {
 
     this->_grid = Wt::cpp14::make_unique<Wt::WGridLayout>();
 
-    this->_header = Wt::cpp14::make_unique<crypto_online_header>(_current_session);
+    this->_header = Wt::cpp14::make_unique<CryptoOnlineHeader>(_current_session);
     this->_footer = Wt::cpp14::make_unique<crypto_online_footer>();
 
     this->_grid->addItem(std::move(this->_header), 0, 0);
