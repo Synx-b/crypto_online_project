@@ -11,7 +11,7 @@
 #include <stdexcept>
 #include <cstring>
 #include <iostream>
-#include <inttypes.h>
+#include <iomanip>
 
 #include "aes_implementation.h"
 
@@ -109,29 +109,29 @@ static byte rcon[256] = {
 };
 
 
-AESImplementation::AESImplementation(AESKeyLengths keyLength) : _expanded_key_length(0),
-                                                                _initial_key_length(0),
+AESImplementation::AESImplementation(AESKeyLengths keyLength) : _n(0),
+                                                                _b(0),
                                                                 _number_of_rounds(0),
                                                                 _block_size(0){
     switch(keyLength){
         case AES128:
             this->_number_of_rounds = 10;
-            this->_initial_key_length = 16;
-            this->_expanded_key_length = 176;
+            this->_n = 16;
+            this->_b = 176;
             this->_m = 0;
             this->_key_size_decrementer = 16;
             break;
         case AES192:
             this->_number_of_rounds = 12;
-            this->_initial_key_length = 24;
-            this->_expanded_key_length = 208;
+            this->_n = 24;
+            this->_b = 208;
             this->_m = 2;
             this->_key_size_decrementer = 24;
             break;
         case AES256:
             this->_number_of_rounds = 14;
-            this->_initial_key_length = 32;
-            this->_expanded_key_length = 240;
+            this->_n = 32;
+            this->_b = 240;
             this->_m = 3;
             this->_key_size_decrementer = 32;
             break;
@@ -141,6 +141,12 @@ AESImplementation::AESImplementation(AESKeyLengths keyLength) : _expanded_key_le
 }
 
 void AESImplementation::encrypt(const byte input[], byte output[], const byte key[]) {
+
+    for(byte i = 0; i < 16; i++){
+        std::cout << std::hex << std::setfill('0') << std::setw(2) << unsigned(key[i]);
+    }
+    std::cout << std::endl;
+
     for(byte i = 0; i < 4; i++){
         this->_state[i][0] = input[i];
         this->_state[i][1] = input[i + 4];
@@ -148,9 +154,9 @@ void AESImplementation::encrypt(const byte input[], byte output[], const byte ke
         this->_state[i][3] = input[i + 12];
     }
 
-    this->outputState("INPUT:");
+    this->outputState("Start");
 
-    byte expanded_key[this->_expanded_key_length];
+    byte expanded_key[this->_b];
     this->KeyExpansion(key, expanded_key);
 
     for(byte i = 0; i < 4; i++){
@@ -161,7 +167,6 @@ void AESImplementation::encrypt(const byte input[], byte output[], const byte ke
     }
 
     this->AddRoundKey(this->_state, this->_round_key);
-    this->outputState("ADD ROUND KEY:");
 
     for(byte current_round = 1; current_round < this->_number_of_rounds; current_round++){
         for(byte i = 0; i < 4; i++)
@@ -169,15 +174,11 @@ void AESImplementation::encrypt(const byte input[], byte output[], const byte ke
                 this->_round_key[i][j] = expanded_key[(current_round * this->_block_size) + (j * 4) + i];
             }
         this->SubBytes(this->_state);
-        this->outputState("SUB BYTES:");
         this->ShiftRows(this->_state);
-        this->outputState("SHIFT ROWS:");
         if(current_round != this->_number_of_rounds) {
             this->MixColumns(this->_state);
-            this->outputState("MIX COLUMNS:");
         }
         this->AddRoundKey(this->_state, this->_round_key);
-        this->outputState("ADD ROUND KEY:");
     }
 
     for(byte i = 0; i < 4; i++){
@@ -189,73 +190,110 @@ void AESImplementation::encrypt(const byte input[], byte output[], const byte ke
 
 
 void AESImplementation::KeyExpansion(const byte key[], byte expandedKey[]) const {
-    byte key_decreasing_counter = 0;
 
-    memset(expandedKey, 0, this->_expanded_key_length);
-    memcpy(expandedKey, key, this->_initial_key_length);
+    memset(expandedKey, 0, this->_b);
+    memcpy(expandedKey, key, this->_n);
 
-    key_decreasing_counter += this->_initial_key_length;
-
-    for(byte rcon_iter = 1; key_decreasing_counter < this->_expanded_key_length; rcon_iter++){
-        byte temp[4];
-        memcpy(temp, expandedKey + (key_decreasing_counter - 4), 4);
-
-        byte gemp[4];
-        AESImplementation::KeyExpansionCore(rcon_iter, temp, gemp);
-
-        memcpy(temp, expandedKey + (key_decreasing_counter - this->_key_size_decrementer), 4 * sizeof(byte));
-
-        for(byte i = 0; i < 4; i++)
-            temp[i] ^= gemp[i];
-
-        memcpy(expandedKey + key_decreasing_counter, temp, 4 * sizeof(byte));
-        key_decreasing_counter += 4;
-
-        for(byte i = 0; (i < 3) && (key_decreasing_counter < this->_expanded_key_length); i++){
-            memcpy(temp, expandedKey + (key_decreasing_counter - 4), 4 * sizeof(byte));
-
-            auto* result = reinterpret_cast<uint32_t *>(expandedKey + key_decreasing_counter);
-            auto* t = reinterpret_cast<uint32_t *>(temp);
-            auto* rhs = reinterpret_cast<uint32_t *>(expandedKey + key_decreasing_counter - this->_key_size_decrementer);
-
-            *result = *t ^ *rhs;
-
-            key_decreasing_counter += 4;
-
-        }
-
-        if((this->_initial_key_length == 256) && (key_decreasing_counter < this->_expanded_key_length)){
-
-            memcpy(temp, expandedKey + (key_decreasing_counter - 4), 4 * sizeof(byte));
-
-            for(byte i  = 0; i < 4; i++)
-                temp[i] = sbox[temp[i]];
-
-            auto* result = reinterpret_cast<uint32_t *>(expandedKey + key_decreasing_counter);
-            auto* t = reinterpret_cast<uint32_t *>(temp);
-            auto* rhs = reinterpret_cast<uint32_t *>(expandedKey + key_decreasing_counter - this->_key_size_decrementer);
-
-            *result = *t ^ *rhs;
-
-            key_decreasing_counter += 4;
-        }
-
-        for(byte i = 0; (i < this->_m) && (key_decreasing_counter < this->_expanded_key_length); i++){
-            memcpy(temp, expandedKey + (key_decreasing_counter - 4), 4 * sizeof(byte));
-
-            auto* result = reinterpret_cast<uint32_t *>(expandedKey + key_decreasing_counter);
-            auto* t = reinterpret_cast<uint32_t *>(temp);
-            auto* rhs = reinterpret_cast<uint32_t *>(expandedKey + key_decreasing_counter - this->_key_size_decrementer);
-
-            *result = *t ^ *rhs;
-
-            key_decreasing_counter += 4;
-        }
+    std::cout << "W[0-3]:";
+    for(byte i = 0; i < 16; i++){
+        std::cout << std::hex << std::setfill('0') << std::setw(2) << unsigned(expandedKey[i]);
     }
+    std::cout << std::endl;
 
+    byte keySizeIterator = 0;
+    keySizeIterator += this->_n;
+
+    for(byte rcon = 1; rcon < 5;/*keySizeIterator < this->_b*/ rcon++){
+
+        byte t[4];
+        byte u[4];
+
+        std::cout << "EK: ";
+        for(byte i = 0; i < this->_b; i+= 8){
+            std::cout  << std::hex << std::setfill('0')
+                      << std::setw(2) << unsigned(expandedKey[i+0])
+                      << unsigned(expandedKey[i+1]) << unsigned(expandedKey[i+2])
+                      << unsigned(expandedKey[i+3]) << unsigned(expandedKey[i+3])
+                    << unsigned(expandedKey[i+5]) << unsigned(expandedKey[i+6]) << unsigned(expandedKey[i+7]) << std::endl;
+        }
+        std::cout << std::endl;
+
+        memcpy(t, expandedKey + (keySizeIterator - 4), 4);
+
+        std::cout << (unsigned)rcon << ",PRE 4: ";
+        for(byte i = 0; i < 4; i++)
+            std::cout << std::hex << std::setfill('0') << std::setw(2) << unsigned(t[i]);
+        std::cout << std::endl;
+
+        this->KeyExpansionCore(rcon, t, u);
+        memcpy(t, expandedKey + (keySizeIterator - this->_n), 4 * sizeof(byte));
+
+        std::cout << (unsigned)rcon << ",W[i - 4]: ";
+        for(byte i = 0; i < 4; i++)
+            std::cout << std::hex << std::setfill('0') << std::setw(2) << unsigned(u[i]);
+        std::cout << std::endl;
+
+        rcon++;
+        for(byte i = 0; i < 4; i++)
+            t[i] ^= u[i];
+
+        std::cout << (unsigned)rcon << ",W[i]: ";
+        for(byte i = 0; i < 4; i++)
+            std::cout << std::hex << std::setfill('0') << std::setw(2) << unsigned(t[i]);
+        std::cout << std::endl;
+
+
+        memcpy(expandedKey + keySizeIterator, t, 4 * sizeof(byte));
+        keySizeIterator += 4;
+
+        memcpy(t, expandedKey + (keySizeIterator  - 4), 4 * sizeof(byte));
+        for(byte i = 0; i < 3 && (keySizeIterator < this->_b); i++){
+
+            byte v[4];
+            std::cout << (unsigned)rcon << ",IW[i - 4]: ";
+            for(byte i = 0; i < 4; i++)
+                std::cout << std::hex << std::setfill('0') << std::setw(2) << unsigned(v[i]);
+            std::cout << std::endl;
+            memcpy(v, expandedKey + ((keySizeIterator) - this->_n), 4 * sizeof(byte));
+
+            std::cout << (unsigned)rcon << ",W[i - 4]: ";
+            for(byte i = 0; i < 4; i++)
+                std::cout << std::hex << std::setfill('0') << std::setw(2) << unsigned(v[i]);
+            std::cout << std::endl;
+
+            for(byte i = 0; i < 4; i++){
+                t[i] ^= v[i];
+            }
+
+            std::cout << (unsigned)rcon << ",t: ";
+            for(byte i = 0; i < 4; i++)
+                std::cout << std::hex << std::setfill('0') << std::setw(2) << unsigned(t[i]);
+            std::cout << std::endl;
+
+            keySizeIterator += 4;
+        }
+
+
+    }
 }
 
 void AESImplementation::KeyExpansionCore(byte roundNumber, const byte keyIn[4], byte keyOut[4]){
+
+
+    std::cout << (unsigned)roundNumber << ",KEC OUT: ";
+
+    for(byte i = 0; i < 4; i++){
+        std::cout << std::hex << std::setfill('0') << std::setw(2) << unsigned(keyOut[i]);
+    }
+    std::cout << std::endl;
+
+    std::cout << (unsigned)roundNumber << ",KEC IN: ";
+
+    for(byte i = 0; i < 4; i++){
+        std::cout << std::hex << std::setfill('0') << std::setw(2) << unsigned(keyIn[i]);
+    }
+    std::cout << std::endl;
+
     memcpy(keyOut, keyIn, 4);
 
     /**
@@ -267,13 +305,34 @@ void AESImplementation::KeyExpansionCore(byte roundNumber, const byte keyIn[4], 
     }
     keyOut[3] = temp;
 
+    std::cout << (unsigned)roundNumber << ",Rotation: ";
+
+    for(byte i = 0; i < 4; i++){
+        std::cout << std::hex << std::setfill('0') << std::setw(2) << unsigned(keyOut[i]);
+    }
+    std::cout << std::endl;
+
     /**
      * Substitution Step
      */
     for(byte i = 0; i < 4; i++){
         keyOut[i] = sbox[keyOut[i]];
     }
+    std::cout << (unsigned)roundNumber << ",Sub: ";
+
+    for(byte i = 0; i < 4; i++){
+        std::cout << std::hex << std::setfill('0') << std::setw(2) << unsigned(keyOut[i]);
+    }
+    std::cout << std::endl;
+
     keyOut[0] ^= rcon[roundNumber];
+
+    std::cout << (unsigned)roundNumber << ",Rcon: ";
+
+    for(byte i = 0; i < 4; i++){
+        std::cout << std::hex << std::setfill('0') << std::setw(2) << unsigned(keyOut[i]);
+    }
+    std::cout << std::endl;
 
 }
 
@@ -316,12 +375,23 @@ void AESImplementation::MixColumns(byte state[4][4]) {
 
 void AESImplementation::outputState(std::string prefix) {
 
-    std::cout << prefix;
-    for(byte i = 0; i < 4; i++){
-        for(byte j = 0; j < 4; j++){
-            printf("%" PRIu8 , this->_state[j][i]);
+    if(prefix == "START"){
+        std::cout << "PLAINTEXT: ";
+        for(byte i = 0; i < 4; i++){
+            for(byte j = 0; j < 4; j++){
+                std::cout << std::hex << std::setfill('0') << std::setw(2) << unsigned(this->_state[j][i]);
+            }
+        }
+        std::cout << std::endl << "KEY: ";
+        for(byte i = 0; i < 16; i++){
+            std::cout << std::hex << std::setfill('0') << std::setw(2) << unsigned(this->_round_key[i]);
         }
     }
 
     std::cout << std::endl;
 }
+
+void AESImplementation::outputKeyExpansion(std::string prefix) const {
+    std::cout << this->expandedKey;
+}
+
