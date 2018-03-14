@@ -72,15 +72,15 @@ private:
     void MixColumns(byte state[4][4]);
 
     void outputState(std::string prefix);
-    void outputKeyExpansion(std::string prefix) const;
+    void outputRoundKey();
 
     byte _state[4][4]; /**< This will hold the current state of the algorithm */
     byte _round_key[4][4]; /**< This will hold the round key */
 
-    byte* expandedKey;
 
     int _number_of_rounds; /**< This holds the number of rounds the algorithm will use */
     int _block_size; /**< This holds the Block size of the AES Algorithm */
+    int _key_size; /**< The chosen key size of the algorithm */
     byte _n; /**< This holds the initial length of key */
     byte _b; /**< This holds the length of the expanded key */
 
