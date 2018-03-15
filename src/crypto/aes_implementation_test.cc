@@ -15,8 +15,6 @@
 #include <iomanip>
 
 
-void outputHexArray(uint8_t array[]);
-
 void test_aes_128(){
     AESImplementation aes(AES256);
 
@@ -29,7 +27,10 @@ void test_aes_128(){
 
     byte ciphertext[16];
 
-    std::cout << "Plaintext: ";
+    byte plaintext2[16];
+    byte ciphertext2[] = {0x8e, 0xa2, 0xb7, 0xca, 0x51, 0x67, 0x45, 0xbf, 0xea, 0xfc, 0x49, 0x90, 0x4b, 0x49, 0x60, 0x89};
+
+    /*std::cout << "Plaintext: ";
     for(byte i = 0; i < 16; i++){
         std::cout << std::hex << std::setfill('0') << std::setw(2) << unsigned(plaintext[i]);
     }
@@ -40,18 +41,22 @@ void test_aes_128(){
     std::cout << "Cipher Text: ";
     for(byte i = 0; i < 16; i++){
         std::cout << std::hex << std::setfill('0') << std::setw(2) << unsigned(ciphertext[i]);
+    }*/
+
+    std::cout << "Decryption Started" << std::endl;
+
+    aes.decrypt(ciphertext2, plaintext2, key_256);
+
+    std::cout << "Plaintext: ";
+    for(byte i = 0; i < 16; i++){
+        std::cout << std::hex << std::setfill('0') << std::setw(2) << unsigned(plaintext2[i]);
     }
+    std::cout << std::endl;
 
     std::cout << std::endl;
 
 }
 
-void outputHexArray(uint8_t array[]){
-    for(int i = 0; i < 16; i++){
-        std::cout << std::hex << std::setfill('0') << std::setw(2) << unsigned(array[i]);
-    }
-    std::cout << std::endl;
-}
 
 int main(){
     test_aes_128();

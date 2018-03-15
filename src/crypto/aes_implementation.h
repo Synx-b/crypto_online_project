@@ -51,9 +51,18 @@ public:
      *
      * @param input The plaintext that wants to be encrypted
      * @param output The ciphertext that has been encrypted
-     * @param key The encryption key
+     * @param key The algorithm key
      */
     void encrypt(const byte input[], byte output[], const byte key[]);
+
+    /**
+     * @brief This method provides the decryption functionality for the AES Algorithm
+     *
+     * @param input The encrypted ciphertext
+     * @param output The decrypted plaintext
+     * @param key The algorithm key
+     */
+    void decrypt(const byte input[], byte output[], const byte key[]);
 
 private:
 
@@ -67,9 +76,14 @@ private:
     static void KeyExpansionCore(byte roundNumber, const byte keyIn[4], byte keyOut[4]);
 
     void AddRoundKey(byte state[4][4], byte roundKey[4][4]);
+
     void SubBytes(byte state[4][4]);
     void ShiftRows(byte state[4][4]);
     void MixColumns(byte state[4][4]);
+
+    void InverseSubBytes(byte state[4][4]);
+    void InverseShiftRows(byte state[4][4]);
+    void InverseMixColumns(byte state[4][4]);
 
     void outputState(std::string prefix);
     void outputRoundKey();
