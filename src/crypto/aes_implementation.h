@@ -4,7 +4,7 @@
  *
  * @brief This contains the class definition for my AES Implementation
  *
- * @version 0.01
+ * @version 0.10
  * @author Jacob Powell
  */
 

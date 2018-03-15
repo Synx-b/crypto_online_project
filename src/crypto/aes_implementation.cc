@@ -4,7 +4,7 @@
  *
  * @brief This file contains my method definitions for my AES Implementation
  *
- * @version 0.01
+ * @version 0.10
  * @author Jacob Powell
  */
 

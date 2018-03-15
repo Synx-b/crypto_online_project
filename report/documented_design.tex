@@ -77,13 +77,13 @@ backgroundcolor=\color{lbcolor},
 
 This section will talk about the general file structure I will be using and the style that I will be coding against. We will be using an example file, file_structure.cc, which is shown below.
     
-\lstinputlisting[language=C++]{../src/file_structure.cc} 
+\lstinputlisting[language=C++]{file_structure.cc} 
 
 \subsubsection{File Header}
 
 Firstly we will be looking at the generic file header for the \textit{.h} and \textit{.cc}  files used in my project. The file header is given below:
 
-\lstinputlisting[language=C++, linerange={1-9}]{../src/file_structure.cc}
+\lstinputlisting[language=C++, linerange={1-9}]{file_structure.cc}
 
 There are 5 key sections included in the file header,
 \begin{itemize}
@@ -106,7 +106,7 @@ The first area we will look at is how we document classes, their members and the
 
 An extract of our example classes is given below:
 
-\lstinputlisting[language=C++, linerange={12-31,53-55}]{../src/file_structure.cc}
+\lstinputlisting[language=C++, linerange={12-31,53-55}]{file_structure.cc}
 
 A class will contain 4 sections:
 \begin{itemize}
@@ -120,7 +120,7 @@ A class will contain 4 sections:
 
 An extract of class method documentation is given below:
 
-\lstinputlisting[language=C++, linerange={30-49,55}]{../src/file_structure.cc}
+\lstinputlisting[language=C++, linerange={30-49,55}]{file_structure.cc}
 
 \begin{itemize}
 \item{@brief - Explains what the method does}
@@ -133,7 +133,7 @@ An extract of class method documentation is given below:
 
 An extract of class member documentation is given below
 
-\lstinputlisting[language=C++, linerange={30-31,51-55}]{../src/file_structure.cc}
+\lstinputlisting[language=C++, linerange={30-31,51-55}]{file_structure.cc}
 
 \begin{itemize}
 \item{Next to the member use the style {\color{green} \textit{/**$<$  */} } to describe what its purpose in the class is}
@@ -143,7 +143,7 @@ An extract of class member documentation is given below
 
 Lets look at the file header again, it is given below:
 
-\lstinputlisting[language=C++, linerange={1-9}]{../src/file_structure.cc}
+\lstinputlisting[language=C++, linerange={1-9}]{file_structure.cc}
 
 As you can see there is a {\color{green} \textit{@version}} tag. For every data structure and file in the project there will the a  {\color{green} \textit{@version}} tag which will contain the most up to date version of the file / data structure. This allows me to easily keep track of how each element of my project is progressing and evolving. The behavior of this tag is explained in \textit{Section 2.2.1.1}. 
 
