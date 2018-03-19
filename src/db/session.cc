@@ -31,7 +31,6 @@ Session::Session(const std::string &sqliteDb) {
     auto connection = Wt::cpp14::make_unique<Wt::Dbo::backend::Sqlite3>(sqliteDb);
     this->setConnection(std::move(connection));
 
-
     this->mapClass<db_user>("db_user");
     this->mapClass<AuthInfo>("auth_info");
     this->mapClass<AuthInfo::AuthIdentityType>("auth_identity");
@@ -56,7 +55,7 @@ Wt::Auth::AbstractUserDatabase &Session::users() {
 
 void Session::configureAuth() {
     myAuthService.setAuthTokensEnabled(true, "logincookie");
-    myAuthService.setEmailVerificationEnabled(true);
+    myAuthService.setEmailVerificationEnabled(false);
     myAuthService.setEmailVerificationRequired(false);
 
     std::unique_ptr<Wt::Auth::PasswordVerifier> verifier =
