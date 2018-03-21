@@ -16,7 +16,7 @@ typedef uint8_t byte; /**< This is a simple typedef that makes my life easier */
 /**
  * @enum AESKeyLengths
  *
- * @version 0.01
+ * @version 1.0
  * @brief This enum contains the possible key lengths that the AES algorithm can use.
  */
 enum AESKeyLengths{
@@ -25,11 +25,10 @@ enum AESKeyLengths{
     AES256
 };
 
-
 /**
  * @class AESImplementation
  *
- * @version 0.01
+ * @version 1.0
  * @brief This class contains my implementation for the AES encryption algorithm
  */
 class AESImplementation {
@@ -73,19 +72,61 @@ private:
      * @param expandedKey The expanded key used for the algorithms round
      */
     void KeyExpansion(const byte key[], byte expandedKey[]) const;
+
+    /**
+     * @brief This provides the implementation for the KeyExpansionCore for the Key Expansion
+     *
+     * @param roundNumber The current round number
+     * @param keyIn The 4 byte input
+     * @param keyOut The 4 byte output
+     */
     static void KeyExpansionCore(byte roundNumber, const byte keyIn[4], byte keyOut[4]);
 
+    /**
+     * @brief This XOR's the current state with the rounds subkey
+     *
+     * @param state The current state
+     * @param roundKey The current rounds subkey
+     */
     void AddRoundKey(byte state[4][4], byte roundKey[4][4]);
 
+    /**
+     * @brief Applies the S-Box to each element of the current state
+     *
+     * @param state The current state
+     */
     void SubBytes(byte state[4][4]);
+
+    /**
+     * @brief This shifts the rows of the current state by the appropriate
+     *
+     * @param state The current state
+     */
     void ShiftRows(byte state[4][4]);
+
+    /**
+     * @brief This applies the MixColumn transformation to the current state
+     *
+     * @param state The current state
+     */
     void MixColumns(byte state[4][4]);
 
     void InverseSubBytes(byte state[4][4]);
     void InverseShiftRows(byte state[4][4]);
     void InverseMixColumns(byte state[4][4]);
 
+    /**
+     * @brief This method outputs what the contents of the current state are with a prefix describing what section this
+     * state has been formed in. The primary use for this method is for debug information.
+     *
+     * @param prefix This is appended to the start of the current state to show where exactly this is
+     * being called from
+     */
     void outputState(std::string prefix);
+
+    /**
+     * @brief This method outputs the current subkey that will be used for the particular round
+     */
     void outputRoundKey();
 
     byte _state[4][4]; /**< This will hold the current state of the algorithm */
@@ -98,7 +139,6 @@ private:
     byte _n; /**< This holds the initial length of key */
     byte _b; /**< This holds the length of the expanded key */
 
-    byte _key_size_decrementer;
-    byte _m;
+    byte _m; /**< This is used when working out how the key schedule behaves for certain key lengths */
 
 };

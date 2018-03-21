@@ -60,9 +60,10 @@ void CryptoOnlineHome::handleInternalPath(const std::string &path) {
         app->setInternalPath("/home", true);
     }else if(path == "/profile")
         load_profile_page();
-    else if(path == "/login")
+    else if(path == "/login") {
         load_login_page();
-    else if(path == "/register")
+        app->setInternalPath("/login", true);
+    } else if(path == "/register")
         load_register_page();
     else if(path == "/symmetric/modular-arithmetic")
         load_modular_arithmetic_page();

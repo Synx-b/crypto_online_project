@@ -198,7 +198,6 @@ AESImplementation::AESImplementation(AESKeyLengths keyLength) : _n(0),
             this->_n = 16;
             this->_b = 176;
             this->_m = 0;
-            this->_key_size_decrementer = 16;
             break;
         case AES192:
             this->_block_size = 16;
@@ -207,7 +206,6 @@ AESImplementation::AESImplementation(AESKeyLengths keyLength) : _n(0),
             this->_n = 24;
             this->_b = 208;
             this->_m = 2;
-            this->_key_size_decrementer = 24;
             break;
         case AES256:
             this->_block_size = 16;
@@ -216,7 +214,6 @@ AESImplementation::AESImplementation(AESKeyLengths keyLength) : _n(0),
             this->_n = 32;
             this->_b = 240;
             this->_m = 3;
-            this->_key_size_decrementer = 32;
             break;
         default:
             throw std::runtime_error("Invalid key length");

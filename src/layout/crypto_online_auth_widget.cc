@@ -15,7 +15,8 @@ CryptoOnlineAuthWidget::CryptoOnlineAuthWidget(const Wt::Auth::AuthService &base
             reinterpret_cast<const Wt::Auth::AbstractPasswordService *>(&Session::passwordAuth()));
     //authWidget->model()->addOAuth(Session::oAuth());
     this->setRegistrationEnabled(true);
-    this->setInternalBasePath("/login");
+
+    this->processEnvironment();
 
 }
 

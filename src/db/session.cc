@@ -55,7 +55,7 @@ Wt::Auth::AbstractUserDatabase &Session::users() {
 
 void Session::configureAuth() {
     myAuthService.setAuthTokensEnabled(true, "logincookie");
-    myAuthService.setEmailVerificationEnabled(false);
+    myAuthService.setEmailVerificationEnabled(true);
     myAuthService.setEmailVerificationRequired(false);
 
     std::unique_ptr<Wt::Auth::PasswordVerifier> verifier =
