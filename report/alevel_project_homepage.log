@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.1.19)  19 MAR 2018 14:55
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.1.19)  21 MAR 2018 10:01
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1637,28 +1637,82 @@ brows-ing through
 <images/aes-rsbox.png, id=136, 294.34969pt x 211.54031pt>
 File: images/aes-rsbox.png Graphic file (type png)
 <use images/aes-rsbox.png>
-Package pdftex.def Info: images/aes-rsbox.png  used on input line 379.
+Package pdftex.def Info: images/aes-rsbox.png  used on input line 376.
 (pdftex.def)             Requested size: 294.34895pt x 211.53978pt.
  [33 <./images/aes-rsbox.png>]
 <images/aes-bl-overview-ue.png, id=143, 803.0pt x 673.51625pt>
 File: images/aes-bl-overview-ue.png Graphic file (type png)
 <use images/aes-bl-overview-ue.png>
-Package pdftex.def Info: images/aes-bl-overview-ue.png  used on input line 394.
+Package pdftex.def Info: images/aes-bl-overview-ue.png  used on input line 391.
 
 (pdftex.def)             Requested size: 401.49902pt x 336.7573pt.
  [34 <./images/aes-bl-overview-ue.png>]
 <images/aes-sbox.png, id=148, 641.39626pt x 295.1025pt>
 File: images/aes-sbox.png Graphic file (type png)
 <use images/aes-sbox.png>
-Package pdftex.def Info: images/aes-sbox.png  used on input line 421.
+Package pdftex.def Info: images/aes-sbox.png  used on input line 418.
 (pdftex.def)             Requested size: 448.97432pt x 206.57033pt.
  [35 <./images/aes-sbox.png>] [36]
-[37] [38] [39] [40]) (./technical_solution.tex [41]
-Chapter 3.
-(../src/crypto/aes_implementation.h [42
+[37]
+<images/aes-keysch-128.png, id=158, 1011.78pt x 884.30376pt>
+File: images/aes-keysch-128.png Graphic file (type png)
+<use images/aes-keysch-128.png>
+Package pdftex.def Info: images/aes-keysch-128.png  used on input line 598.
+(pdftex.def)             Requested size: 404.70483pt x 353.71524pt.
 
-] [43]) [44]
-(../src/crypto/aes_implementation.cc [45] [46] [47] [48] [49] [50]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[38] [39 <./images/aes-keysch-128.png>]
+<images/aes-keysch-192.png, id=166, 1048.91875pt x 946.53625pt>
+File: images/aes-keysch-192.png Graphic file (type png)
+<use images/aes-keysch-192.png>
+Package pdftex.def Info: images/aes-keysch-192.png  used on input line 640.
+(pdftex.def)             Requested size: 419.56006pt x 378.60779pt.
+<images/aes-keysch-256.png, id=167, 847.165pt x 946.53625pt>
+File: images/aes-keysch-256.png Graphic file (type png)
+<use images/aes-keysch-256.png>
+Package pdftex.def Info: images/aes-keysch-256.png  used on input line 652.
+(pdftex.def)             Requested size: 338.85999pt x 378.60779pt.
+ [40 <./images/aes-keysch-192.png>]
+<images/aes-decryption-overview.png, id=171, 747.79375pt x 951.555pt>
+File: images/aes-decryption-overview.png Graphic file (type png)
+<use images/aes-decryption-overview.png>
+Package pdftex.def Info: images/aes-decryption-overview.png  used on input line
+ 664.
+(pdftex.def)             Requested size: 299.1122pt x 380.61525pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[41 <./images/aes-keysch-256.png>]
+Overfull \hbox (3.01918pt too wide) in paragraph at lines 702--703
+[]\OT1/pbk/l/n/12 Then in or-der to cal-cu-late $\OT1/cmr/m/n/12 (\OML/cmm/m/it
+/12 B[]; B[]; B[]; B[]\OT1/cmr/m/n/12 )$ \OT1/pbk/l/n/12 we just use the in-put
+ $\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 C[]; C[]; C[]; C[]\OT1/cmr/m/n/12 )$\OT1/pb
+k/l/n/12 .
+ []
+
+[42 <./images/aes-decryption-overview.png>]
+<images/aes-inv-sbox.jpeg, id=178, 658.71094pt x 333.49594pt>
+File: images/aes-inv-sbox.jpeg Graphic file (type jpg)
+<use images/aes-inv-sbox.jpeg>
+Package pdftex.def Info: images/aes-inv-sbox.jpeg  used on input line 768.
+(pdftex.def)             Requested size: 461.09451pt x 233.44556pt.
+
+Overfull \hbox (8.12662pt too wide) in paragraph at lines 768--769
+ [] 
+ []
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[43] [44 <./images/aes-inv-sbox.jpeg>] [45]) (./technical_solution.tex [46]
+Chapter 3.
+(../src/crypto/aes_implementation.h [47
+
+] [48]) [49]
+(../src/crypto/aes_implementation.cc [50] [51] [52] [53] [54] [55]
 Overfull \hbox (44.14822pt too wide) in paragraph at lines 192--193
 [][][][][][] 
  []
@@ -1668,19 +1722,19 @@ Overfull \hbox (8.14786pt too wide) in paragraph at lines 193--194
 [][][][][][] 
  []
 
-[51] [52] [53] [54] [55] [56] [57] [58])) (./testing.tex [59] [60]
+[56] [57] [58] [59] [60] [61] [62] [63])) (./testing.tex [64] [65]
 Chapter 4.
-) (./evaluation.tex [61
+) (./evaluation.tex [66
 
 ]
 Chapter 5.
-) [62
+) [67
 
 ] (./alevel_project_homepage.lot)
 \tf@lot=\write5
 \openout5 = `alevel_project_homepage.lot'.
 
- [63
+ [68
 
 ] (./alevel_project_homepage.lof)
 \tf@lof=\write6
@@ -1689,14 +1743,14 @@ Chapter 5.
 
 
 AED: lastpage setting LastPage
-[64
+[69
 
 ] (./alevel_project_homepage.aux) ) 
 Here is how much of TeX's memory you used:
- 31003 strings out of 494883
- 611507 string characters out of 6179660
- 1151741 words of memory out of 5000000
- 33754 multiletter control sequences out of 15000+600000
+ 31034 strings out of 494883
+ 612316 string characters out of 6179660
+ 1151966 words of memory out of 5000000
+ 33779 multiletter control sequences out of 15000+600000
  558035 words of font info for 93 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
  57i,16n,68p,10374b,1278s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1716,10 +1770,10 @@ urw/bookman/ubkd8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/bookman/u
 bkl8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/bookman/ubkl8a.pfb></u
 sr/share/texlive/texmf-dist/fonts/type1/urw/bookman/ubkli8a.pfb></usr/share/tex
 live/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb>
-Output written on alevel_project_homepage.pdf (68 pages, 2018851 bytes).
+Output written on alevel_project_homepage.pdf (73 pages, 2402532 bytes).
 PDF statistics:
- 300 PDF objects out of 1000 (max. 8388607)
- 205 compressed objects within 3 object streams
+ 322 PDF objects out of 1000 (max. 8388607)
+ 217 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
- 33 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 58 words of extra memory for PDF output out of 10000 (max. 10000000)
 

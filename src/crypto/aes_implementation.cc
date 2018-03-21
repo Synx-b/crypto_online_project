@@ -15,7 +15,6 @@
 
 #include "aes_implementation.h"
 
-#define debug 1
 
 /**< Precomputed Tables and Lookup tables are given below */
 
@@ -254,7 +253,9 @@ void AESImplementation::encrypt(const byte input[], byte output[], const byte ke
     this->outputState("Current State");
 
     for(byte current_round = 1; current_round <= this->_number_of_rounds; current_round++){
+#if defined(debug)
         std::cout << "Start of Round " << unsigned(current_round) << std::endl;
+#endif
         for(byte i = 0; i < 4; i++)
             for(byte j = 0; j < 4; j++) {
                 this->_round_key[i][j] = expanded_key[(current_round * this->_block_size) + (j * 4) + i];
@@ -267,8 +268,10 @@ void AESImplementation::encrypt(const byte input[], byte output[], const byte ke
             this->MixColumns(this->_state);
         }
         this->AddRoundKey(this->_state, this->_round_key);
+#if defined(debug)
         this->outputRoundKey();
         std::cout << "End of Round " << unsigned(current_round) << std::endl;
+#endif
     }
 
     for(byte i = 0; i < 4; i++){
@@ -290,8 +293,9 @@ void AESImplementation::decrypt(const byte input[], byte output[], const byte ke
         this->_state[i][3] = input[i + 12];
     }
 
+#if defined(debug)
     this->outputState("Current State");
-
+#endif
     byte expanded_key[this->_b];
     this->KeyExpansion(key, expanded_key);
 
@@ -303,32 +307,35 @@ void AESImplementation::decrypt(const byte input[], byte output[], const byte ke
         this->_round_key[i][3] = expanded_key[this->_b - (4 - i)];
     }
 
-    this->outputRoundKey();
-
     this->AddRoundKey(this->_state, this->_round_key);
 
-    this->outputState("Start: ");
-
-    for(byte current_round = (this->_number_of_rounds - 1); current_round > 0; current_round--){
+    for(int current_round = (this->_number_of_rounds - 1); current_round >= 0; current_round--){
+#if defined(debug)
         std::cout << "Start of Round " << unsigned(current_round) << std::endl;
         this->outputState("Current State: ");
+#endif
         for(byte i = 0; i < 4; i++) {
             for (byte j = 0; j < 4; j++) {
-                this->_round_key[i][j] = expanded_key[(current_round * this->_block_size) + (j * 4) + i];
+                this->_round_key[i][j] = expanded_key[(current_round * this->_block_size) + (4 * j) + i];
             }
         }
-
-        this->InverseSubBytes(this->_state);
-        this->InverseShiftRows(this->_state);
-
+#if defined(debug)
         this->outputRoundKey();
+#endif
+        this->InverseShiftRows(this->_state);
+        this->InverseSubBytes(this->_state);
+
+#if defined(debug)
+        this->outputRoundKey();
+#endif
         this->AddRoundKey(this->_state, this->_round_key);
 
         if(current_round != 0){
             this->InverseMixColumns(this->_state);
         }
-
+#if defined(debug)
         std::cout << "End of Round " << unsigned(current_round) << std::endl;
+#endif
     }
 
     this->outputState("End of Dec");
@@ -402,6 +409,7 @@ void AESImplementation::KeyExpansion(const byte key[], byte expandedKey[]) const
         for(byte i = 0; i < 3 && (keySizeIterator < this->_b); i++){
             memcpy(t, expandedKey + (keySizeIterator  - 4), 4 * sizeof(byte));
 
+#if defined(debug)
             std::cout << "temp: ";
             for (byte j = 0; j < 4; j++)
             {
@@ -409,7 +417,7 @@ void AESImplementation::KeyExpansion(const byte key[], byte expandedKey[]) const
                 std::cout << (unsigned)expandedKey[keySizeIterator + j];
             }
             std::cout << std::endl;
-
+#endif
             keySizeIterator += 4;
         }
 
@@ -430,7 +438,7 @@ void AESImplementation::KeyExpansion(const byte key[], byte expandedKey[]) const
 
         for(byte i = 0; (i < this->_m) && (keySizeIterator < this->_b); i++){
             memcpy(t, expandedKey + (keySizeIterator  - 4), 4 * sizeof(byte));
-
+#if defined(debug)
             std::cout << "temp: ";
             for (byte j = 0; j < 4; j++)
             {
@@ -438,7 +446,7 @@ void AESImplementation::KeyExpansion(const byte key[], byte expandedKey[]) const
                 std::cout << (unsigned)expandedKey[keySizeIterator + j];
             }
             std::cout << std::endl;
-
+#endif
             keySizeIterator += 4;
         }
 
@@ -530,14 +538,19 @@ void AESImplementation::AddRoundKey(byte state[4][4], byte roundKey[4][4]) {
         auto* row_state = reinterpret_cast<uint32_t *>(state[i]);
         *row_state ^= *key;
     }
+#if defined(debug)
+    this->outputState("After Key Addition: ");
+#endif
 }
 
 void AESImplementation::SubBytes(byte state[4][4]) {
     for(byte i = 0; i < 4; i++)
         for(byte j = 0; j < 4; j++)
             state[i][j] = sbox[state[i][j]];
-    this->outputState("After SubBytes: ");
 
+#if defined(debug)
+    this->outputState("After SubBytes: ");
+#endif
 }
 
 void AESImplementation::ShiftRows(byte state[4][4]) {
@@ -548,7 +561,10 @@ void AESImplementation::ShiftRows(byte state[4][4]) {
         for(byte j = 0; j < 4; j++)
             state[i][j] = row[(i + j) % 4];
     }
+
+#if defined(debug)
     this->outputState("After ShiftRows: ");
+#endif
 }
 
 void AESImplementation::MixColumns(byte state[4][4]) {
@@ -561,7 +577,10 @@ void AESImplementation::MixColumns(byte state[4][4]) {
         state[2][i] = column[0] ^ column[1] ^ galois_mul_2[column[2]] ^ galois_mul_3[column[3]];
         state[3][i] = galois_mul_3[column[0]] ^ column[1] ^ column[2] ^ galois_mul_2[column[3]];
     }
+
+#if defined(debug)
     this->outputState("After MixColumns: ");
+#endif
 }
 
 
@@ -570,7 +589,10 @@ void AESImplementation::InverseSubBytes(byte state[4][4]) {
     for(byte i = 0; i < 4; i++)
         for(byte j = 0; j < 4; j++)
             state[i][j] = inverse_sbox[state[i][j]];
+
+#if defined(debug)
     this->outputState("After InverseSubBytes: ");
+#endif
 }
 
 void AESImplementation::InverseShiftRows(byte state[4][4]) {
@@ -582,7 +604,10 @@ void AESImplementation::InverseShiftRows(byte state[4][4]) {
             state[i][k] = row[(k + (4 - i)) % 4];
         }
     }
+
+#if defined(debug)
     this->outputState("After InverseShiftRows: ");
+#endif
 }
 
 void AESImplementation::InverseMixColumns(byte state[4][4]) {
@@ -594,7 +619,10 @@ void AESImplementation::InverseMixColumns(byte state[4][4]) {
         state[2][i] = galois_mul_13[column[0]] ^ galois_mul_9[column[1]] ^ galois_mul_14[column[2]] ^ galois_mul_11[column[3]];
         state[3][i] = galois_mul_11[column[0]] ^ galois_mul_13[column[1]] ^ galois_mul_9[column[2]] ^ galois_mul_14[column[3]];
     }
+
+#if defined(debug)
     this->outputState("After InverseMixColumns: ");
+#endif
 }
 
 void AESImplementation::outputState(std::string prefix) {
@@ -618,8 +646,3 @@ void AESImplementation::outputRoundKey() {
     std::cout << std::endl;
 #endif
 }
-
-
-
-
-

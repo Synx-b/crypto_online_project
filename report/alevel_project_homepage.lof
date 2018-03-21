@@ -7,6 +7,11 @@
 \contentsline {figure}{\numberline {2.1}{\ignorespaces The multiplicative inverse table of $GF(2^8)$ for bytes $xy$ used within the AES S-Box\relax }}{33}
 \contentsline {figure}{\numberline {2.2}{\ignorespaces AES Byte Level Overview\relax }}{34}
 \contentsline {figure}{\numberline {2.3}{\ignorespaces The AES S-Box\relax }}{35}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces 128-bit Key Schedule for AES\relax }}{39}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces 192-bit Key Schedule for AES\relax }}{40}
+\contentsline {figure}{\numberline {2.6}{\ignorespaces 256-bit Key Schedule for AES\relax }}{41}
+\contentsline {figure}{\numberline {2.7}{\ignorespaces The Decryption process for AES\relax }}{42}
+\contentsline {figure}{\numberline {2.8}{\ignorespaces The AES Inverse S-Box\relax }}{44}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

@@ -96,41 +96,41 @@
 \contentsline {subsubsection}{\numberline {2.4.2.5}Key Addition Layer}{38}
 \contentsline {subsubsection}{\numberline {2.4.2.6}AES Key Schedule}{38}
 \contentsline {paragraph}{128-bit Key Schedule}{38}
-\contentsline {paragraph}{192-bit Key Schedule}{38}
-\contentsline {paragraph}{256-bit Key Schedule}{38}
-\contentsline {subsection}{\numberline {2.4.3}Decryption in AES}{39}
-\contentsline {subsubsection}{\numberline {2.4.3.1}Inverse MixColumns Layer}{39}
-\contentsline {subsubsection}{\numberline {2.4.3.2}Inverse ShiftRows Layer}{39}
-\contentsline {subsubsection}{\numberline {2.4.3.3}Inverse ByteSubstitution Layer}{39}
-\contentsline {subsubsection}{\numberline {2.4.3.4}Decryption Key Schedule}{39}
-\contentsline {subsection}{\numberline {2.4.4}DES}{39}
-\contentsline {subsubsection}{\numberline {2.4.4.1}Structure of DES}{39}
-\contentsline {subsubsection}{\numberline {2.4.4.2}Internals of DES}{39}
-\contentsline {subsubsection}{\numberline {2.4.4.3}Operations with DES}{39}
-\contentsline {section}{\numberline {2.5}Bespoke Data Structures}{39}
-\contentsline {section}{\numberline {2.6}Bespoke Database Design}{39}
-\contentsline {subsection}{\numberline {2.6.1}User Details}{39}
-\contentsline {subsection}{\numberline {2.6.2}User Answers}{39}
-\contentsline {subsection}{\numberline {2.6.3}Authentication Information}{39}
-\contentsline {subsection}{\numberline {2.6.4}Authentication Identity}{39}
-\contentsline {subsection}{\numberline {2.6.5}Authentication Token}{39}
-\contentsline {subsection}{\numberline {2.6.6}Question Details}{39}
-\contentsline {section}{\numberline {2.7}User Interface Design}{40}
-\contentsline {subsection}{\numberline {2.7.1}Header}{40}
-\contentsline {subsection}{\numberline {2.7.2}Information Window}{40}
-\contentsline {subsection}{\numberline {2.7.3}Login Page}{40}
-\contentsline {subsection}{\numberline {2.7.4}Register Page}{40}
-\contentsline {section}{\numberline {2.8}System Security}{40}
-\contentsline {subsection}{\numberline {2.8.1}Security Requirements}{40}
-\contentsline {subsection}{\numberline {2.8.2}User Details Storage}{40}
-\contentsline {section}{\numberline {2.9}External Library's}{40}
-\contentsline {subsection}{\numberline {2.9.1}Wt}{40}
-\contentsline {subsection}{\numberline {2.9.2}Crypto++}{41}
-\contentsline {chapter}{\numberline {3}Technical Solution}{42}
-\contentsline {section}{\numberline {3.1}AES Implementation}{42}
-\contentsline {subsection}{\numberline {3.1.1}aes\_implementation.h}{42}
-\contentsline {subsection}{\numberline {3.1.2}aes\_implementation.cc}{45}
-\contentsline {section}{\numberline {3.2}DES Implementation}{60}
-\contentsline {section}{\numberline {3.3}Web Application Implementation}{60}
-\contentsline {chapter}{\numberline {4}Testing}{61}
-\contentsline {chapter}{\numberline {5}Evaluation}{62}
+\contentsline {paragraph}{192-bit Key Schedule}{40}
+\contentsline {paragraph}{256-bit Key Schedule}{40}
+\contentsline {subsection}{\numberline {2.4.3}Decryption in AES}{41}
+\contentsline {subsubsection}{\numberline {2.4.3.1}Inverse MixColumns Layer}{42}
+\contentsline {subsubsection}{\numberline {2.4.3.2}Inverse ShiftRows Layer}{43}
+\contentsline {subsubsection}{\numberline {2.4.3.3}Inverse ByteSubstitution Layer}{43}
+\contentsline {subsubsection}{\numberline {2.4.3.4}Decryption Key Schedule}{43}
+\contentsline {subsection}{\numberline {2.4.4}DES}{44}
+\contentsline {subsubsection}{\numberline {2.4.4.1}Structure of DES}{44}
+\contentsline {subsubsection}{\numberline {2.4.4.2}Internals of DES}{44}
+\contentsline {subsubsection}{\numberline {2.4.4.3}Operations with DES}{44}
+\contentsline {section}{\numberline {2.5}Bespoke Data Structures}{44}
+\contentsline {section}{\numberline {2.6}Bespoke Database Design}{44}
+\contentsline {subsection}{\numberline {2.6.1}User Details}{44}
+\contentsline {subsection}{\numberline {2.6.2}User Answers}{44}
+\contentsline {subsection}{\numberline {2.6.3}Authentication Information}{44}
+\contentsline {subsection}{\numberline {2.6.4}Authentication Identity}{45}
+\contentsline {subsection}{\numberline {2.6.5}Authentication Token}{45}
+\contentsline {subsection}{\numberline {2.6.6}Question Details}{45}
+\contentsline {section}{\numberline {2.7}User Interface Design}{45}
+\contentsline {subsection}{\numberline {2.7.1}Header}{45}
+\contentsline {subsection}{\numberline {2.7.2}Information Window}{45}
+\contentsline {subsection}{\numberline {2.7.3}Login Page}{45}
+\contentsline {subsection}{\numberline {2.7.4}Register Page}{45}
+\contentsline {section}{\numberline {2.8}System Security}{45}
+\contentsline {subsection}{\numberline {2.8.1}Security Requirements}{45}
+\contentsline {subsection}{\numberline {2.8.2}User Details Storage}{45}
+\contentsline {section}{\numberline {2.9}External Library's}{45}
+\contentsline {subsection}{\numberline {2.9.1}Wt}{45}
+\contentsline {subsection}{\numberline {2.9.2}Crypto++}{46}
+\contentsline {chapter}{\numberline {3}Technical Solution}{47}
+\contentsline {section}{\numberline {3.1}AES Implementation}{47}
+\contentsline {subsection}{\numberline {3.1.1}aes\_implementation.h}{47}
+\contentsline {subsection}{\numberline {3.1.2}aes\_implementation.cc}{50}
+\contentsline {section}{\numberline {3.2}DES Implementation}{65}
+\contentsline {section}{\numberline {3.3}Web Application Implementation}{65}
+\contentsline {chapter}{\numberline {4}Testing}{66}
+\contentsline {chapter}{\numberline {5}Evaluation}{67}

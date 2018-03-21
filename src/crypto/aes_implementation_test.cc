@@ -16,7 +16,7 @@
 
 
 void test_aes_128(){
-    AESImplementation aes(AES256);
+    AESImplementation aes(AES192);
 
     byte key_128[] = {0x00, 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08, 0x09, 0x0a, 0x0b, 0x0c, 0x0d, 0x0e, 0x0f};
     byte key_192[] = {0x00, 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08, 0x09, 0x0a, 0x0b, 0x0c, 0x0d, 0x0e, 0x0f,
@@ -30,22 +30,23 @@ void test_aes_128(){
     byte plaintext2[16];
     byte ciphertext2[] = {0x8e, 0xa2, 0xb7, 0xca, 0x51, 0x67, 0x45, 0xbf, 0xea, 0xfc, 0x49, 0x90, 0x4b, 0x49, 0x60, 0x89};
 
-    /*std::cout << "Plaintext: ";
+    std::cout << "Plaintext: ";
     for(byte i = 0; i < 16; i++){
         std::cout << std::hex << std::setfill('0') << std::setw(2) << unsigned(plaintext[i]);
     }
     std::cout << std::endl;
 
-    aes.encrypt(plaintext, ciphertext, key_256);
+    aes.encrypt(plaintext, ciphertext, key_192);
 
     std::cout << "Cipher Text: ";
     for(byte i = 0; i < 16; i++){
         std::cout << std::hex << std::setfill('0') << std::setw(2) << unsigned(ciphertext[i]);
-    }*/
+    }
+    std::cout << std::endl;
 
     std::cout << "Decryption Started" << std::endl;
 
-    aes.decrypt(ciphertext2, plaintext2, key_256);
+    aes.decrypt(ciphertext, plaintext2, key_192);
 
     std::cout << "Plaintext: ";
     for(byte i = 0; i < 16; i++){
