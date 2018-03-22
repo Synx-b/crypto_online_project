@@ -15,6 +15,7 @@
 
 #include "aes_implementation.h"
 
+#define debug 0
 
 /**< Precomputed Tables and Lookup tables are given below */
 
@@ -250,7 +251,7 @@ void AESImplementation::encrypt(const byte input[], byte output[], const byte ke
     this->outputState("Current State");
 
     for(byte current_round = 1; current_round <= this->_number_of_rounds; current_round++){
-#if defined(debug)
+#if defined(debug) && debug == 1
         std::cout << "Start of Round " << unsigned(current_round) << std::endl;
 #endif
         for(byte i = 0; i < 4; i++)
@@ -266,7 +267,7 @@ void AESImplementation::encrypt(const byte input[], byte output[], const byte ke
         }
         this->AddRoundKey(this->_state, this->_round_key);
         this->outputRoundKey();
-#if defined(debug)
+#if defined(debug) && debug == 1
         std::cout << "End of Round " << unsigned(current_round) << std::endl;
 #endif
     }
@@ -306,7 +307,7 @@ void AESImplementation::decrypt(const byte input[], byte output[], const byte ke
     this->AddRoundKey(this->_state, this->_round_key);
 
     for(int current_round = (this->_number_of_rounds - 1); current_round >= 0; current_round--){
-#if defined(debug)
+#if defined(debug) && debug == 1
         std::cout << "Start of Round " << unsigned(current_round) << std::endl;
         this->outputState("Current State: ");
 #endif
@@ -329,7 +330,7 @@ void AESImplementation::decrypt(const byte input[], byte output[], const byte ke
         if(current_round != 0){
             this->InverseMixColumns(this->_state);
         }
-#if defined(debug)
+#if defined(debug) && debug == 1
         std::cout << "End of Round " << unsigned(current_round) << std::endl;
 #endif
     }
@@ -348,13 +349,12 @@ void AESImplementation::decrypt(const byte input[], byte output[], const byte ke
 
 void AESImplementation::KeyExpansion(const byte key[], byte expandedKey[]) const {
 
-#if defined(debug)
+#if defined(debug) && debug == 1
     std::cout << "Key Expansion Start" << std::endl;
 #endif
     memset(expandedKey, 0, this->_b);
     memcpy(expandedKey, key, this->_n);
-
-#if defined(debug)
+#if defined(debug) && debug == 1
     std::cout << "W[0-3]:";
     for(byte i = 0; i < this->_n; i++){
         std::cout << std::hex << std::setfill('0') << std::setw(2) << unsigned(expandedKey[i]);
@@ -372,7 +372,7 @@ void AESImplementation::KeyExpansion(const byte key[], byte expandedKey[]) const
 
         memcpy(t, expandedKey + (keySizeIterator - 4), 4);
 
-#if defined(debug)
+#if defined(debug) && debug == 1
         std::cout << "PRE 4: ";
         for(byte i = 0; i < 4; i++)
             std::cout << std::hex << std::setfill('0') << std::setw(2) << unsigned(t[i]);
@@ -382,7 +382,7 @@ void AESImplementation::KeyExpansion(const byte key[], byte expandedKey[]) const
         this->KeyExpansionCore(rcon, t, u);
         memcpy(t, expandedKey + (keySizeIterator - this->_n), 4 * sizeof(byte));
 
-#if defined(debug)
+#if defined(debug) && debug == 1
         std::cout << "W[i - 4]: ";
         for(byte i = 0; i < 4; i++)
             std::cout << std::hex << std::setfill('0') << std::setw(2) << unsigned(u[i]);
@@ -392,7 +392,7 @@ void AESImplementation::KeyExpansion(const byte key[], byte expandedKey[]) const
         for(byte i = 0; i < 4; i++)
             t[i] ^= u[i];
 
-#if defined(debug)
+#if defined(debug) && debug == 1
         std::cout << "W[i]: ";
         for(byte i = 0; i < 4; i++)
             std::cout << std::hex << std::setfill('0') << std::setw(2) << unsigned(t[i]);
@@ -405,13 +405,17 @@ void AESImplementation::KeyExpansion(const byte key[], byte expandedKey[]) const
         for(byte i = 0; i < 3 && (keySizeIterator < this->_b); i++){
             memcpy(t, expandedKey + (keySizeIterator  - 4), 4 * sizeof(byte));
 
-#if defined(debug)
+#if defined(debug) && debug == 1
             std::cout << "temp: ";
+#endif
             for (byte j = 0; j < 4; j++)
             {
                 expandedKey[keySizeIterator + j] = t[j] ^ expandedKey[keySizeIterator - this->_n + j];
+#if defined(debug) && debug == 1
                 std::cout << (unsigned)expandedKey[keySizeIterator + j];
+#endif
             }
+#if defined(debug) && debug == 1
             std::cout << std::endl;
 #endif
             keySizeIterator += 4;
@@ -434,13 +438,17 @@ void AESImplementation::KeyExpansion(const byte key[], byte expandedKey[]) const
 
         for(byte i = 0; (i < this->_m) && (keySizeIterator < this->_b); i++){
             memcpy(t, expandedKey + (keySizeIterator  - 4), 4 * sizeof(byte));
-#if defined(debug)
+#if defined(debug) && debug == 1
             std::cout << "temp: ";
+#endif
             for (byte j = 0; j < 4; j++)
             {
                 expandedKey[keySizeIterator + j] = t[j] ^ expandedKey[keySizeIterator - this->_n + j];
+#if defined(debug) && debug == 1
                 std::cout << (unsigned)expandedKey[keySizeIterator + j];
+#endif
             }
+#if defined(debug) && debug == 1
             std::cout << std::endl;
 #endif
             keySizeIterator += 4;
@@ -448,7 +456,7 @@ void AESImplementation::KeyExpansion(const byte key[], byte expandedKey[]) const
 
     }
 
-#if defined(debug)
+#if defined(debug) && debug == 1
     int count = 0;
     int roundNumber = 1;
     std::cout << "Expanded Key: ";
@@ -602,7 +610,7 @@ void AESImplementation::InverseMixColumns(byte state[4][4]) {
 }
 
 void AESImplementation::outputState(std::string prefix) {
-#if defined(debug)
+#if defined(debug) && debug == 1
     std::cout << prefix << std::endl;
     for(byte i = 0; i < 4; i++){
         for(byte j = 0; j < 4; j++)
@@ -613,7 +621,7 @@ void AESImplementation::outputState(std::string prefix) {
 }
 
 void AESImplementation::outputRoundKey() {
-#if defined(debug)
+#if defined(debug) && debug == 1
     std::cout << "Current Round Key" << std::endl;
     for(byte i = 0; i < 4; i++){
         for(byte j = 0; j < 4; j++)
