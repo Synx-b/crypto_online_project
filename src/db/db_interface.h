@@ -13,12 +13,15 @@
 
 #include "db_roles.h"
 #include "db_user.h"
+#include "session.h"
 
 #include <Wt/Dbo/Session.h>
 
 
 class db_interface {
 public:
+
+    db_interface(Session& session);
 
     void connect_database();
 
@@ -34,7 +37,7 @@ public:
 
 private:
     void create_tables();
-    Wt::Dbo::Session session;
+    Session& current_session;
 
 };
 

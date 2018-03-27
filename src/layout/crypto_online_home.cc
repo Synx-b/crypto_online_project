@@ -47,7 +47,6 @@ void CryptoOnlineHome::handleInternalPath(const std::string &path) {
      * TODO: Add authentication checking, eg whether or not a user is logged in
      *
      */
-
     Wt::WApplication* app = Wt::WApplication::instance();
 
     std::cout << "PATH CHANGED: " + path << std::endl;
@@ -74,7 +73,6 @@ void CryptoOnlineHome::handleInternalPath(const std::string &path) {
          */
     else
         Wt::WApplication::instance()->setInternalPath("/home", true);
-
 }
 
 /**
@@ -154,7 +152,7 @@ void CryptoOnlineHome::load_profile_page() {
     this->_grid = Wt::cpp14::make_unique<Wt::WGridLayout>();
 
     this->_header = Wt::cpp14::make_unique<CryptoOnlineHeader>(_current_session);
-    this->_profile = Wt::cpp14::make_unique<CryptoOnlineProfile>();
+    this->_profile = Wt::cpp14::make_unique<CryptoOnlineProfile>(_current_session);
     this->_footer = Wt::cpp14::make_unique<crypto_online_footer>();
 
     this->_grid->addItem(std::move(this->_header), 0, 0);

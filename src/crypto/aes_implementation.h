@@ -46,22 +46,31 @@ public:
     explicit AESImplementation(AESKeyLengths keyLength);
 
     /**
-     * @brief This method provides the encryption functionality for the AES algorithm
+     * @brief This method provides full encryption functionality of the encryption rounds for AES
      *
-     * @param input The plaintext that wants to be encrypted
-     * @param output The ciphertext that has been encrypted
-     * @param key The algorithm key
+     * @param input The full plaintext message
+     * @param output The full ciphertext message
+     * @param key The encryption key
      */
-    void encrypt(const byte input[], byte output[], const byte key[]);
+    void encrypt(const byte input[], byte output[], const byte key[], const size_t message_length);
 
     /**
-     * @brief This method provides the decryption functionality for the AES Algorithm
+     * @brief This method provides the encryption functionality for a block in the AES Algorithm
      *
-     * @param input The encrypted ciphertext
-     * @param output The decrypted plaintext
+     * @param input The plaintext block that wants to be encrypted
+     * @param output The ciphertext block that has been encrypted
      * @param key The algorithm key
      */
-    void decrypt(const byte input[], byte output[], const byte key[]);
+    void encrypt_block(const byte input[], byte output[], const byte key[]);
+
+    /**
+     * @brief This method provides the decryption functionality for a block in the AES Algorithm
+     *
+     * @param input The encrypted ciphertext block
+     * @param output The decrypted plaintext block
+     * @param key The algorithm key
+     */
+    void decrypt_block(const byte input[], byte output[], const byte key[]);
 
 private:
 
@@ -116,6 +125,14 @@ private:
     void InverseMixColumns(byte state[4][4]);
 
     /**
+     * @brief This method provides padding acording to the PKCS#7 standard
+     *
+     * @param input The original input message by the user
+     * @param output The padded version of the input
+     */
+    void pad_message(const byte input[], byte output[]);
+
+    /**
      * @brief This method outputs what the contents of the current state are with a prefix describing what section this
      * state has been formed in. The primary use for this method is for debug information.
      *
@@ -131,7 +148,6 @@ private:
 
     byte _state[4][4]; /**< This will hold the current state of the algorithm */
     byte _round_key[4][4]; /**< This will hold the round key */
-
 
     int _number_of_rounds; /**< This holds the number of rounds the algorithm will use */
     int _block_size; /**< This holds the Block size of the AES Algorithm */

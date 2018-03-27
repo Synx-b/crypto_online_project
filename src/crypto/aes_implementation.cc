@@ -221,7 +221,27 @@ AESImplementation::AESImplementation(AESKeyLengths keyLength) : _n(0),
     }
 }
 
-void AESImplementation::encrypt(const byte input[], byte output[], const byte key[]) {
+void AESImplementation::encrypt(const byte input[], byte output[], const byte key[], const size_t message_length) {
+    auto pad_length = static_cast<byte>(8 - static_cast<byte>(message_length % 8));
+
+    //memcpy(output, nullptr, message_length + pad_length);
+
+    output = static_cast<byte *>(malloc(message_length + pad_length));
+    if(output == nullptr)
+        exit(1);
+    else{
+        memcpy(output, input, message_length);
+        for(byte i  = 0; i < pad_length; i++){
+            output += (byte)pad_length;
+        }
+    }
+
+    for(byte i = 0; i < message_length + pad_length; i++)
+        std::cout << (unsigned)output[i] << std::endl;
+
+}
+
+void AESImplementation::encrypt_block(const byte input[], byte output[], const byte key[]) {
 
     std::cout << "Encryption Process Started" << std::endl;
 
@@ -280,7 +300,7 @@ void AESImplementation::encrypt(const byte input[], byte output[], const byte ke
     std::cout << "Encryption Process Ended" << std::endl;
 }
 
-void AESImplementation::decrypt(const byte input[], byte output[], const byte key[]) {
+void AESImplementation::decrypt_block(const byte input[], byte output[], const byte key[]) {
 
     std::cout << "Decryption Process Started" << std::endl;
 
@@ -576,8 +596,6 @@ void AESImplementation::MixColumns(byte state[4][4]) {
     this->outputState("After MixColumns: ");
 }
 
-
-
 void AESImplementation::InverseSubBytes(byte state[4][4]) {
     for(byte i = 0; i < 4; i++)
         for(byte j = 0; j < 4; j++)
@@ -607,6 +625,10 @@ void AESImplementation::InverseMixColumns(byte state[4][4]) {
         state[3][i] = galois_mul_11[column[0]] ^ galois_mul_13[column[1]] ^ galois_mul_9[column[2]] ^ galois_mul_14[column[3]];
     }
     this->outputState("After InverseMixColumns: ");
+}
+
+void AESImplementation::pad_message(const byte input[], byte output[]) {
+
 }
 
 void AESImplementation::outputState(std::string prefix) {

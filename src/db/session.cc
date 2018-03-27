@@ -37,6 +37,7 @@ Session::Session(const std::string &sqliteDb) {
     this->mapClass<AuthInfo::AuthTokenType>("auth_token");
     std::cout << "DATABASE CHECKING" << std::endl;
 
+
     try {
         this->createTables();
         std::cerr << "Created Database" << std::endl;

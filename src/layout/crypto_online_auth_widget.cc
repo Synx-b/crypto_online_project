@@ -17,7 +17,6 @@ CryptoOnlineAuthWidget::CryptoOnlineAuthWidget(const Wt::Auth::AuthService &base
     this->setRegistrationEnabled(true);
 
     this->processEnvironment();
-
 }
 
 CryptoOnlineAuthWidget::CryptoOnlineAuthWidget(Wt::Auth::Login &login) : AuthWidget(login) {

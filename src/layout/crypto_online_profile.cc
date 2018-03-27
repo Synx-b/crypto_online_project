@@ -21,8 +21,14 @@
  * It also checks to see if there is actually a user logged in to the system. If there isn't then it displays to the
  * viewer that there is no user currently logged in.
  */
-CryptoOnlineProfile::CryptoOnlineProfile() {
-   load_profile_page();
+CryptoOnlineProfile::CryptoOnlineProfile(Session& session) : _current_session(session) {
+   if(this->_current_session.login().loggedIn())
+       load_profile_page();
+   else{
+       /*
+        * TODO: Show Error saying you need to be logged in
+        */
+   }
 }
 /**
  * @brief This method handles loading the user information into the necessary widgets in order to display it on the
@@ -32,7 +38,7 @@ void CryptoOnlineProfile::load_profile_page() {
     this->_username_label = this->elementAt(0,0)->addWidget(Wt::cpp14::make_unique<Wt::WText>("Username: "));
     this->_username_label->setStyleClass("profile_username");
 
-    this->_username = this->elementAt(0,1)->addWidget(Wt::cpp14::make_unique<Wt::WText>("Hello"));
+    this->_username = this->elementAt(0,1)->addWidget(Wt::cpp14::make_unique<Wt::WText>());
     this->_username->setStyleClass("profile_username");
 
     this->elementAt(0,0)->setContentAlignment(Wt::AlignmentFlag::Center);
