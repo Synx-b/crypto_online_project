@@ -31,7 +31,7 @@ Session::Session(const std::string &sqliteDb) {
     auto connection = Wt::cpp14::make_unique<Wt::Dbo::backend::Sqlite3>(sqliteDb);
     this->setConnection(std::move(connection));
 
-    this->mapClass<db_user>("db_user");
+    this->mapClass<DbUser>("db_user");
     this->mapClass<AuthInfo>("auth_info");
     this->mapClass<AuthInfo::AuthIdentityType>("auth_identity");
     this->mapClass<AuthInfo::AuthTokenType>("auth_token");
@@ -94,11 +94,11 @@ const std::vector<const Wt::Auth::OAuthService *>& Session::oAuth() {
     return result;
 }
 
-Wt::Dbo::ptr<db_user> Session::user() {
+Wt::Dbo::ptr<DbUser> Session::user() {
     if(_login.loggedIn()){
-        Wt::Dbo::ptr<AuthInfo> authInfo = _users->find(_login.user());
+        Wt::Dbo::ptr<AuthInfo::AuthIdentityType> authInfo = _users->find(_login.user());
         return authInfo->user();
     }else{
-        return Wt::Dbo::ptr<db_user>();
+        return Wt::Dbo::ptr<DbUser>();
     }
 }

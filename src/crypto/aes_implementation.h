@@ -125,14 +125,6 @@ private:
     void InverseMixColumns(byte state[4][4]);
 
     /**
-     * @brief This method provides padding acording to the PKCS#7 standard
-     *
-     * @param input The original input message by the user
-     * @param output The padded version of the input
-     */
-    void pad_message(const byte input[], byte output[]);
-
-    /**
      * @brief This method outputs what the contents of the current state are with a prefix describing what section this
      * state has been formed in. The primary use for this method is for debug information.
      *

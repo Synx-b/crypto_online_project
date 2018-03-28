@@ -10,7 +10,9 @@
 
 CryptoOnlineAuthWidget::CryptoOnlineAuthWidget(const Wt::Auth::AuthService &baseAuth,
                                                Wt::Auth::AbstractUserDatabase &users, Wt::Auth::Login &login)
-        : AuthWidget(baseAuth, users, login) {
+        : AuthWidget(baseAuth, users, login)
+
+{
     this->model()->addPasswordAuth(
             reinterpret_cast<const Wt::Auth::AbstractPasswordService *>(&Session::passwordAuth()));
     //authWidget->model()->addOAuth(Session::oAuth());
@@ -18,8 +20,3 @@ CryptoOnlineAuthWidget::CryptoOnlineAuthWidget(const Wt::Auth::AuthService &base
 
     this->processEnvironment();
 }
-
-CryptoOnlineAuthWidget::CryptoOnlineAuthWidget(Wt::Auth::Login &login) : AuthWidget(login) {
-
-}
-

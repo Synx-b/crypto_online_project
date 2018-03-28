@@ -22,10 +22,10 @@
 
 #include <string>
 
-class db_user;
-using AuthInfo = Wt::Auth::Dbo::AuthInfo<db_user>;
+class DbUser;
+using AuthInfo = Wt::Auth::Dbo::AuthInfo<DbUser>;
 
-class db_user  {
+class DbUser  {
 public:
     template<class Action>
     void persist(Action& a) {

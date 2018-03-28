@@ -14,7 +14,9 @@
 #include <Wt/WPushButton.h>
 #include <Wt/WApplication.h>
 
-crypto_online_register::crypto_online_register() {
+crypto_online_register::crypto_online_register(Session& session) : session(session),
+                                                                   database_interface(session)
+{
     this->load_register_page();
     this->database_interface.connect_database();
 }

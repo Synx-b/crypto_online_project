@@ -9,7 +9,6 @@
  */
 
 #include "db_interface.h"
-#include "db_user.h"
 
 #include <Wt/Dbo/backend/Sqlite3.h>
 
@@ -34,16 +33,13 @@ void db_interface::add_user(const std::string name, const std::string passwordHa
                                 const Role role) {
     Wt::Dbo::Transaction transaction(this->current_session);
 
-
-
-
 }
 
 bool db_interface::check_user_pass(std::string username, std::string passwordHash) {
 
     Wt::Dbo::Transaction transaction(this->current_session);
     try{
-        Wt::Dbo::ptr<db_user> user = this->current_session.find<db_user>().where("username = ?").bind(username);
+        Wt::Dbo::ptr<DbUser> user = this->current_session.find<DbUser>().where("username = ?").bind(username);
 
 
     }catch(Wt::Dbo::Exception& exception){
@@ -56,8 +52,8 @@ bool db_interface::check_user_does_not_exist(const std::string &username) {
 
     Wt::Dbo::Transaction transaction(this->current_session);
 
-    Wt::Dbo::ptr<db_user> user = this->current_session.find<db_user>().where("username = ?").bind(username);
-    Wt::Dbo::ptr<db_user> empty_account;
+    Wt::Dbo::ptr<DbUser> user = this->current_session.find<DbUser>().where("username = ?").bind(username);
+    Wt::Dbo::ptr<DbUser> empty_account;
 
     if(user == empty_account){
         return true;
@@ -71,18 +67,25 @@ bool db_interface::check_user_does_not_exist(const std::string &username) {
 int db_interface::get_user_id(const std::string &username) {
     Wt::Dbo::Transaction transaction(this->current_session);
 
-    Wt::Dbo::ptr<db_user> user = this->current_session.find<db_user>().where("username = ?").bind(username);
+    Wt::Dbo::ptr<DbUser> user = this->current_session.find<DbUser>().where("username = ?").bind(username);
 
     return static_cast<int>(user.id());
 
 }
 
-Wt::Dbo::ptr<db_user> db_interface::get_user_details(const int& id) {
+Wt::Dbo::ptr<DbUser> db_interface::get_user_details(const int& id) {
     Wt::Dbo::Transaction transaction(this->current_session);
 
-    Wt::Dbo::ptr<db_user> user = this->current_session.find<db_user>().where("id = ?").bind(id);
+    Wt::Dbo::ptr<DbUser> user = this->current_session.find<DbUser>().where("id = ?").bind(id);
 
     return user;
+}
+
+void db_interface::link_user_auth_account() {
+    Wt::Dbo::Transaction transaction(this->current_session);
+
+    Wt::Dbo::ptr<AuthInfo> user_auth_id = this->current_session.find<AuthInfo>().where("id = ?").bind(this->current_session.user());
+    
 }
 
 

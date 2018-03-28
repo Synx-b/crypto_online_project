@@ -21,7 +21,7 @@
 
 class crypto_online_login : public Wt::WTable{
 public:
-    crypto_online_login();
+    crypto_online_login(Session& session);
 private:
 
     void load_login_page();
@@ -39,6 +39,7 @@ private:
     std::unique_ptr<Wt::WPushButton> login_button;
 
     db_interface database_interface;
+    Session& session;
 
 };
 

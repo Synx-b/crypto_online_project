@@ -22,7 +22,7 @@
 
 class crypto_online_register : public Wt::WTable{
 public:
-    crypto_online_register();
+    crypto_online_register(Session& session);
 private:
 
     void load_register_page();
@@ -44,6 +44,7 @@ private:
 
     db_interface database_interface;
     validation validation_interface;
+    Session& session;
 
 };
 

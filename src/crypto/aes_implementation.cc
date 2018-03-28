@@ -249,8 +249,6 @@ void AESImplementation::encrypt(const byte input[], byte output[], const byte ke
             std::cout << (unsigned) i << ": " << (unsigned) output[i] << std::endl;
         }
     }
-
-
 }
 
 void AESImplementation::encrypt_block(const byte input[], byte output[], const byte key[]) {
@@ -637,10 +635,6 @@ void AESImplementation::InverseMixColumns(byte state[4][4]) {
         state[3][i] = galois_mul_11[column[0]] ^ galois_mul_13[column[1]] ^ galois_mul_9[column[2]] ^ galois_mul_14[column[3]];
     }
     this->outputState("After InverseMixColumns: ");
-}
-
-void AESImplementation::pad_message(const byte input[], byte output[]) {
-
 }
 
 void AESImplementation::outputState(std::string prefix) {

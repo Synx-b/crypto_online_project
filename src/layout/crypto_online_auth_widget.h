@@ -10,12 +10,20 @@
 
 
 #include <Wt/Auth/AuthWidget.h>
+#include "../db/db_interface.h"
 
+
+/**
+ * @class CryptoOnlineAuthWidget
+ *
+ * @brief Basic implementation of the Authentication widget from the Wt Library. It handles basic user registration,
+ *        user login, and linking database information.
+ */
 class CryptoOnlineAuthWidget : public Wt::Auth::AuthWidget {
 public:
     CryptoOnlineAuthWidget(const Wt::Auth::AuthService &baseAuth, Wt::Auth::AbstractUserDatabase &users,
                            Wt::Auth::Login &login);
-    CryptoOnlineAuthWidget(Wt::Auth::Login &login);
+
 
 };
 

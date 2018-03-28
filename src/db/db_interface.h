@@ -28,11 +28,13 @@ public:
     void add_user(std::string username, std::string passwordHash, std::string email,
                   Role role);
 
+    void link_user_auth_account();
+
     bool check_user_does_not_exist(const std::string &username);
     bool check_user_pass(std::string username, std::string passwordHash);
     int get_user_id(const std::string &username);
 
-    Wt::Dbo::ptr<db_user> get_user_details(const int &id);
+    Wt::Dbo::ptr<DbUser> get_user_details(const int &id);
 
 
 private:

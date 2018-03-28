@@ -15,7 +15,9 @@
 #include <Wt/WApplication.h>
 
 
-crypto_online_login::crypto_online_login() {
+crypto_online_login::crypto_online_login(Session& session) : session(session),
+                                                             database_interface(session)
+{
     this->load_login_page();
     this->database_interface.connect_database();
 }

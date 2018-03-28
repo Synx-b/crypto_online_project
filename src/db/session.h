@@ -35,7 +35,7 @@ public:
     static const std::vector<const Wt::Auth::OAuthService *>& oAuth();
 
     Wt::Auth::AbstractUserDatabase& users();
-    Wt::Dbo::ptr<db_user> user();
+    Wt::Dbo::ptr<DbUser> user();
     Wt::Auth::Login& login(){ return _login; }
 
 private:

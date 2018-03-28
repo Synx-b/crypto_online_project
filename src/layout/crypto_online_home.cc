@@ -23,7 +23,8 @@
  * It also handles the behaviour of the website when the internal path changes and correctly navigates to the
  * appropriate page that the user has requested to navigate to.
  */
-CryptoOnlineHome::CryptoOnlineHome(Session& session) : _current_session(session) {
+CryptoOnlineHome::CryptoOnlineHome(Session& session) : _current_session(session),
+                                                        database_interface(session){
 
     load_home_page();
     load_database();
@@ -51,8 +52,12 @@ void CryptoOnlineHome::handleInternalPath(const std::string &path) {
 
     std::cout << "PATH CHANGED: " + path << std::endl;
 
-    if(path == "/home")
+    if(path == "/home") {
+        if(_current_session.login().loggedIn()){
+            std::cout << "User ID: " << this->_current_session.login().id() << std::endl;
+        }
         load_home_page();
+    }
     else if(path == "/signout"){
         _current_session.login().logout();
         load_home_page();
@@ -125,7 +130,7 @@ void CryptoOnlineHome::load_register_page() {
     this->_grid = Wt::cpp14::make_unique<Wt::WGridLayout>();
 
     this->_header = Wt::cpp14::make_unique<CryptoOnlineHeader>(_current_session);
-    this->_register = Wt::cpp14::make_unique<crypto_online_register>();
+    this->_register = Wt::cpp14::make_unique<crypto_online_register>(_current_session);
     this->_footer = Wt::cpp14::make_unique<crypto_online_footer>();
 
     this->_grid->addItem(std::move(this->_header), 0, 0);

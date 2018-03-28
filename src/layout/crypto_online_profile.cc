@@ -21,7 +21,9 @@
  * It also checks to see if there is actually a user logged in to the system. If there isn't then it displays to the
  * viewer that there is no user currently logged in.
  */
-CryptoOnlineProfile::CryptoOnlineProfile(Session& session) : _current_session(session) {
+CryptoOnlineProfile::CryptoOnlineProfile(Session& session) : _current_session(session),
+                                                             database_interface(session)
+{
    if(this->_current_session.login().loggedIn())
        load_profile_page();
    else{
