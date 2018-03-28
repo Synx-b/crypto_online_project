@@ -222,22 +222,34 @@ AESImplementation::AESImplementation(AESKeyLengths keyLength) : _n(0),
 }
 
 void AESImplementation::encrypt(const byte input[], byte output[], const byte key[], const size_t message_length) {
-    auto pad_length = static_cast<byte>(8 - static_cast<byte>(message_length % 8));
+    std::cout << message_length << std::endl;
+    auto pad_check = (message_length % 16);
 
-    //memcpy(output, nullptr, message_length + pad_length);
+    std::cout << pad_check << std::endl;
 
-    output = static_cast<byte *>(malloc(message_length + pad_length));
-    if(output == nullptr)
-        exit(1);
-    else{
-        memcpy(output, input, message_length);
-        for(byte i  = 0; i < pad_length; i++){
-            output += (byte)pad_length;
+    if(pad_check == 0){
+        auto *output_padded = new byte[message_length + pad_check];
+        std::copy(input, (input + std::min(message_length, (message_length + pad_check))), output_padded);
+        output = output_padded;
+
+        for (byte i = 0; i < (message_length + pad_check); i++) {
+            std::cout << (unsigned) i << ": " << (unsigned) output[i] << std::endl;
+        }
+    }else {
+        auto pad_length = 16 - pad_check;
+        auto *output_padded = new byte[message_length + pad_length];
+        std::copy(input, (input + std::min(message_length, (message_length + pad_length))), output_padded);
+        output = output_padded;
+
+        for (size_t i = (message_length + pad_length); i >= message_length; i--) {
+            output[i] = pad_length;
+        }
+
+        for (byte i = 0; i < (message_length + pad_length); i++) {
+            std::cout << (unsigned) i << ": " << (unsigned) output[i] << std::endl;
         }
     }
 
-    for(byte i = 0; i < message_length + pad_length; i++)
-        std::cout << (unsigned)output[i] << std::endl;
 
 }
 
