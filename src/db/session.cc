@@ -35,8 +35,7 @@ Session::Session(const std::string &sqliteDb) {
     this->mapClass<Wt::Auth::Dbo::AuthInfo<DbUser>::AuthIdentityType>("auth_identity");
     this->mapClass<Wt::Auth::Dbo::AuthInfo<DbUser>::AuthTokenType>("auth_token");
 
-    std::cout << "DATABASE CHECKIN"
-            "G" << std::endl;
+    std::cout << "Checking the Database Contents" << std::endl;
     try {
         this->createTables();
         std::cerr << "Created Database" << std::endl;
