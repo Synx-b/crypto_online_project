@@ -31,7 +31,6 @@ CryptoOnlineHome::CryptoOnlineHome(Session& session) : _current_session(session)
 
     this->handleInternalPath(Wt::WApplication::instance()->internalPath());
 
-
     Wt::WApplication::instance()->internalPathChanged()
             .connect(this, &CryptoOnlineHome::handleInternalPath);
 }
@@ -48,31 +47,26 @@ void CryptoOnlineHome::handleInternalPath(const std::string &path) {
      * TODO: Add authentication checking, eg whether or not a user is logged in
      *
      */
-    Wt::WApplication* app = Wt::WApplication::instance();
+    Wt::WApplication *app = Wt::WApplication::instance();
 
     std::cout << "PATH CHANGED: " + path << std::endl;
 
-    if(path == "/home") {
-        if(_current_session.login().loggedIn()){
-            std::cout << "User ID: " << this->_current_session.login().id() << std::endl;
-        }
+    if (path == "/home") {
         load_home_page();
-    }
-    else if(path == "/signout"){
+    } else if (path == "/signout") {
         _current_session.login().logout();
         load_home_page();
         app->setInternalPath("/home", true);
-    }else if(path == "/profile")
+    } else if (path == "/profile"){
         load_profile_page();
-    else if(path == "/login") {
+    } else if(path == "/login") {
         load_login_page();
         app->setInternalPath("/login", true);
-    } else if(path == "/register")
-        load_register_page();
-    else if(path == "/symmetric/modular-arithmetic")
+    } else if(path == "/symmetric/modular-arithmetic") {
         load_modular_arithmetic_page();
-    else if(path == "/basics/concepts")
+    } else if(path == "/basics/concepts"){
         load_intro_to_cryptography_page();
+    }
         /*
          * TODO: Add navigation to all parts of the website
          */
@@ -110,7 +104,8 @@ void CryptoOnlineHome::load_login_page() {
     this->_grid = Wt::cpp14::make_unique<Wt::WGridLayout>();
 
     this->_header = Wt::cpp14::make_unique<CryptoOnlineHeader>(_current_session);
-    this->_login = Wt::cpp14::make_unique<CryptoOnlineAuthWidget>(Session::auth(), _current_session.users(), _current_session.login());
+    this->_login = Wt::cpp14::make_unique<CryptoOnlineAuthWidget>(Session::auth(), _current_session.users(),
+                                                                  _current_session.login(), _current_session);
     this->_footer = Wt::cpp14::make_unique<crypto_online_footer>();
 
     this->_grid->addItem(std::move(this->_header), 0, 0);
@@ -121,30 +116,10 @@ void CryptoOnlineHome::load_login_page() {
 }
 
 /**
- * @brief This method loads the register page of the website
- */
-void CryptoOnlineHome::load_register_page() {
-    this->clear();
-    this->setHeight(400);
-
-    this->_grid = Wt::cpp14::make_unique<Wt::WGridLayout>();
-
-    this->_header = Wt::cpp14::make_unique<CryptoOnlineHeader>(_current_session);
-    this->_register = Wt::cpp14::make_unique<crypto_online_register>(_current_session);
-    this->_footer = Wt::cpp14::make_unique<crypto_online_footer>();
-
-    this->_grid->addItem(std::move(this->_header), 0, 0);
-    this->_grid->addWidget(std::move(this->_register), 1, 0, Wt::AlignmentFlag::Center);
-    this->_grid->addItem(std::move(this->_footer), 2, 0);
-
-    this->setLayout(std::move(this->_grid));
-}
-
-/**
  * @brief This method creates a live connection between the web application of the website
  */
 void CryptoOnlineHome::load_database() {
-    database_interface.connect_database();
+    //database_interface.connect_database();
 }
 
 /**
@@ -211,5 +186,6 @@ void CryptoOnlineHome::load_modular_arithmetic_page() {
     this->setLayout(std::move(this->_grid));
 
 }
+
 
 

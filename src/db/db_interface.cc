@@ -18,7 +18,7 @@ db_interface::db_interface(Session &session) : current_session(session) {
 }
 
 void db_interface::connect_database() {
-
+    create_tables();
 }
 
 void db_interface::create_tables() {
@@ -84,8 +84,17 @@ Wt::Dbo::ptr<DbUser> db_interface::get_user_details(const int& id) {
 void db_interface::link_user_auth_account() {
     Wt::Dbo::Transaction transaction(this->current_session);
 
-    Wt::Dbo::ptr<AuthInfo> user_auth_id = this->current_session.find<AuthInfo>().where("id = ?").bind(this->current_session.user());
-    
+    const std::string& provider = "loginname";
+
+    /*Wt::Dbo::ptr<AuthInfo> user_auth_id = this->current_session.user();
+
+    std::unique_ptr<DbUser> user{new DbUser()};
+    user->user_id = user_auth_id->id();
+    user->user_role = Role::User;
+    user->user_identity = user_auth_id->identity(provider);
+
+    Wt::Dbo::ptr<DbUser> userPtr = this->current_session.add(std::move(user));*/
+
 }
 
 

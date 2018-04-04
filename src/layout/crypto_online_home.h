@@ -10,15 +10,13 @@
 #ifndef CRYPTO_ONLINE_PROJECT_CRYPTO_ONLINE_HOME_H
 #define CRYPTO_ONLINE_PROJECT_CRYPTO_ONLINE_HOME_H
 
-#include "header/CryptoOnlineHeader.h"
+#include "header/crypto_online_header.h"
 #include "crypto_online_navigation_grid.h"
 #include "crypto_online_footer.h"
-#include "../user_utils/crypto_online_login.h"
-#include "../user_utils/crypto_online_register.h"
 #include "../db/db_interface.h"
 #include "crypto_online_profile.h"
 #include "../db/session.h"
-#include "crypto_online_auth_widget.h"
+#include "../auth/crypto_online_auth_widget.h"
 
 #include <Wt/WContainerWidget.h>
 #include <Wt/WNavigationBar.h>
@@ -43,7 +41,6 @@ public:
 private:
     void load_home_page(); /**< Loads the Home Page */
     void load_login_page(); /**< Loads the Login Page */
-    void load_register_page(); /**< Loads the Registration Page */
     void load_profile_page(); /**< Loads the Profile Page */
 
     void load_intro_to_cryptography_page(); /**< Loads the Intro to Cryptography Page */
@@ -61,8 +58,8 @@ private:
     std::unique_ptr<crypto_online_footer> _footer; /**< Holds the state of the footer of the website */
     std::unique_ptr<CryptoOnlineProfile> _profile; /**< Holds the state of the profile page of the website */
 
-    std::unique_ptr<CryptoOnlineAuthWidget> _login; /**< Holds the state of the login page of the website */
-    std::unique_ptr<crypto_online_register> _register; /**< Holds the state of the register page of the website */
+    std::unique_ptr<CryptoOnlineAuthWidget> _login; /**< Holds the state of the login / register page of the website */
+
 
     db_interface database_interface; /**< Allows the interaction between the application and the database */
 

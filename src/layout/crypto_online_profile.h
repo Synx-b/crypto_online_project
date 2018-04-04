@@ -25,10 +25,19 @@
 class CryptoOnlineProfile : public Wt::WTable {
 public:
     CryptoOnlineProfile() = delete;
-    CryptoOnlineProfile(Session& session);
+
+    explicit CryptoOnlineProfile(Session& session);
 
 private:
-    void load_profile_page();
+    /**
+     * @brief This method loads the profile page for a user that is currently logged in
+     */
+    void load_profile_page_logged_in();
+
+    /**
+     * @brief This method show an empty page as there is currently no user logged in
+     */
+    void load_profile_page_logged_out();
 
     Wt::WText* _username_label; /**< A WText instance to load the username tag into, not the actual username. */
     Wt::WText* _username; /**< A WText instance that holds the username that is loaded into from the database */

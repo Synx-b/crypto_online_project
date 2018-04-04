@@ -21,7 +21,7 @@
 class db_interface {
 public:
 
-    db_interface(Session& session);
+    explicit db_interface(Session& session);
 
     void connect_database();
 

@@ -20,7 +20,7 @@
  * @param environment current enviroment that the application is loaded with
  */
 CryptoOnlineLauncher::CryptoOnlineLauncher(const Wt::WEnvironment &environment)
-        : WApplication(environment), _session(appRoot() + "auth.db") {
+        : WApplication(environment), _session(appRoot() + "data.db") {
     /**
      * This section gets the current enviroment theme for the project. Then checks if the theme is set to bootstrap3,
      * if it is then it sets the project theme to bootstrap3. If the environment theme is not set to bootstrap3 then
@@ -68,12 +68,16 @@ CryptoOnlineLauncher::CryptoOnlineLauncher(const Wt::WEnvironment &environment)
  */
 void CryptoOnlineLauncher::auth_event() {
     if (_session.login().loggedIn()) {
-        std::cout << "AUTH EVENT: CALLED" << std::endl;
-        this->root()->clear();
+        const Wt::Auth::User& user = _session.login().user();
+        std::cout << "User " << user.id()
+                  << " (" << user.identity(Wt::Auth::Identity::LoginName)
+                  << ") Logged in" << std::endl;
         this->setInternalPath("/home", true);
+        this->root()->clear();
         this->root()->addWidget(Wt::cpp14::make_unique<CryptoOnlineHome>(_session));
     }else{
-
+        this->setInternalPath("/home", true);
+        std::cout << "User Logged Out" << std::endl;
     }
 }
 

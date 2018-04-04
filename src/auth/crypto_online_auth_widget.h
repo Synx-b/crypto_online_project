@@ -22,9 +22,21 @@
 class CryptoOnlineAuthWidget : public Wt::Auth::AuthWidget {
 public:
     CryptoOnlineAuthWidget(const Wt::Auth::AuthService &baseAuth, Wt::Auth::AbstractUserDatabase &users,
-                           Wt::Auth::Login &login);
+                           Wt::Auth::Login &login, Session& session);
+
+    /**
+     * @brief This method overrides the default createRegistrationView method for the Wt::Auth::Widget Class
+     *        This method loads the registration view form which allows a user to register and create an account
+     *        for the website.
+     *
+     * @param id Identifies what user has just registered
+     * @return
+     */
+    std::unique_ptr<Wt::WWidget> createRegistrationView(const Wt::Auth::Identity& id) override;
 
 
+private:
+    Session& _session;
 };
 
 

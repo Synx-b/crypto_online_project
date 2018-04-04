@@ -8,7 +8,7 @@
  * Author: Jacob Powell
  */
 
-#include "CryptoOnlineHeader.h"
+#include "crypto_online_header.h"
 #include "../crypto_online_home.h"
 
 
@@ -40,11 +40,9 @@ void CryptoOnlineHeader::create_navigation_bar() {
 
     this->right_menu = Wt::cpp14::make_unique<Wt::WMenu>();
     auto right_menu_ = this->navigation_bar->addMenu(std::move(this->right_menu), Wt::AlignmentFlag::Right);
-    right_menu_->addItem("Login")->setLink(Wt::WLink(Wt::LinkType::InternalPath, "/login"));
-    right_menu_->addItem("Register")->setLink(Wt::WLink(Wt::LinkType::InternalPath, "/register"));
+    right_menu_->addItem("Login / Register")->setLink(Wt::WLink(Wt::LinkType::InternalPath, "/login"));
 
     this->addWidget(std::move(this->navigation_bar),1);
-
 }
 
 void CryptoOnlineHeader::create_user_navigation_bar() {

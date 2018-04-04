@@ -19,19 +19,58 @@
 #include <Wt/Dbo/Dbo.h>
 #include <Wt/Dbo/Types.h>
 #include <Wt/WGlobal.h>
+#include <Wt/WString.h>
 
 #include <string>
 
 class DbUser;
+class Question;
+
 using AuthInfo = Wt::Auth::Dbo::AuthInfo<DbUser>;
 
-class DbUser  {
+class Question {
 public:
+
+    Wt::Dbo::ptr<DbUser> user;
+
+    int question_id;
+    int answer_id;
+
+    std::string question_text;
+    std::string answer_text;
+
+
+    template<class Action>
+    void persist(Action& a){
+
+        Wt::Dbo::field(a, question_id, "question_id");
+        Wt::Dbo::field(a, answer_id, "answer_id");
+        Wt::Dbo::field(a, question_text, "question_text");
+        Wt::Dbo::field(a, answer_text, "answer_text");
+
+        Wt::Dbo::belongsTo(a, user, "user");
+    }
+};
+
+
+class DbUser {
+public:
+
+    Wt::Dbo::collection< Wt::Dbo::ptr<Question> > questions;
+
+    int user_id;
+    Role user_role;
+    Wt::WString user_identity;
+
     template<class Action>
     void persist(Action& a) {
 
-    }
+        Wt::Dbo::field(a, user_id, "user_id");
+        Wt::Dbo::field(a, user_role, "user_role");
+        Wt::Dbo::field(a, user_identity, "user_identity");
 
+        Wt::Dbo::hasMany(a, questions, Wt::Dbo::ManyToOne, "user");
+    }
 
 private:
 

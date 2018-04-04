@@ -25,24 +25,24 @@ CryptoOnlineProfile::CryptoOnlineProfile(Session& session) : _current_session(se
                                                              database_interface(session)
 {
    if(this->_current_session.login().loggedIn())
-       load_profile_page();
+       load_profile_page_logged_in();
    else{
-       /*
-        * TODO: Show Error saying you need to be logged in
-        */
+       load_profile_page_logged_out();
    }
 }
-/**
- * @brief This method handles loading the user information into the necessary widgets in order to display it on the
- * screen.
- */
-void CryptoOnlineProfile::load_profile_page() {
-    this->_username_label = this->elementAt(0,0)->addWidget(Wt::cpp14::make_unique<Wt::WText>("Username: "));
+
+void CryptoOnlineProfile::load_profile_page_logged_in() {
+    const Wt::Auth::User& user = _current_session.login().user();
+
+    this->_username_label = this->elementAt(0,0)->addWidget(Wt::cpp14::make_unique<Wt::WText>("Username:"));
     this->_username_label->setStyleClass("profile_username");
 
-    this->_username = this->elementAt(0,1)->addWidget(Wt::cpp14::make_unique<Wt::WText>());
+    this->_username = this->elementAt(0,1)->addWidget(Wt::cpp14::make_unique<Wt::WText>(" " + user.identity(Wt::Auth::Identity::LoginName)));
     this->_username->setStyleClass("profile_username");
-
-    this->elementAt(0,0)->setContentAlignment(Wt::AlignmentFlag::Center);
-
 }
+
+void CryptoOnlineProfile::load_profile_page_logged_out() {
+    this->_username_label = this->elementAt(0,0)->addWidget(Wt::cpp14::make_unique<Wt::WText>("No User Logged In"));
+    this->_username_label->setStyleClass("profile_username");
+}
+
