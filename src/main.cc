@@ -38,9 +38,16 @@ int main(int argc, char **argv)
 {
     try {
         WServer server(argc, argv, WTHTTP_CONFIGURATION);
+
         server.addEntryPoint(EntryPointType::Application, createApplication);
+
         Session::configureAuth();
-        server.run();
+
+        if(server.start()){
+            Wt::WServer::waitForShutdown();
+            server.stop();
+        }
+
     } catch (WServer::Exception& e) {
         std::cerr << e.what() << std::endl;
     } catch (std::exception &e) {

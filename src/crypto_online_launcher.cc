@@ -73,6 +73,7 @@ void CryptoOnlineLauncher::auth_event() {
                   << " (" << user.identity(Wt::Auth::Identity::LoginName)
                   << ") Logged in" << std::endl;
         this->setInternalPath("/home", true);
+        _session.link_account_to_database(user);
         this->root()->clear();
         this->root()->addWidget(Wt::cpp14::make_unique<CryptoOnlineHome>(_session));
     }else{

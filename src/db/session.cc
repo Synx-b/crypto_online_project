@@ -18,6 +18,8 @@
 #include <Wt/Auth/GoogleService.h>
 #include <Wt/Auth/FacebookService.h>
 
+#include <string>
+
 namespace {
     Wt::Auth::AuthService myAuthService;
     Wt::Auth::PasswordService myPasswordService{myAuthService};
@@ -46,7 +48,7 @@ Session::Session(const std::string &sqliteDb) {
     this->_users = Wt::cpp14::make_unique<Wt::Auth::Dbo::UserDatabase<Wt::Auth::Dbo::AuthInfo<DbUser>>>(*this);
 }
 
-Wt::Auth::AbstractUserDatabase &Session::users() {
+Wt::Auth::AbstractUserDatabase& Session::users() {
     return *_users;
 }
 
@@ -115,15 +117,41 @@ void Session::new_registered_user(Wt::Auth::User &user) {
     }
 }
 
-void Session::link_account_to_database(Wt::Dbo::ptr<DbUser>& user) {
+void Session::link_account_to_database(const Wt::Auth::User& user) {
 
+
+    if(!this->does_user_exist_in_dbuser(user)){
+        Wt::Dbo::Transaction transaction(*this);
+
+        std::unique_ptr<DbUser> new_user{new DbUser()};
+        new_user->user_id = std::stoi(user.id());
+        new_user->user_identity = user.identity(Wt::Auth::Identity::LoginName);
+        new_user->user_role = Role::User;
+
+        Wt::Dbo::ptr<DbUser> userPtr = (*this).add(std::move(new_user));
+    }
+
+
+}
+
+bool Session::does_user_exist_in_dbuser(const Wt::Auth::User &user) {
     Wt::Dbo::Transaction transaction(*this);
-    std::cout << "LINKING ACCOUNT TO DATA" << std::endl;
-    std::unique_ptr<DbUser> new_user{new DbUser()};
-    new_user->user_id = static_cast<int>(user.id());
-    new_user->user_role = Role::User;
-    new_user->user_identity = this->login().user().identity(Wt::Auth::Identity::LoginName);
 
-    Wt::Dbo::ptr<DbUser> new_user_ptr = this->add(std::move(new_user));
+    const std::string& looking_for_this_id = user.id();
+
+    std::cout << "Checking for a User with ID: " << looking_for_this_id << std::endl;
+
+    Wt::Dbo::collection< Wt::Dbo::ptr<DbUser> > all_users = this->find<DbUser>();
+
+    const Wt::Dbo::ptr<DbUser> empty_user;
+
+    for(const Wt::Dbo::ptr<DbUser>& current_user : all_users){
+        long long int id = current_user.id();
+        std::cout << "Identity: " << id << std::endl;
+        if(std::to_string(id) == looking_for_this_id)
+            return true;
+    }
+
+    return false;
 }
 

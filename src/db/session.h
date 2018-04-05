@@ -41,7 +41,8 @@ public:
     static const std::vector<const Wt::Auth::OAuthService *>& oAuth();
 
     void new_registered_user(Wt::Auth::User& user);
-    void link_account_to_database(Wt::Dbo::ptr<DbUser>& user);
+    void link_account_to_database(const Wt::Auth::User& user);
+    bool does_user_exist_in_dbuser(const Wt::Auth::User& user);
 
     Wt::Auth::AbstractUserDatabase& users();
     Wt::Dbo::ptr<AuthInfo> user();
@@ -50,8 +51,6 @@ public:
 private:
     std::unique_ptr<Wt::Auth::Dbo::UserDatabase<Wt::Auth::Dbo::AuthInfo<DbUser>>> _users;
     Wt::Auth::Login _login;
-
-
 };
 
 
