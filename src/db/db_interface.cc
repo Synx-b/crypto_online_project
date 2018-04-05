@@ -10,17 +10,17 @@
 
 #include "db_interface.h"
 
-#include <Wt/Dbo/backend/Sqlite3.h>
 
+Wt::Dbo::ptr<DbUser> db_interface::get_user(std::string looking_for_id) {
+    Wt::Dbo::Transaction transaction(current_session);
 
+    Wt::Dbo::collection< Wt::Dbo::ptr<DbUser> > all_users = current_session.find<DbUser>();
 
-bool db_interface::does_user_exist_in_dbuser(Session& current_session, const Wt::Auth::User& user) {
-
-
-
+    for(const Wt::Dbo::ptr<DbUser>& current_user : all_users){
+        long long int id = current_user.id();
+        std::cout << "Identity: " << id << std::endl;
+        if(std::to_string(id) == looking_for_id)
+            return current_user;
+    }
 
 }
-
-
-
-

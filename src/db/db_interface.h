@@ -21,14 +21,13 @@ class db_interface;
 class db_interface {
 public:
 
-    explicit db_interface(Session& session) {
+    explicit db_interface(Session& session) : current_session(session) {}
 
-    }
+    Wt::Dbo::ptr<DbUser> get_user(std::string id);
 
-    bool does_user_exist_in_dbuser(Session& current_session, const Wt::Auth::User& user);
 
 private:
-
+    Session& current_session;
 };
 
 

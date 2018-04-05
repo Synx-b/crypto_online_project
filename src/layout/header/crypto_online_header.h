@@ -36,6 +36,8 @@ private:
     void create_user_navigation_bar();
 
     Session& _current_session; /**< Holds the current session */
+    db_interface database_interface; /**< Interface to interact with the database from */
+    Wt::Dbo::ptr<DbUser> current_user; /**< Holds information on the currently logged in user */
 
     std::unique_ptr<Wt::WNavigationBar> navigation_bar; /**< Holds the current state of the navigation bar */
     std::unique_ptr<Wt::WMenu> left_menu; /**< Holds the state of the left menu in the navigation bar */

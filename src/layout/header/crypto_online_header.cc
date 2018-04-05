@@ -12,7 +12,7 @@
 #include "../crypto_online_home.h"
 
 
-CryptoOnlineHeader::CryptoOnlineHeader(Session& session) : _current_session(session) {
+CryptoOnlineHeader::CryptoOnlineHeader(Session& session) : _current_session(session), database_interface(session) {
     
     if(session.login().loggedIn()){
         create_user_navigation_bar();
@@ -60,8 +60,12 @@ void CryptoOnlineHeader::create_user_navigation_bar() {
     left_menu_->addItem("Home")->setLink(Wt::WLink(Wt::LinkType::InternalPath, "/home"));
 
     const Wt::Auth::User& u = _current_session.login().user();
+    this->current_user = database_interface.get_user(u.id());
 
-    auto username = left_menu_->addItem("User Logged In: " + u.identity(Wt::Auth::Identity::LoginName));
+    if(this->current_user->user_role == Role::Admin)
+        left_menu_->addItem("Admin Settings")->setLink(Wt::WLink(Wt::LinkType::InternalPath, "admin"));
+
+    auto username = left_menu_->addItem("User Logged In: " + this->current_user->user_identity);
     username->disable();
 
     this->right_menu = Wt::cpp14::make_unique<Wt::WMenu>();
