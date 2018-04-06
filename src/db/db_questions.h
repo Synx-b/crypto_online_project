@@ -10,12 +10,9 @@
  * @author Jacob Powell
  */
 
-#ifndef CRYPTO_ONLINE_PROJECT_DB_USER_H
-#define CRYPTO_ONLINE_PROJECT_DB_USER_H
+#ifndef CRYPTO_ONLINE_PROJECT_DB_QUESTIONS_H
+#define CRYPTO_ONLINE_PROJECT_DB_QUESTIONS_H
 
-
-#include "db_roles.h"
-#include "db_user_answered_question.h"
 
 #include <Wt/Dbo/Dbo.h>
 #include <Wt/Dbo/Types.h>
@@ -24,27 +21,26 @@
 
 #include <string>
 
-class DbUser;
+class DbQuestions;
 
-using AuthInfo = Wt::Auth::Dbo::AuthInfo<DbUser>;
-
-class DbUser {
+class DbQuestions {
 public:
 
-    Wt::Dbo::collection< Wt::Dbo::ptr<DbUserAnsweredQuestion> > questions;
+    std::string question_text;
+    std::string question_answer;
+    std::string question_option_a;
+    std::string question_option_b;
+    std::string question_option_c;
 
-    int user_id;
-    Role user_role;
-    Wt::WString user_identity;
 
     template<class Action>
     void persist(Action& a) {
 
-        Wt::Dbo::field(a, user_id, "user_id");
-        Wt::Dbo::field(a, user_role, "user_role");
-        Wt::Dbo::field(a, user_identity, "user_identity");
-
-        Wt::Dbo::hasMany(a, questions, Wt::Dbo::ManyToOne, "user");
+        Wt::Dbo::field(a, question_text, "question_text");
+        Wt::Dbo::field(a, question_answer , "question_answer");
+        Wt::Dbo::field(a, question_option_a, "question_option_a");
+        Wt::Dbo::field(a, question_option_b, "question_option_b");
+        Wt::Dbo::field(a, question_option_c, "question_option_c");
     }
 
 private:
@@ -52,5 +48,4 @@ private:
 };
 
 
-
-#endif //CRYPTO_ONLINE_PROJECT_DB_USER_H
+#endif //CRYPTO_ONLINE_PROJECT_DB_QUESTIONS_H

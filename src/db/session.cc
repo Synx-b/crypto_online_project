@@ -9,6 +9,7 @@
  */
 
 #include "session.h"
+#include "db_questions.h"
 
 #include <Wt/Dbo/backend/Sqlite3.h>
 #include <Wt/Auth/HashFunction.h>
@@ -32,7 +33,8 @@ Session::Session(const std::string &sqliteDb) {
     this->setConnection(std::move(connection));
 
     this->mapClass<DbUser>("db_user");
-    this->mapClass<Question>("questions");
+    this->mapClass<DbUserAnsweredQuestion>("user_answered_questions");
+    this->mapClass<DbQuestions>("questions");
     this->mapClass<Wt::Auth::Dbo::AuthInfo<DbUser>>("auth_info");
     this->mapClass<Wt::Auth::Dbo::AuthInfo<DbUser>::AuthIdentityType>("auth_identity");
     this->mapClass<Wt::Auth::Dbo::AuthInfo<DbUser>::AuthTokenType>("auth_token");
@@ -119,8 +121,7 @@ void Session::new_registered_user(Wt::Auth::User &user) {
 
 void Session::link_account_to_database(const Wt::Auth::User& user) {
 
-
-    if(!this->does_user_exist_in_dbuser(user)){
+    if(true){
         Wt::Dbo::Transaction transaction(*this);
 
         std::unique_ptr<DbUser> new_user{new DbUser()};
@@ -131,12 +132,11 @@ void Session::link_account_to_database(const Wt::Auth::User& user) {
         Wt::Dbo::ptr<DbUser> userPtr = (*this).add(std::move(new_user));
     }
 
-
 }
 
 bool Session::does_user_exist_in_dbuser(const Wt::Auth::User &user) {
-    Wt::Dbo::Transaction transaction(*this);
 
+    Wt::Dbo::Transaction transaction(*this);
     const std::string& looking_for_this_id = user.id();
 
     std::cout << "Checking for a User with ID: " << looking_for_this_id << std::endl;

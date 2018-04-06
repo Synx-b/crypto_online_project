@@ -41,7 +41,7 @@ backgroundcolor=\color{lbcolor},
     breaklines=true,
     showstringspaces=false,
     basicstyle=\footnotesize,
-%  identifierstyle=\color{magenta},
+   %identifierstyle=\color{magenta},
     keywordstyle=\color[rgb]{0,0,1},
     commentstyle=\color[rgb]{0,0.4,0},
     stringstyle=\color{red}}
@@ -49,16 +49,36 @@ backgroundcolor=\color{lbcolor},
 \newpage
 \chapter{Technical Solution}
 
+This chapter will cover my coding implementations for my project. I will not be showcasing all the source code here as it would be far to difficult to search through and find the important parts of my solution. I will mainly be showing code snippets. The full source code solution for my project will be available in the appendix of this report.
+
 \section{AES Implementation}
 
-\subsection{aes\_implementation.h}
-\lstinputlisting[language=C++]{../src/crypto/aes_implementation.h} 
+\subsection{AES Key Schedule}
+\lstinputlisting[language=C++, linerange={380-505}]{../src/crypto/aes_implementation.cc}
 
-\newpage
-\subsection{aes\_implementation.cc}
-\lstinputlisting[language=C++]{../src/crypto/aes_implementation.cc}
+\subsubsection{AES Key Schedule Core}
+\lstinputlisting[language=C++, linerange={507-573}]{../src/crypto/aes_implementation.cc}
 
- 
+\subsection{AES Add Round Key}
+\lstinputlisting[language=C++, linerange={575-582}]{../src/crypto/aes_implementation.cc}
+
+\subsection{AES Substitute Bytes}
+\lstinputlisting[language=C++, linerange={584-589}]{../src/crypto/aes_implementation.cc}
+
+\subsection{AES Shift Rows}
+\lstinputlisting[language=C++, linerange={591-600}]{../src/crypto/aes_implementation.cc}
+
+\subsection{AES Mix Columns}
+\lstinputlisting[language=C++, linerange={602-613}]{../src/crypto/aes_implementation.cc}
+
+\subsection{AES Inverse Substitute Bytes}
+\lstinputlisting[language=C++, linerange={615-620}]{../src/crypto/aes_implementation.cc}
+
+\subsection{AES Inverse Shift Rows}
+\lstinputlisting[language=C++, linerange={622-632}]{../src/crypto/aes_implementation.cc}
+
+\subsection{AES Inverse Mix Columns}
+\lstinputlisting[language=C++, linerange={634-644}]{../src/crypto/aes_implementation.cc}
 
 \section{DES Implementation}
 

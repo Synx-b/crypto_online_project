@@ -506,21 +506,23 @@ void AESImplementation::KeyExpansion(const byte key[], byte expandedKey[]) const
 
 void AESImplementation::KeyExpansionCore(byte roundNumber, const byte keyIn[4], byte keyOut[4]){
 
-    //std::cout << "Key Expansion Core Start" << std::endl;
+#if defined(debug) && debug == 1
+    std::cout << "Key Expansion Core Start" << std::endl;
 
-    //std::cout << "KEY OUT: ";
+    std::cout << "KEY OUT: ";
 
-    /*for(byte i = 0; i < 4; i++){
+    for(byte i = 0; i < 4; i++){
         std::cout << std::hex << std::setfill('0') << std::setw(2) << unsigned(keyOut[i]);
     }
-    std::cout << std::endl;*/
+    std::cout << std::endl;
 
-    //std::cout << "KEY IN: ";
+    std::cout << "KEY IN: ";
 
-    /*for(byte i = 0; i < 4; i++){
+    for(byte i = 0; i < 4; i++){
         std::cout << std::hex << std::setfill('0') << std::setw(2) << unsigned(keyIn[i]);
     }
-    std::cout << std::endl;*/
+    std::cout << std::endl;
+#endif
 
     memcpy(keyOut, keyIn, 4);
 
@@ -533,12 +535,14 @@ void AESImplementation::KeyExpansionCore(byte roundNumber, const byte keyIn[4], 
     }
     keyOut[3] = temp;
 
-    /*std::cout << "After Rotation: ";
+#if defined(debug) && debug == 1
+    std::cout << "After Rotation: ";
 
     for(byte i = 0; i < 4; i++){
         std::cout << std::hex << std::setfill('0') << std::setw(2) << unsigned(keyOut[i]);
     }
-    std::cout << std::endl;*/
+    std::cout << std::endl;
+#endif
 
     /**
      * Substitution Step
@@ -547,23 +551,25 @@ void AESImplementation::KeyExpansionCore(byte roundNumber, const byte keyIn[4], 
         keyOut[i] = sbox[keyOut[i]];
     }
 
-    /*std::cout << "After Substitution: ";
+#if defined(debug) && debug == 1
+    std::cout << "After Substitution: ";
     for(byte i = 0; i < 4; i++){
         std::cout << std::hex << std::setfill('0') << std::setw(2) << unsigned(keyOut[i]);
     }
-    std::cout << std::endl;*/
-
+    std::cout << std::endl;
+#endif
 
     keyOut[0] = keyOut[0] ^ rcon[roundNumber];
 
-    /*std::cout << "After XOR With RCON: ";
+#if defined(debug) && debug == 1
+    std::cout << "After XOR With RCON: ";
     for(byte i = 0; i < 4; i++){
         std::cout << std::hex << std::setfill('0') << std::setw(2) << unsigned(keyOut[i]);
     }
-    std::cout << std::endl;*/
+    std::cout << std::endl;
 
-    //std::cout << "Key Expansion Core End" << std::endl;
-
+    std::cout << "Key Expansion Core End" << std::endl;
+#endif
 }
 
 void AESImplementation::AddRoundKey(byte state[4][4], byte roundKey[4][4]) {
