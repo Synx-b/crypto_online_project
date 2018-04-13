@@ -161,7 +161,7 @@ For the most part Cryptography provides security to a service that we use in out
 \item{Payment Systems like PayPal}
 \end{itemize}
 
-\section{Algorithms Being Used}
+\section{Important Cryptographic Algorithms}
 
 \subsection{DES}
 \subsubsection{What is DES?}
@@ -367,23 +367,6 @@ Each round consists of several processing steps, each containing 4 steps includi
 \label{AES-HL-Overview}
 \end{figure}
 
-    
-
-\subsection{SHA-3}
-\subsubsection{What is SHA-3}
-
-SHA-3, commonly known as the Secure Hashing Algorithm-3, is the most up to date member of the Secure Hashing Algorithm family. It was released by NIST on \textit{August 5, 2015}. Although it is a member of the same group hash function standards, SHA-3's internal structure is quite different from the MD5-like structures of SHA-1 and SHA-2.
-
-SHA-3 is a subset of a broader group of cryptographic primitive Keccak, designed by \textit{Guido Bertoni}, \textit{Joan Daemon}, \textit{Micheal Peeters} and \textit{Gilles Van Assche}, building upon their previous RadioGatun cryptographic primitive. Keccaks authors have proposed further additional uses of the hash function, which are not yet standardized by NIST, including a stream cipher, an authenticated encryption system, a 'tree' hashing scheme for faster hashing on certain architectures and AEAD ciphers Keyak and Ketje. 
-
-Keccak is based on something known as sponge construction. Sponge construction is based on a wide random function or random permutation, and allows inputting of any size of data and outputting any size of data, while acting as a psuedrandom function with regards to all previous inputs. This allows SHA-3 to have great flexibility.
-
-NIST does not have any plans to remove SHA-2 from the revised Secure Hash Standard. The purpose of SHA-3 is that it can be directly substituted for SHA-2 in current application if necessary, and to significantly improve the robustness of NIST's overall hash algorithm toolkit.
-
-\subsubsection{Overview of SHA-3}
-
-\textbf{I NEED TO LEARN THE STRUCTURE OF SHA-3}
-
 
 \section{Why is this important?}
 
@@ -575,7 +558,7 @@ There are 2 main sections here relating to the User and System. Anything that re
 \item{Brief History on Cryptography
 \begin{itemize}
 \item{Caesar Cipher}
-\item{Enigma Machine}
+\item{Vernam Machine}
 \end{itemize}}
 \end{itemize}}
 \item{Cryptanalysis
@@ -642,7 +625,7 @@ There are 2 main sections here relating to the User and System. Anything that re
 \item{SHA-3}
 \end{itemize}}
 \end{itemize}}
-\item{Implementations of the ciphers shown above}
+\item{Implementations of the AES Cipher}
 \item{Create theory questions that require the user to demonstrate their understanding of the various Cryptography sections}
 \end{itemize}}
 \end{itemize}
@@ -677,25 +660,6 @@ There are 2 main sections here relating to the User and System. Anything that re
 \item{Key Schedule Implemented}
 \end{itemize}
 
-\subsubsection{DES Implementation Requirements}
-
-\begin{itemize}
-\item{Initial Permutation Implemented}
-\item{
-Feistal (F) Function Implemented
-
-	\begin{itemize}
-		\item{Key Expansion}
-		\item{Key Mixing}
-		\item{Substitution}
-		\item{Permutation}
-	\end{itemize}
-}
-\item{Final Permutation Implemented}
-\item{Key Schedule Implemented}
-\end{itemize}
-
-\subsubsection{SHA-1 Implementation Requirements}
 
 \subsection{System Objectives}
 \subsubsection{Platform Objectives}
@@ -764,23 +728,6 @@ Different Modes of Operation
 }
 \end{enumerate}
 
-\subsubsection{DES Implementations Objectives}
-
-\begin{enumerate}
-\item{
-Different Modes of Operation
-	\begin{enumerate}
-		\item{ECB (Electronic Code Book}
-		\item{CBC (Cipher Block Chaining)}
-		\item{OFB (Output Feedback Mode)}
-		\item{CFB (Cipher Feedback Mode)}
-		\item{CTR (Counter Mode)}
-		\item{GCM (Galois Counter Mode)}
-	\end{enumerate}
-}
-\end{enumerate}
-
-\subsubsection{SHA-1 Implementation Objectives}
 
 \subsection{Acceptable Limitations}
 \subsubsection{Platform Limitations}
@@ -815,12 +762,6 @@ User Interaction
 \item{Only configure ECB Mode of operation}
 \item{Padding is not implemented}
 \end{enumerate}
-\subsubsection{DES Implementation Limitations}
-\begin{enumerate}
-\item{Only configure ECB Mode of operation}
-\item{Padding is not implemented}
-\end{enumerate}
-\subsubsection{SHA-1 Implementation Limitations}
 
 \section{Data Usage in the System}
 
@@ -835,15 +776,27 @@ The main data sources for my project will be for the users answers to the questi
 
 \subsection{Data Destinations}
 
-
-\subsection{Data Volumes}
+The main data destination for my project will be the back end database in use. This is where the majority of the key information like the authentication information and user data will be stored. All appropriate security measures will also be taken to ensure confidentiality, integrity and availability of the data.
 
 \subsection{Data Analysis}
 \subsubsection{User Data}
+
+All user data will be stored in the database table db\_user. This data will only be able to be accessed through my systems database api. 
+
 \subsubsection{System Data}
+
+All system data will stored in custom built data structures. Important information like authentication information will be stored in the following database tables:
+
+\begin{itemize}
+\item{auth\_information}
+\item{auth\_identity}
+\item{auth\_token}
+\end{itemize}
+
+Information regarding question data will be stored in a table called questions.
+
 \subsubsection{Temporary Data}
 
-\subsection{Data Flow}
-
+Temporary data will be stored in a data structure from the web application and then when it is no longer needed the data will be disposed of.
 
 

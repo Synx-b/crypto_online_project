@@ -80,7 +80,50 @@ This chapter will cover my coding implementations for my project. I will not be 
 \subsection{AES Inverse Mix Columns}
 \lstinputlisting[language=C++, linerange={634-644}]{../src/crypto/aes_implementation.cc}
 
-\section{DES Implementation}
-
 \section{Web Application Implementation}
 
+\subsection{Application Launcher}
+\lstinputlisting[language=C++, linerange={16-57}]{../src/main.cc}
+
+\subsubsection{Application Launcher Handling Class}
+\lstinputlisting[language=C++, linerange={16-64}]{../src/crypto_online_launcher.cc}
+
+\newpage
+\subsection{Creating the Header}
+
+\subsubsection{No User Logged in}
+\lstinputlisting[language=C++, linerange={23-47}]{../src/layout/header/crypto_online_header.cc}
+
+\subsubsection{A User is Logged in}
+\lstinputlisting[language=C++, linerange={49-85}]{../src/layout/header/crypto_online_header.cc}
+
+\subsection{Initializing the Home Page}
+\lstinputlisting[language=C++, linerange={18-36}]{../src/layout/crypto_online_home.cc}
+
+\subsection{Handling Internal Path Changes}
+\lstinputlisting[language=C++, linerange={38-72}]{../src/layout/crypto_online_home.cc}
+
+\subsection{Session Managment}
+
+\subsubsection{Initalizing Session on Start-up of Application}
+\lstinputlisting[language=C++, linerange={30-57}]{../src/db/session.cc}
+
+\subsubsection{Configuration of Authentication Services}
+\lstinputlisting[language=C++, linerange={65-95}]{../src/db/session.cc}
+
+\subsubsection{Getting Auth Information on Logged in User}
+\lstinputlisting[language=C++, linerange={119-129}]{../src/db/session.cc}
+
+\subsubsection{Registering a New User}
+\lstinputlisting[language=C++, linerange={131-145}]{../src/db/session.cc}
+
+\subsubsection{Linking Logged in User to User Database}
+\lstinputlisting[language=C++, linerange={147-167}]{../src/db/session.cc}
+
+\subsubsection{Checking if a User already exists in the User Database}
+\lstinputlisting[language=C++, linerange={169-198}]{../src/db/session.cc}
+
+\subsection{Database API}
+
+\subsubsection{Getting User Information from the Database}
+\lstinputlisting[language=C++, linerange={13-39}]{../src/db/db_interface.cc}

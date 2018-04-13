@@ -43,10 +43,7 @@ CryptoOnlineHome::CryptoOnlineHome(Session& session) : _current_session(session)
  * @param path The new internal path the application has changed to
  */
 void CryptoOnlineHome::handleInternalPath(const std::string &path) {
-    /*
-     * TODO: Add authentication checking, eg whether or not a user is logged in
-     *
-     */
+
     Wt::WApplication *app = Wt::WApplication::instance();
 
     std::cout << "PATH CHANGED: " + path << std::endl;
@@ -83,7 +80,9 @@ void CryptoOnlineHome::load_home_page() {
 
     this->_grid = Wt::cpp14::make_unique<Wt::WGridLayout>();
 
+    std::cout << "WE GOT HERE" << std::endl;
     this->_header = Wt::cpp14::make_unique<CryptoOnlineHeader>(_current_session);
+    std::cout << "WE GOT HERO" << std::endl;
     this->_navigation_grid = Wt::cpp14::make_unique<crypto_online_navigation_grid>();
     this->_footer = Wt::cpp14::make_unique<crypto_online_footer>();
 

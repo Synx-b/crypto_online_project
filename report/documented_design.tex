@@ -157,6 +157,45 @@ This will not actually affect the end result of my project but I do feel it is i
 
 \section{Bespoke Algorithm Design}
 
+\subsection{Question/Answer Algorithm}
+
+Since one of the main aspects of this project is to teach a user a new concept and then get them to answer various questions about that topic. There are {?} stages to this process, these processes are listen below.
+
+\begin{itemize}
+    \item{Stage 1: 
+
+            Get the answer selected by the user}
+    \item{Stage 2: 
+
+            Send information based on the users answer to the Database API.}
+    \item{Stage 3: 
+
+            The Database API will then load this information into the db_user.questions record for the currently
+            logged in user.}
+    \item{Stage 4: 
+
+            The Web Application then queries the Database API for the answer of the question in the questions table.}
+    \item{Stage 5:
+
+            The Web Application then compares both answers to see if the user is correct.}
+    \item{Stage 6:
+
+            The Web Application then shows the user whether or not the question is right.}
+\end{itemize}
+
+\subsubsection{Algorithm Block Diagram}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[scale=1]{algorithm/questions_algorithm.png}
+\end{center}
+\caption{The Questions/Answer Algorithm Process}
+\label{questions_algorithm}
+\end{figure}
+
+\subsection{Cryptographic }
+
+
 \section{Cryptographic Algorithm Design}
 
 \subsection{Galois Fields for AES}
@@ -200,7 +239,7 @@ In order to do arithmetic in a prime field we have to follow the rules for integ
 We can look at the example of the prime field $GF(2) = \{0,1\}$, which is the smallest finite field that can exist. The additive and multiplicative tables for the GF are listed below.
 
 
-\begin{table}[h!]
+\begin{table}[H]
 \begin{center}
 \begin{tabular}{ |c|cc| } 
  \hline
@@ -215,7 +254,7 @@ We can look at the example of the prime field $GF(2) = \{0,1\}$, which is the sm
 \end{center}
 \end{table}
 
-\begin{table}[h!]
+\begin{table}[H]
 \begin{center}
 \begin{tabular}{ |c|cc| } 
  \hline
@@ -371,7 +410,7 @@ $A^{-1} \cdot A(x) = 1 \bmod P(x)$
 
 For small fields, in practice fields with $2^16$ or fewer elements, look-up tables which contain the precomputed inverses of all finite elements are often used. Figure \ref{AES-RS-BOX} shows the multiplicative inverse for $GF(2^8)$ used in AES.
 
-\begin{figure}[h!]
+\begin{figure}[H]
 \begin{center}
 \includegraphics[scale=1]{aes-rsbox.png}
 \caption{The multiplicative inverse table of $GF(2^8)$ for bytes $xy$ used within the AES S-Box}
@@ -386,7 +425,7 @@ As an alternative to using lookup tables, it is possible to compute the inverses
 
 It should be noted that the 128-bit data path that runs through the algorithm is split up into 16-bytes, this is why many people would consider AES a byte oriented block cipher as it works in pure bytes. So our structure diagram from Figure \ref{AES-HL-Overview} can be adapted to the structure shown in Figure \ref{AES-BL-Overview}. We also noted before that the algorithm operates on a $4\times4$ matrix of bytes, Figure \ref{AES-Byte-Ordering}, and this remains true so keep that in mind when performing any operations, this becomes especially important in the ShiftRows and MixColumns steps.
 
-\begin{figure}[h!]
+\begin{figure}[H]
 \begin{center}
 \includegraphics[scale=0.5]{aes-bl-overview-ue.png}
 \end{center}
@@ -413,7 +452,7 @@ With 2 Byte States $A$ and $B$.
 
 The S-Box substitution is a 1-to-1 mapping, basically all of the $2^8 = 256$ elements are mapped to one output element. This is good as it allows us to uniquely reverse the S-Box, which is key to the decryption process. In software, the S-Box is usually setup as a 256 Byte lookup table with fixed entries. The AES S-Box is given below for an input byte $(YX)$, with $(YX$) representing its hexadecimal value in each of its respective columns.
 
-\begin{figure}[h!]
+\begin{figure}[H]
 \begin{center}
 \includegraphics[scale=0.7]{aes-sbox.png}
 \end{center}
@@ -573,7 +612,7 @@ The key addition layer takes 2 inputs, the current 16-byte state matrix and a su
 
 The Key Schedule takes our original 128/192/256 bit key and will then derive the subkeys needed for the algorithm. At the beginning and end of AES a XOR addition is applied to the subkey, this process is sometimes referred to as key-whitening. The number of subkeys required is the number of rounds plus one as we need an extra subkey for the key-whitening. A table with the key lengths, round numbers, and subkeys is shown below.
 
-\begin{table}[h!]
+\begin{table}[H]
 \begin{center}
 \begin{tabular}{ c|c|c } 
 $N_k (bits)$ & $N_r$ & $N_{sk}$ \\
@@ -593,7 +632,7 @@ The AES Key Schedule is word oriented, where 1 word $=$ 32-bits. Sub keys are st
 
 The 11 subkeys are computed and stored in an array with elements $W[0], W[1], ..., W[43].$. Figure \ref{AES-KeySch-128} shows exactly how the subkeys for AES with a 128-bit key are computed. 
 
-\begin{figure}[h!]
+\begin{figure}[H]
 \begin{center}
 \includegraphics[scale=0.4]{aes-keysch-128.png}
 \end{center}
@@ -635,7 +674,7 @@ This function $g()$ has 2 purposes, its first is to add non-linearity to the key
 
 With a 192-bit key, we need 13 subkeys, which means our array $W$ will have $52$ words. The way we compute all of the 13 words, and thus the 52 words, is very similar to the way we compute the subkeys for a 128-bit key, this is shown is Figure \ref{AES-KeySch-192}. There are 8 iterations of the Key Schedule, where each iteration computes 6 new words for the subkey array $W$. We need 8 round coefficients, $RC[i]$, for use in our $g()$ function. These round constants are computed the same way as in a 128-bit key case.
 
-\begin{figure}[h!]
+\begin{figure}[H]
 \begin{center}
 \includegraphics[scale=0.4]{aes-keysch-192.png}
 \end{center}
@@ -647,7 +686,7 @@ With a 192-bit key, we need 13 subkeys, which means our array $W$ will have $52$
 
 With a 256-bit key. we need 15 subkeys, meaning our array $W$ will contain 60 words. The way we compute all of the 13 words, and thus the 52 words, is very similar to the way we compute the subkeys for a 128-bit key, this is shown is Figure \ref{AES-KeySch-256}. There are 7 iterations of the Key Schedule, where each iteration computes 8 new words for the subkey array $W$. We need 7 round coefficients, $RC[i]$, for use in our $g()$ function. These round constants are computed the same way as in a 128-bit key case. The key schedule also introduces a new function $h()$, which takes a 4-byte input and output. $h()$ applies the S-Box to each input byte. 
 
-\begin{figure}[h!]
+\begin{figure}[H]
 \begin{center}
 \includegraphics[scale=0.4]{aes-keysch-256.png}
 \end{center}
@@ -659,7 +698,7 @@ With a 256-bit key. we need 15 subkeys, meaning our array $W$ will contain 60 wo
 
 Unlike DES, because AES is not based on a feistal network each layer needs to be inverted in order to decrypt a message that was encrypted using AES. This means that the S-Box, ShiftRows, MixColumns need to be inverted. For the AddRoundKey, this words slightly differently as for this all we need to do is reverse the order of the key schedule. So for the first round we use the last subkey, the second round we use the second-last subkey. The diagram below, Figure \ref{AES-Dec-Overview}, illustrated this process.
 
-\begin{figure}[h!]
+\begin{figure}[H]
 \begin{center}
 \includegraphics[scale=0.4]{aes-decryption-overview.png}
 \end{center}
@@ -763,7 +802,7 @@ $A_i = S^{-1}(B_i) = S^{-1}(S(A_i))$
 
 The values given in the Inverse S-Box are given in Figure \ref{AES-InvS-BOX}.
 
-\begin{figure}[h!]
+\begin{figure}[H]
 \begin{center}
 \includegraphics[scale=0.7]{aes-inv-sbox.jpeg}
 \end{center}
@@ -775,41 +814,206 @@ The values given in the Inverse S-Box are given in Figure \ref{AES-InvS-BOX}.
 
 Since the first round of the decryption round needs the last subkey, the second round of decryption needs the second-last subkey, etc, etc. So we need to supply the subkeys in reverse order for the decryption rounds. This can generally be done by computing the $11$ or $13$ or $15$ subkeys and storing them. This adds some latency to the decryption of the algorithm when compared to the encryption rounds. 
 
-\subsection{DES}
-\subsubsection{Structure of DES}
-\subsubsection{Internals of DES}
-\subsubsection{Operations with DES}
 
 \section{Bespoke Data Structures}
 
+\newpage
 \section{Bespoke Database Design}
+
 \subsection{User Details}
 
-\subsection{User Answers}
-a
+\begin{figure}[H]
+\begin{center}
+\includegraphics[scale=0.3]{dbschema/db_user.png}
+\end{center}
+\caption{ db\_user Database Table}
+\label{db_user_table}
+\end{figure}
+
+\subsection{User Answered Questions}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[scale=0.3]{dbschema/user_answered_questions.png}
+\end{center}
+\caption{ user\_answered\_questions Database Table}
+\label{db_user_answered_questions}
+\end{figure}
+
 \subsection{Authentication Information}
-a
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[scale=0.3]{dbschema/auth_info.png}
+\end{center}
+\caption{ auth\_information Table}
+\label{auth_information_table}
+\end{figure}
+
+
 \subsection{Authentication Identity}
-a
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[scale=0.3]{dbschema/auth_identity.png}
+\end{center}
+\caption{ auth\_identity\_table Table}
+\label{auth_identity_table}
+\end{figure}
+
 \subsection{Authentication Token}
-a
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[scale=0.3]{dbschema/auth_token.png}
+\end{center}
+\caption{ auth\_token Table}
+\label{auth_token_table}
+\end{figure}
+
+
 \subsection{Question Details}
-a
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[scale=0.3]{dbschema/questions.png}
+\end{center}
+\caption{questions Table}
+\label{questions_table}
+\end{figure}
+
+\subsection{Database Schema Diagram}
+
+\begin{figure}[H]
+\hspace{-2cm} 
+\includegraphics[scale=0.2]{dbschema/schema.png}
+\caption{data.db schema}
+\label{database_schema}
+\end{figure}
 
 \section{User Interface Design}
-a
-\subsection{Header}
-a
-\subsection{Information Window}
-a
-\subsection{Login Page}
-a
-\subsection{Register Page}
-a
+
+\subsection{Header - User not Logged In}
+
+\subsubsection{Left Side of Header}
+\begin{figure}[H]
+\begin{center}
+\includegraphics[scale=0.4]{ux/left_header.png}
+\end{center} 
+\caption{Left Side of the Website Header}
+\label{ux_left_header}
+\end{figure}
+
+\subsubsection{Right Side of Header}
+\begin{figure}[H]
+\begin{center}
+\includegraphics[scale=0.4]{ux/right_header.png}
+\end{center} 
+\caption{Right Side of the Website Header}
+\label{ux_right_header}
+\end{figure}
+
+\subsection{Header - User Logged In}
+
+\subsubsection{Left Side of Header for a Normal User}
+\begin{figure}[H]
+\begin{center}
+\includegraphics[scale=0.4]{ux/left_header_user.png}
+\end{center} 
+\caption{Left Side of the Website Header when a Normal User is logged in}
+\label{ux_left_header_user}
+\end{figure}
+
+\subsubsection{Left Side of Header for a Admin User}
+\begin{figure}[H]
+\begin{center}
+\includegraphics[scale=0.4]{ux/left_header_admin.png}
+\end{center} 
+\caption{Left Side of the Website Header when an Admin User is logged in}
+\label{ux_left_header_admin}
+\end{figure}
+
+\subsubsection{Right Side of Header}
+\begin{figure}[H]
+\begin{center}
+\includegraphics[scale=0.4]{ux/right_header_user.png}
+\end{center} 
+\caption{Right Side of the Website Header when a User is logged in}
+\label{ux_right_header_user}
+\end{figure}
+
+
+\subsection{Navigation Grid}
+
+\subsubsection{Cryptography Basics}
+\begin{figure}[H]
+\begin{center}
+\includegraphics[scale=0.3]{ux/nav_grid_cb.png}
+\end{center} 
+\caption{Cryptography Basics}
+\label{ux_cb}
+\end{figure}
+
+\subsubsection{Symmetric Cryptography}
+\begin{figure}[H]
+\begin{center}
+\includegraphics[scale=0.25]{ux/nav_grid_sc.png}
+\end{center} 
+\caption{Symmetric Cryptography}
+\label{ux_sc}
+\end{figure}
+
+\subsubsection{Asymmetric Cryptography}
+\begin{figure}[H]
+\begin{center}
+\includegraphics[scale=0.25]{ux/nav_grid_asc.png}
+\end{center} 
+\caption{Asymmetric Cryptography}
+\label{ux_asc}
+\end{figure}
+
+\subsubsection{Protocols}
+\begin{figure}[H]
+\begin{center}
+\includegraphics[scale=0.25]{ux/nav_grid_protocols.png}
+\end{center} 
+\caption{Protocols}
+\label{ux_protocol}
+\end{figure}
+
+\subsection{Information Content}
+
+\subsection{Question Content}
+
+\subsection{Login Form}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[scale=0.3]{ux/login_form.png}
+\end{center}
+\hspace{-2cm} 
+\caption{Login Form}
+\label{ux_login_form}
+\end{figure}
+
+
+\subsection{Register Form}
+
+\begin{figure}[H]
+\hspace{-2cm}
+\begin{center}
+\includegraphics[scale=0.4]{ux/register_form.png}
+\end{center} 
+\caption{Register Form}
+\label{ux_register_form}
+\end{figure}
+
 
 \section{System Security}
-\subsection{Security Requirements}
-\subsection{User Details Storage}
+
+Since my project requires users to sign up that means they need to create a password. That means I need to ensure that all users passwords are secured properly so if at any point my database gets leaked onto the internet an attacker can get access to all my users accounts and more imporantly user account data. 
+
+So all passwords are hashed using the bcrypt hash function. There is normally a lot of debate on which hash function to use but bcrypt has been around for over 10 years and no critical security flaws in its design and implementation have been found making a confident choice for me.
 
 \section{External Library's}
 \subsection{Wt}
@@ -828,8 +1032,3 @@ By default, Wt only allows the visible and enable widgets to be interacted with.
 This maps C++ classes to tables in my database using Wt::Dbo, a ORM that only requires pure C++. It does not depend on preprocessor magic or code generation.}
 \end{itemize}
 
-\subsection{Crypto++}
-
-Crypto++ is a C++ library that contains implementations for a huge amount of Cryptographic algorithms.
-
-%For an investigative project; a log of stages taken during the investigation and how this affected the coding

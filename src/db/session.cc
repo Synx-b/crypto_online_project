@@ -27,6 +27,11 @@ namespace {
     std::vector<std::unique_ptr<Wt::Auth::OAuthService>> myOAuth;
 }
 
+/**
+ * @brief This method connects to the database file and maps the various database classes to tables. It then checks if
+ *        the table exits and if it doesnt then it creates it. If it does then it just uses the existing database.
+ * @param sqliteDb
+ */
 Session::Session(const std::string &sqliteDb) {
     auto connection = Wt::cpp14::make_unique<Wt::Dbo::backend::Sqlite3>(sqliteDb);
     connection->setProperty("show-queries", "true");
@@ -50,10 +55,21 @@ Session::Session(const std::string &sqliteDb) {
     this->_users = Wt::cpp14::make_unique<Wt::Auth::Dbo::UserDatabase<Wt::Auth::Dbo::AuthInfo<DbUser>>>(*this);
 }
 
+/**
+ * @return The database containing all users
+ */
 Wt::Auth::AbstractUserDatabase& Session::users() {
     return *_users;
 }
 
+/**
+ * @brief Setup the authentication for users to login through. This includes setting passwords strength validators.
+ *        Adding throttlers to stop brute force attacks on password attempts. Adding hashing to user passwords. It also
+ *        adds OAuth services like Google and Facebook 2.
+ *
+ *        It also determines whether or not a user needs to provide an email address and whether or not they need to
+ *        prove they are real by activating their account by clicking an authentication email.
+ */
 void Session::configureAuth() {
     myAuthService.setAuthTokensEnabled(true, "logincookie");
     myAuthService.setEmailVerificationEnabled(true);
@@ -78,10 +94,16 @@ void Session::configureAuth() {
         myOAuth[i]->generateRedirectEndpoint();
 }
 
+/**
+ * @return The Auth service being used
+ */
 const Wt::Auth::AuthService& Session::auth() {
     return myAuthService;
 }
 
+/**
+ * @return The Password Auth being used
+ */
 const Wt::Auth::PasswordService& Session::passwordAuth() {
     return myPasswordService;
 }
@@ -94,6 +116,9 @@ const std::vector<const Wt::Auth::OAuthService *>& Session::oAuth() {
     return result;
 }
 
+/**
+ * @return The AuthInfo about the current user logged in
+ */
 Wt::Dbo::ptr<AuthInfo> Session::user() {
     if(_login.loggedIn()){
         Wt::Dbo::ptr<AuthInfo> authInfo = _users->find(_login.user());
@@ -119,9 +144,16 @@ void Session::new_registered_user(Wt::Auth::User &user) {
     }
 }
 
+/**
+ * First we check if the user exists in the db_user table and if not we then
+ * add to the table. If they do already exist this method exits
+ *
+ * @param user The user we are linking to the user database
+ */
 void Session::link_account_to_database(const Wt::Auth::User& user) {
-
-    if(true){
+    std::cout << "Link Account Called" << std::endl;
+    if(!this->does_user_exist_in_dbuser(user)){
+        std::cout << "Adding user to the db_user database" << std::endl;
         Wt::Dbo::Transaction transaction(*this);
 
         std::unique_ptr<DbUser> new_user{new DbUser()};
@@ -134,6 +166,13 @@ void Session::link_account_to_database(const Wt::Auth::User& user) {
 
 }
 
+/**
+ * @brief This methods gets given a User and then goes through the db_user table to check to see if that user
+ *        already exists and does not need to be added.
+ *
+ * @param user The user we are looking for in the db_user table
+ * @return True if the user exits in the db_user table. False if the user does not
+ */
 bool Session::does_user_exist_in_dbuser(const Wt::Auth::User &user) {
 
     Wt::Dbo::Transaction transaction(*this);
@@ -143,15 +182,17 @@ bool Session::does_user_exist_in_dbuser(const Wt::Auth::User &user) {
 
     Wt::Dbo::collection< Wt::Dbo::ptr<DbUser> > all_users = this->find<DbUser>();
 
-    const Wt::Dbo::ptr<DbUser> empty_user;
-
-    for(const Wt::Dbo::ptr<DbUser>& current_user : all_users){
-        long long int id = current_user.id();
-        std::cout << "Identity: " << id << std::endl;
-        if(std::to_string(id) == looking_for_this_id)
-            return true;
+    if(!all_users.empty()){
+        for(const Wt::Dbo::ptr<DbUser>& current_user : all_users){
+            long long int id = current_user.id();
+            std::cout << "Identity: " << id << std::endl;
+            if(std::to_string(id) == looking_for_this_id) {
+                std::cout << "User already exists in Database" << std::endl;
+                return true;
+            }
+        }
+        return false;
+    }else{
+        return false;
     }
-
-    return false;
 }
-
