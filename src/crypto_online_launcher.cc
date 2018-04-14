@@ -100,7 +100,7 @@ void CryptoOnlineLauncher::load_css_files() {
  */
 void CryptoOnlineLauncher::load_message_bundles() {
 
-    this->messageResourceBundle().use(this->appRoot() + "resource/xml-templates/login_template");
+    this->messageResourceBundle().use(this->appRoot() + "resource/xml-templates/answer_template");
 
     this->messageResourceBundle().use(this->appRoot() + "resource/content_xmls/modular_arithmetic");
     this->messageResourceBundle().use(this->appRoot() + "resource/content_xmls/intro_to_cryptography");

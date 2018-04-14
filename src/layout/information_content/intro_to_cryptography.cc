@@ -12,9 +12,11 @@
 
 #include <Wt/WText.h>
 
-intro_to_cryptography::intro_to_cryptography(std::string title, std::string contents_link)
-        : learning_content_template(std::move(title), std::move(contents_link)) {
+
+intro_to_cryptography::intro_to_cryptography(Session& session, std::string title, std::string contents_link)
+        : learning_content_template(session, std::move(title), std::move(contents_link)) {
     load_contents();
+
 }
 
 void intro_to_cryptography::load_contents() {
@@ -29,3 +31,8 @@ void intro_to_cryptography::load_contents() {
 
 
 }
+
+void intro_to_cryptography::load_questions() {
+
+}
+

@@ -1,11 +1,11 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.1.19)  27 JAN 2018 20:34
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.4.11)  13 APR 2018 20:14
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **latex_template.tex
 (./latex_template.tex
 LaTeX2e <2017-04-15>
-Babel <3.15> and hyphenation patterns for 5 language(s) loaded.
+Babel <3.15> and hyphenation patterns for 9 language(s) loaded.
 (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
 (/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo
@@ -145,7 +145,7 @@ LaTeX Info: Thecontrolsequence`\]'isalreadyrobust on input line 129.
 \g_EQ_temprow_int=\count106
 )
 (/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcolorbox.sty
-Package: tcolorbox 2017/09/14 version 4.11 text color boxes
+Package: tcolorbox 2018/01/12 version 4.12 text color boxes
 
 (/usr/share/texlive/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
 (/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
@@ -519,12 +519,12 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-LaTeX Font Info:    Try loading font information for U+msa on input line 26.
+LaTeX Font Info:    Try loading font information for U+msa on input line 18.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 26.
+LaTeX Font Info:    Try loading font information for U+msb on input line 18.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -532,22 +532,20 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./latex_template.aux) ) 
 Here is how much of TeX's memory you used:
- 12345 strings out of 494883
- 243442 string characters out of 6179660
- 282589 words of memory out of 5000000
- 15440 multiletter control sequences out of 15000+600000
+ 12345 strings out of 494808
+ 243442 string characters out of 6178059
+ 5281836 words of memory out of 14235429
+ 15449 multiletter control sequences out of 15000+600000
  5339 words of font info for 22 fonts, out of 8000000 for 9000
- 36 hyphenation exceptions out of 8191
- 54i,6n,73p,817b,233s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 81 hyphenation exceptions out of 8191
+ 54i,6n,73p,817b,231s stack positions out of 5000i,500n,10000p,200000b,80000s
 </
-usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/sh
-are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/tex
-live/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on latex_template.pdf (1 page, 37768 bytes).
+usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/sha
+re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb>
+Output written on latex_template.pdf (1 page, 19201 bytes).
 PDF statistics:
- 27 PDF objects out of 1000 (max. 8388607)
- 19 compressed objects within 1 object stream
+ 19 PDF objects out of 1000 (max. 8388607)
+ 13 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 

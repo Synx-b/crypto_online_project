@@ -26,16 +26,17 @@ class DbQuestions;
 class DbQuestions {
 public:
 
+    std::string question_id;
     std::string question_text;
     std::string question_answer;
     std::string question_option_a;
     std::string question_option_b;
     std::string question_option_c;
 
-
     template<class Action>
     void persist(Action& a) {
 
+        Wt::Dbo::field(a, question_id, "question_id");
         Wt::Dbo::field(a, question_text, "question_text");
         Wt::Dbo::field(a, question_answer , "question_answer");
         Wt::Dbo::field(a, question_option_a, "question_option_a");

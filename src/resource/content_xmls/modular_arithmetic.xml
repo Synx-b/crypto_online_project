@@ -12,8 +12,93 @@
     <message id="learning.modular-arithmetic.content">
 
         <center>
-            This is where the content will go
+            Modular Arithmetic is probably the most important concept to get your head around when learning about
+            Cryptography. It is used in every aspect. The good thing is that it isnt that difficult a topic and
+            can be understood after a few examples.
+
+            The idea is that after a certain point you wrap back to zero. A good example of this is a clock. On most modern clock faces the numbers go from 1-12. When it gets to 12 it then goes to 1 again. This is know as Mod 12 arithmetic.
+
         </center>
+
+        <h2 style="text-decoration: underline"> 1. Modular Arithmetic Basics</h2>
+
+        <h3 style="text-decoration: underline;">1.1 Modular Arithmetic Definition</h3>
+
+            Lets first look at the definition for modular arithmetic calculations:
+
+            <center>
+                <img src="../resource/images/mod_arith/def.png" alt="Image could not be loaded" width="50%" height="50%"/>
+            </center>
+
+        <h3 style="text-decoration: underline;">Example 1.1</h3>
+
+            <center>
+                <img src="../resource/images/mod_arith/example1_1.png" alt="Image could not be loaded" width="30%" height="30%"/>
+            </center>
+
+        <h3 style="text-decoration: underline;">1.2 Computation of the Remainder</h3>
+
+            <center>
+                <img src="../resource/images/mod_arith/quot.png" alt="Image could not be loaded" width="30%" height="30%"/>
+            </center>
+
+        <h3 style="text-decoration: underline;">Example 1.2</h3>
+
+            <center>
+                <img src="../resource/images/mod_arith/rem_not_uni.png" alt="Image could not be loaded" width="30%" height="30%"/>
+            </center>
+
+        <h2 style="text-decoration: underline;">2. Equivalence Classes</h2>
+
+        <h3 style="text-decoration: underline"> 2.1 Equivalence classes for Mod 5</h3>
+            <center>
+                <img src="../resource/images/mod_arith/equiv_class.png" alt="Image could not be loaded" width="40%" height="40%"/>
+            </center>
+
+        <h3 style="text-decoration: underline"> 2.2 Important Application for Equivilance Classes</h3>
+            <center>
+                <img src="../resource/images/mod_arith/important_appl.png" alt="Image could not be loaded" width="40%" height="40%"/>
+            </center>
     
+    </message>
+
+    <message id="learning.modular-arithmetic.answer-template">
+
+        <center>
+            <h2 style="text-decoration: underline">
+                Questions
+            </h2>
+        </center>
+
+
+        <div>
+
+            <center>
+                <img src="../resource/images/mod_arith/21_question.png" alt="Image could not be loaded" width="10%" height="10%" aligh="left"/>
+            </center>
+            
+            <div style="align: middle; margin-left: 45%; margin-right: 45%" >
+                ${21}
+            </div>
+
+            <center>
+                ${submit_button_1}            
+            </center>
+
+            <br />
+
+            <center>
+                <img src="../resource/images/mod_arith/22_question.png" alt="Image could not be loaded" width="10%" height="10%" aligh="left"/>
+            </center>
+            
+            <div style="align: middle; margin-left: 45%; margin-right: 45%" >
+                ${22}
+            </div>
+
+            <center>
+                ${submit_button_2}            
+            </center>
+            
+        </div>
     </message>
 </messages>

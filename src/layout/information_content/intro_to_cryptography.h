@@ -16,9 +16,10 @@
 
 class intro_to_cryptography : public learning_content_template {
 public:
-    intro_to_cryptography(std::string title, std::string contents_link);
-
+    intro_to_cryptography(Session& session, std::string title, std::string contents_link);
     void load_contents() override;
+    void load_questions() override;
+
 private:
 
 };

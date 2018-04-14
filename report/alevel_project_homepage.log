@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.4.11)  13 APR 2018 14:04
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.4.11)  13 APR 2018 14:29
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1563,7 +1563,18 @@ LaTeX Font Info:    Font shape `OT1/pbk/b/n' in size <12> not available
 LaTeX Font Info:    Font shape `OT1/pbk/m/sl' in size <12> not available
 (Font)              Font shape `OT1/pbk/l/sl' tried instead on input line 98.
  [2]
-[3])
+[3]
+Overfull \hbox (10.38574pt too wide) in paragraph at lines 152--152
+ [][] []\OT1/pbk/l/n/12 Checking if a User al-ready ex-ists in the User Databas
+e [][]  
+ []
+
+
+Overfull \hbox (3.71979pt too wide) detected at line 177
+ []\OT1/pbk/l/n/12 111
+ []
+
+)
 \tf@toc=\write4
 \openout4 = `alevel_project_homepage.toc'.
 
@@ -1983,7 +1994,7 @@ LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 Here is how much of TeX's memory you used:
  31136 strings out of 494808
  620986 string characters out of 6178059
- 5757280 words of memory out of 14710873
+ 5757282 words of memory out of 14710875
  33796 multiletter control sequences out of 15000+600000
  558035 words of font info for 93 fonts, out of 8000000 for 9000
  81 hyphenation exceptions out of 8191
@@ -2005,7 +2016,7 @@ mf-dist/fonts/type1/urw/bookman/ubkl8a.pfb></usr/share/texlive/texmf-dist/fonts
 /type1/urw/bookman/ubkli8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/c
 ourier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvbo
 8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb>
-Output written on alevel_project_homepage.pdf (91 pages, 4237987 bytes).
+Output written on alevel_project_homepage.pdf (91 pages, 4238446 bytes).
 PDF statistics:
  414 PDF objects out of 1000 (max. 8388607)
  268 compressed objects within 3 object streams

@@ -152,6 +152,7 @@
 \contentsline {subsubsection}{\numberline {3.2.5.6}Checking if a User already exists in the User Database}{69}
 \contentsline {subsection}{\numberline {3.2.6}Database API}{70}
 \contentsline {subsubsection}{\numberline {3.2.6.1}Getting User Information from the Database}{70}
+\contentsline {subsubsection}{\numberline {3.2.6.2}Getting Question Information}{71}
 \contentsline {chapter}{\numberline {4}Testing}{72}
 \contentsline {section}{\numberline {4.1}The Web Application}{72}
 \contentsline {section}{\numberline {4.2}AES Implementation}{72}

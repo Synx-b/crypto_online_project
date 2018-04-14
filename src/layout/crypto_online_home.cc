@@ -157,7 +157,7 @@ void CryptoOnlineHome::load_intro_to_cryptography_page(){
     this->_footer = Wt::cpp14::make_unique<crypto_online_footer>();
 
     this->_grid->addItem(std::move(this->_header), 0, 0);
-    this->_grid->addWidget(Wt::cpp14::make_unique<intro_to_cryptography>(title_link, content_link), 1, 0, Wt::AlignmentFlag::Center);
+    this->_grid->addWidget(Wt::cpp14::make_unique<intro_to_cryptography>(_current_session , title_link, content_link), 1, 0, Wt::AlignmentFlag::Center);
     this->_grid->addItem(std::move(this->_footer), 2, 0);
 
     this->setLayout(std::move(this->_grid));
@@ -168,10 +168,11 @@ void CryptoOnlineHome::load_intro_to_cryptography_page(){
  */
 void CryptoOnlineHome::load_modular_arithmetic_page() {
     this->clear();
-    this->setHeight(1600);
+    this->setHeight(4000);
 
     std::string title_link = "learning.modular-arithmetic.title";
     std::string content_link = "learning.modular-arithmetic.content";
+    std::string question_link = "learning.modular-arithmetic.answer-template";
 
     this->_grid = Wt::cpp14::make_unique<Wt::WGridLayout>();
 
@@ -179,7 +180,8 @@ void CryptoOnlineHome::load_modular_arithmetic_page() {
     this->_footer = Wt::cpp14::make_unique<crypto_online_footer>();
 
     this->_grid->addItem(std::move(this->_header), 0, 0);
-    this->_grid->addWidget(Wt::cpp14::make_unique<modular_arithmetic>(title_link, content_link), 1, 0, Wt::AlignmentFlag::Center);
+    this->_grid->addWidget(Wt::cpp14::make_unique<modular_arithmetic>(_current_session, title_link, content_link, question_link),
+                           1, 0, Wt::AlignmentFlag::Center);
     this->_grid->addItem(std::move(this->_footer), 2, 0);
 
     this->setLayout(std::move(this->_grid));
