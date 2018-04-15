@@ -36,7 +36,7 @@ public:
     /**
      * @brief Setting constructor with no arguments to delete
      */
-    AESImplementation() = delete;
+    AESImplementation() = default;
 
     /**
      * @brief Default constructor which sets the encryption 128-bit key to be used
@@ -51,8 +51,9 @@ public:
      * @param input The full plaintext message
      * @param output The full ciphertext message
      * @param key The encryption key
+     * @return A string of the encrypted data
      */
-    void encrypt(const byte input[], byte output[], const byte key[], const size_t message_length);
+    std::string encrypt(const byte input[], byte output[], const byte key[], const size_t message_length);
 
     /**
      * @brief This method provides the encryption functionality for a block in the AES Algorithm

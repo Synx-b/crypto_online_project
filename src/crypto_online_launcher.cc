@@ -93,6 +93,7 @@ void CryptoOnlineLauncher::load_css_files() {
     this->useStyleSheet("resource/css/crypto_online_register.css");
     this->useStyleSheet("resource/css/crypto_online_profile.css");
     this->useStyleSheet("resource/css/crypto_online_learning_content.css");
+    this->useStyleSheet("resource/css/crypto_online_aes_example.css");
 }
 
 /**

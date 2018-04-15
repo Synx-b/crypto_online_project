@@ -36,8 +36,7 @@ void CryptoOnlineHeader::create_navigation_bar() {
     this->left_menu = Wt::cpp14::make_unique<Wt::WMenu>(this->navigation_bar_contents_stack);
     auto left_menu_ = this->navigation_bar->addMenu(std::move(this->left_menu));
     left_menu_->addItem("Home")->setLink(Wt::WLink(Wt::LinkType::InternalPath, "/home"));
-    left_menu_->addItem("Symmetric");
-    left_menu_->addItem("Asymmetric");
+    left_menu_->addItem("AES Encryption Form")->setLink(Wt::WLink(Wt::LinkType::InternalPath, "/aes-encryption"));
 
     this->right_menu = Wt::cpp14::make_unique<Wt::WMenu>();
     auto right_menu_ = this->navigation_bar->addMenu(std::move(this->right_menu), Wt::AlignmentFlag::Right);

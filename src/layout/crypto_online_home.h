@@ -46,6 +46,8 @@ private:
     void load_intro_to_cryptography_page(); /**< Loads the Intro to Cryptography Page */
     void load_modular_arithmetic_page(); /**< Loads the Modular Arithmetic Page */
 
+    void load_aes_encryption_example(); /**< Loads the aes encryption example page */
+
     void load_database(); /**< Loads and Connects to the Database */
     void handleInternalPath(const std::string& string); /**< Handles the change in the internal path of the application */
 

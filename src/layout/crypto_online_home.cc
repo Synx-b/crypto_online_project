@@ -10,6 +10,7 @@
 #include "crypto_online_home.h"
 #include "information_content/modular_arithmetic.h"
 #include "information_content/intro_to_cryptography.h"
+#include "crypto_online_aes_example.h"
 
 #include <Wt/WApplication.h>
 #include <Wt/Dbo/backend/Sqlite3.h>
@@ -63,6 +64,8 @@ void CryptoOnlineHome::handleInternalPath(const std::string &path) {
         load_modular_arithmetic_page();
     } else if(path == "/basics/concepts"){
         load_intro_to_cryptography_page();
+    } else if(path == "/aes-encryption"){
+        load_aes_encryption_example();
     }
         /*
          * TODO: Add navigation to all parts of the website
@@ -186,6 +189,25 @@ void CryptoOnlineHome::load_modular_arithmetic_page() {
 
     this->setLayout(std::move(this->_grid));
 
+}
+
+/**
+ * @brief This method loads the aes encryption example page
+ */
+void CryptoOnlineHome::load_aes_encryption_example() {
+    this->clear();
+    this->setHeight(1000);
+
+    this->_grid = Wt::cpp14::make_unique<Wt::WGridLayout>();
+
+    this->_header = Wt::cpp14::make_unique<CryptoOnlineHeader>(_current_session);
+    this->_footer = Wt::cpp14::make_unique<crypto_online_footer>();
+
+    this->_grid->addItem(std::move(this->_header), 0, 0);
+    this->_grid->addWidget(Wt::cpp14::make_unique<CryptoOnlineAESExample>(), 1, 0);
+    this->_grid->addItem(std::move(this->_footer), 2, 0);
+
+    this->setLayout(std::move(this->_grid));
 }
 
 

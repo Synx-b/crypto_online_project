@@ -12,6 +12,8 @@
 #include <cstring>
 #include <iostream>
 #include <iomanip>
+#include <iterator>
+#include <sstream>
 
 #include "aes_implementation.h"
 
@@ -221,9 +223,10 @@ AESImplementation::AESImplementation(AESKeyLengths keyLength) : _n(0),
     }
 }
 
-void AESImplementation::encrypt(const byte input[], byte output[], const byte key[], const size_t message_length) {
+std::string AESImplementation::encrypt(const byte input[], byte output[], const byte key[], const size_t message_length) {
     std::cout << message_length << std::endl;
     auto pad_check = (message_length % 16);
+    auto pad_length = 16 - pad_check;
 
     std::cout << pad_check << std::endl;
 
@@ -231,12 +234,13 @@ void AESImplementation::encrypt(const byte input[], byte output[], const byte ke
         auto *output_padded = new byte[message_length + pad_check];
         std::copy(input, (input + std::min(message_length, (message_length + pad_check))), output_padded);
         output = output_padded;
-
+#if defined(debug) && debug == 1
         for (byte i = 0; i < (message_length + pad_check); i++) {
             std::cout << (unsigned) i << ": " << (unsigned) output[i] << std::endl;
         }
+#endif
     }else {
-        auto pad_length = 16 - pad_check;
+
         auto *output_padded = new byte[message_length + pad_length];
         std::copy(input, (input + std::min(message_length, (message_length + pad_length))), output_padded);
         output = output_padded;
@@ -244,11 +248,13 @@ void AESImplementation::encrypt(const byte input[], byte output[], const byte ke
         for (size_t i = (message_length + pad_length); i >= message_length; i--) {
             output[i] = pad_length;
         }
-
+#if defined(debug) && debug == 1
         for (byte i = 0; i < (message_length + pad_length); i++) {
             std::cout << (unsigned) i << ": " << (unsigned) output[i] << std::endl;
         }
+#endif
     }
+
 }
 
 void AESImplementation::encrypt_block(const byte input[], byte output[], const byte key[]) {

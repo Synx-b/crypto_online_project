@@ -1015,6 +1015,10 @@ Since my project requires users to sign up that means they need to create a pass
 
 So all passwords are hashed using the bcrypt hash function. There is normally a lot of debate on which hash function to use but bcrypt has been around for over 10 years and no critical security flaws in its design and implementation have been found making a confident choice for me.
 
+For the passwords aswell, I have set conditions for password strength to make sure that the password a user chooses is suitable. These conditions mean that a password needs upper/lower case letters, number and special characters to be valid.
+
+The login form also has something called rate-limiting. This means that an attacker cannot try to brute-force a users password as it will add a delay to entering the password after 3 failed attempts. This delay increases after every failed password attempt from here making it practically impossible for an attacker to brute force the password.
+
 \section{External Library's}
 \subsection{Wt}
 
