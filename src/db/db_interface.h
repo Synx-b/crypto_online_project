@@ -14,6 +14,7 @@
 #include "session.h"
 #include "db_roles.h"
 #include "db_user.h"
+#include "db_questions.h"
 
 
 class db_interface;
@@ -25,7 +26,8 @@ public:
 
     Wt::Dbo::ptr<DbUser> get_user(std::string id);
 
-    void add_answer_to_user(const std::string &answer, const int question_id);
+    void add_answer_to_user(const std::string& answer, int question_id);
+    bool check_answer(const std::string& answer, int question_id);
 
 
 private:

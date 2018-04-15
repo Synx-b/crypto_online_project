@@ -168,7 +168,7 @@ void CryptoOnlineHome::load_intro_to_cryptography_page(){
  */
 void CryptoOnlineHome::load_modular_arithmetic_page() {
     this->clear();
-    this->setHeight(4000);
+    this->setHeight(3200);
 
     std::string title_link = "learning.modular-arithmetic.title";
     std::string content_link = "learning.modular-arithmetic.content";

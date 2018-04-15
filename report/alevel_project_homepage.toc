@@ -152,17 +152,24 @@
 \contentsline {subsubsection}{\numberline {3.2.5.6}Checking if a User already exists in the User Database}{69}
 \contentsline {subsection}{\numberline {3.2.6}Database API}{70}
 \contentsline {subsubsection}{\numberline {3.2.6.1}Getting User Information from the Database}{70}
-\contentsline {subsubsection}{\numberline {3.2.6.2}Getting Question Information}{71}
-\contentsline {chapter}{\numberline {4}Testing}{72}
-\contentsline {section}{\numberline {4.1}The Web Application}{72}
-\contentsline {section}{\numberline {4.2}AES Implementation}{72}
-\contentsline {subsection}{\numberline {4.2.1}AES-128}{72}
-\contentsline {subsubsection}{\numberline {4.2.1.1}Cipher (ENCRYPT)}{72}
-\contentsline {subsubsection}{\numberline {4.2.1.2}Inverse Cipher (DECRYPT)}{73}
-\contentsline {subsection}{\numberline {4.2.2}AES-192}{76}
-\contentsline {subsubsection}{\numberline {4.2.2.1}Cipher (ENCRYPT)}{76}
-\contentsline {subsubsection}{\numberline {4.2.2.2}Inverse Cipher (DECRYPTION)}{77}
-\contentsline {subsection}{\numberline {4.2.3}AES-256}{80}
-\contentsline {subsubsection}{\numberline {4.2.3.1}Cipher (ENCRYPT)}{80}
-\contentsline {subsubsection}{\numberline {4.2.3.2}Inverse Cipher (DECRYPT)}{81}
-\contentsline {chapter}{\numberline {5}Evaluation}{84}
+\contentsline {subsubsection}{\numberline {3.2.6.2}Add Question to User}{71}
+\contentsline {subsubsection}{\numberline {3.2.6.3}Has User Already Answered Question}{72}
+\contentsline {subsubsection}{\numberline {3.2.6.4}Getting Answer for a Question}{72}
+\contentsline {subsubsection}{\numberline {3.2.6.5}Checking Answer of a Question}{73}
+\contentsline {subsection}{\numberline {3.2.7}Example of Loading Content and Questions (Modular Arithmetic)}{73}
+\contentsline {subsubsection}{\numberline {3.2.7.1}Loading Page Title and Content Section}{73}
+\contentsline {subsubsection}{\numberline {3.2.7.2}Loading Question Section of the Page}{74}
+\contentsline {subsection}{\numberline {3.2.8}Loading Details for the Question Section}{74}
+\contentsline {chapter}{\numberline {4}Testing}{76}
+\contentsline {section}{\numberline {4.1}The Web Application}{76}
+\contentsline {section}{\numberline {4.2}AES Implementation}{76}
+\contentsline {subsection}{\numberline {4.2.1}AES-128}{76}
+\contentsline {subsubsection}{\numberline {4.2.1.1}Cipher (ENCRYPT)}{76}
+\contentsline {subsubsection}{\numberline {4.2.1.2}Inverse Cipher (DECRYPT)}{77}
+\contentsline {subsection}{\numberline {4.2.2}AES-192}{80}
+\contentsline {subsubsection}{\numberline {4.2.2.1}Cipher (ENCRYPT)}{80}
+\contentsline {subsubsection}{\numberline {4.2.2.2}Inverse Cipher (DECRYPTION)}{81}
+\contentsline {subsection}{\numberline {4.2.3}AES-256}{84}
+\contentsline {subsubsection}{\numberline {4.2.3.1}Cipher (ENCRYPT)}{84}
+\contentsline {subsubsection}{\numberline {4.2.3.2}Inverse Cipher (DECRYPT)}{85}
+\contentsline {chapter}{\numberline {5}Evaluation}{88}

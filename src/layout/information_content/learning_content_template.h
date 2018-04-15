@@ -19,7 +19,7 @@
 #include <Wt/WTemplate.h>
 #include "../../db/db_interface.h"
 
-class learning_content_template : public Wt::WTable{
+class learning_content_template : public Wt::WTable {
 public:
     learning_content_template(Session& session, std::string title, std::string contents_link);
     learning_content_template(Session& session, std::string title, std::string contents_link, std::string questions_link);

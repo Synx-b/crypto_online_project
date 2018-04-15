@@ -128,4 +128,28 @@ This chapter will cover my coding implementations for my project. I will not be 
 \subsubsection{Getting User Information from the Database}
 \lstinputlisting[language=C++, linerange={13-39}]{../src/db/db_interface.cc}
 
-\subsubsection{Getting Question Information}
+\subsubsection{Add Question to User}
+\lstinputlisting[language=C++, linerange={41-66}]{../src/db/db_interface.cc}
+
+\newpage
+\subsubsection{Has User Already Answered Question}
+\lstinputlisting[language=C++, linerange={68-93}]{../src/db/db_interface.cc}
+
+\subsubsection{Getting Answer for a Question}
+\lstinputlisting[language=C++, linerange={95-109}]{../src/db/db_interface.cc}
+
+\subsubsection{Checking Answer of a Question}
+\lstinputlisting[language=C++, linerange={111-131}]{../src/db/db_interface.cc}
+
+\subsection{Example of Loading Content and Questions (Modular Arithmetic)}
+
+Since the majority of the pages with content and questions will follow the same layout and functionality. So to keep things simple and clean I will only be showing code snippets for the Modular Arithmetic section.
+
+\subsubsection{Loading Page Title and Content Section}
+\lstinputlisting[language=C++, linerange={25-33}]{../src/layout/information_content/modular_arithmetic.cc}
+
+\subsubsection{Loading Question Section of the Page}
+\lstinputlisting[language=C++, linerange={35-43}]{../src/layout/information_content/modular_arithmetic.cc}
+
+\subsection{Loading Details for the Question Section}
+\lstinputlisting[language=C++, linerange={29-80}]{../src/layout/information_content/learning_content_template.cc}

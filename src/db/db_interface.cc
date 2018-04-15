@@ -103,10 +103,33 @@ Wt::Dbo::ptr<DbUserAnsweredQuestion> db_interface::get_answer(const int &answer_
     Wt::Dbo::Transaction transaction(current_session);
 
     const std::string &current_user_id = this->current_session.login().user().id();
-    auto current_user = this->get_user(current_user_id);
 
     return this->current_session.find<DbUserAnsweredQuestion>().where("user_answered_question_id = ?").bind(answer_id)
             .where("user_id = ?").bind(current_user_id);
 }
+
+/**
+ * @brief This method gets an answer and a question and then checks to see if the users answer is right
+ *
+ * @param answer The user answer
+ * @param question_id The id of the question being answered
+ * @return Whether or not the question is right
+ */
+bool db_interface::check_answer(const std::string &answer, int question_id) {
+    Wt::Dbo::Transaction transaction(current_session);
+
+    const std::string& current_user_id = this->current_session.login().user().id();
+
+    Wt::Dbo::ptr<DbUserAnsweredQuestion> user_answer = this->current_session.find<DbUserAnsweredQuestion>()
+            .where("user_answered_question_id = ?").bind(question_id)
+            .where("user_id = ?").bind(current_user_id);
+
+    Wt::Dbo::ptr<DbQuestions> question = this->current_session.find<DbQuestions>()
+            .where("question_id = ?").bind(question_id);
+
+    return (user_answer->answer_text == question->question_answer);
+}
+
+
 
 
