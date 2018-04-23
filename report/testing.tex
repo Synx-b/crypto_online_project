@@ -2,22 +2,136 @@
 % Chapter 4: Testing
 %
 
+\definecolor{listinggray}{gray}{0.9}
+\definecolor{lbcolor}{rgb}{0.9,0.9,0.9}
+
+\lstset{
+backgroundcolor=\color{lbcolor},
+    tabsize=4,    
+%   rulecolor=,
+    language=[GNU]C++,
+    basicstyle=\scriptsize,
+    upquote=true,
+    aboveskip={1.5\baselineskip},
+    columns=fixed,
+    showstringspaces=false,
+    extendedchars=false,
+    breaklines=true,
+    prebreak = \raisebox{0ex}[0ex][0ex]{\ensuremath{\hookleftarrow}},
+    frame=single,
+    numbers=left,
+    showtabs=false,
+    showspaces=false,
+    showstringspaces=false,
+    identifierstyle=\ttfamily,
+    keywordstyle=\color[rgb]{0,0,1},
+    commentstyle=\color[rgb]{0.026,0.112,0.095},
+    stringstyle=\color[rgb]{0.627,0.126,0.941},
+    numberstyle=\color[rgb]{0.205, 0.142, 0.73}}
+\lstset{
+    backgroundcolor=\color{lbcolor},
+    tabsize=4,
+    language=C++,
+    captionpos=b,
+    tabsize=3,
+    frame=lines,
+    numbers=left,
+    numberstyle=\tiny,
+    numbersep=5pt,
+    breaklines=true,
+    showstringspaces=false,
+    basicstyle=\footnotesize,
+   %identifierstyle=\color{magenta},
+    keywordstyle=\color[rgb]{0,0,1},
+    commentstyle=\color[rgb]{0,0.4,0},
+    stringstyle=\color[rgb]{0.5,0.8,0.3}}
+
 \newpage
 \chapter{Testing}
 
 \section{The Web Application}
 
+Since my Web Application has many moving parts I wil be testing each of the componenets individually first. Then when I can be sure that the components work individually I will test all of them together. 
+
+\subsection{Web Application Test Table}
+
+
+\begin{longtable}{p{0.05\textwidth}|p{0.25\textwidth}|p{0.15\textwidth}|p{0.3\textwidth}|p{0.1\textwidth}|p{0.05\textwidth}}
+\toprule
+Test \# & Test Description & Test Type & Expected Result & Pass /Fail & Ref No \\
+\midrule 
+1 & \breakwords{Connecting to the Website} & Typical & \breakwords{The user will be able to successfully load the Website} & Pass & 01 \\
+\midrule
+2 & \breakwords{Loading the Basic Concepts Page} & Typical & \breakwords{The user will be presented with the content for the basic concepts page} & Pass & 02 \\
+\midrule
+3 & \breakwords{Loading the Modular Arithmetic Page} & Typical & \breakwords{The user will be able to successfully load the content for the Modular Arithmetic Page} & Pass & 03 \\
+\midrule
+4 & \breakwords{Loading the Login Page} & Typical & \breakwords{The user will be able to successfully load the Login Page} & Pass & 04 \\
+\midrule
+5 & \breakwords{Loading the Register Page} & Typical & \breakwords{The user will be able to successfully load the Register Page} & Pass & 05 \\
+\midrule
+6 & \breakwords{Loading the Profile Page} & Typical & \breakwords{The user will be able to successfully load the Profile Page} & Pass & 06 \\
+\midrule
+7 & \breakwords{Check user has to enter a username when registering} & Erroneous & \breakwords{The user will not be able to register if they don't enter a username} & Pass & 07 \\
+\midrule
+8 & \breakwords{Check the user has to enter a password when registering} & Erroneous & \breakwords{The user will not be able to register for an account if the don't enter a password} & Pass & 08 \\
+\midrule
+9 & \breakwords{Check that the user has to enter the same password when confirming their password to register} & Erroneous & \breakwords{The user will not be able to register if they don't enter the same password} & Pass & 09 \\
+\midrule
+10 & \breakwords{Check that the user doesn't have to enter a email if they want to register} & Typical & \breakwords{The user will be able to register whether or not they enter an email address} & Pass & 10 \\
+\midrule
+11 & \breakwords{Check that if the user does enter an email a confirmation email is sent to the address supplied} & Typical & \breakwords{The user will receive an email providing them with a confirmation link to activate their account} & Pass & 11 \\
+\midrule
+12 & \breakwords{Check that the password entered meets strength requirements} & Erroneous & \breakwords{If a user registers with a weak password the user will not be able to register but if they sign up with a strong password then they will be registered} & Pass & 12 \\
+\midrule
+13 & \breakwords{When a user registers with all valid information that user data is added to the authentication tables} & Typical & \breakwords{The authentication information is added to the authentication tables} & Pass & 13 \\
+\midrule
+14 & \breakwords{When a user registers a record is also created for them in the db\_user tables} & Typical & \breakwords{A record for the user is created in the db\_user table} & Pass & 14 \\
+\midrule
+15 & \breakwords{After the user has registered they are then sent to the homepage} & Typical & \breakwords{After the user has registered the website will navigate them to the homepage} & Pass & 15 \\
+\midrule
+16 & \breakwords{Once the user has registered and reached the homepage a custom header navigation bar should be loaded} & Typical & \breakwords{The user header will be loaded rather than the normal site header navigation bar} & Pass & 16 \\
+\midrule
+17 & \breakwords{The admin settings tab should not show for any non-admins} & Typical & \breakwords{When a normal user logs in they should not see the admin settings tab in the header} & Pass & 17 \\
+\midrule
+18 & \breakwords{The admin settings tab should show for any admin users when they log in} & Typical & \breakwords{The admin settings tab should load onto the header when an admin logs in} & Pass & 18 \\\midrule
+19 & \breakwords{When a user is not logged in and they navigate to the profile page it should say that no user is logged in} & Typical & \breakwords{The profile page displays that no user is logged in} & Pass & 19 \\\midrule
+20 & \breakwords{When a user navigates to the profile page it should show the user their profile page} & Typical & \breakwords{The user will be presented with the profile page for their account} & Pass & 20 \\\midrule
+21 & \breakwords{When a user tries to login with bad credentials they can not log in} & Erroneous & \breakwords{The user will not be able to login and will be shown an error message} & Pass & 21 \\\midrule
+22 & \breakwords{When a user tries to log in with valid credentials they are logged in} & Typical & \breakwords{The user will be able to login with valid credentials} & Pass & 22 \\\midrule
+23 & \breakwords{After a few attempts to try to log in the user will have to wait to log in again} & Typical & \breakwords{The user will be given a time out and will have to wait a fair interval until they can try to login in again} & Pass & 23 \\\midrule
+24 & \breakwords{When a user answers a question it should store the question in the user\_answered\_questions table} & Typical & \breakwords{The relevant question information is stored in the user\_answered\_questions table} & Pass & 24 \\\midrule
+25 & \breakwords{When the user answers the question correctly then it displays the user got the question correct} & Typical & \breakwords{The user is shown that they got the question correct} & Pass & 25 \\\midrule
+26 & \breakwords{When the user answers the question wrong it displays that they got the question wrong} & Typical & \breakwords{The user is shown that they got the question wrong} & Pass & 26 \\\midrule
+27 & \breakwords{When ever the user answers the question it updates the question in the user\_answered\_question table} & Typical & \breakwords{The users question answer should be updated in the user\_answered\_question table} & Pass & 27 \\\midrule
+28 & \breakwords{} & Typical & \breakwords{} & Pass & 28 \\\midrule
+28 & \breakwords{} & Typical & \breakwords{} & Pass & 28 \\\midrule
+28 & \breakwords{} & Typical & \breakwords{} & Pass & 28 \\\midrule
+28 & \breakwords{} & Typical & \breakwords{} & Pass & 28 \\\midrule
+28 & \breakwords{} & Typical & \breakwords{} & Pass & 28 \\\midrule
+28 & \breakwords{} & Typical & \breakwords{} & Pass & 28 \\\midrule
+28 & \breakwords{} & Typical & \breakwords{} & Pass & 28 \\\midrule
+29 & \breakwords{} & Typical & \breakwords{} & Pass & 29 \\\bottomrule
+\end{longtable}
+
+\newpage
 \section{AES Implementation}
 
 My AES Implementation has been tested against the Federal Information Processing Standard Publication 197 (FIPS 197) test vectors. All test vectors use hexadecimal notation.
 
+\subsection{AES Implementation Testing Code}
+
+In order to completely test my solution I have written a short program that uses to test vectors from FIPS 197. I can then compare the results from my program and from the FIPS 197 document. If they match then I know my implementation of the algorithm is correct.
+
+\lstinputlisting[language=C++]{../src/crypto/aes_implementation_test_input.cc}
+
 \subsection{AES-128}
 
-\textit{Nk=4, Nr=10}
-
-Plaintext = 00112233445566778899aabbccddeeff
-
-Key = 000102030405060708090a0b0c0d0e0f
+\begin{align*}
+&Nk=4, Nr=10 \\
+Plaintext = &00112233445566778899aabbccddeeff \\
+Key = &000102030405060708090a0b0c0d0e0f \\
+\end{align*}
 
 \subsubsection{Cipher (ENCRYPT)}
 
@@ -118,7 +232,7 @@ round[ 9].m\_col  & e9f74eec023020f61bf2ccf2353c21c7\\
 \hline
 round[ 9].k\_sch  & 549932d1f08557681093ed9cbe2c974e\\
 \hline
-round[10].start  & bd6e7c3df2b5779e0b61216e8b10b689\\
+round[10].start   & bd6e7c3df2b5779e0b61216e8b10b689\\
 \hline
 round[10].s\_box  & 7a9f102789d5f50b2beffd9f3dca4ea7\\
 \hline
@@ -248,11 +362,12 @@ round[10].ioutput&  00112233445566778899aabbccddeeff\\
 \newpage
 \subsection{AES-192}
 
-\textit{Nk=6, Nr=12}
-
-Plaintext = 00112233445566778899aabbccddeeff
-
-Key = 000102030405060708090a0b0c0d0e0f1011121314151617
+\begin{align*}
+&Nk=6, Nr=12 \\
+Plaintext = &00112233445566778899aabbccddeeff \\
+Key = &000102030405060708090a0b0c0d0e0f \\
+	  &1011121314151617
+\end{align*}
 
 \subsubsection{Cipher (ENCRYPT)}
 
@@ -517,11 +632,13 @@ round[12].ioutput&  00112233445566778899aabbccddeeff\\
 \newpage
 \subsection{AES-256}
 
-\textit{Nk=8, Nr=14}
+\begin{align*}
+&Nk=8, Nr=14 \\
+Plaintext = &00112233445566778899aabbccddeeff \\
+Key = &000102030405060708090a0b0c0d0e0f \\
+	  &101112131415161718191a1b1c1d1e1f
+\end{align*}
 
-Plaintext = 00112233445566778899aabbccddeeff
-
-Key = 000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f
 
 \subsubsection{Cipher (ENCRYPT)}
 

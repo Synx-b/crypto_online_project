@@ -39,10 +39,27 @@ void CryptoOnlineProfile::load_profile_page_logged_in() {
 
     this->_username = this->elementAt(0,1)->addWidget(Wt::cpp14::make_unique<Wt::WText>(" " + user.identity(Wt::Auth::Identity::LoginName)));
     this->_username->setStyleClass("profile_username");
+
+    auto questions_answered_label = this->elementAt(1,0)->addWidget(Wt::cpp14::make_unique<Wt::WText>("Questions Answered: "));
+    auto questions_answered = this->elementAt(1,1)->addWidget(Wt::cpp14::make_unique<Wt::WText>());
+    auto questions_answered_correct_label = this->elementAt(2,0)->addWidget(Wt::cpp14::make_unique<Wt::WText>("Questions Correct: "));
+    auto questions_answered_correct = this->elementAt(2,1)->addWidget(Wt::cpp14::make_unique<Wt::WText>());
+
+    questions_answered_label->setStyleClass("profile_username");
+    questions_answered->setStyleClass("profile_username");
+    questions_answered_correct_label->setStyleClass("profile_username");
+    questions_answered_correct->setStyleClass("profile_username");
+
+    int total_questions = this->database_interface.get_total_questions_answered();
+    questions_answered->setText(std::to_string(total_questions));
+    int total_questions_correct = this->database_interface.get_total_correct_question_answered();
+    questions_answered_correct->setText(std::to_string(total_questions_correct));
 }
 
 void CryptoOnlineProfile::load_profile_page_logged_out() {
-    this->_username_label = this->elementAt(0,0)->addWidget(Wt::cpp14::make_unique<Wt::WText>("No User Logged In"));
+    this->_username_label = this->elementAt(0, 0)->addWidget(Wt::cpp14::make_unique<Wt::WText>("No User Logged In"));
     this->_username_label->setStyleClass("profile_username");
 }
+
+
 

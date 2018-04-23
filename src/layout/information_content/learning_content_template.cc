@@ -51,11 +51,14 @@ learning_content_template::load_question_section(const std::string &template_nam
         const std::string &answer_1 = answer_entry_1->text().toUTF8();
         this->database_api.add_answer_to_user(answer_1, question_id_temp[0]);
         if(this->database_api.check_answer(answer_1, question_id_temp[0])){
+            std::cout << "WE DEFO GOT HERE HAHAH" << std::endl;
             answer_status_1->setText("Correct Answer");
             answer_status_1->setStyleClass("learning_content_question_right");
+            this->database_api.set_answer_check_flag(question_id_temp[0], true);
         }else{
             answer_status_1->setText("Wrong Answer");
             answer_status_1->setStyleClass("learning_content_question_wrong");
+            this->database_api.set_answer_check_flag(question_id_temp[0], false);
         }
     });
 
@@ -64,8 +67,10 @@ learning_content_template::load_question_section(const std::string &template_nam
         this->database_api.add_answer_to_user(answer_2, question_id_temp[1]);
         if(this->database_api.check_answer(answer_2, question_id_temp[1])){
             answer_status_2->setText("Correct Answer");
+            this->database_api.set_answer_check_flag(question_id_temp[1], true);
         }else{
             answer_status_2->setText("Wrong Answer");
+            this->database_api.set_answer_check_flag(question_id_temp[1], false);
         }
     });
 

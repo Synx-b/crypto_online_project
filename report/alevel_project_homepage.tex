@@ -14,11 +14,12 @@
 \documentclass[12pt, a4paper, twoside]{report}
 
 \usepackage{bookman}
+\usepackage{booktabs}
 \usepackage{graphicx}
 \usepackage{a4wide}
 \usepackage{fancyhdr}
 \usepackage[utf8]{inputenc}
-\usepackage[margin=1in]{geometry}
+\usepackage[margin=1in, showframe=false]{geometry}
 \usepackage{lastpage}
 \usepackage{caption}
 \usepackage{nameref}
@@ -29,13 +30,20 @@
 \usepackage{textcomp}
 \usepackage{fullpage}
 \usepackage{ifthen}
+\usepackage{changepage}
 \usepackage{amssymb}
 \usepackage{amsmath}
 \usepackage{flexisym}
 \usepackage{appendix}
+\usepackage{tabularx}
 \usepackage{float}
 \usepackage{longtable}
 \usepackage{makecell}
+\usepackage{dirtree}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage[hidelinks]{hyperref}
+\usepackage{soul}
 
 \graphicspath{{images/}}
 
@@ -64,6 +72,14 @@
 
 \pagestyle{IHA-fancy-style}
 
+\makeatletter
+\newcommand\breakwords{%
+    \SOUL@setup
+    \def\SOUL@everyexhyphen##1{##1\linebreak[1]}%
+    \def\SOUL@everytoken{\the\SOUL@token\linebreak[1]}%
+    \SOUL@}
+\makeatother
+
 \input{avanzi-tikz-defs.tex}
 
 \begin{document}
@@ -80,12 +96,13 @@
 % All the content pages including all the chapters %
 
 \pagenumbering{arabic}
-\input{analysis} % Chapter 1
-\input{documented_design} % Chapter 2
-\input{technical_solution} % Chapter 3
+%\input{analysis} % Chapter 1
+%\input{documented_design} % Chapter 2
+%\input{technical_solution} % Chapter 3
 \input{testing} % Chapter 4
 \input{evaluation} % Chapter 5
 \raggedbottom
+
 % BibTeX stuff if I need to cite references
 %\nocite{*}
 %\addcontentsline{toc}{chapter}{Bibliography}

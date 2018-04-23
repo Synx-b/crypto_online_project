@@ -147,6 +147,70 @@ Lets look at the file header again, it is given below:
 
 As you can see there is a {\color{green} \textit{@version}} tag. For every data structure and file in the project there will the a  {\color{green} \textit{@version}} tag which will contain the most up to date version of the file / data structure. This allows me to easily keep track of how each element of my project is progressing and evolving. The behavior of this tag is explained in \textit{Section 2.2.1.1}. 
 
+\subsection{File Directory Organization}
+
+The file organization for any project is very important as it helps keep not only the project organized but the thought process and progression of the project going strong. So, I have setup multiple sub directories and such to keep the file structure good and well. All of my source code is stored in a folder called src. 
+
+\dirtree{%
+    .1 src/.
+    .2 auth/.
+    .2 crypto/.
+    .2 db/.
+    .3 sql-queries/.
+    .2 layout/.
+    .3 header/.
+    .3 information_content/.
+    .2 resource/.
+    .3 content_xmls/.
+    .3 css/.
+    .3 images/.
+    .3 xml-templates/.
+}
+
+\paragraph{auth}
+
+This directory contains all the code required for the authentication system in my project. It handles the login and register form.
+
+\paragraph{crypto}
+
+This has the code for the implementation for the aes algorithm. It also contains tests for the algorithm so I can make sure the algorithm performs the same as what is specified in \textit{FIPS 197}.
+
+\paragraph{db}
+
+This directory contains all files related to database management and session management. It contains all the table definitions for the Dbo module of Wt.
+
+\subparagraph{sql\_queries}
+
+This directory contains any sql queries that I might want to perform multiple times such delete_all and select_all operations.
+
+\paragraph{layout}
+
+This directory contains all files related to display layout and the functionality of how the user interacts with the website.
+
+\subparagraph{header}
+
+The code for the header of the web page is located here.
+
+\subparagraph{information\_content}
+
+Here is where all the different sections of cryptography I am trying to teach will be located and loaded from. 
+
+\paragraph{resources}
+
+This is where any non-code related resources will be stored.
+
+\subparagraph{content\_xmls}
+
+In this directory xml files will contain the specific information relating to the content that I am trying to teach.
+
+\subparagraph{images}
+
+Any images that I need to use will be stored here.
+
+\subparagraph{xml\_templates}
+
+Any xml files that contain layout information are contained here.
+
 \subsection{Off-Site Backups}
 
 When developing a project of this scale it is crucial that you don't just \textit{keep all your eggs in one basket} per say. What I mean by this is that you don't want a single point of failure, if I finished my project and then a week before the submission date my laptop died and I couldn't recover the data from my hard-drive then I would not be able to submit my project and I would fail.
@@ -193,8 +257,9 @@ Since one of the main aspects of this project is to teach a user a new concept a
 \label{questions_algorithm}
 \end{figure}
 
-\subsection{Cryptographic }
+\subsection{Cryptographic Algorithms}
 
+A saying in the cryptographic world is ``\textit{Never use your own Crypto!}''. This is said for a few reasons but the main one being because it is proven that an algorithm that has been developed in secret and only a few people have seen will be far less secure that a algorithm that has been developed in the light and everyone can see. So for that reason alone I will not be designing any Cryptographic algorithms but rather sticking to use a very relevant algorithm, AES, and implement that instead. The documentation for AES is given in \textit{Section 2.4.2} and for further information you should look up the \textit{FIPS 197} standard.
 
 \section{Cryptographic Algorithm Design}
 
@@ -271,7 +336,7 @@ We can look at the example of the prime field $GF(2) = \{0,1\}$, which is the sm
 
 This is quite cool as it shows that addition in $GF(2)$, modulo 2 addition, is equivalent to and XOR Gate. It also shows us that multiplication in $GF(2)$ is equivalent to the logical AND Gate. This field, $GF(2)$ is very important for AES.
 
-\subsubsection{Extention Fields $GF(2^m)$}  
+\subsubsection{Extension Fields $GF(2^m)$}  
 
 AES uses a FF of 256 elements and is denoted as $GF(2^8)$. This field was chosen as each of the elements in this field can be represented as exactly one byte. It becomes increasing important as the S-Box and MixColumn transformations treat every byte of the internal data path as an element of the field $GF(2^8)$ and manipulates the data by performing arithmetic in this finite field.
 
@@ -640,7 +705,7 @@ The 11 subkeys are computed and stored in an array with elements $W[0], W[1], ..
 \label{AES-KeySch-128}
 \end{figure}
 
-The first subkey, $k_0$, is just the original key used when initalizing the algorithm. So elements $W[0], .., W[3]$ contain our original $128-bit$ key. Then, the left most word of a subkey $W[4i]$, where $i = 1,2,...,10$, is computed using the following formula:
+The first subkey, $k_0$, is just the original key used when initializing the algorithm. So elements $W[0], .., W[3]$ contain our original $128-bit$ key. Then, the left most word of a subkey $W[4i]$, where $i = 1,2,...,10$, is computed using the following formula:
 
 \begin{center}
 $W[4i] = W[4(i - 1)] \oplus g(W[4i - 1])$
@@ -813,6 +878,112 @@ The values given in the Inverse S-Box are given in Figure \ref{AES-InvS-BOX}.
 \subsubsection{Decryption Key Schedule}
 
 Since the first round of the decryption round needs the last subkey, the second round of decryption needs the second-last subkey, etc, etc. So we need to supply the subkeys in reverse order for the decryption rounds. This can generally be done by computing the $11$ or $13$ or $15$ subkeys and storing them. This adds some latency to the decryption of the algorithm when compared to the encryption rounds. 
+
+\section{Project Prototypes}
+\algsetup{indent=2em}
+
+\subsection{Question/Answer Algorithm}
+
+\begin{algorithm}[H]
+\begin{algorithmic}
+
+\STATE{Psuedocode for the Question/Answer Algorithm}
+
+\STATE{QuestionAnswer(string question\_id, string question\_answer)}
+\STATE{begin}
+\vspace{1em}
+\STATE{$dbAPI \leftarrow DatabaseAPI(question\_id, question\_answer)$}
+\vspace{1em}
+\STATE{$dbAPI.StoreData()$}
+\STATE{$dbAPI.GetCorrectAnswer()$}
+\STATE{$answer\_result \leftarrow dbAPI.IsAnswerCorrect()$}
+\vspace{1em}
+\IF{$answer\_result$ is true}
+    \STATE{Show User Answer Is Correct}
+\ELSIF{$answer\_result$ is false}
+    \STATE{Show User Answer is Incorrect}
+\ELSE
+    \STATE{Catch Any Errors}
+\ENDIF
+
+\vspace{1em}
+\STATE{end}
+
+\end{algorithmic}
+\end{algorithm}
+
+\subsection{AES Algorithm}
+
+\subsubsection{Cipher (ENCRYPT)}
+
+\begin{algorithm}[H]
+\begin{algorithmic}
+\STATE{Psuedocode for the AES Cipher}
+
+
+\STATE{Cipher(byte input[4*Nb], byte output[4*Nb], word w[Nb*(Nr+1)])}
+\STATE{begin}
+
+\STATE $state \leftarrow byte[4,Nb]$
+\STATE $state \leftarrow in$
+
+\vspace{1em}
+\STATE $AddRoundKey(state, w[0, Nb-1])$
+
+\FOR{$round \leftarrow 1$ \TO $Nr - 1$}
+    \STATE{$SubBytes(state)$}
+    \STATE{$ShiftRows(state)$}
+    \STATE{$MixColumns(state)$}
+    \STATE{$AddRoundKey(state, w[round*Nb, (round+1)*Nb-1])$}
+\ENDFOR
+\vspace{1em}
+\STATE{$SubBytes(state)$}
+\STATE{$ShiftRows(state)$}
+\STATE{$AddRoundKey(state, w[Nr*Nb, (Nr+1)*Nb-1])$}
+
+\vspace{1em}
+\STATE $output \leftarrow state$
+\vspace{1em}
+\STATE{end}
+\end{algorithmic}
+\end{algorithm}
+
+\subsubsection{Inverse Cipher (DECRYPT)}
+
+\algsetup{indent=2em}
+\begin{algorithm}[H]
+\begin{algorithmic}
+\STATE{Psuedocode for the Inverse AES Cipher}
+
+\STATE{InvCipher(byte input[4*Nb], byte output[4*Nb], word w[Nb*(Nr+1)])}
+\STATE{begin}
+
+\STATE $state \leftarrow byte[4,Nb]$
+\STATE $state \leftarrow in$
+
+\vspace{1em}
+\STATE $AddRoundKey(state, w[Nr*Nb, (Nr+1)*(Nb-1)]$
+
+\FOR{$round \leftarrow (Nr-1)$ \TO $1$}
+    \STATE{$InvSubBytes(state)$}
+    \STATE{$InvShiftRows(state)$}
+    \STATE{$AddRoundKey(state, w[round*Nb, (round+1)*Nb-1])$}
+    \STATE{$InvMixColumns(state)$}
+\ENDFOR
+\vspace{1em}
+\STATE{$SubBytes(state)$}
+\STATE{$ShiftRows(state)$}
+\STATE{$AddRoundKey(state, w[0, Nb-1)$}
+
+\vspace{1em}
+\STATE $output \leftarrow state$
+\vspace{1em}
+\STATE{end}
+\end{algorithmic}
+\end{algorithm}
+
+\subsubsection{AES Key Schedule}
+
 
 
 \section{Bespoke Data Structures}
@@ -1011,11 +1182,11 @@ Since the first round of the decryption round needs the last subkey, the second 
 
 \section{System Security}
 
-Since my project requires users to sign up that means they need to create a password. That means I need to ensure that all users passwords are secured properly so if at any point my database gets leaked onto the internet an attacker can get access to all my users accounts and more imporantly user account data. 
+Since my project requires users to sign up that means they need to create a password. That means I need to ensure that all users passwords are secured properly so if at any point my database gets leaked onto the Internet an attacker can get access to all my users accounts and more importantly user account data. 
 
 So all passwords are hashed using the bcrypt hash function. There is normally a lot of debate on which hash function to use but bcrypt has been around for over 10 years and no critical security flaws in its design and implementation have been found making a confident choice for me.
 
-For the passwords aswell, I have set conditions for password strength to make sure that the password a user chooses is suitable. These conditions mean that a password needs upper/lower case letters, number and special characters to be valid.
+For the passwords as well, I have set conditions for password strength to make sure that the password a user chooses is suitable. These conditions mean that a password needs upper/lower case letters, number and special characters to be valid.
 
 The login form also has something called rate-limiting. This means that an attacker cannot try to brute-force a users password as it will add a delay to entering the password after 3 failed attempts. This delay increases after every failed password attempt from here making it practically impossible for an attacker to brute force the password.
 

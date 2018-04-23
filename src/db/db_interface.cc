@@ -100,6 +100,7 @@ bool db_interface::does_answer_exist_user(const int &answer_id) {
  * @return An object containing the information on the question begin searched for
  */
 Wt::Dbo::ptr<DbUserAnsweredQuestion> db_interface::get_answer(const int &answer_id){
+    std::cout << "GET ANSWER CALLED" << std::endl;
     Wt::Dbo::Transaction transaction(current_session);
 
     const std::string &current_user_id = this->current_session.login().user().id();
@@ -116,18 +117,71 @@ Wt::Dbo::ptr<DbUserAnsweredQuestion> db_interface::get_answer(const int &answer_
  * @return Whether or not the question is right
  */
 bool db_interface::check_answer(const std::string &answer, int question_id) {
+    std::cout << "CHECK ANSWER CALLED" << std::endl;
     Wt::Dbo::Transaction transaction(current_session);
 
     const std::string& current_user_id = this->current_session.login().user().id();
 
+    std::cout << "Getting User Answered Questions" << std::endl;
     Wt::Dbo::ptr<DbUserAnsweredQuestion> user_answer = this->current_session.find<DbUserAnsweredQuestion>()
             .where("user_answered_question_id = ?").bind(question_id)
             .where("user_id = ?").bind(current_user_id);
 
+    std::cout << "Getting  Questions" << std::endl;
     Wt::Dbo::ptr<DbQuestions> question = this->current_session.find<DbQuestions>()
             .where("question_id = ?").bind(question_id);
+    std::cout << "Got Questions" << std::endl;
 
     return (user_answer->answer_text == question->question_answer);
+}
+
+/**
+ * @brief This method works out how many questions the user has answered
+ * @return THe number of questions the user has attempted
+ */
+int db_interface::get_total_questions_answered() {
+    Wt::Dbo::Transaction transaction(current_session);
+
+    int number_of_questions = 0;
+
+    auto current_user_id = this->current_session.login().user().id();
+    auto current_user = this->get_user(current_user_id);
+
+    for(const Wt::Dbo::ptr<DbUserAnsweredQuestion> question : current_user->questions){
+        number_of_questions++;
+    }
+
+    return number_of_questions;
+}
+
+/**
+ * This method works out how many of the quesitons the user has answered correctly
+ * @return The number of correctly answered questions
+ */
+int db_interface::get_total_correct_question_answered() {
+    Wt::Dbo::Transaction transaction(current_session);
+
+    int number_of_correct_questions = 0;
+
+    auto current_user_id = this->current_session.login().user().id();
+    auto current_user = this->get_user(current_user_id);
+
+    for(const Wt::Dbo::ptr<DbUserAnsweredQuestion> question : current_user->questions){
+        if(question->is_correct)
+            number_of_correct_questions++;
+    }
+    return number_of_correct_questions;
+}
+
+/**
+ * @brief This method sets the is_correct flag in the user_answered_question table so I can easily work out whether or
+ * not the user got the question correct
+ */
+void db_interface::set_answer_check_flag(int question_id, bool check) {
+    Wt::Dbo::Transaction transaction(current_session);
+
+    auto question = this->get_answer(question_id);
+    question.modify()->is_correct = check;
 }
 
 

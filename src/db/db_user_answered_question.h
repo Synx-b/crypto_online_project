@@ -36,6 +36,7 @@ public:
 
     int question_id;
     int answer_id;
+    bool is_correct;
 
     std::string question_text;
     std::string answer_text;
@@ -48,6 +49,7 @@ public:
         Wt::Dbo::field(a, answer_id, "user_answered_answer_id");
         Wt::Dbo::field(a, question_text, "user_answered_question_text");
         Wt::Dbo::field(a, answer_text, "user_answered_answer_text");
+        Wt::Dbo::field(a, is_correct, "user_answered_is_correct");
 
         Wt::Dbo::belongsTo(a, user, "user");
     }

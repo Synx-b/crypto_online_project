@@ -45,7 +45,6 @@ private:
     Session& _current_session;
 
     db_interface database_interface; /**< A database_interface instance that allows data to be read from the database*/
-    Wt::Dbo::ptr<DbUser> database_user; /**< This is where the database information about the user will be loaded into */
 
 };
 

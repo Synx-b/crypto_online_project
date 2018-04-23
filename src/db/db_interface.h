@@ -28,6 +28,9 @@ public:
 
     void add_answer_to_user(const std::string& answer, int question_id);
     bool check_answer(const std::string& answer, int question_id);
+    void set_answer_check_flag(int question_id, bool flag);
+    int get_total_questions_answered();
+    int get_total_correct_question_answered();
 
 
 private:
