@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.4.11)  23 APR 2018 12:46
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.4.11)  24 APR 2018 08:55
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1801,12 +1801,12 @@ Underfull \vbox (badness 10000) detected at line 98
  []
 
 
-Underfull \hbox (badness 1728) in paragraph at lines 106--106
+Underfull \hbox (badness 1728) in paragraph at lines 108--108
 \OT1/pbk/l/n/12 e user[]answered[]q
  []
 
 
-Overfull \hbox (28.70728pt too wide) in alignment at lines 98--109
+Overfull \hbox (28.70728pt too wide) in alignment at lines 98--117
  [] [] [] [] [] [] 
  []
 
@@ -1814,15 +1814,15 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.109 \end{longtable}
+l.117 \end{longtable}
                       [1
 
 ]
 LaTeX Font Info:    Font shape `OT1/pbk/m/sl' in size <12> not available
-(Font)              Font shape `OT1/pbk/l/sl' tried instead on input line 109.
- [2] [3] [4]
+(Font)              Font shape `OT1/pbk/l/sl' tried instead on input line 117.
+ [2] [3] [4] [5]
 LaTeX Font Info:    Font shape `OT1/pbk/m/n' in size <10> not available
-(Font)              Font shape `OT1/pbk/l/n' tried instead on input line 120.
+(Font)              Font shape `OT1/pbk/l/n' tried instead on input line 128.
 
 (../src/crypto/aes_implementation_test_input.cc
 LaTeX Font Info:    Font shape `OT1/pbk/m/n' in size <6> not available
@@ -1853,39 +1853,39 @@ File: omspbk.fd
 )
 LaTeX Font Info:    Font shape `OMS/pbk/m/n' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 18.
- [5] [6])
-Underfull \vbox (badness 10000) detected at line 174
+ [6] [7])
+Underfull \vbox (badness 10000) detected at line 182
  []
 
-[7]
-Underfull \vbox (badness 10000) detected at line 288
+[8]
+Underfull \vbox (badness 10000) detected at line 296
  []
 
-[8] [9] [10]
-Underfull \vbox (badness 10000) detected at line 410
+[9] [10] [11]
+Underfull \vbox (badness 10000) detected at line 418
  []
 
-[11]
-Underfull \vbox (badness 10000) detected at line 538
+[12]
+Underfull \vbox (badness 10000) detected at line 546
  []
 
-[12] [13] [14]
-Underfull \vbox (badness 10000) detected at line 681
+[13] [14] [15]
+Underfull \vbox (badness 10000) detected at line 689
  []
 
-[15]
-Underfull \vbox (badness 10000) detected at line 833
+[16]
+Underfull \vbox (badness 10000) detected at line 841
  []
 
-[16] [17]) (./evaluation.tex [18]
+[17] [18]) (./evaluation.tex [19]
 Chapter 2.
-) [19
+) [20
 
 ] (./alevel_project_homepage.lof)
 \tf@lof=\write6
 \openout6 = `alevel_project_homepage.lof'.
 
- [20
+ [21
 
 ] (./alevel_project_homepage.lot)
 \tf@lot=\write7
@@ -1894,7 +1894,7 @@ Chapter 2.
 
 
 AED: lastpage setting LastPage
-[21
+[22
 
 ]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 115.
@@ -1902,21 +1902,14 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 115.
  (./alevel_project_homepage.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 115.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 115.
-
-
-Package rerunfilecheck Warning: File `alevel_project_homepage.out' has changed.
-
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `alevel_project_homepage.out':
-(rerunfilecheck)             Before: 4CFA2297DA10EF4FA904DC9FDBBD9E96;1398
-(rerunfilecheck)             After:  5C92D3C41541C88B6DB199C0EE47A446;1404.
+Package rerunfilecheck Info: File `alevel_project_homepage.out' has not changed
+.
+(rerunfilecheck)             Checksum: 5C92D3C41541C88B6DB199C0EE47A446;1404.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 115.
  ) 
 Here is how much of TeX's memory you used:
- 33515 strings out of 494808
- 650780 string characters out of 6178059
+ 33516 strings out of 494808
+ 650787 string characters out of 6178059
  5808601 words of memory out of 14762194
  36083 multiletter control sequences out of 15000+600000
  555445 words of font info for 85 fonts, out of 8000000 for 9000
@@ -1931,10 +1924,10 @@ urw/bookman/ubkd8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/bookman/u
 bkl8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/bookman/ubkl8a.pfb></u
 sr/share/texlive/texmf-dist/fonts/type1/urw/bookman/ubkli8a.pfb></usr/share/tex
 live/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb>
-Output written on alevel_project_homepage.pdf (23 pages, 154013 bytes).
+Output written on alevel_project_homepage.pdf (24 pages, 155061 bytes).
 PDF statistics:
- 414 PDF objects out of 1000 (max. 8388607)
- 376 compressed objects within 4 object streams
- 156 named destinations out of 1000 (max. 500000)
+ 420 PDF objects out of 1000 (max. 8388607)
+ 381 compressed objects within 4 object streams
+ 157 named destinations out of 1000 (max. 500000)
  173 words of extra memory for PDF output out of 10000 (max. 10000000)
 

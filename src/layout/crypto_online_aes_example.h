@@ -26,9 +26,14 @@ private:
 
     void load_page_content();
     void process();
+    void hexstring_to_array(std::string hexstring, byte out[], int length);
+    uint8_t hex_char_to_string(char c);
 
     Wt::WLineEdit* plaintext_entry;
     Wt::WLineEdit* key_entry;
+
+    Wt::WText* plaintext_error;
+    Wt::WText* key_error;
 
     Wt::WTextArea* ciphertext_area;
 
