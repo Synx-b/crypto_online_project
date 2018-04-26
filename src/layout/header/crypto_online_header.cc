@@ -64,6 +64,8 @@ void CryptoOnlineHeader::create_user_navigation_bar() {
     auto left_menu_ = this->navigation_bar->addMenu(std::move(this->left_menu));
     left_menu_->addItem("Home")->setLink(Wt::WLink(Wt::LinkType::InternalPath, "/home"));
 
+    Wt::Dbo::Transaction transaction(_current_session);
+
     // Getting information on the current logged in user
     const Wt::Auth::User& u = _current_session.login().user();
     auto current_user = database_interface.get_user(u.id());
@@ -71,9 +73,9 @@ void CryptoOnlineHeader::create_user_navigation_bar() {
     if(current_user->user_role == Role::Admin)
         left_menu_->addItem("Admin Settings")->setLink(Wt::WLink(Wt::LinkType::InternalPath, "admin"));
 
-    Wt::Dbo::Transaction transaction(_current_session);
     auto username = left_menu_->addItem("User Logged In: " + this->_current_session.user()->identity(Wt::Auth::Identity::LoginName));
     username->disable();
+
 
     this->right_menu = Wt::cpp14::make_unique<Wt::WMenu>();
     auto right_menu_ = this->navigation_bar->addMenu(std::move(this->right_menu), Wt::AlignmentFlag::Right);

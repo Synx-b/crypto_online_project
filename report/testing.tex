@@ -51,14 +51,14 @@ backgroundcolor=\color{lbcolor},
 
 \section{The Web Application}
 
-Since my Web Application has many moving parts I wil be testing each of the componenets individually first. Then when I can be sure that the components work individually I will test all of them together. 
+Since my Web Application has many moving parts I will be testing each of the components individually first. Then when I can be sure that the components work individually I will test all of them together. 
 
 \subsection{Web Application Test Table}
 
 
 \begin{longtable}{p{0.05\textwidth}|p{0.25\textwidth}|p{0.15\textwidth}|p{0.3\textwidth}|p{0.1\textwidth}|p{0.05\textwidth}}
 \toprule
-Test \# & Test Description & Test Type & Expected Result & Pass /Fail & Ref No \\
+Test \# & Test Description & Test Type & Expected Result & Pass /Fail & Fig No \\
 \midrule 
 1 & \breakwords{Connecting to the Website} & Typical & \breakwords{The user will be able to successfully load the Website} & Pass & 01 \\
 \midrule
@@ -100,12 +100,12 @@ Test \# & Test Description & Test Type & Expected Result & Pass /Fail & Ref No \
 21 & \breakwords{When a user is not logged in and they navigate to the profile page it should say that no user is logged in} & Typical & \breakwords{The profile page displays that no user is logged in} & Pass & 21 \\\midrule
 22 & \breakwords{When a logged in user goes to their profile page it should show them the number of questions that they have answered} & Typical & \breakwords{The user will be able to see the total number of questions they have answered} & Pass & 22 \\\midrule
 23 & \breakwords{When a logged in user goes to their profile page it should show the total number of questions answered correctly} & Typical & \breakwords{The profile page will show the total number of questions that have been answered correctly.} & Pass & 23 \\\midrule
-22 & \breakwords{When a user tries to log in with valid credentials they are logged in} & Typical & \breakwords{The user will be logged in} & Pass & 22 \\\midrule
-23 & \breakwords{After a few attempts to try to log in the user will have to wait to log in again} & Typical & \breakwords{The user will be given a time out and will have to wait a fair interval until they can try to login in again} & Pass & 23 \\\midrule
-24 & \breakwords{When a user answers a question it should store the question in the user\_answered\_questions table} & Typical & \breakwords{The relevant question information is stored in the user\_answered\_questions table} & Pass & 24 \\\midrule
-25 & \breakwords{When the user answers the question correctly then it displays the user got the question correct} & Typical & \breakwords{The user is shown that they got the question correct} & Pass & 25 \\\midrule
-26 & \breakwords{When the user answers the question wrong it displays that they got the question wrong} & Typical & \breakwords{The user is shown that they got the question wrong} & Pass & 26 \\\midrule
-27 & \breakwords{When ever the user answers the question it updates the question in the user\_answered\_question table} & Typical & \breakwords{The users question answer should be updated in the user\_answered\_question table} & Pass & 27 \\\midrule
+24 & \breakwords{When a user tries to log in with valid credentials they are logged in} & Typical & \breakwords{The user will be logged in} & Pass & 24 \\\midrule
+25 & \breakwords{After a few attempts to try to log in the user will have to wait to log in again} & Typical & \breakwords{The user will be given a time out and will have to wait a fair interval until they can try to login in again} & Pass & 25 \\\midrule
+26 & \breakwords{When a user answers a question it should store the question in the user\_answered\_questions table} & Typical & \breakwords{The relevant question information is stored in the user\_answered\_questions table} & Pass & 26 \\\midrule
+27 & \breakwords{When the user answers the question correctly then it displays the user got the question correct} & Typical & \breakwords{The user is shown that they got the question correct} & Pass & 27 \\\midrule
+28 & \breakwords{When the user answers the question wrong it displays that they got the question wrong} & Typical & \breakwords{The user is shown that they got the question wrong} & Pass & 28 \\\midrule
+29 & \breakwords{When ever the user answers the question it updates the question in the user\_answered\_question table} & Typical & \breakwords{The users question answer should be updated in the user\_answered\_question table} & Pass & 29 \\\midrule
 28 & \breakwords{} & Typical & \breakwords{} & Pass & 28 \\\midrule
 28 & \breakwords{} & Typical & \breakwords{} & Pass & 28 \\\midrule
 28 & \breakwords{} & Typical & \breakwords{} & Pass & 28 \\\midrule
@@ -115,6 +115,170 @@ Test \# & Test Description & Test Type & Expected Result & Pass /Fail & Ref No \
 28 & \breakwords{} & Typical & \breakwords{} & Pass & 28 \\\midrule
 29 & \breakwords{} & Typical & \breakwords{} & Pass & 29 \\\bottomrule
 \end{longtable}
+
+\section{Test Evidence}
+
+\subsection{Test Ref 01}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.5]{testing/test-01-01}
+\caption{Entering the URL of the Web Application}
+\label{test-01-01}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.2]{testing/test-01-02}
+\caption{Pressing enter the Web Application Loads the Home Page}
+\label{test-01-02}
+\end{figure}
+
+\subsection{Test Ref 02}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.2]{testing/test-01-02}
+\caption{Starting at the Homepage and then clicking the Basic Concepts Button}
+\label{test-02-01}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.2]{testing/test-02-01}
+\caption{After clicking the button the Basic Concepts Page Loads}
+\label{test-02-02}
+\end{figure}
+
+\subsection{Test Ref 03}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.2]{testing/test-01-02}
+\caption{Starting at the Homepage and then clicking the Modular Arithmetic Button}
+\label{test-03-01}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.2]{testing/test-03-01}
+\caption{After clicking the button the Modular Arithmetic Page Loads}
+\label{test-03-02}
+\end{figure}
+
+\subsection{Test Ref 04}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.2]{testing/test-01-02}
+\caption{Starting at the Homepage and then clicking the Login/Register Button}
+\label{test-04-01}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.2]{testing/test-04-01}
+\caption{After clicking the button the Login/Register Page Loads}
+\label{test-04-02}
+\end{figure}
+
+\subsection{Test Ref 05}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.2]{testing/test-04-01}
+\caption{Starting at the Login/Register Page and then clicking the Register Button}
+\label{test-05-01}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.2]{testing/test-05-01}
+\caption{After clicking the button the Login/Register Page Loads}
+\label{test-05-02}
+\end{figure}
+
+\subsection{Test Ref 06}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.2]{testing/test-06-01}
+\caption{Starting at the Home Page and then clicking the Profile Button}
+\label{test-06-01}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.2]{testing/test-06-02}
+\caption{After clicking the button Profile Page Loads}
+\label{test-06-02}
+\end{figure}
+
+\subsection{Test Ref 07}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.2]{testing/test-04-01}
+\caption{Starting at the Register Page and then clicking the Register Button}
+\label{test-07-01}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.4]{testing/test-07-01}
+\caption{The username field states that you need to enter a username}
+\label{test-07-02}
+\end{figure}
+
+\subsection{Test Ref 08}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.2]{testing/test-04-01}
+\caption{Starting at the Register Page and then clicking the Register Button}
+\label{test-08-01}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.4]{testing/test-08-01}
+\caption{The password field states that you need to enter a password}
+\label{test-08-02}
+\end{figure}
+
+\subsection{Test Ref 09}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.2]{testing/test-04-01}
+\caption{Starting at the Register Page and then clicking the Register Button}
+\label{test-09-01}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.4]{testing/test-09-01}
+\caption{Having two different Passwords causes an error}
+\label{test-09-02}
+\end{figure}
+
+\subsection{Test Ref 10}
+\subsection{Test Ref 11}
+\subsection{Test Ref 12}
+\subsection{Test Ref 13}
+\subsection{Test Ref 14}
+\subsection{Test Ref 15}
+\subsection{Test Ref 16}
+\subsection{Test Ref 17}
+\subsection{Test Ref 18}
+\subsection{Test Ref 19}
+\subsection{Test Ref 20}
+\subsection{Test Ref 21}
+\subsection{Test Ref 22}
+\subsection{Test Ref 23}
+\subsection{Test Ref 24}
+\subsection{Test Ref 25}
+\subsection{Test Ref 26}
 
 \newpage
 \section{AES Implementation}

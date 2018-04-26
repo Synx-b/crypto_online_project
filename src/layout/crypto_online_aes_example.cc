@@ -68,9 +68,8 @@ void CryptoOnlineAESExample::process() {
         byte plaintext_array[16];
         this->hexstring_to_array(plaintext, plaintext_array, 16);
         this->hexstring_to_array(key, key_array, static_cast<int>(key_size));
-        std::cout << plaintext.data() << std::endl;
         for(int i = 0; i < 16; i++)
-            std::cout << plaintext[i] << std::endl;
+            std::cout << (unsigned)plaintext[i] << std::endl;
     }
 
 }

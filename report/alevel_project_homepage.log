@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.4.11)  24 APR 2018 08:55
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.4.11)  26 APR 2018 08:50
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1746,14 +1746,17 @@ LaTeX Font Info:    Font shape `OT1/pbk/bx/n' in size <12> not available
 (Font)              Font shape `OT1/pbk/b/n' tried instead on input line 2.
 LaTeX Font Info:    Font shape `OT1/pbk/b/n' in size <12> not available
 (Font)              Font shape `OT1/pbk/db/n' tried instead on input line 2.
-)
+ [1
+
+])
 \tf@toc=\write5
 \openout5 = `alevel_project_homepage.toc'.
 
- [1
+LaTeX Font Info:    Font shape `OT1/pbk/m/sl' in size <12> not available
+(Font)              Font shape `OT1/pbk/l/sl' tried instead on input line 92.
 
-]
-(./testing.tex (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+[2] (./testing.tex
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2015/06/04 1.6 listings language file
 )
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
@@ -1788,7 +1791,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 61--61
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 61--62
-[]|\OT1/pbk/l/n/12 Ref
+[]|\OT1/pbk/l/n/12 Fig
  []
 
 
@@ -1817,12 +1820,117 @@ been already used, duplicate ignored
 l.117 \end{longtable}
                       [1
 
-]
-LaTeX Font Info:    Font shape `OT1/pbk/m/sl' in size <12> not available
-(Font)              Font shape `OT1/pbk/l/sl' tried instead on input line 117.
- [2] [3] [4] [5]
+] [2] [3] [4]
+<images/testing/test-01-01.png, id=255, 562.1pt x 198.7425pt>
+File: images/testing/test-01-01.png Graphic file (type png)
+<use images/testing/test-01-01.png>
+Package pdftex.def Info: images/testing/test-01-01.png  used on input line 125.
+
+(pdftex.def)             Requested size: 281.04932pt x 99.371pt.
+<images/testing/test-01-02.png, id=256, 1927.2pt x 1084.05pt>
+File: images/testing/test-01-02.png Graphic file (type png)
+<use images/testing/test-01-02.png>
+Package pdftex.def Info: images/testing/test-01-02.png  used on input line 132.
+
+(pdftex.def)             Requested size: 385.43318pt x 216.80615pt.
+File: images/testing/test-01-02.png Graphic file (type png)
+<use images/testing/test-01-02.png>
+Package pdftex.def Info: images/testing/test-01-02.png  used on input line 141.
+
+(pdftex.def)             Requested size: 385.43318pt x 216.80615pt.
+ [5 <./images/testing/test-01-01.png> <./images/testing/test-01-02.png>]
+<images/testing/test-02-01.png, id=264, 1927.2pt x 1084.05pt>
+File: images/testing/test-02-01.png Graphic file (type png)
+<use images/testing/test-02-01.png>
+Package pdftex.def Info: images/testing/test-02-01.png  used on input line 148.
+
+(pdftex.def)             Requested size: 385.43318pt x 216.80615pt.
+File: images/testing/test-01-02.png Graphic file (type png)
+<use images/testing/test-01-02.png>
+Package pdftex.def Info: images/testing/test-01-02.png  used on input line 157.
+
+(pdftex.def)             Requested size: 385.43318pt x 216.80615pt.
+ [6 <./images/testing/test-02-01.png>]
+<images/testing/test-03-01.png, id=272, 1927.2pt x 1084.05pt>
+File: images/testing/test-03-01.png Graphic file (type png)
+<use images/testing/test-03-01.png>
+Package pdftex.def Info: images/testing/test-03-01.png  used on input line 164.
+
+(pdftex.def)             Requested size: 385.43318pt x 216.80615pt.
+File: images/testing/test-01-02.png Graphic file (type png)
+<use images/testing/test-01-02.png>
+Package pdftex.def Info: images/testing/test-01-02.png  used on input line 173.
+
+(pdftex.def)             Requested size: 385.43318pt x 216.80615pt.
+ [7 <./images/testing/test-03-01.png>]
+<images/testing/test-04-01.png, id=280, 1926.19624pt x 595.22375pt>
+File: images/testing/test-04-01.png Graphic file (type png)
+<use images/testing/test-04-01.png>
+Package pdftex.def Info: images/testing/test-04-01.png  used on input line 180.
+
+(pdftex.def)             Requested size: 385.23242pt x 119.04263pt.
+File: images/testing/test-04-01.png Graphic file (type png)
+<use images/testing/test-04-01.png>
+Package pdftex.def Info: images/testing/test-04-01.png  used on input line 189.
+
+(pdftex.def)             Requested size: 385.23242pt x 119.04263pt.
+<images/testing/test-05-01.png, id=281, 1927.2pt x 1057.9525pt>
+File: images/testing/test-05-01.png Graphic file (type png)
+<use images/testing/test-05-01.png>
+Package pdftex.def Info: images/testing/test-05-01.png  used on input line 196.
+
+(pdftex.def)             Requested size: 385.43318pt x 211.58675pt.
+ [8 <./images/testing/test-04-01.png>]
+<images/testing/test-06-01.png, id=291, 1927.2pt x 1057.9525pt>
+File: images/testing/test-06-01.png Graphic file (type png)
+<use images/testing/test-06-01.png>
+Package pdftex.def Info: images/testing/test-06-01.png  used on input line 205.
+
+(pdftex.def)             Requested size: 385.43318pt x 211.58675pt.
+<images/testing/test-06-02.png, id=292, 1927.2pt x 1057.9525pt>
+File: images/testing/test-06-02.png Graphic file (type png)
+<use images/testing/test-06-02.png>
+Package pdftex.def Info: images/testing/test-06-02.png  used on input line 212.
+
+(pdftex.def)             Requested size: 385.43318pt x 211.58675pt.
+ [9 <./images/testing/test-05-01.png> <./images/testing/test-06-01.png>]
+File: images/testing/test-04-01.png Graphic file (type png)
+<use images/testing/test-04-01.png>
+Package pdftex.def Info: images/testing/test-04-01.png  used on input line 221.
+
+(pdftex.def)             Requested size: 385.23242pt x 119.04263pt.
+<images/testing/test-07-01.png, id=302, 702.625pt x 210.7875pt>
+File: images/testing/test-07-01.png Graphic file (type png)
+<use images/testing/test-07-01.png>
+Package pdftex.def Info: images/testing/test-07-01.png  used on input line 228.
+
+(pdftex.def)             Requested size: 281.04501pt x 84.3135pt.
+File: images/testing/test-04-01.png Graphic file (type png)
+<use images/testing/test-04-01.png>
+Package pdftex.def Info: images/testing/test-04-01.png  used on input line 237.
+
+(pdftex.def)             Requested size: 385.23242pt x 119.04263pt.
+ [10 <./images/testing/test-06-02.png> <./images/testing/test-07-01.png>]
+<images/testing/test-08-01.png, id=314, 711.65875pt x 282.05376pt>
+File: images/testing/test-08-01.png Graphic file (type png)
+<use images/testing/test-08-01.png>
+Package pdftex.def Info: images/testing/test-08-01.png  used on input line 244.
+
+(pdftex.def)             Requested size: 284.65845pt x 112.81949pt.
+File: images/testing/test-04-01.png Graphic file (type png)
+<use images/testing/test-04-01.png>
+Package pdftex.def Info: images/testing/test-04-01.png  used on input line 253.
+
+(pdftex.def)             Requested size: 385.23242pt x 119.04263pt.
+<images/testing/test-09-01.png, id=315, 729.72626pt x 363.3575pt>
+File: images/testing/test-09-01.png Graphic file (type png)
+<use images/testing/test-09-01.png>
+Package pdftex.def Info: images/testing/test-09-01.png  used on input line 260.
+
+(pdftex.def)             Requested size: 291.88533pt x 145.34041pt.
+ [11 <./images/testing/test-08-01.png>] [12 <./images/testing/test-09-01.png>]
 LaTeX Font Info:    Font shape `OT1/pbk/m/n' in size <10> not available
-(Font)              Font shape `OT1/pbk/l/n' tried instead on input line 128.
+(Font)              Font shape `OT1/pbk/l/n' tried instead on input line 292.
 
 (../src/crypto/aes_implementation_test_input.cc
 LaTeX Font Info:    Font shape `OT1/pbk/m/n' in size <6> not available
@@ -1853,48 +1961,44 @@ File: omspbk.fd
 )
 LaTeX Font Info:    Font shape `OMS/pbk/m/n' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 18.
- [6] [7])
-Underfull \vbox (badness 10000) detected at line 182
+ [13] [14])
+Underfull \vbox (badness 10000) detected at line 346
  []
 
-[8]
-Underfull \vbox (badness 10000) detected at line 296
+[15]
+Underfull \vbox (badness 10000) detected at line 460
  []
 
-[9] [10] [11]
-Underfull \vbox (badness 10000) detected at line 418
+[16] [17] [18]
+Underfull \vbox (badness 10000) detected at line 582
  []
 
-[12]
-Underfull \vbox (badness 10000) detected at line 546
+[19]
+Underfull \vbox (badness 10000) detected at line 710
  []
 
-[13] [14] [15]
-Underfull \vbox (badness 10000) detected at line 689
+[20] [21] [22]
+Underfull \vbox (badness 10000) detected at line 853
  []
 
-[16]
-Underfull \vbox (badness 10000) detected at line 841
+[23]
+Underfull \vbox (badness 10000) detected at line 1005
  []
 
-[17] [18]) (./evaluation.tex [19]
-Chapter 2.
-) [20
-
-] (./alevel_project_homepage.lof)
+[24] [25]) [26] (./alevel_project_homepage.lof)
 \tf@lof=\write6
 \openout6 = `alevel_project_homepage.lof'.
 
- [21
+ [27
 
-] (./alevel_project_homepage.lot)
+]
+(./alevel_project_homepage.lot)
 \tf@lot=\write7
 \openout7 = `alevel_project_homepage.lot'.
 
-
-
+ 
 AED: lastpage setting LastPage
-[22
+[28
 
 ]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 115.
@@ -1904,14 +2008,14 @@ Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 115.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 115.
 Package rerunfilecheck Info: File `alevel_project_homepage.out' has not changed
 .
-(rerunfilecheck)             Checksum: 5C92D3C41541C88B6DB199C0EE47A446;1404.
+(rerunfilecheck)             Checksum: 9CCE3F5ED18E72A91FAE0E408CBA66DB;2799.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 115.
  ) 
 Here is how much of TeX's memory you used:
- 33516 strings out of 494808
- 650787 string characters out of 6178059
- 5808601 words of memory out of 14762194
- 36083 multiletter control sequences out of 15000+600000
+ 33662 strings out of 494808
+ 653860 string characters out of 6178059
+ 5810293 words of memory out of 14763886
+ 36172 multiletter control sequences out of 15000+600000
  555445 words of font info for 85 fonts, out of 8000000 for 9000
  81 hyphenation exceptions out of 8191
  57i,12n,68p,10395b,1305s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1924,10 +2028,10 @@ urw/bookman/ubkd8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/bookman/u
 bkl8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/bookman/ubkl8a.pfb></u
 sr/share/texlive/texmf-dist/fonts/type1/urw/bookman/ubkli8a.pfb></usr/share/tex
 live/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb>
-Output written on alevel_project_homepage.pdf (24 pages, 155061 bytes).
+Output written on alevel_project_homepage.pdf (31 pages, 907300 bytes).
 PDF statistics:
- 420 PDF objects out of 1000 (max. 8388607)
- 381 compressed objects within 4 object streams
- 157 named destinations out of 1000 (max. 500000)
- 173 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 627 PDF objects out of 1000 (max. 8388607)
+ 565 compressed objects within 6 object streams
+ 203 named destinations out of 1000 (max. 500000)
+ 396 words of extra memory for PDF output out of 10000 (max. 10000000)
 

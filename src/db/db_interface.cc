@@ -36,6 +36,7 @@ Wt::Dbo::ptr<DbUser> db_interface::get_user(std::string looking_for_id) {
                 return current_user;
         }
     }
+    std::cout << "Leaving db_interface::db_user" << std::endl;
 }
 
 /**
