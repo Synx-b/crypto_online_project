@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.4.11)  26 APR 2018 08:50
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.4.11)  27 APR 2018 13:16
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1586,7 +1586,14 @@ File: pgflibraryshapes.symbols.code.tex 2013/09/11 v3.0.1a (rcs-revision 1.6)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
 zlibrarytrees.code.tex
 File: tikzlibrarytrees.code.tex 2008/02/24 v3.0.1a (rcs-revision 1.2)
-)) (./alevel_project_homepage.aux)
+)) (./alevel_project_homepage.aux
+
+LaTeX Warning: Label `test-09-01' multiply defined.
+
+
+LaTeX Warning: Label `test-09-02' multiply defined.
+
+)
 \openout1 = `alevel_project_homepage.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 85.
@@ -1603,8 +1610,7 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 85.
 LaTeX Font Info:    ... okay on input line 85.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 85.
 LaTeX Font Info:    Try loading font information for TS1+cmr on input line 85.
-
-(/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
+ (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    ... okay on input line 85.
@@ -1729,12 +1735,12 @@ LaTeX Font Info:    Font shape `OT1/pbk/m/n' in size <14.4> not available
 (Font)              Font shape `OT1/pbk/l/n' tried instead on input line 27.
 LaTeX Font Info:    Font shape `OT1/pbk/m/it' in size <14.4> not available
 (Font)              Font shape `OT1/pbk/l/it' tried instead on input line 28.
-LaTeX Font Info:    Try loading font information for U+msa on input line 31.
+LaTeX Font Info:    Try loading font information for U+msa on input line 33.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 31.
+LaTeX Font Info:    Try loading font information for U+msb on input line 33.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -1748,14 +1754,470 @@ LaTeX Font Info:    Font shape `OT1/pbk/b/n' in size <12> not available
 (Font)              Font shape `OT1/pbk/db/n' tried instead on input line 2.
  [1
 
-])
+]
+LaTeX Font Info:    Font shape `OT1/pbk/m/sl' in size <12> not available
+(Font)              Font shape `OT1/pbk/l/sl' tried instead on input line 109.
+ [2]
+[3]
+Overfull \hbox (3.71979pt too wide) detected at line 162
+ []\OT1/pbk/l/n/12 101
+ []
+
+
+Overfull \hbox (3.71979pt too wide) detected at line 163
+ []\OT1/pbk/l/n/12 102
+ []
+
+
+Overfull \hbox (3.71979pt too wide) detected at line 164
+ []\OT1/pbk/l/n/12 106
+ []
+
+
+Overfull \hbox (3.71979pt too wide) detected at line 165
+ []\OT1/pbk/l/n/12 107
+ []
+
+
+Overfull \hbox (3.71979pt too wide) detected at line 166
+ []\OT1/pbk/l/n/12 109
+ []
+
+
+Overfull \hbox (3.71979pt too wide) detected at line 167
+ []\OT1/pbk/l/n/12 110
+ []
+
+
+Overfull \hbox (3.71979pt too wide) detected at line 168
+ []\OT1/pbk/l/n/12 112
+ []
+
+
+Overfull \hbox (3.71979pt too wide) detected at line 169
+ []\OT1/pbk/l/n/12 114
+ []
+
+
+Overfull \hbox (3.71979pt too wide) detected at line 170
+ []\OT1/pbk/l/n/12 114
+ []
+
+
+Overfull \hbox (3.71979pt too wide) detected at line 171
+ []\OT1/pbk/l/n/12 116
+ []
+
+
+Overfull \hbox (3.71979pt too wide) detected at line 172
+ []\OT1/pbk/l/n/12 121
+ []
+
+
+Overfull \hbox (3.71979pt too wide) detected at line 173
+ []\OT1/pbk/l/n/12 124
+ []
+
+
+Overfull \hbox (3.71979pt too wide) detected at line 174
+ []\OT1/pbk/l/n/12 144
+ []
+
+
+Overfull \hbox (3.71979pt too wide) detected at line 175
+ []\OT1/pbk/l/n/12 146
+ []
+
+
+Overfull \hbox (3.71979pt too wide) detected at line 176
+ []\OT1/pbk/l/n/12 148
+ []
+
+
+Overfull \hbox (3.71979pt too wide) detected at line 177
+ []\OT1/pbk/l/n/12 149
+ []
+
+
+Overfull \hbox (3.71979pt too wide) detected at line 178
+ []\OT1/pbk/l/n/12 151
+ []
+
+
+Overfull \hbox (3.71979pt too wide) detected at line 179
+ []\OT1/pbk/l/n/12 152
+ []
+
+
+Overfull \hbox (3.71979pt too wide) detected at line 180
+ []\OT1/pbk/l/n/12 154
+ []
+
+
+Overfull \hbox (3.71979pt too wide) detected at line 181
+ []\OT1/pbk/l/n/12 154
+ []
+
+
+Overfull \hbox (3.71979pt too wide) detected at line 182
+ []\OT1/pbk/l/n/12 155
+ []
+
+
+Overfull \hbox (3.71979pt too wide) detected at line 183
+ []\OT1/pbk/l/n/12 158
+ []
+
+
+Overfull \hbox (3.71979pt too wide) detected at line 184
+ []\OT1/pbk/l/n/12 159
+ []
+
+
+Overfull \hbox (3.71979pt too wide) detected at line 185
+ []\OT1/pbk/l/n/12 161
+ []
+
+
+Overfull \hbox (3.71979pt too wide) detected at line 186
+ []\OT1/pbk/l/n/12 162
+ []
+
+
+Overfull \hbox (3.71979pt too wide) detected at line 187
+ []\OT1/pbk/l/n/12 164
+ []
+
+
+Overfull \hbox (3.71979pt too wide) detected at line 188
+ []\OT1/pbk/l/n/12 164
+ []
+
+
+Overfull \hbox (3.71979pt too wide) detected at line 189
+ []\OT1/pbk/l/n/12 166
+ []
+
+
+Overfull \hbox (3.71979pt too wide) detected at line 190
+ []\OT1/pbk/l/n/12 169
+ []
+
+
+Overfull \hbox (3.71979pt too wide) detected at line 191
+ []\OT1/pbk/l/n/12 169
+ []
+
+
+Overfull \hbox (3.71979pt too wide) detected at line 192
+ []\OT1/pbk/l/n/12 173
+ []
+
+
+Overfull \hbox (3.71979pt too wide) detected at line 194
+ []\OT1/pbk/l/n/12 176
+ []
+
+
+Overfull \hbox (3.71979pt too wide) detected at line 195
+ []\OT1/pbk/l/n/12 176
+ []
+
+
+Overfull \hbox (3.71979pt too wide) detected at line 196
+ []\OT1/pbk/l/n/12 180
+ []
+
+
+Overfull \hbox (3.71979pt too wide) detected at line 197
+ []\OT1/pbk/l/n/12 180
+ []
+
+
+Overfull \hbox (3.71979pt too wide) detected at line 198
+ []\OT1/pbk/l/n/12 181
+ []
+
+[4]
+Overfull \hbox (3.71979pt too wide) detected at line 199
+ []\OT1/pbk/l/n/12 182
+ []
+
+
+Overfull \hbox (3.71979pt too wide) detected at line 200
+ []\OT1/pbk/l/n/12 183
+ []
+
+
+Overfull \hbox (3.71979pt too wide) detected at line 201
+ []\OT1/pbk/l/n/12 183
+ []
+
+
+Overfull \hbox (3.71979pt too wide) detected at line 202
+ []\OT1/pbk/l/n/12 184
+ []
+
+
+Overfull \hbox (3.71979pt too wide) detected at line 203
+ []\OT1/pbk/l/n/12 185
+ []
+
+
+Overfull \hbox (3.71979pt too wide) detected at line 204
+ []\OT1/pbk/l/n/12 186
+ []
+
+
+Overfull \hbox (3.71979pt too wide) detected at line 205
+ []\OT1/pbk/l/n/12 186
+ []
+
+
+Overfull \hbox (3.71979pt too wide) detected at line 206
+ []\OT1/pbk/l/n/12 187
+ []
+
+
+Overfull \hbox (3.71979pt too wide) detected at line 207
+ []\OT1/pbk/l/n/12 188
+ []
+
+
+Overfull \hbox (3.71979pt too wide) detected at line 208
+ []\OT1/pbk/l/n/12 188
+ []
+
+
+Overfull \hbox (3.71979pt too wide) detected at line 209
+ []\OT1/pbk/l/n/12 188
+ []
+
+
+Overfull \hbox (3.71979pt too wide) detected at line 210
+ []\OT1/pbk/l/n/12 188
+ []
+
+
+Overfull \hbox (3.71979pt too wide) detected at line 211
+ []\OT1/pbk/l/n/12 188
+ []
+
+
+Overfull \hbox (3.71979pt too wide) detected at line 212
+ []\OT1/pbk/l/n/12 188
+ []
+
+
+Overfull \hbox (3.71979pt too wide) detected at line 213
+ []\OT1/pbk/l/n/12 188
+ []
+
+
+Overfull \hbox (3.71979pt too wide) detected at line 214
+ []\OT1/pbk/l/n/12 188
+ []
+
+
+Overfull \hbox (3.71979pt too wide) detected at line 215
+ []\OT1/pbk/l/n/12 188
+ []
+
+
+Overfull \hbox (3.71979pt too wide) detected at line 216
+ []\OT1/pbk/l/n/12 188
+ []
+
+
+Overfull \hbox (3.71979pt too wide) detected at line 217
+ []\OT1/pbk/l/n/12 188
+ []
+
+
+Overfull \hbox (3.71979pt too wide) detected at line 218
+ []\OT1/pbk/l/n/12 188
+ []
+
+
+Overfull \hbox (3.71979pt too wide) detected at line 219
+ []\OT1/pbk/l/n/12 188
+ []
+
+
+Overfull \hbox (3.71979pt too wide) detected at line 220
+ []\OT1/pbk/l/n/12 188
+ []
+
+
+Overfull \hbox (3.71979pt too wide) detected at line 221
+ []\OT1/pbk/l/n/12 188
+ []
+
+
+Overfull \hbox (3.71979pt too wide) detected at line 222
+ []\OT1/pbk/l/n/12 188
+ []
+
+
+Overfull \hbox (3.71979pt too wide) detected at line 223
+ []\OT1/pbk/l/n/12 189
+ []
+
+
+Overfull \hbox (3.71979pt too wide) detected at line 224
+ []\OT1/pbk/l/n/12 189
+ []
+
+
+Overfull \hbox (3.71979pt too wide) detected at line 225
+ []\OT1/pbk/l/n/12 191
+ []
+
+
+Overfull \hbox (3.71979pt too wide) detected at line 226
+ []\OT1/pbk/l/n/12 191
+ []
+
+
+Overfull \hbox (3.71979pt too wide) detected at line 227
+ []\OT1/pbk/l/n/12 192
+ []
+
+
+Overfull \hbox (3.71979pt too wide) detected at line 228
+ []\OT1/pbk/l/n/12 195
+ []
+
+
+Overfull \hbox (3.71979pt too wide) detected at line 229
+ []\OT1/pbk/l/n/12 195
+ []
+
+
+Overfull \hbox (3.71979pt too wide) detected at line 230
+ []\OT1/pbk/l/n/12 196
+ []
+
+
+Overfull \hbox (3.71979pt too wide) detected at line 231
+ []\OT1/pbk/l/n/12 199
+ []
+
+
+Overfull \hbox (3.71979pt too wide) detected at line 232
+ []\OT1/pbk/l/n/12 199
+ []
+
+
+Overfull \hbox (3.71979pt too wide) detected at line 233
+ []\OT1/pbk/l/n/12 200
+ []
+
+
+Overfull \hbox (3.71979pt too wide) detected at line 235
+ []\OT1/pbk/l/n/12 203
+ []
+
+
+Overfull \hbox (3.71979pt too wide) detected at line 236
+ []\OT1/pbk/l/n/12 203
+ []
+
+
+Overfull \hbox (3.71979pt too wide) detected at line 237
+ []\OT1/pbk/l/n/12 203
+ []
+
+
+Overfull \hbox (3.71979pt too wide) detected at line 238
+ []\OT1/pbk/l/n/12 203
+ []
+
+
+Overfull \hbox (3.71979pt too wide) detected at line 239
+ []\OT1/pbk/l/n/12 203
+ []
+
+)
 \tf@toc=\write5
 \openout5 = `alevel_project_homepage.toc'.
 
-LaTeX Font Info:    Font shape `OT1/pbk/m/sl' in size <12> not available
-(Font)              Font shape `OT1/pbk/l/sl' tried instead on input line 92.
+ [5] (./analysis.tex
+Chapter 1.
+LaTeX Font Info:    Font shape `OT1/pbk/m/n' in size <17.28> not available
+(Font)              Font shape `OT1/pbk/l/n' tried instead on input line 61.
+LaTeX Font Info:    Font shape `OT1/pbk/bx/n' in size <17.28> not available
+(Font)              Font shape `OT1/pbk/b/n' tried instead on input line 61.
+LaTeX Font Info:    Font shape `OT1/pbk/b/n' in size <17.28> not available
+(Font)              Font shape `OT1/pbk/db/n' tried instead on input line 61.
+LaTeX Font Info:    Font shape `OT1/pbk/bx/n' in size <14.4> not available
+(Font)              Font shape `OT1/pbk/b/n' tried instead on input line 65.
+LaTeX Font Info:    Font shape `OT1/pbk/b/n' in size <14.4> not available
+(Font)              Font shape `OT1/pbk/db/n' tried instead on input line 65.
+LaTeX Font Info:    Font shape `OT1/pbk/m/it' in size <12> not available
+(Font)              Font shape `OT1/pbk/l/it' tried instead on input line 67.
+pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.73 
+      [1
 
-[2] (./testing.tex
+]
+Overfull \hbox (5.20296pt too wide) in paragraph at lines 75--76
+ []\OT1/pbk/db/n/12 WW2:[] \OT1/pbk/l/n/12 Dur-ing World War 2, cryp-tog-ra-phy
+ was used ex-ten-sively with a plethora
+ []
+
+LaTeX Font Info:    Try loading font information for TS1+pbk on input line 87.
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1pbk.fd
+File: ts1pbk.fd 2001/06/04 font definitions for TS1/pbk.
+)
+LaTeX Font Info:    Font shape `TS1/pbk/m/n' in size <12> not available
+(Font)              Font shape `TS1/pbk/l/n' tried instead on input line 87.
+ [2] [3] [4]
+Overfull \hbox (1.6924pt too wide) in paragraph at lines 149--149
+[]\OT1/pbk/db/n/14.4 Applications of Mod-ern Cryp-tog-ra-phy in Ev-ery-day Life
+ 
+ []
+
+[5]
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+LaTeX Font Info:    Try loading font information for U+euf on input line 202.
+ (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/ueuf.fd
+File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
+)
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+\u=\count329
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[6] [7] [8]
+<images/aes-hl-overview-ue.png, id=1171, 597.23125pt x 867.24pt>
+File: images/aes-hl-overview-ue.png Graphic file (type png)
+<use images/aes-hl-overview-ue.png>
+Package pdftex.def Info: images/aes-hl-overview-ue.png  used on input line 364.
+
+(pdftex.def)             Requested size: 298.61488pt x 433.61894pt.
+ [9 <./images/aes-hl-overview-ue.png (PNG copy)>] [10] [11] [12]
+[13] [14] [15] [16]
+Overfull \hbox (8.61655pt too wide) in paragraph at lines 618--619
+[]\OT1/pbk/l/n/12 Stream ci-phers based off Lin-ear Feed-back Shift Reg-is-ter 
+(LFSR) 
+ []
+
+[17] [18] [19] [20]) (./documented_design.tex
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2015/06/04 1.6 listings language file
 )
@@ -1767,18 +2229,493 @@ File: lstlang1.sty 2015/06/04 1.6 listings language file
 )
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
+) [21]
+Chapter 2.
+LaTeX Font Info:    Font shape `OT1/pbk/m/n' in size <10> not available
+(Font)              Font shape `OT1/pbk/l/n' tried instead on input line 80.
+(./file_structure.cc
+LaTeX Font Info:    Font shape `OT1/pbk/m/n' in size <6> not available
+(Font)              Font shape `OT1/pbk/l/n' tried instead on input line 1.
+LaTeX Font Info:    Font shape `TS1/pbk/m/n' in size <10> not available
+(Font)              Font shape `TS1/pbk/l/n' tried instead on input line 1.
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 18.
+ (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1pcr.fd
+File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
-Chapter 1.
-LaTeX Font Info:    Font shape `OT1/pbk/m/n' in size <17.28> not available
-(Font)              Font shape `OT1/pbk/l/n' tried instead on input line 52.
-LaTeX Font Info:    Font shape `OT1/pbk/bx/n' in size <17.28> not available
-(Font)              Font shape `OT1/pbk/b/n' tried instead on input line 52.
-LaTeX Font Info:    Font shape `OT1/pbk/b/n' in size <17.28> not available
-(Font)              Font shape `OT1/pbk/db/n' tried instead on input line 52.
-LaTeX Font Info:    Font shape `OT1/pbk/bx/n' in size <14.4> not available
-(Font)              Font shape `OT1/pbk/b/n' tried instead on input line 56.
-LaTeX Font Info:    Font shape `OT1/pbk/b/n' in size <14.4> not available
-(Font)              Font shape `OT1/pbk/db/n' tried instead on input line 56.
+LaTeX Font Info:    Try loading font information for OMS+pbk on input line 19.
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/omspbk.fd
+File: omspbk.fd 
+)
+LaTeX Font Info:    Font shape `OMS/pbk/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 19.
+ [22
+
+]
+LaTeX Font Info:    Try loading font information for OML+pbk on input line 52.
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/omlpbk.fd
+File: omlpbk.fd 
+)
+LaTeX Font Info:    Font shape `OML/pbk/m/n' in size <10> not available
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 52.
+)
+(./file_structure.cc) [23]
+Overfull \hbox (5.66472pt too wide) in paragraph at lines 97--98
+[]\OT1/pbk/l/n/12 The rea-son I am in-clud-ing a header block is be-cause when 
+brows-ing through
+ []
+
+(./file_structure.cc [24]) (./file_structure.cc) [25] (./file_structure.cc)
+(./file_structure.cc) [26] [27]
+Overfull \hbox (9.68692pt too wide) in paragraph at lines 237--239
+[]\OT1/pbk/l/n/12 The Database API will then load this in-for-ma-tion into the 
+db_user.questions
+ []
+
+<images/algorithm/questions_algorithm.png, id=1464, 486.1362pt x 162.6075pt>
+File: images/algorithm/questions_algorithm.png Graphic file (type png)
+<use images/algorithm/questions_algorithm.png>
+Package pdftex.def Info: images/algorithm/questions_algorithm.png  used on inpu
+t line 254.
+(pdftex.def)             Requested size: 486.13501pt x 162.6071pt.
+
+Overfull \hbox (33.16711pt too wide) in paragraph at lines 254--255
+ [] 
+ []
+
+[28] [29 <./images/algorithm/questions_algorithm.png>] [30]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 339.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 339.
+
+[31]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 365.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 365.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 393.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 393.
+
+[32] [33]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 468.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 468.
+
+<images/aes-rsbox.png, id=1516, 294.34969pt x 211.54031pt>
+File: images/aes-rsbox.png Graphic file (type png)
+<use images/aes-rsbox.png>
+Package pdftex.def Info: images/aes-rsbox.png  used on input line 480.
+(pdftex.def)             Requested size: 294.34895pt x 211.53978pt.
+[34]
+<images/aes-bl-overview-ue.png, id=1527, 803.0pt x 673.51625pt>
+File: images/aes-bl-overview-ue.png Graphic file (type png)
+<use images/aes-bl-overview-ue.png>
+Package pdftex.def Info: images/aes-bl-overview-ue.png  used on input line 495.
+
+(pdftex.def)             Requested size: 401.49902pt x 336.7573pt.
+ [35 <./images/aes-rsbox.png>] [36 <./images/aes-bl-overview-ue.png>]
+<images/aes-sbox.png, id=1542, 641.39626pt x 295.1025pt>
+File: images/aes-sbox.png Graphic file (type png)
+<use images/aes-sbox.png>
+Package pdftex.def Info: images/aes-sbox.png  used on input line 522.
+(pdftex.def)             Requested size: 448.97432pt x 206.57033pt.
+
+[37 <./images/aes-sbox.png>] [38] [39]
+<images/aes-keysch-128.png, id=1564, 1011.78pt x 884.30376pt>
+File: images/aes-keysch-128.png Graphic file (type png)
+<use images/aes-keysch-128.png>
+Package pdftex.def Info: images/aes-keysch-128.png  used on input line 702.
+(pdftex.def)             Requested size: 404.70483pt x 353.71524pt.
+ [40] [41 <./images/aes-keysch-128.png>]
+<images/aes-keysch-192.png, id=1579, 1048.91875pt x 946.53625pt>
+File: images/aes-keysch-192.png Graphic file (type png)
+<use images/aes-keysch-192.png>
+Package pdftex.def Info: images/aes-keysch-192.png  used on input line 744.
+(pdftex.def)             Requested size: 419.56006pt x 378.60779pt.
+
+[42]
+<images/aes-keysch-256.png, id=1588, 847.165pt x 946.53625pt>
+File: images/aes-keysch-256.png Graphic file (type png)
+<use images/aes-keysch-256.png>
+Package pdftex.def Info: images/aes-keysch-256.png  used on input line 756.
+(pdftex.def)             Requested size: 338.85999pt x 378.60779pt.
+ [43 <./images/aes-keysch-192.png>]
+<images/aes-decryption-overview.png, id=1598, 747.79375pt x 951.555pt>
+File: images/aes-decryption-overview.png Graphic file (type png)
+<use images/aes-decryption-overview.png>
+Package pdftex.def Info: images/aes-decryption-overview.png  used on input line
+ 768.
+(pdftex.def)             Requested size: 299.1122pt x 380.61525pt.
+ [44 <./images/aes-keysch-256.png>]
+Overfull \hbox (3.01918pt too wide) in paragraph at lines 806--807
+[]\OT1/pbk/l/n/12 Then in or-der to cal-cu-late $\OT1/cmr/m/n/12 (\OML/cmm/m/it
+/12 B[]; B[]; B[]; B[]\OT1/cmr/m/n/12 )$ \OT1/pbk/l/n/12 we just use the in-put
+ $\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 C[]; C[]; C[]; C[]\OT1/cmr/m/n/12 )$\OT1/pb
+k/l/n/12 .
+ []
+
+[45 <./images/aes-decryption-overview.png>]
+<images/aes-inv-sbox.jpeg, id=1611, 658.71094pt x 333.49594pt>
+File: images/aes-inv-sbox.jpeg Graphic file (type jpg)
+<use images/aes-inv-sbox.jpeg>
+Package pdftex.def Info: images/aes-inv-sbox.jpeg  used on input line 872.
+(pdftex.def)             Requested size: 461.09451pt x 233.44556pt.
+
+Overfull \hbox (8.12662pt too wide) in paragraph at lines 872--873
+ [] 
+ []
+
+[46] [47 <./images/aes-inv-sbox.jpeg>] [48] [49] [50]
+<images/dbschema/db_user.png, id=1689, 713.66624pt x 463.7325pt>
+File: images/dbschema/db_user.png Graphic file (type png)
+<use images/dbschema/db_user.png>
+Package pdftex.def Info: images/dbschema/db_user.png  used on input line 998.
+(pdftex.def)             Requested size: 214.10152pt x 139.12082pt.
+<images/dbschema/user_answered_questions.png, id=1690, 1023.825pt x 596.2275pt>
+
+File: images/dbschema/user_answered_questions.png Graphic file (type png)
+<use images/dbschema/user_answered_questions.png>
+Package pdftex.def Info: images/dbschema/user_answered_questions.png  used on i
+nput line 1008.
+(pdftex.def)             Requested size: 307.14987pt x 178.86963pt.
+<images/dbschema/auth_info.png, id=1691, 820.06375pt x 877.2775pt>
+File: images/dbschema/auth_info.png Graphic file (type png)
+<use images/dbschema/auth_info.png>
+Package pdftex.def Info: images/dbschema/auth_info.png  used on input line 1018
+.
+(pdftex.def)             Requested size: 246.02103pt x 263.18527pt.
+ [51 <./images/dbschema/db_user.png> <./images/dbschema/user_answered_questions
+.png>]
+<images/dbschema/auth_identity.png, id=1699, 833.1125pt x 466.74374pt>
+File: images/dbschema/auth_identity.png Graphic file (type png)
+<use images/dbschema/auth_identity.png>
+Package pdftex.def Info: images/dbschema/auth_identity.png  used on input line 
+1029.
+(pdftex.def)             Requested size: 249.93568pt x 140.0242pt.
+<images/dbschema/auth_token.png, id=1700, 799.98875pt x 464.73625pt>
+File: images/dbschema/auth_token.png Graphic file (type png)
+<use images/dbschema/auth_token.png>
+Package pdftex.def Info: images/dbschema/auth_token.png  used on input line 103
+9.
+(pdftex.def)             Requested size: 239.99847pt x 139.42194pt.
+ [52 <./images/dbschema/auth_info.png> <./images/dbschema/auth_identity.png>]
+<images/dbschema/questions.png, id=1708, 813.0375pt x 598.235pt>
+File: images/dbschema/questions.png Graphic file (type png)
+<use images/dbschema/questions.png>
+Package pdftex.def Info: images/dbschema/questions.png  used on input line 1050
+.
+(pdftex.def)             Requested size: 243.91313pt x 179.47188pt.
+<images/dbschema/schema.png, id=1709, 2953.0325pt x 2978.12625pt>
+File: images/dbschema/schema.png Graphic file (type png)
+<use images/dbschema/schema.png>
+Package pdftex.def Info: images/dbschema/schema.png  used on input line 1060.
+(pdftex.def)             Requested size: 590.59605pt x 595.61472pt.
+
+Overfull \hbox (83.65073pt too wide) in paragraph at lines 1059--1061
+[]  [] 
+ []
+
+[53 <./images/dbschema/auth_token.png> <./images/dbschema/questions.png>]
+<images/ux/left_header.png, id=1717, 428.60126pt x 61.22874pt>
+File: images/ux/left_header.png Graphic file (type png)
+<use images/ux/left_header.png>
+Package pdftex.def Info: images/ux/left_header.png  used on input line 1072.
+(pdftex.def)             Requested size: 171.43745pt x 24.49104pt.
+
+[54 <./images/dbschema/schema.png>]
+<images/ux/right_header.png, id=1738, 156.585pt x 59.22125pt>
+File: images/ux/right_header.png Graphic file (type png)
+<use images/ux/right_header.png>
+Package pdftex.def Info: images/ux/right_header.png  used on input line 1081.
+(pdftex.def)             Requested size: 62.63287pt x 23.68806pt.
+<images/ux/left_header_user.png, id=1739, 413.545pt x 72.27pt>
+File: images/ux/left_header_user.png Graphic file (type png)
+<use images/ux/left_header_user.png>
+Package pdftex.def Info: images/ux/left_header_user.png  used on input line 109
+2.
+(pdftex.def)             Requested size: 165.41505pt x 28.90747pt.
+<images/ux/left_header_admin.png, id=1740, 540.0175pt x 62.2325pt>
+File: images/ux/left_header_admin.png Graphic file (type png)
+<use images/ux/left_header_admin.png>
+Package pdftex.def Info: images/ux/left_header_admin.png  used on input line 11
+01.
+(pdftex.def)             Requested size: 216.00316pt x 24.89255pt.
+<images/ux/right_header_user.png, id=1741, 158.5925pt x 61.22874pt>
+File: images/ux/right_header_user.png Graphic file (type png)
+<use images/ux/right_header_user.png>
+Package pdftex.def Info: images/ux/right_header_user.png  used on input line 11
+10.
+(pdftex.def)             Requested size: 63.43585pt x 24.49104pt.
+<images/ux/nav_grid_cb.png, id=1742, 1604.99625pt x 120.45pt>
+File: images/ux/nav_grid_cb.png Graphic file (type png)
+<use images/ux/nav_grid_cb.png>
+Package pdftex.def Info: images/ux/nav_grid_cb.png  used on input line 1122.
+(pdftex.def)             Requested size: 481.5026pt x 36.13527pt.
+
+Overfull \hbox (28.5347pt too wide) in paragraph at lines 1122--1123
+ [] 
+ []
+
+[55 <./images/ux/left_header.png> <./images/ux/right_header.png> <./images/ux/l
+eft_header_user.png> <./images/ux/left_header_admin.png> <./images/ux/right_hea
+der_user.png>]
+<images/ux/nav_grid_sc.png, id=1754, 1689.31125pt x 494.84875pt>
+File: images/ux/nav_grid_sc.png Graphic file (type png)
+<use images/ux/nav_grid_sc.png>
+Package pdftex.def Info: images/ux/nav_grid_sc.png  used on input line 1131.
+(pdftex.def)             Requested size: 422.32678pt x 123.71188pt.
+<images/ux/nav_grid_asc.png, id=1755, 1905.1175pt x 721.69624pt>
+File: images/ux/nav_grid_asc.png Graphic file (type png)
+<use images/ux/nav_grid_asc.png>
+Package pdftex.def Info: images/ux/nav_grid_asc.png  used on input line 1140.
+(pdftex.def)             Requested size: 476.27821pt x 180.42361pt.
+
+Overfull \hbox (23.31032pt too wide) in paragraph at lines 1140--1141
+ [] 
+ []
+
+<images/ux/nav_grid_protocols.png, id=1756, 1815.78375pt x 337.26pt>
+File: images/ux/nav_grid_protocols.png Graphic file (type png)
+<use images/ux/nav_grid_protocols.png>
+Package pdftex.def Info: images/ux/nav_grid_protocols.png  used on input line 1
+149.
+(pdftex.def)             Requested size: 453.94482pt x 84.31479pt.
+
+Overfull \hbox (0.97693pt too wide) in paragraph at lines 1149--1150
+ [] 
+ []
+
+[56 <./images/ux/nav_grid_cb.png> <./images/ux/nav_grid_sc.png> <./images/ux/na
+v_grid_asc.png>]
+<images/ux/login_form.png, id=1766, 1453.43pt x 271.0125pt>
+File: images/ux/login_form.png Graphic file (type png)
+<use images/ux/login_form.png>
+Package pdftex.def Info: images/ux/login_form.png  used on input line 1163.
+(pdftex.def)             Requested size: 436.03236pt x 81.30437pt.
+<images/ux/register_form.png, id=1767, 598.235pt x 456.70625pt>
+File: images/ux/register_form.png Graphic file (type png)
+<use images/ux/register_form.png>
+Package pdftex.def Info: images/ux/register_form.png  used on input line 1176.
+(pdftex.def)             Requested size: 239.28975pt x 182.67926pt.
+ [57 <./images/ux/nav_grid_protocols.png> <./images/ux/login_form.png (PNG copy
+)>] [58 <./images/ux/register_form.png>])
+(./technical_solution.tex [59]
+Chapter 3.
+(../src/main.cc [60
+
+]) [61] (../src/crypto_online_launcher.h) [62]
+(../src/crypto_online_launcher.cc [63] [64]) [65]
+(../src/crypto/aes_implementation.h [66] [67] [68]) [69]
+(../src/crypto/aes_implementation.cc [70] [71] [72] [73] [74] [75]
+Overfull \hbox (44.14822pt too wide) in paragraph at lines 194--195
+[][][][][][][] 
+ []
+
+
+Overfull \hbox (8.14786pt too wide) in paragraph at lines 195--196
+[][][][][][][] 
+ []
+
+[76] [77] [78] [79] [80] [81] [82] [83] [84]) [85]
+(../src/crypto/aes_implementation_test.cc [86] [87]) [88] [89]
+(../src/auth/crypto_online_auth_widget.h) [90]
+(../src/auth/crypto_online_auth_widget.cc) [91]
+(../src/auth/crypto_online_register_widget.h) [92]
+(../src/auth/crypto_online_register_widget.h) [93] (../src/db/session.h
+[94]) [95] (../src/db/session.cc [96] [97] [98] [99]) [100]
+(../src/db/db_interface.h) [101] (../src/db/db_interface.cc [102] [103]
+[104]) [105] (../src/db/db_roles.h) [106] (../src/db/db_user.h [107]) [108]
+(../src/db/db_user.cc) [109] (../src/db/db_questions.h [110]) [111]
+(../src/db/db_user_answered_question.h [112]) [113]
+(../src/layout/crypto_online_home.h [114]) [115]
+(../src/layout/crypto_online_home.cc
+Overfull \hbox (2.1478pt too wide) in paragraph at lines 28--30
+[][][][][][][] 
+ []
+
+[116] [117]
+Overfull \hbox (50.14828pt too wide) in paragraph at lines 110--111
+[][][][][][][] 
+ []
+
+
+Overfull \hbox (4.14761pt too wide) in paragraph at lines 110--111
+[][][] 
+ []
+
+
+Overfull \hbox (70.14828pt too wide) in paragraph at lines 110--111
+[][][] 
+ []
+
+[118] [119]) [120] (../src/layout/crypto_online_navigation_grid.h [121]
+Overfull \hbox (4.14761pt too wide) in paragraph at lines 79--81
+[][][] 
+ []
+
+[122]) [123] (../src/layout/crypto_online_navigation_grid.cc [124] [125]
+[126] [127] [128] [129]
+Overfull \hbox (40.14798pt too wide) in paragraph at lines 209--210
+[][][] 
+ []
+
+
+Overfull \hbox (20.14798pt too wide) in paragraph at lines 211--212
+[][][][][][][] 
+ []
+
+
+Overfull \hbox (88.14847pt too wide) in paragraph at lines 213--214
+[][][] 
+ []
+
+
+Overfull \hbox (46.14804pt too wide) in paragraph at lines 218--219
+[][][] 
+ []
+
+
+Overfull \hbox (26.14804pt too wide) in paragraph at lines 220--221
+[][][][][][][] 
+ []
+
+
+Overfull \hbox (94.14853pt too wide) in paragraph at lines 222--223
+[][][] 
+ []
+
+
+Overfull \hbox (4.14761pt too wide) in paragraph at lines 225--226
+[][][] 
+ []
+
+
+Overfull \hbox (124.14883pt too wide) in paragraph at lines 227--228
+[][][] 
+ []
+
+
+Overfull \hbox (104.14883pt too wide) in paragraph at lines 229--230
+[][][][][][][] 
+ []
+
+[130]
+Overfull \hbox (4.14761pt too wide) in paragraph at lines 230--231
+[][][] 
+ []
+
+
+Overfull \hbox (172.14932pt too wide) in paragraph at lines 231--232
+[][][] 
+ []
+
+
+Overfull \hbox (4.14761pt too wide) in paragraph at lines 232--233
+[][][] 
+ []
+
+[131] [132]
+Overfull \hbox (58.14816pt too wide) in paragraph at lines 317--318
+[][][] 
+ []
+
+[133]
+Overfull \hbox (38.14816pt too wide) in paragraph at lines 319--320
+[][][][][][][] 
+ []
+
+
+Overfull \hbox (58.14816pt too wide) in paragraph at lines 320--321
+[][][] 
+ []
+
+[134]
+Overfull \hbox (28.14786pt too wide) in paragraph at lines 353--354
+[][][] 
+ []
+
+
+Overfull \hbox (8.14786pt too wide) in paragraph at lines 355--356
+[][][][][][][] 
+ []
+
+
+Overfull \hbox (28.14786pt too wide) in paragraph at lines 356--357
+[][][] 
+ []
+
+[135] [136] [137]
+Overfull \hbox (22.1478pt too wide) in paragraph at lines 446--447
+[][][] 
+ []
+
+
+Overfull \hbox (2.1478pt too wide) in paragraph at lines 448--449
+[][][][][][][] 
+ []
+
+
+Overfull \hbox (22.1478pt too wide) in paragraph at lines 449--450
+[][][] 
+ []
+
+[138] [139] [140] [141] [142]) [143] (../src/layout/crypto_online_profile.h
+[144]) [145] (../src/layout/crypto_online_profile.cc
+Overfull \hbox (32.1481pt too wide) in paragraph at lines 25--26
+[][][][][][][] 
+ []
+
+[146]) [147] (../src/layout/crypto_online_footer.cc) [148]
+(../src/layout/crypto_online_profile.cc
+Overfull \hbox (32.1481pt too wide) in paragraph at lines 25--26
+[][][][][][][] 
+ []
+
+[149]) [150] (../src/layout/crypto_online_aes_example.h) [151]
+(../src/layout/crypto_online_aes_example.cc [152]) [153]
+(../src/layout/information_content/learning_content_template.h) [154]
+(../src/layout/information_content/learning_content_template.cc [155] [156])
+[157] (../src/layout/information_content/intro_to_cryptography.h) [158]
+(../src/layout/information_content/intro_to_cryptography.cc
+Overfull \hbox (64.14822pt too wide) in paragraph at lines 24--25
+[][][] 
+ []
+
+
+Overfull \hbox (10.14767pt too wide) in paragraph at lines 28--29
+[][][] 
+ []
+
+
+Overfull \hbox (94.14853pt too wide) in paragraph at lines 28--29
+[][][] 
+ []
+
+) [159] [160] (../src/layout/information_content/modular_arithmetic.h) [161]
+(../src/layout/information_content/modular_arithmetic.cc) [162] [163]
+(../src/layout/header/crypto_online_header.h [164]) [165]
+(../src/layout/header/crypto_online_header.cc [166]) [167] [168]
+(../src/resource/content_xmls/intro_to_cryptography.xml [169] [170] [171])
+[172] (../src/resource/content_xmls/modular_arithmetic.xml [173] [174])
+[175]) (./testing.tex
+Chapter 4.
 
 Overfull \hbox (1.98581pt too wide) in paragraph at lines 61--61
 []|\OT1/pbk/l/n/12 Test
@@ -1813,21 +2750,16 @@ Overfull \hbox (28.70728pt too wide) in alignment at lines 98--117
  [] [] [] [] [] [] 
  []
 
-pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
-been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.117 \end{longtable}
-                      [1
+[176
 
-] [2] [3] [4]
-<images/testing/test-01-01.png, id=255, 562.1pt x 198.7425pt>
+] [177] [178] [179]
+<images/testing/test-01-01.png, id=6469, 562.1pt x 198.7425pt>
 File: images/testing/test-01-01.png Graphic file (type png)
 <use images/testing/test-01-01.png>
 Package pdftex.def Info: images/testing/test-01-01.png  used on input line 125.
 
 (pdftex.def)             Requested size: 281.04932pt x 99.371pt.
-<images/testing/test-01-02.png, id=256, 1927.2pt x 1084.05pt>
+<images/testing/test-01-02.png, id=6470, 1927.2pt x 1084.05pt>
 File: images/testing/test-01-02.png Graphic file (type png)
 <use images/testing/test-01-02.png>
 Package pdftex.def Info: images/testing/test-01-02.png  used on input line 132.
@@ -1838,8 +2770,8 @@ File: images/testing/test-01-02.png Graphic file (type png)
 Package pdftex.def Info: images/testing/test-01-02.png  used on input line 141.
 
 (pdftex.def)             Requested size: 385.43318pt x 216.80615pt.
- [5 <./images/testing/test-01-01.png> <./images/testing/test-01-02.png>]
-<images/testing/test-02-01.png, id=264, 1927.2pt x 1084.05pt>
+ [180 <./images/testing/test-01-01.png> <./images/testing/test-01-02.png>]
+<images/testing/test-02-01.png, id=6478, 1927.2pt x 1084.05pt>
 File: images/testing/test-02-01.png Graphic file (type png)
 <use images/testing/test-02-01.png>
 Package pdftex.def Info: images/testing/test-02-01.png  used on input line 148.
@@ -1850,8 +2782,8 @@ File: images/testing/test-01-02.png Graphic file (type png)
 Package pdftex.def Info: images/testing/test-01-02.png  used on input line 157.
 
 (pdftex.def)             Requested size: 385.43318pt x 216.80615pt.
- [6 <./images/testing/test-02-01.png>]
-<images/testing/test-03-01.png, id=272, 1927.2pt x 1084.05pt>
+ [181 <./images/testing/test-02-01.png>]
+<images/testing/test-03-01.png, id=6487, 1927.2pt x 1084.05pt>
 File: images/testing/test-03-01.png Graphic file (type png)
 <use images/testing/test-03-01.png>
 Package pdftex.def Info: images/testing/test-03-01.png  used on input line 164.
@@ -1862,8 +2794,8 @@ File: images/testing/test-01-02.png Graphic file (type png)
 Package pdftex.def Info: images/testing/test-01-02.png  used on input line 173.
 
 (pdftex.def)             Requested size: 385.43318pt x 216.80615pt.
- [7 <./images/testing/test-03-01.png>]
-<images/testing/test-04-01.png, id=280, 1926.19624pt x 595.22375pt>
+ [182 <./images/testing/test-03-01.png>]
+<images/testing/test-04-01.png, id=6496, 1926.19624pt x 595.22375pt>
 File: images/testing/test-04-01.png Graphic file (type png)
 <use images/testing/test-04-01.png>
 Package pdftex.def Info: images/testing/test-04-01.png  used on input line 180.
@@ -1874,32 +2806,32 @@ File: images/testing/test-04-01.png Graphic file (type png)
 Package pdftex.def Info: images/testing/test-04-01.png  used on input line 189.
 
 (pdftex.def)             Requested size: 385.23242pt x 119.04263pt.
-<images/testing/test-05-01.png, id=281, 1927.2pt x 1057.9525pt>
+<images/testing/test-05-01.png, id=6497, 1927.2pt x 1057.9525pt>
 File: images/testing/test-05-01.png Graphic file (type png)
 <use images/testing/test-05-01.png>
 Package pdftex.def Info: images/testing/test-05-01.png  used on input line 196.
 
 (pdftex.def)             Requested size: 385.43318pt x 211.58675pt.
- [8 <./images/testing/test-04-01.png>]
-<images/testing/test-06-01.png, id=291, 1927.2pt x 1057.9525pt>
+ [183 <./images/testing/test-04-01.png>]
+<images/testing/test-06-01.png, id=6506, 1927.2pt x 1057.9525pt>
 File: images/testing/test-06-01.png Graphic file (type png)
 <use images/testing/test-06-01.png>
 Package pdftex.def Info: images/testing/test-06-01.png  used on input line 205.
 
 (pdftex.def)             Requested size: 385.43318pt x 211.58675pt.
-<images/testing/test-06-02.png, id=292, 1927.2pt x 1057.9525pt>
+<images/testing/test-06-02.png, id=6507, 1927.2pt x 1057.9525pt>
 File: images/testing/test-06-02.png Graphic file (type png)
 <use images/testing/test-06-02.png>
 Package pdftex.def Info: images/testing/test-06-02.png  used on input line 212.
 
 (pdftex.def)             Requested size: 385.43318pt x 211.58675pt.
- [9 <./images/testing/test-05-01.png> <./images/testing/test-06-01.png>]
+ [184 <./images/testing/test-05-01.png> <./images/testing/test-06-01.png>]
 File: images/testing/test-04-01.png Graphic file (type png)
 <use images/testing/test-04-01.png>
 Package pdftex.def Info: images/testing/test-04-01.png  used on input line 221.
 
 (pdftex.def)             Requested size: 385.23242pt x 119.04263pt.
-<images/testing/test-07-01.png, id=302, 702.625pt x 210.7875pt>
+<images/testing/test-07-01.png, id=6517, 702.625pt x 210.7875pt>
 File: images/testing/test-07-01.png Graphic file (type png)
 <use images/testing/test-07-01.png>
 Package pdftex.def Info: images/testing/test-07-01.png  used on input line 228.
@@ -1910,8 +2842,8 @@ File: images/testing/test-04-01.png Graphic file (type png)
 Package pdftex.def Info: images/testing/test-04-01.png  used on input line 237.
 
 (pdftex.def)             Requested size: 385.23242pt x 119.04263pt.
- [10 <./images/testing/test-06-02.png> <./images/testing/test-07-01.png>]
-<images/testing/test-08-01.png, id=314, 711.65875pt x 282.05376pt>
+ [185 <./images/testing/test-06-02.png> <./images/testing/test-07-01.png>]
+<images/testing/test-08-01.png, id=6527, 711.65875pt x 282.05376pt>
 File: images/testing/test-08-01.png Graphic file (type png)
 <use images/testing/test-08-01.png>
 Package pdftex.def Info: images/testing/test-08-01.png  used on input line 244.
@@ -1922,83 +2854,165 @@ File: images/testing/test-04-01.png Graphic file (type png)
 Package pdftex.def Info: images/testing/test-04-01.png  used on input line 253.
 
 (pdftex.def)             Requested size: 385.23242pt x 119.04263pt.
-<images/testing/test-09-01.png, id=315, 729.72626pt x 363.3575pt>
+<images/testing/test-09-01.png, id=6528, 729.72626pt x 363.3575pt>
 File: images/testing/test-09-01.png Graphic file (type png)
 <use images/testing/test-09-01.png>
 Package pdftex.def Info: images/testing/test-09-01.png  used on input line 260.
 
 (pdftex.def)             Requested size: 291.88533pt x 145.34041pt.
- [11 <./images/testing/test-08-01.png>] [12 <./images/testing/test-09-01.png>]
-LaTeX Font Info:    Font shape `OT1/pbk/m/n' in size <10> not available
-(Font)              Font shape `OT1/pbk/l/n' tried instead on input line 292.
+ [186 <./images/testing/test-08-01.png>]
+File: images/testing/test-04-01.png Graphic file (type png)
+<use images/testing/test-04-01.png>
+Package pdftex.def Info: images/testing/test-04-01.png  used on input line 269.
 
-(../src/crypto/aes_implementation_test_input.cc
-LaTeX Font Info:    Font shape `OT1/pbk/m/n' in size <6> not available
-(Font)              Font shape `OT1/pbk/l/n' tried instead on input line 1.
-LaTeX Font Info:    Try loading font information for TS1+pbk on input line 1.
+(pdftex.def)             Requested size: 385.23242pt x 119.04263pt.
+File: images/testing/test-09-01.png Graphic file (type png)
+<use images/testing/test-09-01.png>
+Package pdftex.def Info: images/testing/test-09-01.png  used on input line 276.
 
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1pbk.fd
-File: ts1pbk.fd 2001/06/04 font definitions for TS1/pbk.
+(pdftex.def)             Requested size: 291.88533pt x 145.34041pt.
+ [187 <./images/testing/test-09-01.png>] [188]
+(../src/crypto/aes_implementation_test_input.cc [189] [190])
+Underfull \vbox (badness 10000) detected at line 361
+ []
+
+[191]
+Underfull \vbox (badness 10000) detected at line 475
+ []
+
+[192] [193] [194]
+Underfull \vbox (badness 10000) detected at line 597
+ []
+
+[195]
+Underfull \vbox (badness 10000) detected at line 725
+ []
+
+[196] [197] [198]
+Underfull \vbox (badness 10000) detected at line 868
+ []
+
+[199]
+Underfull \vbox (badness 10000) detected at line 1020
+ []
+
+[200] [201]) (./evaluation.tex [202]
+Chapter 5.
+) [203
+
+] (./alevel_project_homepage.lof
+Overfull \hbox (3.71979pt too wide) detected at line 36
+ []\OT1/pbk/l/n/12 180
+ []
+
+
+Overfull \hbox (3.71979pt too wide) detected at line 37
+ []\OT1/pbk/l/n/12 180
+ []
+
+
+Overfull \hbox (3.71979pt too wide) detected at line 38
+ []\OT1/pbk/l/n/12 181
+ []
+
+[204
+
+]
+Overfull \hbox (3.71979pt too wide) detected at line 39
+ []\OT1/pbk/l/n/12 181
+ []
+
+
+Overfull \hbox (3.71979pt too wide) detected at line 40
+ []\OT1/pbk/l/n/12 182
+ []
+
+
+Overfull \hbox (3.71979pt too wide) detected at line 41
+ []\OT1/pbk/l/n/12 182
+ []
+
+
+Overfull \hbox (3.71979pt too wide) detected at line 42
+ []\OT1/pbk/l/n/12 183
+ []
+
+
+Overfull \hbox (3.71979pt too wide) detected at line 43
+ []\OT1/pbk/l/n/12 183
+ []
+
+
+Overfull \hbox (3.71979pt too wide) detected at line 44
+ []\OT1/pbk/l/n/12 183
+ []
+
+
+Overfull \hbox (3.71979pt too wide) detected at line 45
+ []\OT1/pbk/l/n/12 184
+ []
+
+
+Overfull \hbox (3.71979pt too wide) detected at line 46
+ []\OT1/pbk/l/n/12 184
+ []
+
+
+Overfull \hbox (3.71979pt too wide) detected at line 47
+ []\OT1/pbk/l/n/12 185
+ []
+
+
+Overfull \hbox (3.71979pt too wide) detected at line 48
+ []\OT1/pbk/l/n/12 185
+ []
+
+
+Overfull \hbox (3.71979pt too wide) detected at line 49
+ []\OT1/pbk/l/n/12 185
+ []
+
+
+Overfull \hbox (3.71979pt too wide) detected at line 50
+ []\OT1/pbk/l/n/12 186
+ []
+
+
+Overfull \hbox (3.71979pt too wide) detected at line 51
+ []\OT1/pbk/l/n/12 186
+ []
+
+
+Overfull \hbox (3.71979pt too wide) detected at line 52
+ []\OT1/pbk/l/n/12 186
+ []
+
+
+Overfull \hbox (3.71979pt too wide) detected at line 53
+ []\OT1/pbk/l/n/12 187
+ []
+
+
+Overfull \hbox (3.71979pt too wide) detected at line 54
+ []\OT1/pbk/l/n/12 187
+ []
+
+
+Overfull \hbox (3.71979pt too wide) detected at line 55
+ []\OT1/pbk/l/n/12 187
+ []
+
 )
-LaTeX Font Info:    Font shape `TS1/pbk/m/n' in size <10> not available
-(Font)              Font shape `TS1/pbk/l/n' tried instead on input line 1.
-LaTeX Font Info:    Try loading font information for OML+pbk on input line 15.
-
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/omlpbk.fd
-File: omlpbk.fd 
-)
-LaTeX Font Info:    Font shape `OML/pbk/m/n' in size <10> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 15.
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 18.
-
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1pcr.fd
-File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
-)
-LaTeX Font Info:    Try loading font information for OMS+pbk on input line 18.
-
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/omspbk.fd
-File: omspbk.fd 
-)
-LaTeX Font Info:    Font shape `OMS/pbk/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 18.
- [13] [14])
-Underfull \vbox (badness 10000) detected at line 346
- []
-
-[15]
-Underfull \vbox (badness 10000) detected at line 460
- []
-
-[16] [17] [18]
-Underfull \vbox (badness 10000) detected at line 582
- []
-
-[19]
-Underfull \vbox (badness 10000) detected at line 710
- []
-
-[20] [21] [22]
-Underfull \vbox (badness 10000) detected at line 853
- []
-
-[23]
-Underfull \vbox (badness 10000) detected at line 1005
- []
-
-[24] [25]) [26] (./alevel_project_homepage.lof)
 \tf@lof=\write6
 \openout6 = `alevel_project_homepage.lof'.
 
- [27
-
-]
-(./alevel_project_homepage.lot)
+ [205] (./alevel_project_homepage.lot)
 \tf@lot=\write7
 \openout7 = `alevel_project_homepage.lot'.
 
  
 AED: lastpage setting LastPage
-[28
+[206
 
 ]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 115.
@@ -2008,30 +3022,42 @@ Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 115.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 115.
 Package rerunfilecheck Info: File `alevel_project_homepage.out' has not changed
 .
-(rerunfilecheck)             Checksum: 9CCE3F5ED18E72A91FAE0E408CBA66DB;2799.
+(rerunfilecheck)             Checksum: 9E253760F0E17127E75F7F00A69C8FCD;15964.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 115.
  ) 
 Here is how much of TeX's memory you used:
- 33662 strings out of 494808
- 653860 string characters out of 6178059
- 5810293 words of memory out of 14763886
- 36172 multiletter control sequences out of 15000+600000
- 555445 words of font info for 85 fonts, out of 8000000 for 9000
+ 41786 strings out of 494808
+ 791100 string characters out of 6178059
+ 5843012 words of memory out of 14796605
+ 39458 multiletter control sequences out of 15000+600000
+ 558863 words of font info for 96 fonts, out of 8000000 for 9000
  81 hyphenation exceptions out of 8191
- 57i,12n,68p,10395b,1305s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 57i,16n,68p,10395b,1359s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
-e/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/
-type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/
-urw/bookman/ubkd8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/bookman/u
-bkl8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/bookman/ubkl8a.pfb></u
-sr/share/texlive/texmf-dist/fonts/type1/urw/bookman/ubkli8a.pfb></usr/share/tex
-live/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb>
-Output written on alevel_project_homepage.pdf (31 pages, 907300 bytes).
+e/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
+sy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10
+.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.
+pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.p
+fb></usr/share/texlive/texmf-dist/fonts/type1/urw/bookman/ubkd8a.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/urw/bookman/ubkl8a.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/urw/bookman/ubkl8a.pfb></usr/share/texlive/texmf-dist/fonts
+/type1/urw/bookman/ubkli8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/c
+ourier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvbo
+8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb>
+Output written on alevel_project_homepage.pdf (212 pages, 5450531 bytes).
 PDF statistics:
- 627 PDF objects out of 1000 (max. 8388607)
- 565 compressed objects within 6 object streams
- 203 named destinations out of 1000 (max. 500000)
- 396 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 7865 PDF objects out of 8907 (max. 8388607)
+ 7511 compressed objects within 76 object streams
+ 4865 named destinations out of 5155 (max. 500000)
+ 1912 words of extra memory for PDF output out of 10000 (max. 10000000)
 

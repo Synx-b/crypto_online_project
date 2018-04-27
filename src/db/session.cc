@@ -192,7 +192,5 @@ bool Session::does_user_exist_in_dbuser(const Wt::Auth::User &user) {
             }
         }
         return false;
-    }else{
-        return false;
     }
 }

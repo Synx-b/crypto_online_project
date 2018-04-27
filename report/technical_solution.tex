@@ -4,6 +4,10 @@
 
 \definecolor{listinggray}{gray}{0.9}
 \definecolor{lbcolor}{rgb}{0.9,0.9,0.9}
+\definecolor{gray}{rgb}{0.4,0.4,0.4}
+\definecolor{darkblue}{rgb}{0.0,0.0,0.6}
+\definecolor{cyan}{rgb}{0.0,0.6,0.6}
+
 
 \lstset{
 backgroundcolor=\color{lbcolor},
@@ -44,112 +48,192 @@ backgroundcolor=\color{lbcolor},
    %identifierstyle=\color{magenta},
     keywordstyle=\color[rgb]{0,0,1},
     commentstyle=\color[rgb]{0,0.4,0},
-    stringstyle=\color[rgb]{0.5,0.8,0.3}}
+    stringstyle=\color[rgb]{0.5,0.8,0.3}
+}
+
+\lstdefinelanguage{XML}
+{
+  morestring=[b]",
+  morestring=[s]{>}{<},
+  morecomment=[s]{<?}{?>},
+  stringstyle=\color{black},
+  identifierstyle=\color{darkblue},
+  keywordstyle=\color{cyan},
+  morekeywords={xmlns,version,type}% list your attributes here
+}
 
 \newpage
 \chapter{Technical Solution}
 
-This chapter will cover my coding implementations for my project. I will not be showcasing all the source code here as it would be far to difficult to search through and find the important parts of my solution. I will mainly be showing code snippets. The full source code solution for my project will be available in the appendix of this report.
+\section{src/}        
 
-\section{AES Implementation}
-
-\subsection{AES Key Schedule}
-\lstinputlisting[language=C++, linerange={380-505}]{../src/crypto/aes_implementation.cc}
-
-\subsubsection{AES Key Schedule Core}
-\lstinputlisting[language=C++, linerange={507-573}]{../src/crypto/aes_implementation.cc}
-
-\subsection{AES Add Round Key}
-\lstinputlisting[language=C++, linerange={575-582}]{../src/crypto/aes_implementation.cc}
-
-\subsection{AES Substitute Bytes}
-\lstinputlisting[language=C++, linerange={584-589}]{../src/crypto/aes_implementation.cc}
-
-\subsection{AES Shift Rows}
-\lstinputlisting[language=C++, linerange={591-600}]{../src/crypto/aes_implementation.cc}
-
-\subsection{AES Mix Columns}
-\lstinputlisting[language=C++, linerange={602-613}]{../src/crypto/aes_implementation.cc}
-
-\subsection{AES Inverse Substitute Bytes}
-\lstinputlisting[language=C++, linerange={615-620}]{../src/crypto/aes_implementation.cc}
-
-\subsection{AES Inverse Shift Rows}
-\lstinputlisting[language=C++, linerange={622-632}]{../src/crypto/aes_implementation.cc}
-
-\subsection{AES Inverse Mix Columns}
-\lstinputlisting[language=C++, linerange={634-644}]{../src/crypto/aes_implementation.cc}
-
-\section{Web Application Implementation}
-
-\subsection{Application Launcher}
-\lstinputlisting[language=C++, linerange={16-57}]{../src/main.cc}
-
-\subsubsection{Application Launcher Handling Class}
-\lstinputlisting[language=C++, linerange={16-64}]{../src/crypto_online_launcher.cc}
-
+\subsection{main.cc}
+\lstinputlisting[language=C++]{../src/main.cc}
 \newpage
-\subsection{Creating the Header}
 
-\subsubsection{No User Logged in}
-\lstinputlisting[language=C++, linerange={23-47}]{../src/layout/header/crypto_online_header.cc}
-
-\subsubsection{A User is Logged in}
-\lstinputlisting[language=C++, linerange={49-85}]{../src/layout/header/crypto_online_header.cc}
-
-\subsection{Initializing the Home Page}
-\lstinputlisting[language=C++, linerange={18-36}]{../src/layout/crypto_online_home.cc}
-
-\subsection{Handling Internal Path Changes}
-\lstinputlisting[language=C++, linerange={38-72}]{../src/layout/crypto_online_home.cc}
-
-\subsection{Session Managment}
-
-\subsubsection{Initalizing Session on Start-up of Application}
-\lstinputlisting[language=C++, linerange={30-57}]{../src/db/session.cc}
-
-\subsubsection{Configuration of Authentication Services}
-\lstinputlisting[language=C++, linerange={65-95}]{../src/db/session.cc}
-
-\subsubsection{Getting Auth Information on Logged in User}
-\lstinputlisting[language=C++, linerange={119-129}]{../src/db/session.cc}
-
-\subsubsection{Registering a New User}
-\lstinputlisting[language=C++, linerange={131-145}]{../src/db/session.cc}
-
-\subsubsection{Linking Logged in User to User Database}
-\lstinputlisting[language=C++, linerange={147-167}]{../src/db/session.cc}
-
-\subsubsection{Checking if a User already exists in the User Database}
-\lstinputlisting[language=C++, linerange={169-198}]{../src/db/session.cc}
-
-\subsection{Database API}
-
-\subsubsection{Getting User Information from the Database}
-\lstinputlisting[language=C++, linerange={13-39}]{../src/db/db_interface.cc}
-
-\subsubsection{Add Question to User}
-\lstinputlisting[language=C++, linerange={41-66}]{../src/db/db_interface.cc}
-
+\subsection{crypto\_online\_launcher.h}
+\lstinputlisting[language=C++]{../src/crypto_online_launcher.h}
 \newpage
-\subsubsection{Has User Already Answered Question}
-\lstinputlisting[language=C++, linerange={68-93}]{../src/db/db_interface.cc}
 
-\subsubsection{Getting Answer for a Question}
-\lstinputlisting[language=C++, linerange={95-109}]{../src/db/db_interface.cc}
+\subsection{crypto\_online\_launcher.cc}
+\lstinputlisting[language=C++]{../src/crypto_online_launcher.cc}
+\newpage
 
-\subsubsection{Checking Answer of a Question}
-\lstinputlisting[language=C++, linerange={111-131}]{../src/db/db_interface.cc}
 
-\subsection{Example of Loading Content and Questions (Modular Arithmetic)}
+\section{src/crypto/}
 
-Since the majority of the pages with content and questions will follow the same layout and functionality. So to keep things simple and clean I will only be showing code snippets for the Modular Arithmetic section.
+\subsection{aes\_implementation.h}
+\lstinputlisting[language=C++]{../src/crypto/aes_implementation.h}
+\newpage
 
-\subsubsection{Loading Page Title and Content Section}
-\lstinputlisting[language=C++, linerange={25-33}]{../src/layout/information_content/modular_arithmetic.cc}
+\subsection{aes\_implementation.cc}
+\lstinputlisting[language=C++]{../src/crypto/aes_implementation.cc}
+\newpage
 
-\subsubsection{Loading Question Section of the Page}
-\lstinputlisting[language=C++, linerange={35-43}]{../src/layout/information_content/modular_arithmetic.cc}
+\subsection{aes\_implementation\_test.cc}
+\lstinputlisting[language=C++]{../src/crypto/aes_implementation_test.cc}
+\newpage
 
-\subsection{Loading Details for the Question Section}
-\lstinputlisting[language=C++, linerange={29-80}]{../src/layout/information_content/learning_content_template.cc}
+\section{src/auth/}
+
+\subsection{crypto_online_auth_widget.h}
+\lstinputlisting[language=C++]{../src/auth/crypto_online_auth_widget.h}
+\newpage
+
+\subsection{crypto_online_auth_widget.cc}
+\lstinputlisting[language=C++]{../src/auth/crypto_online_auth_widget.cc}
+\newpage
+
+\subsection{crypto_online_register_widget.h}
+\lstinputlisting[language=C++]{../src/auth/crypto_online_register_widget.h}
+\newpage
+
+\subsection{crypto_online_register_widget.h}
+\lstinputlisting[language=C++]{../src/auth/crypto_online_register_widget.h}
+\newpage
+
+\section{src/db/}
+
+\subsection{session.h}
+\lstinputlisting[language=C++]{../src/db/session.h}
+\newpage
+
+\subsection{session.cc}
+\lstinputlisting[language=C++]{../src/db/session.cc}
+\newpage
+
+\subsection{db_interface.h}
+\lstinputlisting[language=C++]{../src/db/db_interface.h}
+\newpage
+
+\subsection{db_interface.cc}
+\lstinputlisting[language=C++]{../src/db/db_interface.cc}
+\newpage
+
+\subsection{db_roles.h}
+\lstinputlisting[language=C++]{../src/db/db_roles.h}
+\newpage
+
+\subsection{db_user.h}
+\lstinputlisting[language=C++]{../src/db/db_user.h}
+\newpage
+
+\subsection{db_user.cc}
+\lstinputlisting[language=C++]{../src/db/db_user.cc}
+\newpage
+
+\subsection{db_questions.h}
+\lstinputlisting[language=C++]{../src/db/db_questions.h}
+\newpage
+
+\subsection{db_user_answered_question.h}
+\lstinputlisting[language=C++]{../src/db/db_user_answered_question.h}
+\newpage
+
+\section{src/layout/}
+
+\subsection{crypto_online_home.h}
+\lstinputlisting[language=C++]{../src/layout/crypto_online_home.h}
+\newpage
+
+\subsection{crypto_online_home.cc}
+\lstinputlisting[language=C++]{../src/layout/crypto_online_home.cc}
+\newpage
+
+\subsection{crypto_online_navigation_grid.h}
+\lstinputlisting[language=C++]{../src/layout/crypto_online_navigation_grid.h}
+\newpage
+
+\subsection{crypto_online_navigation_grid.cc}
+\lstinputlisting[language=C++]{../src/layout/crypto_online_navigation_grid.cc}
+\newpage
+
+\subsection{crypto_online_profile.h}
+\lstinputlisting[language=C++]{../src/layout/crypto_online_profile.h}
+\newpage
+
+\subsection{crypto_online_profile.cc}
+\lstinputlisting[language=C++]{../src/layout/crypto_online_profile.cc}
+\newpage
+
+\subsection{crypto_online_footer.h}
+\lstinputlisting[language=C++]{../src/layout/crypto_online_footer.cc}
+\newpage
+
+\subsection{crypto_online_profile.cc}
+\lstinputlisting[language=C++]{../src/layout/crypto_online_profile.cc}
+\newpage
+
+\subsection{crypto_online_aes_example.h}
+\lstinputlisting[language=C++]{../src/layout/crypto_online_aes_example.h}
+\newpage
+
+\subsection{crypto_online_aes_example.cc}
+\lstinputlisting[language=C++]{../src/layout/crypto_online_aes_example.cc}
+\newpage
+
+\section{src/layout/information_content/}
+
+\subsection{learning_content_template.h}
+\lstinputlisting[language=C++]{../src/layout/information_content/learning_content_template.h}
+\newpage
+
+\subsection{learning_content_template.cc}
+\lstinputlisting[language=C++]{../src/layout/information_content/learning_content_template.cc}
+\newpage
+
+\subsection{intro_to_cryptography.h}
+\lstinputlisting[language=C++]{../src/layout/information_content/intro_to_cryptography.h}
+\newpage
+
+\subsection{intro_to_cryptography.cc}
+\lstinputlisting[language=C++]{../src/layout/information_content/intro_to_cryptography.cc}
+\newpage
+
+\subsection{modular_arithmetic.h}
+\lstinputlisting[language=C++]{../src/layout/information_content/modular_arithmetic.h}
+\newpage
+
+\subsection{modular_arithmetic.cc}
+\lstinputlisting[language=C++]{../src/layout/information_content/modular_arithmetic.cc}
+\newpage
+
+\section{src/layout/header/}
+
+\subsection{crypto_online_header.h}
+\lstinputlisting[language=C++]{../src/layout/header/crypto_online_header.h}
+\newpage
+
+\subsection{crypto_online_header.cc}
+\lstinputlisting[language=C++]{../src/layout/header/crypto_online_header.cc}
+\newpage
+
+\section{src/resource/content_xmls/}
+
+\subsection{intro_to_cryptography.xml}
+\lstinputlisting[language=XML]{../src/resource/content_xmls/intro_to_cryptography.xml}
+\newpage
+
+\subsection{modular_arithmetic.xml}
+\lstinputlisting[language=XML]{../src/resource/content_xmls/modular_arithmetic.xml}
+\newpage

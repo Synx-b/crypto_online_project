@@ -34,6 +34,9 @@ Wt::Dbo::ptr<DbUser> db_interface::get_user(std::string looking_for_id) {
             std::cout << "Identity: " << id << std::endl;
             if(std::to_string(id) == looking_for_id)
                 return current_user;
+            else{
+                std::cout << "User not Found" << std::endl;
+            }
         }
     }
     std::cout << "Leaving db_interface::db_user" << std::endl;

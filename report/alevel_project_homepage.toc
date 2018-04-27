@@ -1,42 +1,239 @@
 \select@language {english}
-\contentsline {chapter}{\numberline {1}Testing}{1}{chapter.1}
-\contentsline {section}{\numberline {1.1}The Web Application}{1}{section.1.1}
-\contentsline {subsection}{\numberline {1.1.1}Web Application Test Table}{1}{subsection.1.1.1}
-\contentsline {section}{\numberline {1.2}Test Evidence}{5}{section.1.2}
-\contentsline {subsection}{\numberline {1.2.1}Test Ref 01}{5}{subsection.1.2.1}
-\contentsline {subsection}{\numberline {1.2.2}Test Ref 02}{6}{subsection.1.2.2}
-\contentsline {subsection}{\numberline {1.2.3}Test Ref 03}{7}{subsection.1.2.3}
-\contentsline {subsection}{\numberline {1.2.4}Test Ref 04}{8}{subsection.1.2.4}
-\contentsline {subsection}{\numberline {1.2.5}Test Ref 05}{8}{subsection.1.2.5}
-\contentsline {subsection}{\numberline {1.2.6}Test Ref 06}{9}{subsection.1.2.6}
-\contentsline {subsection}{\numberline {1.2.7}Test Ref 07}{10}{subsection.1.2.7}
-\contentsline {subsection}{\numberline {1.2.8}Test Ref 08}{11}{subsection.1.2.8}
-\contentsline {subsection}{\numberline {1.2.9}Test Ref 09}{11}{subsection.1.2.9}
-\contentsline {subsection}{\numberline {1.2.10}Test Ref 10}{12}{subsection.1.2.10}
-\contentsline {subsection}{\numberline {1.2.11}Test Ref 11}{12}{subsection.1.2.11}
-\contentsline {subsection}{\numberline {1.2.12}Test Ref 12}{12}{subsection.1.2.12}
-\contentsline {subsection}{\numberline {1.2.13}Test Ref 13}{12}{subsection.1.2.13}
-\contentsline {subsection}{\numberline {1.2.14}Test Ref 14}{12}{subsection.1.2.14}
-\contentsline {subsection}{\numberline {1.2.15}Test Ref 15}{12}{subsection.1.2.15}
-\contentsline {subsection}{\numberline {1.2.16}Test Ref 16}{12}{subsection.1.2.16}
-\contentsline {subsection}{\numberline {1.2.17}Test Ref 17}{12}{subsection.1.2.17}
-\contentsline {subsection}{\numberline {1.2.18}Test Ref 18}{12}{subsection.1.2.18}
-\contentsline {subsection}{\numberline {1.2.19}Test Ref 19}{12}{subsection.1.2.19}
-\contentsline {subsection}{\numberline {1.2.20}Test Ref 20}{12}{subsection.1.2.20}
-\contentsline {subsection}{\numberline {1.2.21}Test Ref 21}{12}{subsection.1.2.21}
-\contentsline {subsection}{\numberline {1.2.22}Test Ref 22}{12}{subsection.1.2.22}
-\contentsline {subsection}{\numberline {1.2.23}Test Ref 23}{12}{subsection.1.2.23}
-\contentsline {subsection}{\numberline {1.2.24}Test Ref 24}{12}{subsection.1.2.24}
-\contentsline {subsection}{\numberline {1.2.25}Test Ref 25}{12}{subsection.1.2.25}
-\contentsline {subsection}{\numberline {1.2.26}Test Ref 26}{12}{subsection.1.2.26}
-\contentsline {section}{\numberline {1.3}AES Implementation}{13}{section.1.3}
-\contentsline {subsection}{\numberline {1.3.1}AES Implementation Testing Code}{13}{subsection.1.3.1}
-\contentsline {subsection}{\numberline {1.3.2}AES-128}{15}{subsection.1.3.2}
-\contentsline {subsubsection}{\numberline {1.3.2.1}Cipher (ENCRYPT)}{15}{subsubsection.1.3.2.1}
-\contentsline {subsubsection}{\numberline {1.3.2.2}Inverse Cipher (DECRYPT)}{16}{subsubsection.1.3.2.2}
-\contentsline {subsection}{\numberline {1.3.3}AES-192}{19}{subsection.1.3.3}
-\contentsline {subsubsection}{\numberline {1.3.3.1}Cipher (ENCRYPT)}{19}{subsubsection.1.3.3.1}
-\contentsline {subsubsection}{\numberline {1.3.3.2}Inverse Cipher (DECRYPTION)}{20}{subsubsection.1.3.3.2}
-\contentsline {subsection}{\numberline {1.3.4}AES-256}{23}{subsection.1.3.4}
-\contentsline {subsubsection}{\numberline {1.3.4.1}Cipher (ENCRYPT)}{23}{subsubsection.1.3.4.1}
-\contentsline {subsubsection}{\numberline {1.3.4.2}Inverse Cipher (DECRYPT)}{24}{subsubsection.1.3.4.2}
+\contentsline {chapter}{\numberline {1}Analysis}{1}{chapter.1}
+\contentsline {section}{\numberline {1.1}What is Cryptography}{1}{section.1.1}
+\contentsline {subsection}{\numberline {1.1.1}Quick History}{1}{subsection.1.1.1}
+\contentsline {subsubsection}{\numberline {1.1.1.1}Ancient History}{1}{subsubsection.1.1.1.1}
+\contentsline {subsubsection}{\numberline {1.1.1.2}Recent History}{1}{subsubsection.1.1.1.2}
+\contentsline {paragraph}{WW1:}{1}{section*.2}
+\contentsline {paragraph}{WW2:}{2}{section*.3}
+\contentsline {subsection}{\numberline {1.1.2}Modern Day Cryptography}{2}{subsection.1.1.2}
+\contentsline {subsubsection}{\numberline {1.1.2.1}Symmetric}{2}{subsubsection.1.1.2.1}
+\contentsline {subsubsection}{\numberline {1.1.2.2}Asymmetric}{3}{subsubsection.1.1.2.2}
+\contentsline {subsubsection}{\numberline {1.1.2.3}Cryptanalysis}{3}{subsubsection.1.1.2.3}
+\contentsline {subsubsection}{\numberline {1.1.2.4}Protocols}{4}{subsubsection.1.1.2.4}
+\contentsline {paragraph}{Example: Transport Layer Security}{4}{section*.4}
+\contentsline {subsection}{\numberline {1.1.3}Applications of Modern Cryptography in Everyday Life}{5}{subsection.1.1.3}
+\contentsline {section}{\numberline {1.2}Important Cryptographic Algorithms}{5}{section.1.2}
+\contentsline {subsection}{\numberline {1.2.1}DES}{5}{subsection.1.2.1}
+\contentsline {subsubsection}{\numberline {1.2.1.1}What is DES?}{5}{subsubsection.1.2.1.1}
+\contentsline {subsubsection}{\numberline {1.2.1.2}Overview of DES}{6}{subsubsection.1.2.1.2}
+\contentsline {paragraph}{Overview of Internal Structure:}{6}{section*.5}
+\contentsline {subsection}{\numberline {1.2.2}AES}{7}{subsection.1.2.2}
+\contentsline {subsubsection}{\numberline {1.2.2.1}What is AES?}{7}{subsubsection.1.2.2.1}
+\contentsline {subsubsection}{\numberline {1.2.2.2}Overview of AES}{8}{subsubsection.1.2.2.2}
+\contentsline {section}{\numberline {1.3}Why is this important?}{9}{section.1.3}
+\contentsline {subsection}{\numberline {1.3.1}The Importance of Cryptography in the Modern day}{9}{subsection.1.3.1}
+\contentsline {subsection}{\numberline {1.3.2}Analysis of Current Solutions}{10}{subsection.1.3.2}
+\contentsline {subsubsection}{\numberline {1.3.2.1}1. Academia}{10}{subsubsection.1.3.2.1}
+\contentsline {subsubsection}{\numberline {1.3.2.2}2. Self Taught}{11}{subsubsection.1.3.2.2}
+\contentsline {subsubsection}{\numberline {1.3.2.3}3. Learning on the Job}{11}{subsubsection.1.3.2.3}
+\contentsline {section}{\numberline {1.4}My Proposed Solution}{12}{section.1.4}
+\contentsline {subsection}{\numberline {1.4.1}End Goal}{12}{subsection.1.4.1}
+\contentsline {subsection}{\numberline {1.4.2}Proposed End Users}{12}{subsection.1.4.2}
+\contentsline {subsection}{\numberline {1.4.3}How the User will interact with the system}{12}{subsection.1.4.3}
+\contentsline {subsection}{\numberline {1.4.4}Technical Analysis of my System}{13}{subsection.1.4.4}
+\contentsline {subsubsection}{\numberline {1.4.4.1}Option 1: Classical Approach}{13}{subsubsection.1.4.4.1}
+\contentsline {subsubsection}{\numberline {1.4.4.2}Option 2: Modern Approach}{14}{subsubsection.1.4.4.2}
+\contentsline {subsubsection}{\numberline {1.4.4.3}Option 3: The Hybrid}{14}{subsubsection.1.4.4.3}
+\contentsline {section}{\numberline {1.5}Requirements / Objectives / Limitations}{15}{section.1.5}
+\contentsline {subsection}{\numberline {1.5.1}User Requirements}{15}{subsection.1.5.1}
+\contentsline {subsection}{\numberline {1.5.2}System Requirements}{16}{subsection.1.5.2}
+\contentsline {subsubsection}{\numberline {1.5.2.1}Platform Requirements}{16}{subsubsection.1.5.2.1}
+\contentsline {subsubsection}{\numberline {1.5.2.2}AES Implementation Requirements}{18}{subsubsection.1.5.2.2}
+\contentsline {subsection}{\numberline {1.5.3}System Objectives}{18}{subsection.1.5.3}
+\contentsline {subsubsection}{\numberline {1.5.3.1}Platform Objectives}{18}{subsubsection.1.5.3.1}
+\contentsline {subsubsection}{\numberline {1.5.3.2}AES Implementation Objectives}{19}{subsubsection.1.5.3.2}
+\contentsline {subsection}{\numberline {1.5.4}Acceptable Limitations}{20}{subsection.1.5.4}
+\contentsline {subsubsection}{\numberline {1.5.4.1}Platform Limitations}{20}{subsubsection.1.5.4.1}
+\contentsline {subsubsection}{\numberline {1.5.4.2}AES Implementation Limitations}{20}{subsubsection.1.5.4.2}
+\contentsline {section}{\numberline {1.6}Data Usage in the System}{20}{section.1.6}
+\contentsline {subsection}{\numberline {1.6.1}Data Security Overview}{20}{subsection.1.6.1}
+\contentsline {subsection}{\numberline {1.6.2}Data Sources}{20}{subsection.1.6.2}
+\contentsline {subsection}{\numberline {1.6.3}Data Destinations}{21}{subsection.1.6.3}
+\contentsline {subsection}{\numberline {1.6.4}Data Analysis}{21}{subsection.1.6.4}
+\contentsline {subsubsection}{\numberline {1.6.4.1}User Data}{21}{subsubsection.1.6.4.1}
+\contentsline {subsubsection}{\numberline {1.6.4.2}System Data}{21}{subsubsection.1.6.4.2}
+\contentsline {subsubsection}{\numberline {1.6.4.3}Temporary Data}{21}{subsubsection.1.6.4.3}
+\contentsline {chapter}{\numberline {2}Documented Design}{22}{chapter.2}
+\contentsline {section}{\numberline {2.1}High-Level Overview of System}{22}{section.2.1}
+\contentsline {section}{\numberline {2.2}Project Versioning}{22}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}File Structure}{22}{subsection.2.2.1}
+\contentsline {subsubsection}{\numberline {2.2.1.1}File Header}{23}{subsubsection.2.2.1.1}
+\contentsline {subsubsection}{\numberline {2.2.1.2}File Commenting}{24}{subsubsection.2.2.1.2}
+\contentsline {paragraph}{Classes}{24}{section*.9}
+\contentsline {paragraph}{Methods}{25}{section*.10}
+\contentsline {paragraph}{Members}{26}{section*.11}
+\contentsline {subsection}{\numberline {2.2.2}Version Changelog}{26}{subsection.2.2.2}
+\contentsline {subsection}{\numberline {2.2.3}File Directory Organization}{26}{subsection.2.2.3}
+\contentsline {paragraph}{auth}{27}{section*.12}
+\contentsline {paragraph}{crypto}{27}{section*.13}
+\contentsline {paragraph}{db}{27}{section*.14}
+\contentsline {subparagraph}{sql\_queries}{27}{section*.15}
+\contentsline {paragraph}{layout}{27}{section*.16}
+\contentsline {subparagraph}{header}{27}{section*.17}
+\contentsline {subparagraph}{information\_content}{27}{section*.18}
+\contentsline {paragraph}{resources}{27}{section*.19}
+\contentsline {subparagraph}{content\_xmls}{27}{section*.20}
+\contentsline {subparagraph}{images}{27}{section*.21}
+\contentsline {subparagraph}{xml\_templates}{27}{section*.22}
+\contentsline {subsection}{\numberline {2.2.4}Off-Site Backups}{28}{subsection.2.2.4}
+\contentsline {section}{\numberline {2.3}Bespoke Algorithm Design}{28}{section.2.3}
+\contentsline {subsection}{\numberline {2.3.1}Question/Answer Algorithm}{28}{subsection.2.3.1}
+\contentsline {subsubsection}{\numberline {2.3.1.1}Algorithm Block Diagram}{29}{subsubsection.2.3.1.1}
+\contentsline {subsection}{\numberline {2.3.2}Cryptographic Algorithms}{29}{subsection.2.3.2}
+\contentsline {section}{\numberline {2.4}Cryptographic Algorithm Design}{29}{section.2.4}
+\contentsline {subsection}{\numberline {2.4.1}Galois Fields for AES}{29}{subsection.2.4.1}
+\contentsline {subsubsection}{\numberline {2.4.1.1}Introduction to Finite Fields}{29}{subsubsection.2.4.1.1}
+\contentsline {paragraph}{Groups Definition}{29}{section*.24}
+\contentsline {paragraph}{Finite Field Definition}{30}{section*.25}
+\contentsline {paragraph}{Prime Fields}{30}{section*.26}
+\contentsline {subsubsection}{\numberline {2.4.1.2}Extension Fields $GF(2^m)$}{31}{subsubsection.2.4.1.2}
+\contentsline {subsubsection}{\numberline {2.4.1.3}Addition and Subtraction in $GF(2^m)$}{32}{subsubsection.2.4.1.3}
+\contentsline {subsubsection}{\numberline {2.4.1.4}Multiplication in $GF(2^m)$}{33}{subsubsection.2.4.1.4}
+\contentsline {subsubsection}{\numberline {2.4.1.5}Inversion in $GF(2^m)$}{34}{subsubsection.2.4.1.5}
+\contentsline {subsection}{\numberline {2.4.2}AES Internals}{35}{subsection.2.4.2}
+\contentsline {subsubsection}{\numberline {2.4.2.1}Structure of AES}{35}{subsubsection.2.4.2.1}
+\contentsline {subsubsection}{\numberline {2.4.2.2}Byte Substitution Layer}{36}{subsubsection.2.4.2.2}
+\contentsline {paragraph}{Mathematical Description of S-Box}{37}{section*.32}
+\contentsline {subsubsection}{\numberline {2.4.2.3}ShiftRows Layer}{37}{subsubsection.2.4.2.3}
+\contentsline {subsubsection}{\numberline {2.4.2.4}MixColumns Layer}{38}{subsubsection.2.4.2.4}
+\contentsline {subsubsection}{\numberline {2.4.2.5}Key Addition Layer}{39}{subsubsection.2.4.2.5}
+\contentsline {subsubsection}{\numberline {2.4.2.6}AES Key Schedule}{40}{subsubsection.2.4.2.6}
+\contentsline {paragraph}{128-bit Key Schedule}{40}{section*.34}
+\contentsline {paragraph}{192-bit Key Schedule}{42}{section*.36}
+\contentsline {paragraph}{256-bit Key Schedule}{43}{section*.38}
+\contentsline {subsection}{\numberline {2.4.3}Decryption in AES}{44}{subsection.2.4.3}
+\contentsline {subsubsection}{\numberline {2.4.3.1}Inverse MixColumns Layer}{45}{subsubsection.2.4.3.1}
+\contentsline {subsubsection}{\numberline {2.4.3.2}Inverse ShiftRows Layer}{46}{subsubsection.2.4.3.2}
+\contentsline {subsubsection}{\numberline {2.4.3.3}Inverse ByteSubstitution Layer}{46}{subsubsection.2.4.3.3}
+\contentsline {subsubsection}{\numberline {2.4.3.4}Decryption Key Schedule}{47}{subsubsection.2.4.3.4}
+\contentsline {section}{\numberline {2.5}Project Prototypes}{48}{section.2.5}
+\contentsline {subsection}{\numberline {2.5.1}Question/Answer Algorithm}{48}{subsection.2.5.1}
+\contentsline {subsection}{\numberline {2.5.2}AES Algorithm}{49}{subsection.2.5.2}
+\contentsline {subsubsection}{\numberline {2.5.2.1}Cipher (ENCRYPT)}{49}{subsubsection.2.5.2.1}
+\contentsline {subsubsection}{\numberline {2.5.2.2}Inverse Cipher (DECRYPT)}{50}{subsubsection.2.5.2.2}
+\contentsline {subsubsection}{\numberline {2.5.2.3}AES Key Schedule}{50}{subsubsection.2.5.2.3}
+\contentsline {section}{\numberline {2.6}Bespoke Data Structures}{50}{section.2.6}
+\contentsline {section}{\numberline {2.7}Bespoke Database Design}{51}{section.2.7}
+\contentsline {subsection}{\numberline {2.7.1}User Details}{51}{subsection.2.7.1}
+\contentsline {subsection}{\numberline {2.7.2}User Answered Questions}{51}{subsection.2.7.2}
+\contentsline {subsection}{\numberline {2.7.3}Authentication Information}{52}{subsection.2.7.3}
+\contentsline {subsection}{\numberline {2.7.4}Authentication Identity}{52}{subsection.2.7.4}
+\contentsline {subsection}{\numberline {2.7.5}Authentication Token}{53}{subsection.2.7.5}
+\contentsline {subsection}{\numberline {2.7.6}Question Details}{53}{subsection.2.7.6}
+\contentsline {subsection}{\numberline {2.7.7}Database Schema Diagram}{54}{subsection.2.7.7}
+\contentsline {section}{\numberline {2.8}User Interface Design}{55}{section.2.8}
+\contentsline {subsection}{\numberline {2.8.1}Header - User not Logged In}{55}{subsection.2.8.1}
+\contentsline {subsubsection}{\numberline {2.8.1.1}Left Side of Header}{55}{subsubsection.2.8.1.1}
+\contentsline {subsubsection}{\numberline {2.8.1.2}Right Side of Header}{55}{subsubsection.2.8.1.2}
+\contentsline {subsection}{\numberline {2.8.2}Header - User Logged In}{55}{subsection.2.8.2}
+\contentsline {subsubsection}{\numberline {2.8.2.1}Left Side of Header for a Normal User}{55}{subsubsection.2.8.2.1}
+\contentsline {subsubsection}{\numberline {2.8.2.2}Left Side of Header for a Admin User}{55}{subsubsection.2.8.2.2}
+\contentsline {subsubsection}{\numberline {2.8.2.3}Right Side of Header}{55}{subsubsection.2.8.2.3}
+\contentsline {subsection}{\numberline {2.8.3}Navigation Grid}{56}{subsection.2.8.3}
+\contentsline {subsubsection}{\numberline {2.8.3.1}Cryptography Basics}{56}{subsubsection.2.8.3.1}
+\contentsline {subsubsection}{\numberline {2.8.3.2}Symmetric Cryptography}{56}{subsubsection.2.8.3.2}
+\contentsline {subsubsection}{\numberline {2.8.3.3}Asymmetric Cryptography}{56}{subsubsection.2.8.3.3}
+\contentsline {subsubsection}{\numberline {2.8.3.4}Protocols}{57}{subsubsection.2.8.3.4}
+\contentsline {subsection}{\numberline {2.8.4}Information Content}{57}{subsection.2.8.4}
+\contentsline {subsection}{\numberline {2.8.5}Question Content}{57}{subsection.2.8.5}
+\contentsline {subsection}{\numberline {2.8.6}Login Form}{57}{subsection.2.8.6}
+\contentsline {subsection}{\numberline {2.8.7}Register Form}{58}{subsection.2.8.7}
+\contentsline {section}{\numberline {2.9}System Security}{58}{section.2.9}
+\contentsline {section}{\numberline {2.10}External Library's}{59}{section.2.10}
+\contentsline {subsection}{\numberline {2.10.1}Wt}{59}{subsection.2.10.1}
+\contentsline {chapter}{\numberline {3}Technical Solution}{60}{chapter.3}
+\contentsline {section}{\numberline {3.1}src/}{60}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}main.cc}{60}{subsection.3.1.1}
+\contentsline {subsection}{\numberline {3.1.2}crypto\_online\_launcher.h}{62}{subsection.3.1.2}
+\contentsline {subsection}{\numberline {3.1.3}crypto\_online\_launcher.cc}{63}{subsection.3.1.3}
+\contentsline {section}{\numberline {3.2}src/crypto/}{66}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}aes\_implementation.h}{66}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}aes\_implementation.cc}{70}{subsection.3.2.2}
+\contentsline {subsection}{\numberline {3.2.3}aes\_implementation\_test.cc}{86}{subsection.3.2.3}
+\contentsline {section}{\numberline {3.3}src/auth/}{90}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}crypto_online_auth_widget.h}{90}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.2}crypto_online_auth_widget.cc}{91}{subsection.3.3.2}
+\contentsline {subsection}{\numberline {3.3.3}crypto_online_register_widget.h}{92}{subsection.3.3.3}
+\contentsline {subsection}{\numberline {3.3.4}crypto_online_register_widget.h}{93}{subsection.3.3.4}
+\contentsline {section}{\numberline {3.4}src/db/}{94}{section.3.4}
+\contentsline {subsection}{\numberline {3.4.1}session.h}{94}{subsection.3.4.1}
+\contentsline {subsection}{\numberline {3.4.2}session.cc}{96}{subsection.3.4.2}
+\contentsline {subsection}{\numberline {3.4.3}db_interface.h}{101}{subsection.3.4.3}
+\contentsline {subsection}{\numberline {3.4.4}db_interface.cc}{102}{subsection.3.4.4}
+\contentsline {subsection}{\numberline {3.4.5}db_roles.h}{106}{subsection.3.4.5}
+\contentsline {subsection}{\numberline {3.4.6}db_user.h}{107}{subsection.3.4.6}
+\contentsline {subsection}{\numberline {3.4.7}db_user.cc}{109}{subsection.3.4.7}
+\contentsline {subsection}{\numberline {3.4.8}db_questions.h}{110}{subsection.3.4.8}
+\contentsline {subsection}{\numberline {3.4.9}db_user_answered_question.h}{112}{subsection.3.4.9}
+\contentsline {section}{\numberline {3.5}src/layout/}{114}{section.3.5}
+\contentsline {subsection}{\numberline {3.5.1}crypto_online_home.h}{114}{subsection.3.5.1}
+\contentsline {subsection}{\numberline {3.5.2}crypto_online_home.cc}{116}{subsection.3.5.2}
+\contentsline {subsection}{\numberline {3.5.3}crypto_online_navigation_grid.h}{121}{subsection.3.5.3}
+\contentsline {subsection}{\numberline {3.5.4}crypto_online_navigation_grid.cc}{124}{subsection.3.5.4}
+\contentsline {subsection}{\numberline {3.5.5}crypto_online_profile.h}{144}{subsection.3.5.5}
+\contentsline {subsection}{\numberline {3.5.6}crypto_online_profile.cc}{146}{subsection.3.5.6}
+\contentsline {subsection}{\numberline {3.5.7}crypto_online_footer.h}{148}{subsection.3.5.7}
+\contentsline {subsection}{\numberline {3.5.8}crypto_online_profile.cc}{149}{subsection.3.5.8}
+\contentsline {subsection}{\numberline {3.5.9}crypto_online_aes_example.h}{151}{subsection.3.5.9}
+\contentsline {subsection}{\numberline {3.5.10}crypto_online_aes_example.cc}{152}{subsection.3.5.10}
+\contentsline {section}{\numberline {3.6}src/layout/information_content/}{154}{section.3.6}
+\contentsline {subsection}{\numberline {3.6.1}learning_content_template.h}{154}{subsection.3.6.1}
+\contentsline {subsection}{\numberline {3.6.2}learning_content_template.cc}{155}{subsection.3.6.2}
+\contentsline {subsection}{\numberline {3.6.3}intro_to_cryptography.h}{158}{subsection.3.6.3}
+\contentsline {subsection}{\numberline {3.6.4}intro_to_cryptography.cc}{159}{subsection.3.6.4}
+\contentsline {subsection}{\numberline {3.6.5}modular_arithmetic.h}{161}{subsection.3.6.5}
+\contentsline {subsection}{\numberline {3.6.6}modular_arithmetic.cc}{162}{subsection.3.6.6}
+\contentsline {section}{\numberline {3.7}src/layout/header/}{164}{section.3.7}
+\contentsline {subsection}{\numberline {3.7.1}crypto_online_header.h}{164}{subsection.3.7.1}
+\contentsline {subsection}{\numberline {3.7.2}crypto_online_header.cc}{166}{subsection.3.7.2}
+\contentsline {section}{\numberline {3.8}src/resource/content_xmls/}{169}{section.3.8}
+\contentsline {subsection}{\numberline {3.8.1}intro_to_cryptography.xml}{169}{subsection.3.8.1}
+\contentsline {subsection}{\numberline {3.8.2}modular_arithmetic.xml}{173}{subsection.3.8.2}
+\contentsline {chapter}{\numberline {4}Testing}{176}{chapter.4}
+\contentsline {section}{\numberline {4.1}The Web Application}{176}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}Web Application Test Table}{176}{subsection.4.1.1}
+\contentsline {section}{\numberline {4.2}Test Evidence}{180}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}Test Ref 01}{180}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2}Test Ref 02}{181}{subsection.4.2.2}
+\contentsline {subsection}{\numberline {4.2.3}Test Ref 03}{182}{subsection.4.2.3}
+\contentsline {subsection}{\numberline {4.2.4}Test Ref 04}{183}{subsection.4.2.4}
+\contentsline {subsection}{\numberline {4.2.5}Test Ref 05}{183}{subsection.4.2.5}
+\contentsline {subsection}{\numberline {4.2.6}Test Ref 06}{184}{subsection.4.2.6}
+\contentsline {subsection}{\numberline {4.2.7}Test Ref 07}{185}{subsection.4.2.7}
+\contentsline {subsection}{\numberline {4.2.8}Test Ref 08}{186}{subsection.4.2.8}
+\contentsline {subsection}{\numberline {4.2.9}Test Ref 09}{186}{subsection.4.2.9}
+\contentsline {subsection}{\numberline {4.2.10}Test Ref 10}{187}{subsection.4.2.10}
+\contentsline {subsection}{\numberline {4.2.11}Test Ref 11}{188}{subsection.4.2.11}
+\contentsline {subsection}{\numberline {4.2.12}Test Ref 12}{188}{subsection.4.2.12}
+\contentsline {subsection}{\numberline {4.2.13}Test Ref 13}{188}{subsection.4.2.13}
+\contentsline {subsection}{\numberline {4.2.14}Test Ref 14}{188}{subsection.4.2.14}
+\contentsline {subsection}{\numberline {4.2.15}Test Ref 15}{188}{subsection.4.2.15}
+\contentsline {subsection}{\numberline {4.2.16}Test Ref 16}{188}{subsection.4.2.16}
+\contentsline {subsection}{\numberline {4.2.17}Test Ref 17}{188}{subsection.4.2.17}
+\contentsline {subsection}{\numberline {4.2.18}Test Ref 18}{188}{subsection.4.2.18}
+\contentsline {subsection}{\numberline {4.2.19}Test Ref 19}{188}{subsection.4.2.19}
+\contentsline {subsection}{\numberline {4.2.20}Test Ref 20}{188}{subsection.4.2.20}
+\contentsline {subsection}{\numberline {4.2.21}Test Ref 21}{188}{subsection.4.2.21}
+\contentsline {subsection}{\numberline {4.2.22}Test Ref 22}{188}{subsection.4.2.22}
+\contentsline {subsection}{\numberline {4.2.23}Test Ref 23}{188}{subsection.4.2.23}
+\contentsline {subsection}{\numberline {4.2.24}Test Ref 24}{188}{subsection.4.2.24}
+\contentsline {subsection}{\numberline {4.2.25}Test Ref 25}{188}{subsection.4.2.25}
+\contentsline {subsection}{\numberline {4.2.26}Test Ref 26}{188}{subsection.4.2.26}
+\contentsline {section}{\numberline {4.3}AES Implementation}{189}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}AES Implementation Testing Code}{189}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.2}AES-128}{191}{subsection.4.3.2}
+\contentsline {subsubsection}{\numberline {4.3.2.1}Cipher (ENCRYPT)}{191}{subsubsection.4.3.2.1}
+\contentsline {subsubsection}{\numberline {4.3.2.2}Inverse Cipher (DECRYPT)}{192}{subsubsection.4.3.2.2}
+\contentsline {subsection}{\numberline {4.3.3}AES-192}{195}{subsection.4.3.3}
+\contentsline {subsubsection}{\numberline {4.3.3.1}Cipher (ENCRYPT)}{195}{subsubsection.4.3.3.1}
+\contentsline {subsubsection}{\numberline {4.3.3.2}Inverse Cipher (DECRYPTION)}{196}{subsubsection.4.3.3.2}
+\contentsline {subsection}{\numberline {4.3.4}AES-256}{199}{subsection.4.3.4}
+\contentsline {subsubsection}{\numberline {4.3.4.1}Cipher (ENCRYPT)}{199}{subsubsection.4.3.4.1}
+\contentsline {subsubsection}{\numberline {4.3.4.2}Inverse Cipher (DECRYPT)}{200}{subsubsection.4.3.4.2}
+\contentsline {chapter}{\numberline {5}Evaluation}{203}{chapter.5}
+\contentsline {section}{\numberline {5.1}Looking Back}{203}{section.5.1}
+\contentsline {section}{\numberline {5.2}The Web Application}{203}{section.5.2}
+\contentsline {section}{\numberline {5.3}The AES Algorithm}{203}{section.5.3}
+\contentsline {section}{\numberline {5.4}What I would do differently}{203}{section.5.4}
+\contentsline {section}{\numberline {5.5}Final Evaluation}{203}{section.5.5}
