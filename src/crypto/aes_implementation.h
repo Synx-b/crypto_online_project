@@ -11,7 +11,7 @@
 #include <cstdint>
 #include <string>
 
-typedef uint8_t byte; /**< This is a simple typedef that makes my life easier */
+typedef unsigned char byte; /**< This is a simple typedef that makes my life easier */
 
 /**
  * @enum AESKeyLengths
@@ -53,7 +53,7 @@ public:
      * @param key The encryption key
      * @return A string of the encrypted data
      */
-    std::string encrypt(const byte input[], byte output[], const byte key[], const size_t message_length);
+    std::string encrypt(const byte input[], byte output[], const byte key[], size_t message_length);
 
     /**
      * @brief This method provides the encryption functionality for a block in the AES Algorithm

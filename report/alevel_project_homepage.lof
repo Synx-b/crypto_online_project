@@ -33,24 +33,80 @@
 \contentsline {figure}{\numberline {2.27}{\ignorespaces Register Form\relax }}{58}{figure.caption.59}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Entering the URL of the Web Application\relax }}{180}{figure.caption.60}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Pressing enter the Web Application Loads the Home Page\relax }}{180}{figure.caption.61}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Starting at the Homepage and then clicking the Basic Concepts Button\relax }}{181}{figure.caption.62}
-\contentsline {figure}{\numberline {4.4}{\ignorespaces After clicking the button the Basic Concepts Page Loads\relax }}{181}{figure.caption.63}
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Starting at the Homepage and then clicking the Modular Arithmetic Button\relax }}{182}{figure.caption.64}
-\contentsline {figure}{\numberline {4.6}{\ignorespaces After clicking the button the Modular Arithmetic Page Loads\relax }}{182}{figure.caption.65}
-\contentsline {figure}{\numberline {4.7}{\ignorespaces Starting at the Homepage and then clicking the Login/Register Button\relax }}{183}{figure.caption.66}
-\contentsline {figure}{\numberline {4.8}{\ignorespaces After clicking the button the Login/Register Page Loads\relax }}{183}{figure.caption.67}
-\contentsline {figure}{\numberline {4.9}{\ignorespaces Starting at the Login/Register Page and then clicking the Register Button\relax }}{183}{figure.caption.68}
-\contentsline {figure}{\numberline {4.10}{\ignorespaces After clicking the button the Login/Register Page Loads\relax }}{184}{figure.caption.69}
-\contentsline {figure}{\numberline {4.11}{\ignorespaces Starting at the Home Page and then clicking the Profile Button\relax }}{184}{figure.caption.70}
-\contentsline {figure}{\numberline {4.12}{\ignorespaces After clicking the button Profile Page Loads\relax }}{185}{figure.caption.71}
-\contentsline {figure}{\numberline {4.13}{\ignorespaces Starting at the Register Page and then clicking the Register Button\relax }}{185}{figure.caption.72}
-\contentsline {figure}{\numberline {4.14}{\ignorespaces The username field states that you need to enter a username\relax }}{185}{figure.caption.73}
-\contentsline {figure}{\numberline {4.15}{\ignorespaces Starting at the Register Page and then clicking the Register Button\relax }}{186}{figure.caption.74}
-\contentsline {figure}{\numberline {4.16}{\ignorespaces The password field states that you need to enter a password\relax }}{186}{figure.caption.75}
-\contentsline {figure}{\numberline {4.17}{\ignorespaces Starting at the Register Page and then clicking the Register Button\relax }}{186}{figure.caption.76}
-\contentsline {figure}{\numberline {4.18}{\ignorespaces Having two different Passwords causes an error\relax }}{187}{figure.caption.77}
-\contentsline {figure}{\numberline {4.19}{\ignorespaces Registering without an Email\relax }}{187}{figure.caption.78}
-\contentsline {figure}{\numberline {4.20}{\ignorespaces User is registered and logged in\relax }}{187}{figure.caption.79}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Entering the URL of the Web Application\relax }}{177}{figure.caption.60}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Pressing enter the Web Application Loads the Home Page\relax }}{177}{figure.caption.61}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Starting at the Homepage and then clicking the Basic Concepts Button\relax }}{178}{figure.caption.62}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces After clicking the button the Basic Concepts Page Loads\relax }}{178}{figure.caption.63}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Starting at the Homepage and then clicking the Modular Arithmetic Button\relax }}{179}{figure.caption.64}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces After clicking the button the Modular Arithmetic Page Loads\relax }}{179}{figure.caption.65}
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Starting at the Homepage and then clicking the Login/Register Button\relax }}{180}{figure.caption.66}
+\contentsline {figure}{\numberline {4.8}{\ignorespaces After clicking the button the Login/Register Page Loads\relax }}{180}{figure.caption.67}
+\contentsline {figure}{\numberline {4.9}{\ignorespaces Starting at the Login/Register Page and then clicking the Register Button\relax }}{180}{figure.caption.68}
+\contentsline {figure}{\numberline {4.10}{\ignorespaces After clicking the button the Login/Register Page Loads\relax }}{181}{figure.caption.69}
+\contentsline {figure}{\numberline {4.11}{\ignorespaces Starting at the Home Page and then clicking the Profile Button\relax }}{181}{figure.caption.70}
+\contentsline {figure}{\numberline {4.12}{\ignorespaces After clicking the button Profile Page Loads\relax }}{182}{figure.caption.71}
+\contentsline {figure}{\numberline {4.13}{\ignorespaces Starting at the Register Page and then clicking the Register Button\relax }}{182}{figure.caption.72}
+\contentsline {figure}{\numberline {4.14}{\ignorespaces The username field states that you need to enter a username\relax }}{182}{figure.caption.73}
+\contentsline {figure}{\numberline {4.15}{\ignorespaces Starting at the Register Page and then clicking the Register Button\relax }}{183}{figure.caption.74}
+\contentsline {figure}{\numberline {4.16}{\ignorespaces The password field states that you need to enter a password\relax }}{183}{figure.caption.75}
+\contentsline {figure}{\numberline {4.17}{\ignorespaces Starting at the Register Page and then clicking the Register Button\relax }}{183}{figure.caption.76}
+\contentsline {figure}{\numberline {4.18}{\ignorespaces Having two different Passwords causes an error\relax }}{184}{figure.caption.77}
+\contentsline {figure}{\numberline {4.19}{\ignorespaces Navigating to the Register Form\relax }}{184}{figure.caption.78}
+\contentsline {figure}{\numberline {4.20}{\ignorespaces Entering Registration information with no email\relax }}{185}{figure.caption.79}
+\contentsline {figure}{\numberline {4.21}{\ignorespaces User is Registered and Logged in\relax }}{185}{figure.caption.80}
+\contentsline {figure}{\numberline {4.22}{\ignorespaces Navigating to the Register Form\relax }}{186}{figure.caption.81}
+\contentsline {figure}{\numberline {4.23}{\ignorespaces Entering Registration information with an email\relax }}{186}{figure.caption.82}
+\contentsline {figure}{\numberline {4.24}{\ignorespaces User is Registered and Logged in\relax }}{187}{figure.caption.83}
+\contentsline {figure}{\numberline {4.25}{\ignorespaces If I had a running Email Server on my machine then the user would have received this Email containing an activation link for their account\relax }}{187}{figure.caption.84}
+\contentsline {figure}{\numberline {4.26}{\ignorespaces Password needs to be at least 7 characters long\relax }}{188}{figure.caption.85}
+\contentsline {figure}{\numberline {4.27}{\ignorespaces Password needs to contain enough characters from different classes\relax }}{188}{figure.caption.86}
+\contentsline {figure}{\numberline {4.28}{\ignorespaces Password cannot be based of username\relax }}{188}{figure.caption.87}
+\contentsline {figure}{\numberline {4.29}{\ignorespaces Password with suitable strength is met and classed as a valid password\relax }}{189}{figure.caption.88}
+\contentsline {figure}{\numberline {4.30}{\ignorespaces New User is about to register\relax }}{189}{figure.caption.89}
+\contentsline {figure}{\numberline {4.31}{\ignorespaces Authentication Tables do not contain information on new user\relax }}{190}{figure.caption.90}
+\contentsline {figure}{\numberline {4.32}{\ignorespaces New User has registered and is logged in\relax }}{190}{figure.caption.91}
+\contentsline {figure}{\numberline {4.33}{\ignorespaces New User information is added into authentication tables\relax }}{191}{figure.caption.92}
+\contentsline {figure}{\numberline {4.34}{\ignorespaces New User is about to register\relax }}{191}{figure.caption.93}
+\contentsline {figure}{\numberline {4.35}{\ignorespaces db\_user Table does not have a record for the new user\relax }}{192}{figure.caption.94}
+\contentsline {figure}{\numberline {4.36}{\ignorespaces New User has registered and is logged in\relax }}{192}{figure.caption.95}
+\contentsline {figure}{\numberline {4.37}{\ignorespaces db\_user Table now has a record for the new user\relax }}{192}{figure.caption.96}
+\contentsline {figure}{\numberline {4.38}{\ignorespaces New User is about to register\relax }}{193}{figure.caption.97}
+\contentsline {figure}{\numberline {4.39}{\ignorespaces New User has registered and is taken straight to the Homepage\relax }}{193}{figure.caption.98}
+\contentsline {figure}{\numberline {4.40}{\ignorespaces With no user logged in the normal header is shown\relax }}{194}{figure.caption.99}
+\contentsline {figure}{\numberline {4.41}{\ignorespaces A Normal User logs in\relax }}{194}{figure.caption.100}
+\contentsline {figure}{\numberline {4.42}{\ignorespaces The custom page header is shown to the user\relax }}{195}{figure.caption.101}
+\contentsline {figure}{\numberline {4.43}{\ignorespaces A Normal User logs in\relax }}{195}{figure.caption.102}
+\contentsline {figure}{\numberline {4.44}{\ignorespaces The normal user header is loaded, not the admin header\relax }}{196}{figure.caption.103}
+\contentsline {figure}{\numberline {4.45}{\ignorespaces A Admin user logs in\relax }}{196}{figure.caption.104}
+\contentsline {figure}{\numberline {4.46}{\ignorespaces The admin user header is loaded\relax }}{197}{figure.caption.105}
+\contentsline {figure}{\numberline {4.47}{\ignorespaces No User is logged in\relax }}{197}{figure.caption.106}
+\contentsline {figure}{\numberline {4.48}{\ignorespaces Profile page shows no user is logged in\relax }}{198}{figure.caption.107}
+\contentsline {figure}{\numberline {4.49}{\ignorespaces A User is logged in\relax }}{198}{figure.caption.108}
+\contentsline {figure}{\numberline {4.50}{\ignorespaces Profile page for user is loaded\relax }}{199}{figure.caption.109}
+\contentsline {figure}{\numberline {4.51}{\ignorespaces Profile page for user shows total questions answered\relax }}{199}{figure.caption.110}
+\contentsline {figure}{\numberline {4.52}{\ignorespaces Profile page for user shows total questions answered correctly\relax }}{200}{figure.caption.111}
+\contentsline {figure}{\numberline {4.53}{\ignorespaces User about to login with valid credentials\relax }}{200}{figure.caption.112}
+\contentsline {figure}{\numberline {4.54}{\ignorespaces The User is logged in\relax }}{201}{figure.caption.113}
+\contentsline {figure}{\numberline {4.55}{\ignorespaces User about to login with invalid credentials\relax }}{201}{figure.caption.114}
+\contentsline {figure}{\numberline {4.56}{\ignorespaces The User is not logged in\relax }}{202}{figure.caption.115}
+\contentsline {figure}{\numberline {4.57}{\ignorespaces It shows the user whether their username or password is wrong\relax }}{202}{figure.caption.116}
+\contentsline {figure}{\numberline {4.58}{\ignorespaces User tries to log in with bad credentials\relax }}{203}{figure.caption.117}
+\contentsline {figure}{\numberline {4.59}{\ignorespaces The user is given a timeout where they cannot login\relax }}{203}{figure.caption.118}
+\contentsline {figure}{\numberline {4.60}{\ignorespaces User is about to answer a Question\relax }}{203}{figure.caption.119}
+\contentsline {figure}{\numberline {4.61}{\ignorespaces User question data is not stored in user\_answered\_question table\relax }}{204}{figure.caption.120}
+\contentsline {figure}{\numberline {4.62}{\ignorespaces User has about to answer a Question\relax }}{204}{figure.caption.121}
+\contentsline {figure}{\numberline {4.63}{\ignorespaces User question data is now stored in user\_answered\_question table\relax }}{204}{figure.caption.122}
+\contentsline {figure}{\numberline {4.64}{\ignorespaces User is about to answer a Question Correctly\relax }}{205}{figure.caption.123}
+\contentsline {figure}{\numberline {4.65}{\ignorespaces It shows the user they got the question correct\relax }}{205}{figure.caption.124}
+\contentsline {figure}{\numberline {4.66}{\ignorespaces User is about to answer a Question Incorrectly\relax }}{205}{figure.caption.125}
+\contentsline {figure}{\numberline {4.67}{\ignorespaces It shows the user they got the question incorrect\relax }}{205}{figure.caption.126}
+\contentsline {figure}{\numberline {4.68}{\ignorespaces User is about to answer a Question they have already answered\relax }}{206}{figure.caption.127}
+\contentsline {figure}{\numberline {4.69}{\ignorespaces The question data is stored in the user\_answered\_questions Table\relax }}{206}{figure.caption.128}
+\contentsline {figure}{\numberline {4.70}{\ignorespaces User answers the question with a different answer than they did before\relax }}{206}{figure.caption.129}
+\contentsline {figure}{\numberline {4.71}{\ignorespaces The question data stored in the user\_answered\_questions Table is updated with the user new answer\relax }}{206}{figure.caption.130}
+\contentsline {figure}{\numberline {4.72}{\ignorespaces User answers the question with the correct answer\relax }}{207}{figure.caption.131}
+\contentsline {figure}{\numberline {4.73}{\ignorespaces The is\_correct field is set to 1\relax }}{207}{figure.caption.132}
+\contentsline {figure}{\numberline {4.74}{\ignorespaces User answers the question with the incorrect answer\relax }}{207}{figure.caption.133}
+\contentsline {figure}{\numberline {4.75}{\ignorespaces The is\_correct field is set to 0\relax }}{207}{figure.caption.134}
+\contentsline {figure}{\numberline {4.76}{\ignorespaces The Output from the AES Testing program\relax }}{211}{figure.caption.135}
 \addvspace {10\p@ }

@@ -20,12 +20,10 @@ intro_to_cryptography::intro_to_cryptography(Session& session, std::string title
 }
 
 void intro_to_cryptography::load_contents() {
-    this->page_title = this->elementAt(0,0)->addWidget(Wt::cpp14::make_unique<Wt::WText>
-                                                               (Wt::WString::tr(this->content_title_link)));
+    this->page_title = this->elementAt(0,0)->addWidget(Wt::cpp14::make_unique<Wt::WText>(Wt::WString::tr(this->content_title_link)));
     this->elementAt(0,0)->setStyleClass("learning_content_title");
 
-    this->page_content = this->elementAt(1,0)->addWidget(Wt::cpp14::make_unique<Wt::WText>
-                                                                 (Wt::WString::tr(this->content_resource_link)));
+    this->page_content = this->elementAt(1,0)->addWidget(Wt::cpp14::make_unique<Wt::WText>(Wt::WString::tr(this->content_resource_link)));
     this->elementAt(1,0)->setStyleClass("learning_content_content");
     this->elementAt(1,0)->setContentAlignment(Wt::AlignmentFlag::Left);
 

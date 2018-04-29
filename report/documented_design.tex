@@ -541,9 +541,71 @@ Even though the S-Box has a 1-to-1 mapping, it does not have any fixed points. T
 
 \paragraph{Mathematical Description of S-Box}
 
+Unlike the DES S-Box, which are effectively random tables that fulfill certain properties (particularly to help prevent attacks based on differential cryptanalysis), the AES S-Boxes have very strong algebraic structure. The AES S-Box can be thought as a 2 step mathematical process. 
+
 \begin{center}
-ADD THIS IN LATER
+$A_i \longrightarrow GF^{-1}(2^8) \longrightarrow B^{'}_{i} \longrightarrow$ Affine Mapping $\longrightarrow B_i$
 \end{center}
+
+The first part of the substitution is a Galois Field inversion. For each element of $A_i$, the inverse is computed, such that $B^{'}_i = A^{-1}_i$, where both $A$ and $B$ are elements of the field $GF(2^8)$ with the fixed irreducible polynomial $P(x) = x^8 + x^4 + x + 1$. 
+
+In the second part of the process, each byte $B^{'}_i$ is multiplied by a constant bit-matrix followed by the addition of a constant $8-bit$ vector. This is shown below:
+
+\begin{center}
+$
+\begin{pmatrix}
+B_0 \\
+B_1 \\
+B_2 \\
+B_3 \\
+B_4 \\
+B_5 \\
+B_6 \\
+B_7
+\end{pmatrix} 
+$
+=
+$
+\begin{pmatrix}
+1&0&0&0&1&1&1&1\\
+1&1&0&0&0&1&1&1\\
+1&1&1&0&0&0&1&1\\
+1&1&1&1&0&0&0&1\\
+1&1&1&1&1&0&0&0\\
+0&1&1&1&1&1&0&0\\
+0&0&1&1&1&1&1&0\\
+0&0&0&1&1&1&1&1
+\end{pmatrix}
+$
+$
+\begin{pmatrix}
+B^{'}_0 \\
+B^{'}_1 \\
+B^{'}_2 \\
+B^{'}_3 \\
+B^{'}_4 \\
+B^{'}_5 \\
+B^{'}_6 \\
+B^{'}_7
+\end{pmatrix}
+$
++
+$
+\begin{pmatrix}
+1 \\
+1 \\
+0 \\
+0 \\
+0 \\
+1 \\
+1 \\
+0
+\end{pmatrix}
+$
+$\mod{2}$
+\end{center}
+
+This entire process is known as affine mapping.
 
 \subsubsection{ShiftRows Layer}
 
@@ -686,7 +748,7 @@ $128$ & $10$ & $11$ \\
 $192$ & $12$ & $13$ \\
 $256$ & $14$ & $15$ \\
 \end{tabular}
-\caption{Repsective Key Lengths, Rounds Numbers, Subkey Numbers}
+\caption{Respective Key Lengths, Rounds Numbers, Subkey Numbers}
 \label{AES-KeyL-RoundNumber-Subkeys}
 \end{center}
 \end{table}
@@ -981,12 +1043,6 @@ Since the first round of the decryption round needs the last subkey, the second 
 \STATE{end}
 \end{algorithmic}
 \end{algorithm}
-
-\subsubsection{AES Key Schedule}
-
-
-
-\section{Bespoke Data Structures}
 
 \newpage
 \section{Bespoke Database Design}

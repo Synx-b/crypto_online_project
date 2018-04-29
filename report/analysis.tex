@@ -512,27 +512,8 @@ The key disadvantage with this option is that it uses a not-so friendly language
 }
 \end{itemize}
 
-\section{Requirements / Objectives / Limitations}
-
-This whole section is going to serve a check list of the requirements, objectives and limitations of my project. The requirements serve as a detailed check list for me to go over and use to see if my project has all the content I want it to have. The objectives serve as a more 'is my project complete' check list and that is what will be used when checking as to whether or not my project is complete per say. And finally, limitations are similar to objectives but are things that I would like to achieve but couldn't due a variety of reasons including but not limited to time constraints and complexity of the problem.
-
-There are 2 main sections here relating to the User and System. Anything that relates the the User is about how the platform is designed and orientated around the user. When it comes to the System it is mainly about my implementation for the solution.
-
-\subsection{User Requirements}
-
-\begin{itemize}
-\item{Easy to read font}
-\item{Intuitive user interface}
-\item{Good flow through out the entirety of the website}
-\item{Content explained makes sense}
-\item{Hard / Complex areas explained simply}
-\item{Content should be easy to follow}
-\end{itemize}
-
-\subsection{System Requirements}
-\subsubsection{Platform Requirements}
-
-\textbf{A High Level look at what I want the platform to cover.}
+\section{All Different Areas of Cryptography}
+\textbf{General Overview}
 \begin{itemize}
 \item{Cryptography
 \begin{itemize}
@@ -568,7 +549,7 @@ There are 2 main sections here relating to the User and System. Anything that re
 \end{itemize}}
 \end{itemize}
 
-\textbf{Going into more detail about what I want to teach specifically.}
+\textbf{More Detailed look}
 \begin{itemize} % Second List of Objectives %
 \item{Cryptography
 \begin{itemize}
@@ -629,36 +610,25 @@ There are 2 main sections here relating to the User and System. Anything that re
 \item{Create theory questions that require the user to demonstrate their understanding of the various Cryptography sections}
 \end{itemize}}
 \end{itemize}
-{\noindent
-\textbf{Additional Content that I would like to add if possible but not critical to the completion of the project}}
 
-\begin{itemize} % Third List of Objectives %
-\item{Cryptography
+\section{Requirements / Objectives / Limitations}
+
+This whole section is going to serve a check list of the requirements, objectives and limitations of my project. The requirements serve as a detailed check list for me to go over and use to see if my project has all the content I want it to have. The objectives serve as a more 'is my project complete' check list and that is what will be used when checking as to whether or not my project is complete per say. And finally, limitations are similar to objectives but are things that I would like to achieve but couldn't due a variety of reasons including but not limited to time constraints and complexity of the problem.
+
+There are 2 main sections here relating to the User and System. Anything that relates the the User is about how the platform is designed and orientated around the user. When it comes to the System it is mainly about my implementation for the solution.
+
+\subsection{User Requirements}
+
 \begin{itemize}
-\item{Build a simulator for the enigma machine and show graphically how it works}
-\item{Coding Problems
-\begin{itemize}
-\item{Design Custom coding problems that test the users cryptology knowledge}
-\item{Create a custom development environment so the user can enter the solution to the problem on the website and it will be able to tell you if the answer is correct or not}
-\end{itemize}}
-\end{itemize}}
-\item{Cryptanalysis
-\begin{itemize}
-\item{Explain some of the common techniques used in cryptanalysis}
-\item{Provide come example ciphers for the users to practice their cryptanalysis on}
-\end{itemize}}
+\item{Easy to read font}
+\item{Intuitive user interface}
+\item{Good flow through out the entirety of the website}
+\item{Content explained makes sense}
+\item{Content should be easy to follow}
 \end{itemize}
 
-\subsubsection{AES Implementation Requirements}
 
-\begin{itemize}
-\item{Key Expansion Implemented}
-\item{AddRoundKey Function Implemented}
-\item{SubstituteBytes Function Implemented}
-\item{ShiftRows Function Implemented}
-\item{MixColumns Function Implemented}
-\item{Key Schedule Implemented}
-\end{itemize}
+
 
 
 \subsection{System Objectives}
@@ -677,19 +647,12 @@ I have split up this section into 3 different areas, Website Management, Website
 }
 \item{Website Content
 	\begin{enumerate}
-		\item{Contains content on Symmetric Cryptography}
-		\item{Contains theoretical questions on Symmetric Cryptography}
-		\item{Contains content on Asymmetric Cryptography}
-		\item{Contains theoretical questions on Asymmetric Cryptography}
+		\item{Create Navigation Grid that can link to all the different sections of the website}
+        \item{Create Content Template that allows me to easily add new content}
+        \item{Create Question Template that allows me to easily add new Questions}
 		\item{Create online code-editor with standard code-editor features. E.g. Auto-complete, re factoring, a home made 'intellisense'}
 		\item{Create questions that require the need to write code in order to solve them}
 		\item{Review the Coded solutions and suggest improvements}
-		\item{Create Visual simulation of various algorithms and cryptographic systems
-			\begin{enumerate}
-				\item{AES and DES}
-				\item{The Engima Machine}
-			\end{enumerate}					
-		}
 	\end{enumerate}
 }
 \item{User Interaction
@@ -699,8 +662,7 @@ I have split up this section into 3 different areas, Website Management, Website
 		\item{Relevant user information is stored in local database}
 		\item{Email verification for accounts is implemented}
 		\item{Store answers to questions into local database}
-		\item{Analyse the users answers to questions and produce report on what they need to work on}
-		\item{}
+		\item{Analyze the users answers to questions and produce report on what they need to work on}
 	\end{enumerate}
 }
 \end{enumerate}
@@ -708,6 +670,16 @@ I have split up this section into 3 different areas, Website Management, Website
 \subsubsection{AES Implementation Objectives}
 
 \begin{enumerate}
+\item{
+    \begin{enumerate}
+        \item{Key Schedule Implemented}
+        \item{Sub Bytes Implemented}
+        \item{Shift Rows Implemented}
+        \item{Mix Columns Implemented}
+        \item{Add Round Key Implemented}
+    \end{enumerate}
+}
+
 \item{Key sizes supported
 	\begin{enumerate}
 		\item{128-bit}
@@ -744,8 +716,8 @@ Website Management
 \item{
 Website Content
 	\begin{enumerate}
+        \item{Only a few sections have Content and Questions}
 		\item{Online Code-editor does not support all the modern features}
-		\item{Visual simulations are not implemented}
 	\end{enumerate}
 }
 \item{

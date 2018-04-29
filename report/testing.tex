@@ -84,36 +84,29 @@ Test \# & Test Description & Test Type & Expected Result & Pass /Fail & Fig No \
 \midrule
 12 & \breakwords{Check that the password entered meets strength requirements} & Erroneous & \breakwords{If a user registers with a weak password the user will not be able to register but if they sign up with a strong password then they will be registered} & Pass & 12 \\
 \midrule
-13 & \breakwords{When a user registers with all valid information that user data is added to the authentication tables} & Typical & \breakwords{The authentication information is added to the authentication tables} & Pass & 13 \\
+13 & \breakwords{Check that all user information is added to authentication tables} & Typical & \breakwords{The authentication information is added to the authentication tables} & Pass & 13 \\
 \midrule
 14 & \breakwords{When a user registers a record is also created for them in the db\_user tables} & Typical & \breakwords{A record for the user is created in the db\_user table} & Pass & 14 \\
 \midrule
 15 & \breakwords{After the user has registered they are then sent to the homepage} & Typical & \breakwords{After the user has registered the website will navigate them to the homepage} & Pass & 15 \\
 \midrule
-16 & \breakwords{Once the user has registered and reached the homepage a custom header navigation bar should be loaded} & Typical & \breakwords{The user header will be loaded rather than the normal site header navigation bar} & Pass & 16 \\
+16 & \breakwords{Check the custom header loads for a logged in user} & Typical & \breakwords{The user header will be loaded rather than the normal site header navigation bar} & Pass & 16 \\
 \midrule
 17 & \breakwords{The admin settings tab should not show for any non-admins} & Typical & \breakwords{When a normal user logs in they should not see the admin settings tab in the header} & Pass & 17 \\
 \midrule
-18 & \breakwords{The admin settings tab should show for any admin users when they log in} & Typical & \breakwords{The admin settings tab should load onto the header when an admin logs in} & Pass & 18 \\\midrule
-19 & \breakwords{When a user is not logged in and they navigate to the profile page it should say that no user is logged in} & Typical & \breakwords{The profile page displays that no user is logged in} & Pass & 19 \\\midrule
-20 & \breakwords{When a logged in user navigates to the profile page it should show the user their profile page} & Typical & \breakwords{The user will be presented with the profile page for their account} & Pass & 20 \\\midrule
-21 & \breakwords{When a user is not logged in and they navigate to the profile page it should say that no user is logged in} & Typical & \breakwords{The profile page displays that no user is logged in} & Pass & 21 \\\midrule
-22 & \breakwords{When a logged in user goes to their profile page it should show them the number of questions that they have answered} & Typical & \breakwords{The user will be able to see the total number of questions they have answered} & Pass & 22 \\\midrule
-23 & \breakwords{When a logged in user goes to their profile page it should show the total number of questions answered correctly} & Typical & \breakwords{The profile page will show the total number of questions that have been answered correctly.} & Pass & 23 \\\midrule
-24 & \breakwords{When a user tries to log in with valid credentials they are logged in} & Typical & \breakwords{The user will be logged in} & Pass & 24 \\\midrule
-25 & \breakwords{After a few attempts to try to log in the user will have to wait to log in again} & Typical & \breakwords{The user will be given a time out and will have to wait a fair interval until they can try to login in again} & Pass & 25 \\\midrule
-26 & \breakwords{When a user answers a question it should store the question in the user\_answered\_questions table} & Typical & \breakwords{The relevant question information is stored in the user\_answered\_questions table} & Pass & 26 \\\midrule
-27 & \breakwords{When the user answers the question correctly then it displays the user got the question correct} & Typical & \breakwords{The user is shown that they got the question correct} & Pass & 27 \\\midrule
-28 & \breakwords{When the user answers the question wrong it displays that they got the question wrong} & Typical & \breakwords{The user is shown that they got the question wrong} & Pass & 28 \\\midrule
-29 & \breakwords{When ever the user answers the question it updates the question in the user\_answered\_question table} & Typical & \breakwords{The users question answer should be updated in the user\_answered\_question table} & Pass & 29 \\\midrule
-28 & \breakwords{} & Typical & \breakwords{} & Pass & 28 \\\midrule
-28 & \breakwords{} & Typical & \breakwords{} & Pass & 28 \\\midrule
-28 & \breakwords{} & Typical & \breakwords{} & Pass & 28 \\\midrule
-28 & \breakwords{} & Typical & \breakwords{} & Pass & 28 \\\midrule
-28 & \breakwords{} & Typical & \breakwords{} & Pass & 28 \\\midrule
-28 & \breakwords{} & Typical & \breakwords{} & Pass & 28 \\\midrule
-28 & \breakwords{} & Typical & \breakwords{} & Pass & 28 \\\midrule
-29 & \breakwords{} & Typical & \breakwords{} & Pass & 29 \\\bottomrule
+18 & \breakwords{Profile page should show when no user is logged in} & Typical & \breakwords{The profile page displays that no user is logged in} & Pass & 19 \\\midrule
+19 & \breakwords{Profile page should load when a user is logged in} & Typical & \breakwords{The user will be presented with the profile page for their account} & Pass & 19 \\\midrule
+20 & \breakwords{Profile page shows total number of questions answered} & Typical & \breakwords{The user will be able to see the total number of questions they have answered} & Pass & 20 \\\midrule
+21 & \breakwords{Profile page shows total number of questions answered correctly} & Typical & \breakwords{The profile page will show the total number of questions that have been answered correctly.} & Pass & 21 \\\midrule
+22 & \breakwords{When a user tries to log in with valid credentials they are logged in} & Typical & \breakwords{The user will be logged in} & Pass & 22 \\\midrule
+23 & \breakwords{When a user tries to log in with invalid credentials they are not logged in} & Typical & \breakwords{The user will be logged in} & Pass & 23 \\\midrule
+24 & \breakwords{After a few attempts to try to log in the user will have to wait to log in again} & Typical & \breakwords{The user will be given a time out and will have to wait a fair interval until they can try to login in again} & Pass & 24 \\\midrule
+25 & \breakwords{When a user answers a question it should store the question in the user\_answered\_questions table} & Typical & \breakwords{The relevant question information is stored in the user\_answered\_questions table} & Pass & 25 \\\midrule
+26 & \breakwords{When the user answers the question correctly then it displays that the user got the question correct} & Typical & \breakwords{The user is shown that they got the question correct} & Pass & 26 \\\midrule
+27 & \breakwords{When the user answers the question wrong it displays that they got the question wrong} & Typical & \breakwords{The user is shown that they got the question wrong} & Pass & 27 \\\midrule
+28 & \breakwords{When ever the user answers the question it updates the question in the user\_answered\_question table} & Typical & \breakwords{The users question answer should be updated in the user\_answered\_question table} & Pass & 28 \\\midrule
+29 & \breakwords{When a user answers a question correctly it should set the is_correct field appropriately} & Typical & \breakwords{The is_correct field should be set to 1} & pass & 29 \\\midrule
+30 & \breakwords{When a user answers a question incorrectly it should set the is_correct field appropriately} & Typical & \breakwords{The is_correct field should be set to 0} & pass & 30 \\\midrule
 \end{longtable}
 
 \section{Test Evidence}
@@ -266,34 +259,444 @@ Test \# & Test Description & Test Type & Expected Result & Pass /Fail & Fig No \
 
 \begin{figure}[H]
 \centering
-\includegraphics[scale=0.2]{testing/test-04-01}
-\caption{Registering without an Email}
-\label{test-09-01}
+\includegraphics[scale=0.4]{testing/test-10-01}
+\caption{Navigating to the Register Form}
+\label{test-10-01}
 \end{figure}
 
 \begin{figure}[H]
 \centering
-\includegraphics[scale=0.4]{testing/test-09-01}
-\caption{User is registered and logged in}
-\label{test-09-02}
+\includegraphics[scale=0.4]{testing/test-10-02}
+\caption{Entering Registration information with no email}
+\label{test-10-02}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.2]{testing/test-10-03}
+\caption{User is Registered and Logged in}
+\label{test-10-03}
 \end{figure}
 
 \subsection{Test Ref 11}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.4]{testing/test-10-01}
+\caption{Navigating to the Register Form}
+\label{test-11-01}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.4]{testing/test-11-02}
+\caption{Entering Registration information with an email}
+\label{test-11-02}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.2]{testing/test-11-03}
+\caption{User is Registered and Logged in}
+\label{test-11-03}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.4]{testing/test-11-04}
+\caption{If I had a running Email Server on my machine then the user would have received this Email containing an activation link for their account}
+\label{test-11-03}
+\end{figure}
+
 \subsection{Test Ref 12}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.4]{testing/test-12-01}
+\caption{Password needs to be at least 7 characters long}
+\label{test-12-01}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.4]{testing/test-12-02}
+\caption{Password needs to contain enough characters from different classes}
+\label{test-12-02}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.4]{testing/test-12-03}
+\caption{Password cannot be based of username}
+\label{test-12-03}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.4]{testing/test-12-04}
+\caption{Password with suitable strength is met and classed as a valid password}
+\label{test-12-04}
+\end{figure}
+
 \subsection{Test Ref 13}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.4]{testing/test-13-01}
+\caption{New User is about to register}
+\label{test-13-01}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.4]{testing/test-13-02-02}
+\includegraphics[scale=0.25]{testing/test-13-02-01}
+\caption{Authentication Tables do not contain information on new user}
+\label{test-13-02}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.2]{testing/test-13-03}
+\caption{New User has registered and is logged in}
+\label{test-13-03}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.4]{testing/test-13-04-01}
+\includegraphics[scale=0.25]{testing/test-13-04-02}
+\caption{New User information is added into authentication tables}
+\label{test-13-04}
+\end{figure}
+
 \subsection{Test Ref 14}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.4]{testing/test-13-01}
+\caption{New User is about to register}
+\label{test-14-01}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.4]{testing/test-14-02}
+\caption{db\_user Table does not have a record for the new user}
+\label{test-14-02}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.2]{testing/test-13-03}
+\caption{New User has registered and is logged in}
+\label{test-14-03}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.4]{testing/test-14-04}
+\caption{db\_user Table now has a record for the new user}
+\label{test-14-02}
+\end{figure}
+
 \subsection{Test Ref 15}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.4]{testing/test-13-01}
+\caption{New User is about to register}
+\label{test-15-01}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.2]{testing/test-13-03}
+\caption{New User has registered and is taken straight to the Homepage}
+\label{test-15-02}
+\end{figure}
+
 \subsection{Test Ref 16}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.2]{testing/test-16-01}
+\caption{With no user logged in the normal header is shown}
+\label{test-16-01}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.2]{testing/test-16-02}
+\caption{A Normal User logs in}
+\label{test-16-02}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.2]{testing/test-16-03}
+\caption{The custom page header is shown to the user}
+\label{test-16-02}
+\end{figure}
+
 \subsection{Test Ref 17}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.2]{testing/test-16-02}
+\caption{A Normal User logs in}
+\label{test-17-01}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.2]{testing/test-16-03}
+\caption{The normal user header is loaded, not the admin header}
+\label{test-17-02}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.2]{testing/test-17-01}
+\caption{A Admin user logs in}
+\label{test-17-03}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.2]{testing/test-17-02}
+\caption{The admin user header is loaded}
+\label{test-17-04}
+\end{figure}
+
 \subsection{Test Ref 18}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.2]{testing/test-18-01}
+\caption{No User is logged in}
+\label{test-18-01}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.2]{testing/test-18-02}
+\caption{Profile page shows no user is logged in}
+\label{test-18-01}
+\end{figure}
+
 \subsection{Test Ref 19}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.2]{testing/test-19-01}
+\caption{A User is logged in}
+\label{test-19-01}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.2]{testing/test-19-02}
+\caption{Profile page for user is loaded}
+\label{test-19-01}
+\end{figure}
+
 \subsection{Test Ref 20}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.2]{testing/test-19-02}
+\caption{Profile page for user shows total questions answered}
+\label{test-20-01}
+\end{figure}
+
 \subsection{Test Ref 21}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.2]{testing/test-19-02}
+\caption{Profile page for user shows total questions answered correctly}
+\label{test-21-01}
+\end{figure}
+
 \subsection{Test Ref 22}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.2]{testing/test-22-01}
+\caption{User about to login with valid credentials}
+\label{test-22-01}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.2]{testing/test-22-02}
+\caption{The User is logged in}
+\label{test-22-02}
+\end{figure}
+
 \subsection{Test Ref 23}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.2]{testing/test-23-01}
+\caption{User about to login with invalid credentials}
+\label{test-23-01}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.2]{testing/test-23-02}
+\caption{The User is not logged in}
+\label{test-23-02}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.2]{testing/test-23-03}
+\caption{It shows the user whether their username or password is wrong}
+\label{test-23-03}
+\end{figure}
+
 \subsection{Test Ref 24}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.2]{testing/test-23-02}
+\caption{User tries to log in with bad credentials}
+\label{test-24-01}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.25]{testing/test-24-01}
+\caption{The user is given a timeout where they cannot login}
+\label{test-24-02}
+\end{figure}
+
 \subsection{Test Ref 25}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.4]{testing/test-25-01}
+\caption{User is about to answer a Question}
+\label{test-25-01}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.4]{testing/test-25-02}
+\caption{User question data is not stored in user\_answered\_question table}
+\label{test-25-01}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.4]{testing/test-25-03}
+\caption{User has about to answer a Question}
+\label{test-25-03}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.4]{testing/test-25-04}
+\caption{User question data is now stored in user\_answered\_question table}
+\label{test-25-04}
+\end{figure}
+
 \subsection{Test Ref 26}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.4]{testing/test-26-01}
+\caption{User is about to answer a Question Correctly}
+\label{test-26-01}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.4]{testing/test-26-02}
+\caption{It shows the user they got the question correct}
+\label{test-26-01}
+\end{figure}
+
+\subsection{Test Ref 27}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.4]{testing/test-26-01}
+\caption{User is about to answer a Question Incorrectly}
+\label{test-27-01}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.4]{testing/test-27-01}
+\caption{It shows the user they got the question incorrect}
+\label{test-27-02}
+\end{figure}
+
+\subsection{Test Ref 28}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.4]{testing/test-28-01}
+\caption{User is about to answer a Question they have already answered}
+\label{test-28-01}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.4]{testing/test-28-02}
+\caption{The question data is stored in the user\_answered\_questions Table}
+\label{test-28-01}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.4]{testing/test-28-04}
+\caption{User answers the question with a different answer than they did before}
+\label{test-28-01}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.4]{testing/test-28-03}
+\caption{The question data stored in the user\_answered\_questions Table is updated with the user new answer}
+\label{test-28-01}
+\end{figure}
+
+\subsection{Test Ref 29}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.4]{testing/test-29-01}
+\caption{User answers the question with the correct answer}
+\label{test-29-01}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.4]{testing/test-29-02}
+\caption{The is\_correct field is set to 1}
+\label{test-29-01}
+\end{figure}
+
+\subsection{Test Ref 30}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.4]{testing/test-30-01}
+\caption{User answers the question with the incorrect answer}
+\label{test-30-01}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.4]{testing/test-30-02}
+\caption{The is\_correct field is set to 0}
+\label{test-30-01}
+\end{figure}
 
 \newpage
 \section{AES Implementation}
@@ -305,6 +708,15 @@ My AES Implementation has been tested against the Federal Information Processing
 In order to completely test my solution I have written a short program that uses to test vectors from FIPS 197. I can then compare the results from my program and from the FIPS 197 document. If they match then I know my implementation of the algorithm is correct.
 
 \lstinputlisting[language=C++]{../src/crypto/aes_implementation_test_input.cc}
+
+\subsection{AES Implementation Testing Code Output}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.7]{testing/test-aes-output}
+\caption{The Output from the AES Testing program}
+\label{test-aes-output}
+\end{figure}
 
 \subsection{AES-128}
 

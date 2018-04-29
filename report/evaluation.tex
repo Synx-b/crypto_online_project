@@ -5,12 +5,107 @@
 \newpage
 \chapter{Evaluation}
 
-\section{Looking Back}
+\section{My Thoughts}
 
-\section{The Web Application}
+Overall I have been happy with the progress made on the project. Throughout the 6-7 months of work that has gone into the project I feel that my programming skills and knowledge have increased 2, if not 3 fold. I now understand a lot more about how a website core functions operate. My debugging skills have also increased massively. One aspect of this project meant that I had to learn how to use the \textit{Wt} Library and I can say that I have a reasonable understanding of this and will definitely be using it in future projects.
 
-\section{The AES Algorithm}
+One really positive aspect of this project is that I ended up teaching my self about the core concepts of Cryptography. I followed the online lecture series \textit{Understanding Cryptography} which has taught me all about Symmetric/Asymmetric Cryptography as well as applications of these ideas in MACs and HASH functions.
 
-\section{What I would do differently}
+I do feel however that I definitely \textit{bit of more than I could chew}. In hindsight I definitely would not have been able to complete all the work that I set out to do at the beginning of the project. But the work that I have been able to complete has put me in a very good position to expand to the website as I have programmed it in a way that allows me to easily add new Sections and Questions.
 
-\section{Final Evaluation}
+
+
+\section{Objective Analysis}
+
+I will now go through each of my objectives and decide on whether or not I have completed to a high degree of quality and success.
+
+\newpage
+\subsection{Platform Objective Analysis}
+\begin{longtable}{|p{0.2\textwidth}|p{0.6\textwidth}|p{0.2\textwidth}|}
+\toprule 
+Objective Number & Feelings about Objective Progress & Did I achieve this Objective  \\
+\midrule
+1a & I have definitely met this objective as I have a working website that can be launched from the my Computer & Yes \\
+\midrule
+1b & I did not end up buying a domain for my website to be loaded to. This means that the website will not be public for anyone to use at the end of the project & No\\
+\midrule
+1c & I did not do this as it turns out renting server space for my web server to live is fairly expensive & No\\
+\midrule
+1d & I did not do this either for a similar reason, getting a SSL Certificate to enable HTTPS only connections is expensive. But if I were to put this into the public domain I would have to do this as in this day and age it is a necessity to have HTTPS enabled for your website & No\\
+\midrule
+2a & A Navigation Grid that allows the user to access all the different sections of the website has been implemented & Yes  \\
+\midrule
+2b & A Template implementation for all the content I want to show to user has been implemented & Yes \\
+\midrule
+2c & A Template implementation for all the questions that the user can answer to test their knowledge about all the different content sections has been implemented & Yes\\
+\midrule
+2d & Due to time constraints I was not able to implement this. Given more time I definitely feel this would be achievable & No \\
+\midrule
+2e & Without the online code-editor it would not be possible for me to achieve this Objective & No\\
+\midrule
+2f & I was not able to achieve this objective for the same reason I was not able to achieve Objective \textit{2e} & No \\
+\midrule
+3a & I have fully implemented The Login system for the Website & Yes\\
+\midrule
+3b & Authentication for all user is implemented allowing them to verify their accounts with provided email addresses. & Yes \\
+\midrule
+3c & I have fully implemented this objective as every user has a record created in the db\_user table which contains relevant information about the user & Yes\\
+\midrule
+3d & Email Verification has been implemented So I have fully achieved this objective & Yes\\
+\midrule
+3e & All answers a user gives are stored in the user\_answered\_questions Table so I have achieved this objective & yes\\
+\midrule
+3f & The profile page shows the user what questions they have got correct and what questions they have got wrong. & Yes\\
+\bottomrule
+\end{longtable}
+
+\subsection{AES Implementation Objectives}
+
+
+\begin{longtable}{|p{0.2\textwidth}|p{0.6\textwidth}|p{0.2\textwidth}|}
+\toprule 
+Objective Number & Feelings about Objective Progress & Did I achieve this Objective  \\
+\midrule
+1a & I have implemented the AES Key Schedule  & Yes \\
+\midrule
+1b & I have implemented the Sub Bytes Routine for AES & Yes \\
+\midrule
+1c & I have implemented the Shift Rows Routine for AES & Yes \\
+\midrule
+1d & I have implemented the Mix Columns Routine for AES & Yes \\
+\midrule
+1e & I have implemented the Add Round Key Routine for AES & Yes \\
+\midrule
+2a & 128-bit Keys are supported & Yes \\
+\midrule 
+2b & 192-bit Keys are supported & Yes \\
+\midrule 
+2c & 256-bit Keys are supported & Yes \\
+\midrule 
+3a & Electronic Code Book Mode has been implemented & Yes \\
+\bottomrule
+\end{longtable}
+
+Due to the time constraints I was only able to implement 1 mode of operation, ECB, for the algorithm. Given more time I definitely feel that I would be able to implement the remaining modes of operation for the algorithm. These include CBC, OFB, CFB, etc.
+
+\section{How I could Extend my Project}
+
+Now that I am at the end of the project I have come up with various ways that my project could be extended. I think the first obvious extension would be to streamline the process of answering questions. Right now in order to answer a question you need to create an account, go the the content page, navigate to the bottom of the page where the questions are located and answer them. I feel that if split the site up into different sections that only contained learning content and sections that contained only questions then it would be way easier for a user to just test their knowledge. This would also give me the opportunity to add general topic quizzes. These would contain questions on a broad number of topics about Cryptography.
+
+I would also like to increase the amount of information available to the user when they go to their profile. Right now the user can only see the questions that they have answered and the questions they have answered correctly. I would like to extend this so that for the questions the user got wrong it clearly explains how to get to the correct answer and how to do it more efficiently. Adding a more formal reporting system would also be a good idea. This system would take in all the information about the answers for the user questions and then would correlate and analyze all that information. It would inform the user about what areas they are good at and what areas they need to work on. It would also give specifics on certain areas so that the user can really benefit and learn exactly what they need to learn. Rather than spending time on a topic that they already understand.
+
+Anther extension would be to incorporate more algorithms into the project. Due to the time constraints I was only able to implement AES but I would also like to implement more algorithms. Examples of some algorithms I could implement are
+
+\begin{itemize}
+	\item{DES - Data Encryption Standard}
+	\item{Twofish}
+	\item{Serpent}
+	\item{RC6}
+	\item{SHA-2}
+	\item{SHA-3}
+	\item{bcrypt}
+\end{itemize}
+
+\section{Final Thoughts}
+
+I definitely feel that this project has been worth my time. I have gained lots of experience and now have various skill sets that I know I will be very useful for my career. This entire process has been very fun and I have enjoyed every aspect of it. I look forward to any challenge I face in the future that involves any of the information/skills that I have learned throughout this project.

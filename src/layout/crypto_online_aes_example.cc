@@ -53,7 +53,7 @@ void CryptoOnlineAESExample::process() {
 
     std::string plaintext = this->plaintext_entry->text().toUTF8();
     std::string key = this->key_entry->text().toUTF8();
-    unsigned long long int key_size;
+    std::string ciphertext = "";
 
     if(plaintext.length() != 32) {
         this->plaintext_error->setText("Plaintext needs to be 32 Hex Characters");
@@ -63,30 +63,18 @@ void CryptoOnlineAESExample::process() {
         this->key_error->setStyleClass("error_message");
     }
     else{
-        key_size = key.length();
-        byte key_array[key_size];
-        byte plaintext_array[16];
-        this->hexstring_to_array(plaintext, plaintext_array, 16);
-        this->hexstring_to_array(key, key_array, static_cast<int>(key_size));
-        for(int i = 0; i < 16; i++)
-            std::cout << (unsigned)plaintext[i] << std::endl;
+        byte output[16];
+        aes_implementation.encrypt_block((const byte*)plaintext.data(), output, (const byte*)key.data());
+        for(int i = 0; i < 16; i++) {
+            std::cout << unsigned(output[i]);
+            ciphertext += std::to_string(unsigned(output[i]));
+        }
+        std::cout << std::endl;
+        this->ciphertext_area->setText(ciphertext);
     }
 
 }
 
-void CryptoOnlineAESExample::hexstring_to_array(std::string hexstring, byte out[], int length) {
-    for(int i = 0; i < length; i++){
-        out[i] = this->hex_char_to_string(hexstring[i]);
-    }
-}
 
-uint8_t CryptoOnlineAESExample::hex_char_to_string(char c) {
-    if(c >= '0' && c <= '9')
-        return (c - 87);
-    else if(c >= 'A' && c <= 'F')
-        return (c - 55);
-    else if(c >= 'a' && c <= 'f')
-        return (c - 48);
-}
 
 

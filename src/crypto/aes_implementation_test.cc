@@ -102,7 +102,7 @@ void test_aes_128(){
     byte ciphertext[16];
     byte plaintext2[16];
 
-    /*std::cout << "Plaintext: ";
+    std::cout << "Plaintext: ";
     for(byte i = 0; i < 16; i++){
         std::cout << std::hex << std::setfill('0') << std::setw(2) << unsigned(plaintext[i]);
     }
@@ -112,7 +112,7 @@ void test_aes_128(){
     for(byte i = 0; i < 16; i++){
         std::cout << std::hex << std::setfill('0') << std::setw(2) << unsigned(key_128[i]);
     }
-    std::cout << std::endl;*/
+    std::cout << std::endl;
 
     aes.encrypt_block(plaintext, ciphertext, key_128);
 
@@ -122,7 +122,7 @@ void test_aes_128(){
     }
     std::cout << std::endl;
 
-    /*aes.decrypt(ciphertext, plaintext2, key_128);
+    aes.decrypt_block(ciphertext, plaintext2, key_128);
 
     std::cout << "Plaintext: ";
     for(byte i = 0; i < 16; i++){
@@ -130,13 +130,13 @@ void test_aes_128(){
     }
     std::cout << std::endl;
 
-    std::cout << std::endl;*/
+    std::cout << std::endl;
 
 }
 
 
 int main(){
     test_aes_128();
-    // test_aes_192();
-    // test_aes_256();
+    test_aes_192();
+    test_aes_256();
 }

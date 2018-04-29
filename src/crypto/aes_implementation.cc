@@ -189,10 +189,7 @@ static byte rcon[256] = {
 };
 
 
-AESImplementation::AESImplementation(AESKeyLengths keyLength) : _n(0),
-                                                                _b(0),
-                                                                _number_of_rounds(0),
-                                                                _block_size(0){
+AESImplementation::AESImplementation(AESKeyLengths keyLength) : _n(0), _b(0), _number_of_rounds(0), _block_size(0){
     switch(keyLength){
         case AES128:
             this->_block_size = 16;
